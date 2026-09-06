@@ -33,14 +33,19 @@ export function uniqueWorks(works){
  });
 }
 export function paperText(p){
- return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.stack_layer,p.data_size_bin,p.validation_type,p.why,p.summary,p.brief,p.ask_next,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+ return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.stack_layer,p.data_size_bin,p.validation_type,p.why,p.summary,p.brief,p.ask_next,p.descriptytor_role,p.descriptytor_vs,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 }
 function focusMatch(p,focus,text){
  if(!focus)return true;
  if(focus==='milo')return (p.groups||[]).includes('Milo')||(p.derived_authors||[]).some(a=>/anat milo/i.test(a));
+ if(focus==='descriptytor')return Number.isFinite(p.descriptytor_rank);
  if(focus==='stack')return ['Ground-state conformers','TS search','TS ensembles','Thermochemistry'].includes(p.stack_layer)||/crest|autode|ts-tools|racerts|goodvibes|thermomlip|\bedbo\b/.test(text);
  const re={small:/small.data|sparse|few.shot|low.data|transfer/,representation:/descriptor|representation|conformer|3d|ligand.space|ligand library/,autonomous:/autonom|bayesian|active.learning|self.driving|hte/,mechanism:/mechanis|mlip|interatomic|transition.state/}[focus];
  return !re||re.test(text);
+}
+export function sortByFocus(papers,focus){
+ if(focus!=='descriptytor')return papers;
+ return papers.slice().sort((a,b)=>(a.descriptytor_rank??999)-(b.descriptytor_rank??999)||String(b.year).localeCompare(String(a.year))||String(a.label).localeCompare(String(b.label)));
 }
 export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},chemistry='',representation='',stack=''}={}){
  return papers.filter(p=>{

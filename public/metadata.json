@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T12:03:22.955Z",
+  "checked_at": "2026-09-06T12:52:00.988Z",
   "records": {
     "paper_kraken_2022": {
       "title": "A Comprehensive Discovery Platform for Organophosphorus Ligands for Catalysis",
@@ -450,6 +450,48 @@
       "published_date": "2022-10-19",
       "doi": "10.1021/jacs.2c08592",
       "source": "https://api.crossref.org/works/10.1021%2Fjacs.2c08592"
+    },
+    "paper_molli_2024": {
+      "title": "molli: A General Purpose Python Toolkit for Combinatorial Small Molecule Library Generation, Manipulation, and Feature Extraction",
+      "published_date": "2024-10-23",
+      "doi": "10.1021/acs.jcim.4c00424",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jcim.4c00424"
+    },
+    "paper_sambvca2_2016": {
+      "title": "SambVca 2. A Web Tool for Analyzing Catalytic Pockets with Topographic Steric Maps",
+      "published_date": "2016-06-27",
+      "doi": "10.1021/acs.organomet.6b00371",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.organomet.6b00371"
+    },
+    "paper_sambvca_pockets_2019": {
+      "title": "Towards the online computer-aided design of catalytic pockets",
+      "published_date": "2019-09-02",
+      "doi": "10.1038/s41557-019-0319-5",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41557-019-0319-5"
+    },
+    "paper_vbur_2010": {
+      "title": "Percent buried volume for phosphine and N-heterocyclic carbene ligands: steric properties in organometallic chemistry",
+      "published_date": "2010",
+      "doi": "10.1039/b922984a",
+      "source": "https://api.crossref.org/works/10.1039%2Fb922984a"
+    },
+    "paper_sigman_accounts_2016": {
+      "title": "The Development of Multidimensional Analysis Tools for Asymmetric Catalysis and Beyond",
+      "published_date": "2016-05-24",
+      "doi": "10.1021/acs.accounts.6b00194",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.accounts.6b00194"
+    },
+    "paper_lkb_p_2005": {
+      "title": "Development of a Ligand Knowledge Base, Part 1: Computational Descriptors for Phosphorus Donor Ligands",
+      "published_date": "2005-12-09",
+      "doi": "10.1002/chem.200500891",
+      "source": "https://api.crossref.org/works/10.1002%2Fchem.200500891"
+    },
+    "paper_fey_ligand_rev_2019": {
+      "title": "Computational Ligand Descriptors for Catalyst Design",
+      "published_date": "2019-02-25",
+      "doi": "10.1021/acs.chemrev.8b00588",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.chemrev.8b00588"
     }
   },
   "failures": []

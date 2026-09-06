@@ -65,7 +65,14 @@ const GROUP_PATCH = {
   paper_goodvibes_2020: ['Paton', 'Alegre-Requena'],
   paper_thermomlip_2026: ['Stuyver'],
   paper_edbo_2021: ['Doyle'],
-  paper_edboplus_2022: ['Doyle']
+  paper_edboplus_2022: ['Doyle'],
+  paper_molli_2024: ['Denmark'],
+  paper_sambvca2_2016: ['Cavallo'],
+  paper_sambvca_pockets_2019: ['Cavallo'],
+  paper_vbur_2010: ['Nolan'],
+  paper_sigman_accounts_2016: ['Sigman', 'Milo'],
+  paper_lkb_p_2005: ['Fey'],
+  paper_fey_ligand_rev_2019: ['Fey']
 };
 
 const ALIASES = {'M. Abolhasani': 'Milad Abolhasani', 'Z. Wang': 'Zhihao Wang'};
@@ -146,7 +153,14 @@ const REPRESENTATION = {
   paper_goodvibes_2020: 'Physical / chemist descriptors',
   paper_thermomlip_2026: 'MLIP / physics acceleration',
   paper_edbo_2021: 'Dataset / experimental loop',
-  paper_edboplus_2022: 'Dataset / experimental loop'
+  paper_edboplus_2022: 'Dataset / experimental loop',
+  paper_molli_2024: 'Reusable ligand library',
+  paper_sambvca2_2016: 'Physical / chemist descriptors',
+  paper_sambvca_pockets_2019: 'Physical / chemist descriptors',
+  paper_vbur_2010: 'Physical / chemist descriptors',
+  paper_sigman_accounts_2016: 'Physical / chemist descriptors',
+  paper_lkb_p_2005: 'Reusable ligand library',
+  paper_fey_ligand_rev_2019: 'Overview / mixed'
 };
 
 const STACK_LAYER = {
@@ -225,7 +239,47 @@ const STACK_LAYER = {
   paper_ai_homocat_review_2025: 'Overview',
   paper_bestpractices_2026: 'Overview',
   paper_organocat_review_2024: 'Overview',
-  paper_milo_smalldata_2023: 'Overview'
+  paper_milo_smalldata_2023: 'Overview',
+  paper_molli_2024: 'Descriptors',
+  paper_sambvca2_2016: 'Descriptors',
+  paper_sambvca_pockets_2019: 'Descriptors',
+  paper_vbur_2010: 'Descriptors',
+  paper_sigman_accounts_2016: 'Overview',
+  paper_lkb_p_2005: 'Descriptors',
+  paper_fey_ligand_rev_2019: 'Overview'
+};
+
+export const DESCRIPYTOR_ROLE_LABELS = {
+  ancestor: 'Ancestor',
+  'same-lab': 'Same lab',
+  'contrast-pool': 'Contrast · pool',
+  'contrast-library': 'Contrast · library',
+  'contrast-cavity': 'Contrast · cavity',
+  complement: 'Complement'
+};
+
+const DESCRIPYTOR = {
+  paper_harper_sterimol_2012: {rank:1, role:'ancestor', vs:'Direct ancestor: L, B1 and B5 already treat steric bulk as directional. DescriPyTor adds chemist-chosen axes on the same idea.'},
+  paper_sigman_accounts_2016: {rank:2, role:'ancestor', vs:'The MLR playbook DescriPyTor still follows: chemist-designed descriptors, then Q². It does not yet force a user-defined reference frame.'},
+  paper_autoqchem_2022: {rank:3, role:'contrast-pool', vs:'Contrast: a large fixed DFT pool from SMILES. No chemist-chosen axis for where Sterimol or a dipole is read.'},
+  paper_aqme_2023: {rank:4, role:'contrast-pool', vs:'Contrast: Sterimol and %Vbur from the supplied geometry. The missing control is the chemist-defined axis, not more descriptors.'},
+  paper_smartpy_2025: {rank:5, role:'contrast-cavity', vs:'Contrast: cavity steric numbers. Measures the pocket, not a substituent frame the chemist orients.'},
+  paper_sambvca_pockets_2019: {rank:6, role:'contrast-cavity', vs:'Contrast: catalytic-pocket topographic maps. Cavity occupancy, not an orientational Sterimol on a chosen substituent axis.'},
+  paper_sambvca2_2016: {rank:7, role:'contrast-cavity', vs:'Contrast: web topographic steric maps from a metal-centered sphere. Same steric family, different origin of the frame.'},
+  paper_vbur_2010: {rank:8, role:'contrast-cavity', vs:'Contrast: the canonical buried-volume number from a metal-centered sphere. One number, no user-defined substituent axis.'},
+  paper_kraken_2022: {rank:9, role:'contrast-library', vs:'Contrast: a reaction-agnostic phosphine library. Precomputed descriptors for screening, not a chemist-chosen frame on small catalytic n.'},
+  paper_lkb_p_2005: {rank:10, role:'contrast-library', vs:'Contrast: the original ligand-space map. Reaction-agnostic DFT descriptors that Kraken later scaled.'},
+  paper_molli_2024: {rank:11, role:'contrast-library', vs:'Contrast: combinatorial library generation plus feature extraction. Infrastructure for molecules, not chemist-guided catalytic axes.'},
+  paper_fey_ligand_rev_2019: {rank:12, role:'contrast-library', vs:'Landscape of computational ligand descriptors. The library alternative DescriPyTor is arguing against: maps of ligand space over chemist frames.'},
+  paper_robert_2024: {rank:13, role:'complement', vs:'Complement: screens models once a feature matrix exists. DescriPyTor chooses the frame; ROBERT hunts the equation.'},
+  paper_paton_sterimol_2019: {rank:14, role:'ancestor', vs:'Ancestor: which conformer you read Sterimol from is itself a modeling variable — the same point for metal complex vs free ligand.'},
+  paper_santiago_mlr_2018: {rank:15, role:'ancestor', vs:'Ancestor: exhaustive search of a chemist-designed pool, then validate on Q² not R².'},
+  paper_milo_vibrations_2014: {rank:16, role:'same-lab', vs:'Same lab: IR frequencies as site-anchored electronic descriptors. Same premise as projected dipoles: choose where to read the feature.'},
+  paper_milo_science_2015: {rank:17, role:'same-lab', vs:'Same lab: small designed catalytic n plus interpretable descriptors to interrogate mechanism.'},
+  paper_santiago_milo_2016: {rank:18, role:'same-lab', vs:'Same lab: Sterimol on the same footing as σ constants — the electronic/steric split DescriPyTor still uses.'},
+  paper_lustosa_milo_2022: {rank:19, role:'same-lab', vs:'Same lab: with n in the tens, unconstrained descriptor search overfits. That is why DescriPyTor constrains the frame first.'},
+  paper_milo_smalldata_2023: {rank:20, role:'same-lab', vs:'Same lab: do not wait for HTE-scale data if the representation is chemically right.'},
+  paper_chemrefine_2026: {rank:21, role:'complement', vs:'Complement: owns the simulation stack. DescriPyTor only owns the reference frame of each descriptor.'}
 };
 
 function chemistryClass(p){
@@ -412,7 +466,7 @@ export function buildInsights(papers){
 
 export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v12',features_version:12,updated:'2026-09-06',enrichment:'Inspect table, stack layers, computational-stack papers'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v13',features_version:13,updated:'2026-09-06',enrichment:'DescriPyTor ranked filter, comparator papers, Inspect vs column'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -452,6 +506,12 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
     p.data_size_bin=dataSizeBin(p);
     p.validation_type=validationType(p);
     p.stack_layer=stackLayer(p);
+    const vs=DESCRIPYTOR[p.id];
+    if(vs){
+      p.descriptytor_rank=vs.rank;
+      p.descriptytor_role=vs.role;
+      p.descriptytor_vs=vs.vs;
+    }
     p.summary=paperSummary(p);
     p.brief=paperBrief(p);
     p.ask_next=askNext(p);
@@ -462,10 +522,15 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
 
   g.stories={
     ...g.stories,
+    descriptytor:{
+      label:'DescriPyTor vs',
+      description:'Ranked against the manuscript idea: the chemist chooses where each descriptor is read on small catalytic n, rather than a fixed QM pool or a reaction-agnostic library.',
+      ids:Object.keys(DESCRIPYTOR)
+    },
     chemist_frames:{
       label:'Chemist-guided descriptors',
       description:'Where a descriptor is read: Sterimol, cavities, vibrations, and the AQME / Auto-QChem / ROBERT platforms DescriPyTor sits against.',
-      keywords:['sterimol','cavity','aqme','auto-qchem','robert','smartpy','chemrefine','physical-organic','descriptor pipeline','chemist-guided','vibrations','hammett']
+      keywords:['sterimol','cavity','aqme','auto-qchem','robert','smartpy','chemrefine','physical-organic','descriptor pipeline','chemist-guided','vibrations','hammett','sambvca','buried volume','molli','ligand knowledge']
     },
     representation:{
       label:'Representation battle',

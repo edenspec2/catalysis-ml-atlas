@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T12:04:02.146Z",
+  "checked_at": "2026-09-06T12:52:38.832Z",
   "records": {
     "paper_target_data_2025": {
       "src": "figures/paper_target_data_2025.jpg",
@@ -324,6 +324,24 @@
       "pmcid": "",
       "bytes": 289526,
       "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-021-03213-y/MediaObjects/41586_2021_3213_Fig1_HTML.png"
+    },
+    "paper_racerts_2026": {
+      "src": "figures/paper_racerts_2026.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12977065",
+      "bytes": 89892,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6fc9/12977065/abd93d35df17/ci5c02794_0010.jpg"
+    },
+    "paper_sambvca_pockets_2019": {
+      "src": "figures/paper_sambvca_pockets_2019.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 104155,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41557-019-0319-5/MediaObjects/41557_2019_319_Fig1_HTML.png"
     }
   },
   "failures": [
@@ -332,19 +350,19 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_hda_2025",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_kraken_2022",
       "reason": "not openly available"
     },
     {
-      "id": "paper_reid_2025",
+      "id": "paper_hda_2025",
       "reason": "not openly available"
     },
     {
       "id": "paper_qmworkflow_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_reid_2025",
       "reason": "not openly available"
     },
     {
@@ -364,11 +382,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_sunoj_2026",
+      "id": "paper_shearilicine_2026",
       "reason": "not openly available"
     },
     {
-      "id": "paper_shearilicine_2026",
+      "id": "paper_sunoj_2026",
       "reason": "not openly available"
     },
     {
@@ -380,19 +398,19 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_pd_fluorination_2025",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_rajaraman_2025",
       "reason": "not openly available"
     },
     {
-      "id": "paper_ni_edbo_2024",
+      "id": "paper_pd_fluorination_2025",
       "reason": "not openly available"
     },
     {
       "id": "paper_denmark_catalyst_selection_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ni_edbo_2024",
       "reason": "not openly available"
     },
     {
@@ -404,15 +422,19 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_kulik_space_2023",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_palladaelectro_2024",
       "reason": "not openly available"
     },
     {
+      "id": "paper_kulik_space_2023",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_resource_hydroformylation_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_santiago_milo_2016",
       "reason": "not openly available"
     },
     {
@@ -425,10 +447,6 @@
     },
     {
       "id": "paper_paton_sterimol_2019",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_santiago_milo_2016",
       "reason": "not openly available"
     },
     {
@@ -456,7 +474,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_tstools_2024",
+      "id": "paper_crest_2024",
       "reason": "not openly available"
     },
     {
@@ -464,7 +482,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_crest_2024",
+      "id": "paper_tstools_2024",
       "reason": "not openly available"
     },
     {
@@ -472,18 +490,38 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_edboplus_2022",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_thermomlip_2026",
       "reason": "not openly available"
     },
     {
-      "id": "paper_racerts_2026",
+      "id": "paper_molli_2024",
       "reason": "not openly available"
     },
     {
-      "id": "paper_edboplus_2022",
+      "id": "paper_sambvca2_2016",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_lkb_p_2005",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_vbur_2010",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_sigman_accounts_2016",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_fey_ligand_rev_2019",
       "reason": "not openly available"
     }
   ],
-  "found": 36,
-  "tried": 75
+  "found": 38,
+  "tried": 82
 }

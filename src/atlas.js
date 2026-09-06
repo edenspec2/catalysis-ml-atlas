@@ -24,7 +24,7 @@ const groupColors = {
   Schwaller:'#e078bc',Denmark:'#a0d66f',Reid:'#c2a3ff',Abolhasani:'#54d7c1',Sunoj:'#f3cd78',Pidko:'#7f9cff',
   Hong:'#ff9d78',Coley:'#9ad0ff',Duarte:'#7fd0b5',Cernak:'#e0a36b',Rajaraman:'#c9a6ff',Nova:'#7fb3d8',
   Glorius:'#f0c27a',Schreiner:'#8fd0a8',Woodward:'#f2a0b6','Alegre-Requena':'#9bb7e8',Paton:'#b7c8ee',
-  Jorner:'#7ec8ff',Stuyver:'#c9e07a',Grimme:'#e8a06a',Other:'#9aa7b8'
+  Jorner:'#7ec8ff',Stuyver:'#c9e07a',Grimme:'#e8a06a',Cavallo:'#d4a574',Nolan:'#8ec4c0',Fey:'#b8a0e8',Other:'#9aa7b8'
 };
 const typeColors = { paper:'#f0c867', author:'#63a8ff', topic:'#64d59e', method:'#b991f0', workflow:'#ed80a5', program:'#34c9e8' };
 const yearColors = { '2026':'#72a8ff','2025':'#7fd0b5','2024':'#edbf6a','2023':'#d590e8','2022':'#e47d78', Unknown:'#9aa7b8' };
@@ -42,7 +42,7 @@ let lastLayoutSize = { w: 0, h: 0 };
 let relayouting = false;
 
 const primaryGroup = n => n.type === 'paper' ? (n.groups?.[0] || 'Other') : 'Other';
-const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.stack_layer, p.data_size_bin, p.validation_type, p.why, p.summary, p.brief, p.ask_next, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.stack_layer, p.data_size_bin, p.validation_type, p.why, p.summary, p.brief, p.ask_next, p.descriptytor_role, p.descriptytor_vs, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 
 function colorMap() {
   const mode = $('colorby').value;
@@ -457,13 +457,24 @@ function updateHud() {
   else papers.forEach(n => used.add(n.paradigm));
   $('legend').innerHTML = `<b>Color: ${esc($('colorby').value)}</b>` + Object.entries(cmap).filter(([k]) => used.has(k)).slice(0, 12).map(([k,v]) => `<div class="legendrow"><span class="swatch" style="background:${v}"></span>${esc(k)}</div>`).join('');
 }
+const VS_ROLE = {ancestor:'Ancestor','same-lab':'Same lab','contrast-pool':'Contrast · pool','contrast-library':'Contrast · library','contrast-cavity':'Contrast · cavity',complement:'Complement'};
 function renderPapers() {
-  const papers = currentData.nodes.filter(n => n.type === 'paper').sort((a,b) => (b.year||0) - (a.year||0) || a.label.localeCompare(b.label));
+  const vs = activeStory === 'descriptytor';
+  const papers = currentData.nodes.filter(n => n.type === 'paper').sort((a,b) => {
+    if (vs) return (a.descriptytor_rank||99) - (b.descriptytor_rank||99) || (b.year||0) - (a.year||0) || a.label.localeCompare(b.label);
+    return (b.year||0) - (a.year||0) || a.label.localeCompare(b.label);
+  });
   const figs = $('showFigs')?.checked !== false;
   $('paper-count').textContent = papers.length;
   $('papers').classList.toggle('fig-list', figs);
   $('papers').innerHTML = papers.length
-    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}${figs && p.figure ? ' has-fig' : ''}" data-node="${esc(p.id)}">${figs ? figureButton(p, false) : ''}<span class="row-text"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.stack_layer || p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></span></button>`).join('')
+    ? papers.map(p => {
+        const muted = vs
+          ? `${p.descriptytor_rank ? '#'+p.descriptytor_rank+' · ' : ''}${esc(VS_ROLE[p.descriptytor_role] || p.descriptytor_role || '')}${p.year ? ' · '+p.year : ''}`
+          : `${esc(p.year || '')} · ${esc(p.stack_layer || p.groups?.[0] || p.paradigm || '')}`;
+        const brief = vs ? (p.descriptytor_vs || p.brief || p.summary || p.why || '') : (p.brief || p.summary || p.why || '');
+        return `<button type="button" class="rowitem${p._selected ? ' active' : ''}${figs && p.figure ? ' has-fig' : ''}" data-node="${esc(p.id)}">${figs ? figureButton(p, false) : ''}<span class="row-text"><span>${esc(p.label)}</span><span class="muted">${muted}</span><span class="row-brief">${esc(brief)}</span></span></button>`;
+      }).join('')
     : '<p class="muted">No papers match these filters.</p>';
 }
 function similarPapers(id) {
@@ -518,12 +529,13 @@ function renderSelection() {
     <h2>${esc(n.label)}</h2>
     ${figureButton(n, true)}
     ${n.full_title && n.full_title !== n.label ? `<p class="sel-full muted">${esc(n.full_title)}</p>` : ''}
-    <p class="fact-strip"><span><i>n</i>${esc(n.data_size_bin || 'unspecified')}</span><span><i>Checked</i>${esc(n.validation_type || 'unspecified')}</span><span><i>Layer</i>${esc(n.stack_layer || 'unspecified')}</span></p>
+    <p class="fact-strip"><span><i>n</i>${esc(n.data_size_bin || 'unspecified')}</span><span><i>Checked</i>${esc(n.validation_type || 'unspecified')}</span><span><i>Layer</i>${esc(n.stack_layer || 'unspecified')}</span>${n.descriptytor_rank ? `<span><i>vs DescriPyTor</i>${esc(VS_ROLE[n.descriptytor_role] || n.descriptytor_role)} · #${n.descriptytor_rank}</span>` : ''}</p>
     <p class="summary">${esc(n.summary || n.why || '')}</p>
     <p class="prompt">${esc(n.ask_next || '')}</p>
     <p class="muted">${esc(n.use_for || '')}</p>
     <dl class="mini">
       ${n.stack_layer ? `<dt>Layer</dt><dd>${esc(n.stack_layer)}</dd>` : ''}
+      ${n.descriptytor_vs ? `<dt>vs DescriPyTor</dt><dd>${esc(n.descriptytor_vs)}</dd>` : ''}
       ${n.data_regime ? `<dt>Data</dt><dd>${esc(n.data_size_bin ? n.data_size_bin + ' · ' : '')}${esc(n.data_regime)}</dd>` : ''}
       ${n.validation ? `<dt>Checked</dt><dd>${esc(n.validation_type ? n.validation_type + ' · ' : '')}${esc(n.validation)}</dd>` : ''}
     </dl>
@@ -594,7 +606,7 @@ function fillFilters(papers) {
   const stack = $('stack');
   if (stack) STACKS.filter(s => papers.some(p => p.stack_layer === s)).forEach(s => stack.insertAdjacentHTML('beforeend', `<option>${esc(s)}</option>`));
   const bar = $('storybar');
-  const order = ['milo','chemist_frames','computational_stack','representation','small_data','automation','physics','frontier_2026'];
+  const order = ['milo','descriptytor','chemist_frames','computational_stack','representation','small_data','automation','physics','frontier_2026'];
   [...new Set([...order, ...Object.keys(STORIES)])].forEach(id => {
     const s = STORIES[id]; if (!s) return;
     const b = document.createElement('button');

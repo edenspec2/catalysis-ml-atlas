@@ -99,6 +99,8 @@ body.atlas-page header{position:static}
 .fact i,.fact-strip i{display:block;font-style:normal;color:var(--muted);font-size:10px;letter-spacing:.4px;text-transform:uppercase}
 .inspect-wrap{margin-top:4px}
 table.inspect{min-width:980px;font-size:13px}
+table.inspect.descriptytor{min-width:1080px}
+table.inspect td.vs{max-width:280px;font-size:12px;color:var(--muted);line-height:1.4}
 table.inspect th,table.inspect td{padding:10px 12px;vertical-align:top}
 table.inspect thead th{position:sticky;top:0;z-index:1;background:#111923;white-space:nowrap}
 table.inspect thead button{min-height:0;padding:0;border:0;background:none;font:inherit;font-weight:700;color:inherit;text-align:left}

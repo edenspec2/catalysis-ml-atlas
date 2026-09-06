@@ -5,10 +5,10 @@
     "citation_note": "Citation counts are OpenAlex 'cited by' counts where verified. Blank means not verified in this pass, not zero.",
     "citation_snapshot": "2026-09-03",
     "updated": "2026-09-06",
-    "new_papers_added": 37,
-    "paper_count": 76,
+    "new_papers_added": 44,
+    "paper_count": 83,
     "features_version": 7,
-    "note": "Includes a DescriPyTor neighborhood and a computational stack: CREST, autodE, TS-tools, racerTS, GoodVibes, thermoMLIP, EDBO, EDBO+."
+    "note": "DescriPyTor neighborhood plus comparators: molli, SambVca, %Vbur, Sigman Accounts, LKB-P, Fey ligand-descriptor review."
   },
   "nodes": [
     {
@@ -12102,6 +12102,441 @@
       "focus": "",
       "steps": [],
       "group": "paper"
+    },
+    {
+      "id": "paper_molli_2024",
+      "label": "molli: Combinatorial Libraries and Feature Extraction",
+      "year": 2024,
+      "journal": "JCIM",
+      "doi": "10.1021/acs.jcim.4c00424",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "derived_authors": [
+        "Alexander S. Shved",
+        "Blake E. Ocampo",
+        "Elena S. Burlova",
+        "Casey L. Olen",
+        "N. Ian Rinehart",
+        "Scott E. Denmark"
+      ],
+      "derived_topics": [
+        "Combinatorial libraries",
+        "Feature extraction",
+        "Python toolkit",
+        "Molecular descriptors"
+      ],
+      "derived_methods": [
+        "molli",
+        "Combinatorial library generation",
+        "Descriptor extraction"
+      ],
+      "derived_workflows": [
+        "Automated QM descriptor workflow"
+      ],
+      "chemistry": "General molecular / homogeneous-ligand libraries; combinatorial feature extraction, not a catalytic reference frame",
+      "data_regime": "Software paper; combinatorial molecular libraries rather than a single catalytic n",
+      "validation": "Software demonstration across library generation and feature-extraction workflows",
+      "why": "Denmark-lab infrastructure for making libraries and extracting features. Contrast for DescriPyTor: no chemist-chosen substituent axis.",
+      "summary": "Python toolkit for combinatorial small-molecule libraries and feature extraction. Useful when the bottleneck is enumerating molecules. DescriPyTor’s claim is different: on small catalytic n the missing control is where each descriptor is read, not another feature extractor.",
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Denmark"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.jcim.4c00424",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Alexander S. Shved",
+        "Blake E. Ocampo",
+        "Elena S. Burlova",
+        "Casey L. Olen",
+        "N. Ian Rinehart",
+        "Scott E. Denmark"
+      ],
+      "topics": [
+        "Combinatorial libraries",
+        "Feature extraction",
+        "Python toolkit",
+        "Molecular descriptors"
+      ],
+      "methods": [
+        "molli",
+        "Combinatorial library generation",
+        "Descriptor extraction"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sambvca2_2016",
+      "label": "SambVca 2: Topographic Steric Maps of Catalytic Pockets",
+      "year": 2016,
+      "journal": "Organometallics",
+      "doi": "10.1021/acs.organomet.6b00371",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Laura Falivene",
+        "Raffaele Credendino",
+        "Albert Poater",
+        "Andrea Petta",
+        "Luigi Serra",
+        "Romina Oliva",
+        "Vittorio Scarano",
+        "Luigi Cavallo"
+      ],
+      "derived_topics": [
+        "Buried volume",
+        "Steric maps",
+        "Catalytic pockets",
+        "N-heterocyclic carbenes"
+      ],
+      "derived_methods": [
+        "SambVca 2",
+        "Percent buried volume",
+        "Topographic steric maps"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; metal-centered steric maps for NHCs, phosphines, and catalytic pockets",
+      "data_regime": "Software paper with organometallic pocket examples",
+      "validation": "Web-tool demonstration of topographic maps versus classical %Vbur numbers",
+      "why": "Canonical cavity/pocket steric software. The frame is a metal-centered sphere, not a chemist-oriented substituent axis.",
+      "summary": "SambVca 2 turns buried volume into topographic steric maps of the catalytic pocket. Same steric family as %Vbur and SMARTpy; opposite origin of the frame from DescriPyTor’s orientational Sterimol.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Cavallo"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.organomet.6b00371",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Laura Falivene",
+        "Raffaele Credendino",
+        "Albert Poater",
+        "Andrea Petta",
+        "Luigi Serra",
+        "Romina Oliva",
+        "Vittorio Scarano",
+        "Luigi Cavallo"
+      ],
+      "topics": [
+        "Buried volume",
+        "Steric maps",
+        "Catalytic pockets",
+        "N-heterocyclic carbenes"
+      ],
+      "methods": [
+        "SambVca 2",
+        "Percent buried volume",
+        "Topographic steric maps"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sambvca_pockets_2019",
+      "label": "Online Computer-Aided Design of Catalytic Pockets",
+      "year": 2019,
+      "journal": "Nature Chemistry",
+      "doi": "10.1038/s41557-019-0319-5",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Laura Falivene",
+        "Zhen Cao",
+        "Andrea Petta",
+        "Luigi Serra",
+        "Albert Poater",
+        "Romina Oliva",
+        "Vittorio Scarano",
+        "Luigi Cavallo"
+      ],
+      "derived_topics": [
+        "Catalytic pockets",
+        "Buried volume",
+        "Ligand design",
+        "Steric maps"
+      ],
+      "derived_methods": [
+        "SambVca",
+        "Percent buried volume",
+        "Topographic steric maps"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; online design of catalytic pockets from buried-volume maps",
+      "data_regime": "Computational pocket-design case studies across organometallic catalysts",
+      "validation": "Case studies connecting pocket topography to known catalytic behavior",
+      "why": "The high-profile cavity paper: design the pocket, not a substituent axis. Natural contrast for DescriPyTor’s orientational Sterimol.",
+      "summary": "Shows how topographic steric maps can be used to design catalytic pockets online. Measures cavity occupancy around a metal; DescriPyTor instead lets the chemist point the steric frame along a chosen substituent.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Cavallo"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1038/s41557-019-0319-5",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Laura Falivene",
+        "Zhen Cao",
+        "Andrea Petta",
+        "Luigi Serra",
+        "Albert Poater",
+        "Romina Oliva",
+        "Vittorio Scarano",
+        "Luigi Cavallo"
+      ],
+      "topics": [
+        "Catalytic pockets",
+        "Buried volume",
+        "Ligand design",
+        "Steric maps"
+      ],
+      "methods": [
+        "SambVca",
+        "Percent buried volume",
+        "Topographic steric maps"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_vbur_2010",
+      "label": "Percent Buried Volume for Phosphines and NHCs",
+      "year": 2010,
+      "journal": "Chemical Communications",
+      "doi": "10.1039/b922984a",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Hervé Clavier",
+        "Steven P. Nolan"
+      ],
+      "derived_topics": [
+        "Buried volume",
+        "N-heterocyclic carbenes",
+        "Phosphine ligands",
+        "Steric parameters"
+      ],
+      "derived_methods": [
+        "Percent buried volume",
+        "SambVca"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; %Vbur as a steric number for phosphines and NHCs",
+      "data_regime": "Method paper; computational buried-volume examples on common ligands",
+      "validation": "Comparisons of %Vbur with Tolman cone angle and related steric scales",
+      "why": "The single-number buried-volume ancestor. Metal-centered sphere, no user-defined substituent axis.",
+      "summary": "Defines percent buried volume as a practical steric parameter for phosphines and NHCs. AQME, SambVca and SMARTpy all sit downstream of this number. DescriPyTor’s steric terms are directional Sterimol, not a metal-centered occupancy.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Nolan"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1039/b922984a",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Hervé Clavier",
+        "Steven P. Nolan"
+      ],
+      "topics": [
+        "Buried volume",
+        "N-heterocyclic carbenes",
+        "Phosphine ligands",
+        "Steric parameters"
+      ],
+      "methods": [
+        "Percent buried volume",
+        "SambVca"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sigman_accounts_2016",
+      "label": "Multidimensional Analysis Tools for Asymmetric Catalysis",
+      "year": 2016,
+      "journal": "Accounts of Chemical Research",
+      "doi": "10.1021/acs.accounts.6b00194",
+      "paper_type": "review",
+      "relevance": "overview",
+      "derived_authors": [
+        "Matthew S. Sigman",
+        "Kaid C. Harper",
+        "Elizabeth N. Bess",
+        "Anat Milo"
+      ],
+      "derived_topics": [
+        "Multivariable linear regression",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis",
+        "Sterimol"
+      ],
+      "derived_methods": [
+        "Multivariable linear regression",
+        "Sterimol parameters",
+        "Descriptor design"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Asymmetric catalysis; the Sigman/Milo playbook for chemist-designed descriptors and MLR",
+      "data_regime": "n/a overview of multivariable catalytic modeling case studies",
+      "validation": "N/A",
+      "why": "The written playbook DescriPyTor still follows: chemist-designed descriptors, then MLR. Milo is a coauthor.",
+      "summary": "Accounts of how multidimensional analysis — Sterimol, IR, Hammett-type terms, MLR — became a catalytic workflow. Direct ancestor of DescriPyTor’s modeling stage; it does not yet require a user-defined orientational reference frame.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman",
+        "Milo"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.accounts.6b00194",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Matthew S. Sigman",
+        "Kaid C. Harper",
+        "Elizabeth N. Bess",
+        "Anat Milo"
+      ],
+      "topics": [
+        "Multivariable linear regression",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis",
+        "Sterimol"
+      ],
+      "methods": [
+        "Multivariable linear regression",
+        "Sterimol parameters",
+        "Descriptor design"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_lkb_p_2005",
+      "label": "Ligand Knowledge Base for Phosphorus Donor Ligands",
+      "year": 2005,
+      "journal": "Chemistry – A European Journal",
+      "doi": "10.1002/chem.200500891",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Natalie Fey",
+        "Athanassios C. Tsipis",
+        "Stephanie E. Harris",
+        "Jeremy N. Harvey",
+        "A. Guy Orpen",
+        "Ralph A. Mansson"
+      ],
+      "derived_topics": [
+        "Ligand knowledge base",
+        "Phosphine descriptors",
+        "Ligand space",
+        "DFT descriptors"
+      ],
+      "derived_methods": [
+        "DFT ligand descriptors",
+        "Principal component maps",
+        "LKB-P"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; reaction-agnostic DFT maps of phosphorus-donor ligand space",
+      "data_regime": "Computational phosphine ligand maps rather than a single catalytic dataset",
+      "validation": "PCA maps of ligand space compared with known organometallic trends",
+      "why": "The original reaction-agnostic ligand library. Kraken is the scaled descendant; DescriPyTor argues the opposite direction.",
+      "summary": "Builds a DFT descriptor knowledge base for phosphorus donor ligands and maps ligand space. This is the library alternative: precomputed, reaction-agnostic features. DescriPyTor instead reads descriptors from a chemist-chosen frame on a small catalytic n.",
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Fey"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1002/chem.200500891",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Natalie Fey",
+        "Athanassios C. Tsipis",
+        "Stephanie E. Harris",
+        "Jeremy N. Harvey",
+        "A. Guy Orpen",
+        "Ralph A. Mansson"
+      ],
+      "topics": [
+        "Ligand knowledge base",
+        "Phosphine descriptors",
+        "Ligand space",
+        "DFT descriptors"
+      ],
+      "methods": [
+        "DFT ligand descriptors",
+        "Principal component maps",
+        "LKB-P"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_fey_ligand_rev_2019",
+      "label": "Computational Ligand Descriptors for Catalyst Design",
+      "year": 2019,
+      "journal": "Chemical Reviews",
+      "doi": "10.1021/acs.chemrev.8b00588",
+      "paper_type": "review",
+      "relevance": "overview",
+      "derived_authors": [
+        "Derek J. Durand",
+        "Natalie Fey"
+      ],
+      "derived_topics": [
+        "Ligand descriptors",
+        "Catalyst design",
+        "Ligand space",
+        "Computational screening"
+      ],
+      "derived_methods": [
+        "Review of computational ligand descriptors",
+        "Ligand knowledge bases"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; survey of computational ligand descriptors used in catalyst design",
+      "data_regime": "n/a overview of computational ligand-descriptor methods",
+      "validation": "N/A",
+      "why": "The map of the library/descriptor landscape DescriPyTor is written against: computational ligand space rather than chemist-chosen axes.",
+      "summary": "Reviews computational ligand descriptors for catalyst design, from knowledge bases to steric maps. Use it as the landscape paper: most of the field precomputes ligand space; DescriPyTor asks the chemist to define the frame on the reaction at hand.",
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Fey"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.chemrev.8b00588",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Derek J. Durand",
+        "Natalie Fey"
+      ],
+      "topics": [
+        "Ligand descriptors",
+        "Catalyst design",
+        "Ligand space",
+        "Computational screening"
+      ],
+      "methods": [
+        "Review of computational ligand descriptors",
+        "Ligand knowledge bases"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
     }
   ],
   "edges": [
@@ -15964,6 +16399,11 @@
       "source": "program_anat_milo_work",
       "target": "paper_milo_smalldata_2023",
       "relation": "includes_work"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_sigman_accounts_2016",
+      "relation": "includes_work"
     }
   ],
   "paper_similarity_edges": [
@@ -17637,6 +18077,150 @@
       "relation": "paper_similarity",
       "score": 6,
       "reason": "BO / closed-loop experiment selection",
+      "density": "normal"
+    },
+    {
+      "source": "paper_molli_2024",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Library infrastructure vs reaction-agnostic ligand descriptors",
+      "density": "normal"
+    },
+    {
+      "source": "paper_molli_2024",
+      "target": "paper_autoqchem_2022",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Feature extraction / automated descriptor pipelines",
+      "density": "normal"
+    },
+    {
+      "source": "paper_molli_2024",
+      "target": "paper_denmark_catalyst_selection_2024",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "authors: Scott E. Denmark; Denmark-lab selection tools",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sambvca2_2016",
+      "target": "paper_sambvca_pockets_2019",
+      "relation": "paper_similarity",
+      "score": 9,
+      "reason": "authors: Laura Falivene, Luigi Cavallo; SambVca pocket maps",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sambvca2_2016",
+      "target": "paper_vbur_2010",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "%Vbur numbers to topographic steric maps",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sambvca2_2016",
+      "target": "paper_smartpy_2025",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Cavity / pocket steric descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sambvca_pockets_2019",
+      "target": "paper_smartpy_2025",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "Catalytic-pocket steric software",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sambvca_pockets_2019",
+      "target": "paper_vbur_2010",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Buried-volume lineage of pocket design",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_vbur_2010",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "AQME computes %Vbur from supplied geometries",
+      "density": "normal"
+    },
+    {
+      "source": "paper_vbur_2010",
+      "target": "paper_harper_sterimol_2012",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Two steric languages: buried volume vs directional Sterimol",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sigman_accounts_2016",
+      "target": "paper_harper_sterimol_2012",
+      "relation": "paper_similarity",
+      "score": 9,
+      "reason": "authors: Matthew S. Sigman, Kaid C. Harper; Sterimol MLR playbook",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sigman_accounts_2016",
+      "target": "paper_santiago_mlr_2018",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Matthew S. Sigman; multidimensional MLR tools",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sigman_accounts_2016",
+      "target": "paper_milo_science_2015",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Anat Milo, Matthew S. Sigman",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sigman_accounts_2016",
+      "target": "paper_santiago_milo_2016",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Anat Milo, Matthew S. Sigman; steric/electronic split",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_lkb_p_2005",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Ligand-knowledge-base ancestor of Kraken maps",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_lkb_p_2005",
+      "target": "paper_fey_ligand_rev_2019",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Natalie Fey; ligand-space descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_fey_ligand_rev_2019",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Computational ligand-descriptor landscape including libraries",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_fey_ligand_rev_2019",
+      "target": "paper_harper_sterimol_2012",
+      "relation": "paper_similarity",
+      "score": 5.5,
+      "reason": "Library descriptors vs chemist-designed Sterimol",
       "density": "normal"
     }
   ],
