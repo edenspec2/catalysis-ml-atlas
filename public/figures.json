@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T10:18:43.286Z",
+  "checked_at": "2026-09-06T11:15:31.785Z",
   "records": {
     "paper_target_data_2025": {
       "src": "figures/paper_target_data_2025.jpg",
@@ -39,8 +39,8 @@
     },
     "paper_hcat_2025": {
       "src": "figures/paper_hcat_2025.jpg",
-      "caption": "Figure",
-      "kind": "figure",
+      "caption": "Graphical abstract",
+      "kind": "toc",
       "source": "pmc",
       "pmcid": "PMC11889620",
       "bytes": 273477,
@@ -261,6 +261,51 @@
       "pmcid": "PMC5903422",
       "bytes": 66792,
       "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1864/5903422/a02858e2e18f/c7sc04679k-f1.jpg"
+    },
+    "paper_flower_2025": {
+      "src": "figures/paper_flower_2025.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 295507,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-025-09426-9/MediaObjects/41586_2025_9426_Fig1_HTML.png"
+    },
+    "paper_duarte_almeta_2025": {
+      "src": "figures/paper_duarte_almeta_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12642453",
+      "bytes": 120033,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c3de/12642453/d4e9a6a639e2/d5dd00261c-f1.jpg"
+    },
+    "paper_milo_hie_2025": {
+      "src": "figures/paper_milo_hie_2025.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 207204,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41929-025-01447-x/MediaObjects/41929_2025_1447_Fig1_HTML.png"
+    },
+    "paper_fastcat_2024": {
+      "src": "figures/paper_fastcat_2024.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 526788,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs44286-024-00033-5/MediaObjects/44286_2024_33_Fig1_HTML.png"
+    },
+    "paper_harper_sterimol_2012": {
+      "src": "figures/paper_harper_sterimol_2012.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 93369,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fnchem.1297/MediaObjects/41557_2012_Article_BFnchem1297_Fig1_HTML.jpg"
     }
   },
   "failures": [
@@ -269,11 +314,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_duarte_almeta_2025",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_flower_2025",
+      "id": "paper_reid_2025",
       "reason": "not openly available"
     },
     {
@@ -285,19 +326,15 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_reid_2025",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_qmworkflow_2026",
       "reason": "not openly available"
     },
     {
-      "id": "paper_hartwig_ru_2026",
+      "id": "paper_reid_local_2025",
       "reason": "not openly available"
     },
     {
-      "id": "paper_reid_local_2025",
+      "id": "paper_hartwig_ru_2026",
       "reason": "not openly available"
     },
     {
@@ -309,6 +346,10 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_rmlp_2025",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_sunoj_2026",
       "reason": "not openly available"
     },
@@ -317,19 +358,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_rmlp_2025",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_rajaraman_2025",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_milo_hie_2025",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_sigman_gold_2026",
       "reason": "not openly available"
     },
     {
@@ -337,11 +366,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_fastcat_2024",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_ni_edbo_2024",
+      "id": "paper_sigman_gold_2026",
       "reason": "not openly available"
     },
     {
@@ -349,11 +374,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_delta_phosphine_2024",
+      "id": "paper_ni_edbo_2024",
       "reason": "not openly available"
     },
     {
-      "id": "paper_cbs_2024",
+      "id": "paper_delta_phosphine_2024",
       "reason": "not openly available"
     },
     {
@@ -361,11 +386,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_kulik_space_2023",
+      "id": "paper_cbs_2024",
       "reason": "not openly available"
     },
     {
-      "id": "paper_kulik_manybody_2024",
+      "id": "paper_kulik_space_2023",
       "reason": "not openly available"
     },
     {
@@ -373,15 +398,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_milo_vibrations_2014",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_harper_sterimol_2012",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_paton_sterimol_2019",
+      "id": "paper_kulik_manybody_2024",
       "reason": "not openly available"
     },
     {
@@ -389,11 +406,15 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_milo_vibrations_2014",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_autoqchem_2022",
       "reason": "not openly available"
     },
     {
-      "id": "paper_aqme_2023",
+      "id": "paper_paton_sterimol_2019",
       "reason": "not openly available"
     },
     {
@@ -402,6 +423,10 @@
     },
     {
       "id": "paper_robert_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_aqme_2023",
       "reason": "not openly available"
     },
     {
@@ -417,6 +442,6 @@
       "reason": "not openly available"
     }
   ],
-  "found": 29,
+  "found": 34,
   "tried": 67
 }

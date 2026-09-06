@@ -24,7 +24,7 @@ test('DOI or title search hits Crossref and can return a work',async()=>{
  assert.equal(found.doi,true);assert.equal(found.papers.length,1);assert.equal(found.papers[0].doi,'10.1234/add.1');
 });
 test('corpus integrity and preserved atlas',async()=>{const g=JSON.parse(await readFile('dist/graph.json','utf8'));const ps=g.nodes.filter(p=>p.type==='paper');assert.equal(ps.length,68);assert.equal(new Set(ps.filter(p=>p.doi).map(p=>doiKey(p.doi))).size,67);assert.equal(ps.filter(p=>p.published_date).length,67);assert.ok(ps.every(p=>p.summary&&p.summary.length>24&&p.ask_next&&p.brief&&p.use_for));
-assert.ok(ps.filter(p=>p.figure?.src).length>=15);
+assert.ok(ps.filter(p=>p.figure?.src).length>=30);
 assert.ok(g.insights?.stats?.papers===68);
 assert.ok(ps.some(p=>p.id==='paper_harper_sterimol_2012'));
 assert.ok(ps.some(p=>p.id==='paper_aqme_2023'));

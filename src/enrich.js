@@ -333,7 +333,7 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
     p.ask_next=askNext(p);
     p.use_for=useFor(p);
     const fig=figures.records?.[p.id];
-    if(fig?.src)p.figure={src:fig.src,caption:fig.caption||'Figure 1',kind:fig.kind||'figure1',source:fig.source||''};
+    if(fig?.src)p.figure={src:fig.src,caption:fig.caption||(fig.kind==='toc'?'Graphical abstract':'Figure 1'),kind:fig.kind||'figure1',source:fig.source||''};
   }
 
   g.stories={

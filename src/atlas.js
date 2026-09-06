@@ -105,8 +105,8 @@ function restore() {
   } catch {}
 }
 function figureButton(p, large) {
-  if (!p.figure?.src) return large ? '<p class="fig-missing muted">Figure 1 is not in an open source for this paper.</p>' : '';
-  const cap = p.figure.caption || 'Figure 1';
+  if (!p.figure?.src) return large ? '<p class="fig-missing muted">No open Figure 1 or abstract image for this paper.</p>' : '';
+  const cap = p.figure.caption || (p.figure.kind === 'toc' ? 'Graphical abstract' : 'Figure 1');
   if (!large) return `<img class="fig-sm" src="${esc(p.figure.src)}" alt="" loading="lazy" decoding="async">`;
   return `<button type="button" class="fig fig-lg" data-fig="${esc(p.id)}" aria-label="Enlarge ${esc(cap)}"><img src="${esc(p.figure.src)}" alt="${esc(cap)}" loading="eager" decoding="async"></button><p class="fig-cap">${esc(cap)}</p>`;
 }
@@ -388,7 +388,7 @@ function renderSelection() {
     document.querySelector('.atlas-shell')?.classList.remove('has-paper-fig');
     box.classList.remove('has-fig');
     box.innerHTML = papers.length ? `<div class="sel-card"><p class="eyebrow">This view</p>
-      <p class="view-stats"><b>${s.n}</b> papers · <b>${papers.filter(p=>p.figure).length}</b> with Figure 1 · <b>${s.hard}</b> prospective/OOD/closed-loop</p>
+      <p class="view-stats"><b>${s.n}</b> papers · <b>${papers.filter(p=>p.figure).length}</b> with an open figure · <b>${s.hard}</b> prospective/OOD/closed-loop</p>
       <p class="muted">${s.topChem ? `Most papers: ${esc(s.topChem[0])} (${s.topChem[1]}).` : ''} ${s.topRep ? `Dominant representation: ${esc(s.topRep[0])}.` : ''}</p>
       <p class="prompt">All ${s.n} papers are in the graph and in the list. Use Fit if they look bunched. Timeline or paradigm layouts spread them further.</p></div>` : '';
     if (!papers.length) box.hidden = true;
