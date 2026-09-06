@@ -5,9 +5,10 @@
     "citation_note": "Citation counts are OpenAlex 'cited by' counts where verified. Blank means not verified in this pass, not zero.",
     "citation_snapshot": "2026-09-03",
     "updated": "2026-09-06",
-    "new_papers_added": 16,
-    "paper_count": 55,
-    "features_version": 7
+    "new_papers_added": 37,
+    "paper_count": 76,
+    "features_version": 7,
+    "note": "Includes a DescriPyTor neighborhood and a computational stack: CREST, autodE, TS-tools, racerTS, GoodVibes, thermoMLIP, EDBO, EDBO+."
   },
   "nodes": [
     {
@@ -10816,6 +10817,1291 @@
       "id": "topic_review",
       "label": "Review",
       "type": "topic"
+    },
+    {
+      "id": "paper_harper_sterimol_2012",
+      "label": "Multidimensional Steric Parameters in Asymmetric Catalysis",
+      "year": 2012,
+      "journal": "Nature Chemistry",
+      "doi": "10.1038/nchem.1297",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Kaid C. Harper",
+        "Elizabeth N. Bess",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Sterimol",
+        "Asymmetric catalysis",
+        "Physical-organic descriptors",
+        "Enantioselectivity"
+      ],
+      "derived_methods": [
+        "Sterimol parameters",
+        "Multivariable linear regression"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Asymmetric catalysis; directional Sterimol parameterization of substituents",
+      "data_regime": "Small published enantioselectivity series",
+      "validation": "Retrospective correlation with selectivity; steric terms interpreted mechanistically",
+      "why": "Moved Sterimol from QSAR into homogeneous catalysis: L, B1 and B5 report where bulk sits, not only a cone angle.",
+      "summary": "Sigman lab showed that Verloop Sterimol parameters, used as a chemist-defined steric frame, can give compact multivariable models of enantioselectivity. Direct ancestor of DescriPyTor’s orientational Sterimol terms.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1038/nchem.1297",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Kaid C. Harper",
+        "Elizabeth N. Bess",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Sterimol",
+        "Asymmetric catalysis",
+        "Physical-organic descriptors",
+        "Enantioselectivity"
+      ],
+      "methods": [
+        "Sterimol parameters",
+        "Multivariable linear regression"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_milo_vibrations_2014",
+      "label": "Interrogating Selectivity in Catalysis Using Molecular Vibrations",
+      "year": 2014,
+      "journal": "Nature",
+      "doi": "10.1038/nature13019",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Anat Milo",
+        "Elizabeth N. Bess",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Infrared descriptors",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis",
+        "Selectivity"
+      ],
+      "derived_methods": [
+        "IR stretching frequencies",
+        "Multivariable linear regression"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Asymmetric catalysis; IR vibrations as electronic descriptors",
+      "data_regime": "Small catalytic selectivity datasets",
+      "validation": "Interpretable vibrational terms mapped onto the selectivity-determining interaction",
+      "why": "Milo/Sigman prototype for reading an electronic descriptor from a chemically chosen site rather than a generic molecular fingerprint.",
+      "summary": "Uses IR stretching frequencies as site-anchored electronic descriptors in multivariable models of catalytic selectivity. The same premise — choose where to read the feature — is the DescriPyTor reference-frame argument.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Milo",
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1038/nature13019",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Anat Milo",
+        "Elizabeth N. Bess",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Infrared descriptors",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis",
+        "Selectivity"
+      ],
+      "methods": [
+        "IR stretching frequencies",
+        "Multivariable linear regression"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_milo_science_2015",
+      "label": "A Data-Intensive Approach to Mechanistic Elucidation in Chiral Anion Catalysis",
+      "year": 2015,
+      "journal": "Science",
+      "doi": "10.1126/science.1261043",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Anat Milo",
+        "Andrew J. Neel",
+        "F. Dean Toste",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Mechanistic discovery",
+        "Physical-organic descriptors",
+        "Organocatalysis",
+        "Small data"
+      ],
+      "derived_methods": [
+        "Multivariable linear regression",
+        "Parameterization of catalysts and substrates"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Chiral anion organocatalysis; catalyst–substrate parameterization",
+      "data_regime": "Designed small catalytic library, not a large HTE dump",
+      "validation": "Statistical models used to distinguish competing mechanistic hypotheses",
+      "why": "Canonical Milo-lab result: a small, chemically designed dataset plus interpretable descriptors can interrogate mechanism.",
+      "summary": "Parameterizes catalysts and substrates in a chiral-anion system and uses the fitted models to distinguish mechanisms. Template for DescriPyTor’s claim that small catalytic sets need chemist-guided features, not bigger descriptor pools.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Milo",
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1126/science.1261043",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Anat Milo",
+        "Andrew J. Neel",
+        "F. Dean Toste",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Mechanistic discovery",
+        "Physical-organic descriptors",
+        "Organocatalysis",
+        "Small data"
+      ],
+      "methods": [
+        "Multivariable linear regression",
+        "Parameterization of catalysts and substrates"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_santiago_milo_2016",
+      "label": "A Modern Approach to Steric Effects in Hammett-Type Correlations",
+      "year": 2016,
+      "journal": "JACS",
+      "doi": "10.1021/jacs.6b08799",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Celine B. Santiago",
+        "Anat Milo",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Sterimol",
+        "Hammett correlations",
+        "Physical-organic descriptors",
+        "Steric effects"
+      ],
+      "derived_methods": [
+        "Sterimol parameters",
+        "Linear free-energy relationships"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Physical-organic catalysis; steric correction of Hammett-type models",
+      "data_regime": "Classic linear free-energy series plus Sterimol terms",
+      "validation": "Improved correlations when steric and electronic terms are separated geometrically",
+      "why": "Puts Sterimol on the same footing as σ constants — the electronic/steric split DescriPyTor still uses.",
+      "summary": "Shows that Sterimol steric terms can be combined with Hammett electronic parameters instead of burying steric demand in a single substituent constant. Milo is a coauthor; this is the closest published ancestor of chemist-guided steric frames.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Milo",
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/jacs.6b08799",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Celine B. Santiago",
+        "Anat Milo",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Sterimol",
+        "Hammett correlations",
+        "Physical-organic descriptors",
+        "Steric effects"
+      ],
+      "methods": [
+        "Sterimol parameters",
+        "Linear free-energy relationships"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_santiago_mlr_2018",
+      "label": "Predictive and Mechanistic Multivariate Linear Regression for Reaction Development",
+      "year": 2018,
+      "journal": "Chemical Science",
+      "doi": "10.1039/C7SC04679K",
+      "paper_type": "review",
+      "relevance": "overview",
+      "derived_authors": [
+        "Celine B. Santiago",
+        "Jing-Yao Guo",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Multivariable linear regression",
+        "Physical-organic descriptors",
+        "Reaction development",
+        "Enantioselectivity"
+      ],
+      "derived_methods": [
+        "Multivariable linear regression",
+        "Cross-validation",
+        "Descriptor design"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Asymmetric catalysis; MLR workflow for selectivity models",
+      "data_regime": "Review of small-to-moderate catalytic modeling case studies",
+      "validation": "N/A",
+      "why": "The playbook DescriPyTor still follows: exhaustively search a chemist-designed descriptor pool, then validate on Q² not R².",
+      "summary": "Sigman-group tutorial on multivariate linear regression for reaction development: how to choose physical-organic descriptors, avoid overfitting, and read mechanism from the selected terms. Direct methodological backdrop for DescriPyTor’s modeling stage.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1039/C7SC04679K",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Celine B. Santiago",
+        "Jing-Yao Guo",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Multivariable linear regression",
+        "Physical-organic descriptors",
+        "Reaction development",
+        "Enantioselectivity"
+      ],
+      "methods": [
+        "Multivariable linear regression",
+        "Cross-validation",
+        "Descriptor design"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_paton_sterimol_2019",
+      "label": "Conformational Effects on Sterimol Steric Parameters",
+      "year": 2019,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.8b04043",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Alexandre V. Brethomé",
+        "Stephen P. Fletcher",
+        "Robert S. Paton"
+      ],
+      "derived_topics": [
+        "Sterimol",
+        "Conformer ensembles",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis"
+      ],
+      "derived_methods": [
+        "Boltzmann-weighted Sterimol",
+        "Conformer ensembles",
+        "DFT geometries"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Asymmetric catalysis; conformer-averaged Sterimol descriptors",
+      "data_regime": "Catalytic case studies where a single conformer misrepresents steric demand",
+      "validation": "Boltzmann-weighted Sterimol outperforms single-conformer values",
+      "why": "Shows that the geometry a steric descriptor is read from is itself a modeling variable — the same point DescriPyTor makes for metal complexes vs free ligands.",
+      "summary": "Paton lab: Sterimol values change with conformation, and Boltzmann averaging is required before the descriptor is used in a selectivity model. DescriPyTor’s case studies treat structure choice (product, free ligand, metal complex) as the analogous decision.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Paton"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acscatal.8b04043",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Alexandre V. Brethomé",
+        "Stephen P. Fletcher",
+        "Robert S. Paton"
+      ],
+      "topics": [
+        "Sterimol",
+        "Conformer ensembles",
+        "Physical-organic descriptors",
+        "Asymmetric catalysis"
+      ],
+      "methods": [
+        "Boltzmann-weighted Sterimol",
+        "Conformer ensembles",
+        "DFT geometries"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_autoqchem_2022",
+      "label": "Auto-QChem: Automated DFT Descriptor Workflows for Organic Molecules",
+      "year": 2022,
+      "journal": "Reaction Chemistry & Engineering",
+      "doi": "10.1039/D2RE00030J",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "derived_authors": [
+        "Andrzej M. Żurański",
+        "Jason Y. Wang",
+        "Benjamin J. Shields",
+        "Abigail G. Doyle"
+      ],
+      "derived_topics": [
+        "Descriptor pipelines",
+        "Automated featurization",
+        "DFT descriptors",
+        "Organic molecules"
+      ],
+      "derived_methods": [
+        "Automated DFT workflows",
+        "Descriptor databases"
+      ],
+      "derived_workflows": [
+        "Automated QM descriptor workflow"
+      ],
+      "chemistry": "Organic molecules including catalytic ligands and substrates; automated DFT featurization",
+      "data_regime": "Reusable DFT descriptor database generated from SMILES inputs",
+      "validation": "Workflow benchmarks and downstream modeling use-cases",
+      "why": "The Doyle-lab pipeline DescriPyTor contrasts with: compute a large fixed descriptor pool, then model. No user-defined chemical axes.",
+      "summary": "Automates DFT jobs and stores molecular descriptors from SMILES. Important platform paper: it solves extraction, not reference-frame choice. DescriPyTor’s claim is that in small catalytic sets the missing control is where each descriptor is read.",
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Doyle"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1039/D2RE00030J",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Andrzej M. Żurański",
+        "Jason Y. Wang",
+        "Benjamin J. Shields",
+        "Abigail G. Doyle"
+      ],
+      "topics": [
+        "Descriptor pipelines",
+        "Automated featurization",
+        "DFT descriptors",
+        "Organic molecules"
+      ],
+      "methods": [
+        "Automated DFT workflows",
+        "Descriptor databases"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_lustosa_milo_2022",
+      "label": "Mechanistic Inference from Statistical Models at Different Data-Size Regimes",
+      "year": 2022,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.2c01741",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Danilo M. Lustosa",
+        "Anat Milo"
+      ],
+      "derived_topics": [
+        "Small data",
+        "Mechanistic inference",
+        "Statistical modeling",
+        "Physical-organic descriptors"
+      ],
+      "derived_methods": [
+        "Multivariable linear regression",
+        "Data-size analysis"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; how dataset size changes what a statistical model can claim",
+      "data_regime": "Explicit comparison across small vs larger catalytic data-size regimes",
+      "validation": "Shows when fitted equations support mechanistic claims versus when they only interpolate",
+      "why": "Milo-lab warning that DescriPyTor is built on: with n in the tens, an unconstrained descriptor search will overfit.",
+      "summary": "Maps what statistical models in catalysis can and cannot support as n grows. The small-n regime is exactly where DescriPyTor insists on a chemist-chosen reference frame instead of a free search over hundreds of features.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Milo"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acscatal.2c01741",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Danilo M. Lustosa",
+        "Anat Milo"
+      ],
+      "topics": [
+        "Small data",
+        "Mechanistic inference",
+        "Statistical modeling",
+        "Physical-organic descriptors"
+      ],
+      "methods": [
+        "Multivariable linear regression",
+        "Data-size analysis"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_aqme_2023",
+      "label": "AQME: Automated Quantum Mechanical Environments for Descriptor Generation",
+      "year": 2023,
+      "journal": "WIREs Computational Molecular Science",
+      "doi": "10.1002/wcms.1663",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "derived_authors": [
+        "Juan V. Alegre-Requena",
+        "Shree Sowndarya S. V.",
+        "Raúl Pérez-Soto",
+        "Turki M. Alturaifi",
+        "Robert S. Paton"
+      ],
+      "derived_topics": [
+        "Descriptor pipelines",
+        "Automated featurization",
+        "Quantum chemistry workflows",
+        "Catalysis modeling"
+      ],
+      "derived_methods": [
+        "Automated QM workflows",
+        "MORFEUS",
+        "xTB",
+        "DFT descriptors"
+      ],
+      "derived_workflows": [
+        "Automated QM descriptor workflow"
+      ],
+      "chemistry": "General molecular / catalysis descriptor generation from automated quantum chemistry",
+      "data_regime": "Broad descriptor pools assembled per molecule from QM and steric codes",
+      "validation": "Software demonstration and downstream modeling examples",
+      "why": "The Paton/Alegre-Requena platform DescriPyTor is written against: Sterimol and %Vbur from supplied geometries, not user-defined axes.",
+      "summary": "End-to-end automated QM environment that computes charges, frequencies, Sterimol and buried volume. DescriPyTor keeps this broad pool, then adds chemist-chosen axes for orientational Sterimol and projected dipoles.",
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Paton",
+        "Alegre-Requena"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1002/wcms.1663",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Juan V. Alegre-Requena",
+        "Shree Sowndarya S. V.",
+        "Raúl Pérez-Soto",
+        "Turki M. Alturaifi",
+        "Robert S. Paton"
+      ],
+      "topics": [
+        "Descriptor pipelines",
+        "Automated featurization",
+        "Quantum chemistry workflows",
+        "Catalysis modeling"
+      ],
+      "methods": [
+        "Automated QM workflows",
+        "MORFEUS",
+        "xTB",
+        "DFT descriptors"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_milo_smalldata_2023",
+      "label": "Small Data Can Play a Big Role in Chemical Discovery",
+      "year": 2023,
+      "journal": "Angewandte Chemie",
+      "doi": "10.1002/anie.202219070",
+      "paper_type": "viewpoint",
+      "relevance": "overview",
+      "derived_authors": [
+        "Hadas Shalit Peleg",
+        "Anat Milo"
+      ],
+      "derived_topics": [
+        "Small data",
+        "Chemical discovery",
+        "Interpretable models",
+        "Dataset design"
+      ],
+      "derived_methods": [
+        "Viewpoint / methodology guidance"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Chemical discovery including catalysis; advocacy for small, designed datasets",
+      "data_regime": "n/a overview",
+      "validation": "N/A",
+      "why": "Milo-lab manifesto for the DescriPyTor setting: do not wait for HTE-scale data if the representation is chemically right.",
+      "summary": "Argues that carefully designed small datasets, paired with interpretable representations, can drive discovery. Sets the lab stance that DescriPyTor operationalizes: descriptor frame first, more data second.",
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Milo"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1002/anie.202219070",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Hadas Shalit Peleg",
+        "Anat Milo"
+      ],
+      "topics": [
+        "Small data",
+        "Chemical discovery",
+        "Interpretable models",
+        "Dataset design"
+      ],
+      "methods": [
+        "Viewpoint / methodology guidance"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_robert_2024",
+      "label": "ROBERT: Automated Machine Learning for Chemistry",
+      "year": 2024,
+      "journal": "WIREs Computational Molecular Science",
+      "doi": "10.1002/wcms.1733",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "derived_authors": [
+        "Juan V. Alegre-Requena",
+        "David Dalmau",
+        "Raúl Pérez-Soto",
+        "Robert S. Paton"
+      ],
+      "derived_topics": [
+        "Automated model selection",
+        "Small data",
+        "Catalysis workflows",
+        "Descriptor matrices"
+      ],
+      "derived_methods": [
+        "ROBERT",
+        "Automated ML workflow",
+        "Cross-validation"
+      ],
+      "derived_workflows": [
+        "Automated ML workflow"
+      ],
+      "chemistry": "Chemistry ML including homogeneous catalysis; automated model screening from feature matrices",
+      "data_regime": "Designed for the small-n chemical tables AQME and similar tools export",
+      "validation": "Automated model comparison with reported diagnostics",
+      "why": "DescriPyTor exports its labeled feature matrices here. ROBERT screens models; it does not choose the chemical reference frame.",
+      "summary": "Bridges chemistry descriptor tables to automated model selection. Complementary to DescriPyTor: once the chemist has anchored Sterimol and dipole columns to atoms and axes, ROBERT can hunt the equation.",
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Alegre-Requena",
+        "Paton"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1002/wcms.1733",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Juan V. Alegre-Requena",
+        "David Dalmau",
+        "Raúl Pérez-Soto",
+        "Robert S. Paton"
+      ],
+      "topics": [
+        "Automated model selection",
+        "Small data",
+        "Catalysis workflows",
+        "Descriptor matrices"
+      ],
+      "methods": [
+        "ROBERT",
+        "Automated ML workflow",
+        "Cross-validation"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_smartpy_2025",
+      "label": "SMARTpy: Cavity Steric Molecular Descriptors",
+      "year": 2025,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/D4DD00329B",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Beck R. Miller",
+        "Ryan C. Cammarota",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Cavity descriptors",
+        "Steric parameters",
+        "Physical-organic descriptors",
+        "Homogeneous catalysis"
+      ],
+      "derived_methods": [
+        "Cavity steric descriptors",
+        "Python descriptor software"
+      ],
+      "derived_workflows": [],
+      "chemistry": "Homogeneous catalysis; cavity-specific steric descriptors beyond classical Sterimol",
+      "data_regime": "Applied to diverse catalytic and molecular systems",
+      "validation": "Case studies against established steric parameterizations",
+      "why": "Newest Sigman-lab steric software: measures bulk in a cavity, not only along a substituent axis. Natural comparison for DescriPyTor’s orientational Sterimol.",
+      "summary": "Python package for cavity-centric steric descriptors. Like morfeus and DBSTEP, it computes steric numbers from a supplied geometry; unlike DescriPyTor, the chemist does not define an orientational reference frame on the substituent axis.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1039/D4DD00329B",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Beck R. Miller",
+        "Ryan C. Cammarota",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Cavity descriptors",
+        "Steric parameters",
+        "Physical-organic descriptors",
+        "Homogeneous catalysis"
+      ],
+      "methods": [
+        "Cavity steric descriptors",
+        "Python descriptor software"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_chemrefine_2026",
+      "label": "ChemRefine: Automated Interoperable ML and Quantum Chemistry Platform",
+      "year": 2026,
+      "journal": "Journal of Chemical Theory and Computation",
+      "doi": "10.1021/acs.jctc.5c01881",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "derived_authors": [
+        "Ian Migliaro",
+        "Mikayla G. S. Weiss",
+        "Alistair J. Sterling"
+      ],
+      "derived_topics": [
+        "Automated featurization",
+        "Quantum chemistry workflows",
+        "Machine learning simulations",
+        "Interoperable platforms"
+      ],
+      "derived_methods": [
+        "Automated QM workflows",
+        "Machine learning potentials",
+        "Interoperable simulation platform"
+      ],
+      "derived_workflows": [
+        "Automated QM descriptor workflow"
+      ],
+      "chemistry": "General molecular / organometallic simulation; automated QM and ML interoperability",
+      "data_regime": "Workflow platform rather than a single catalytic dataset",
+      "validation": "Software interoperability demonstrations across QM and ML engines",
+      "why": "2026 platform in the same automation layer as AQME/Auto-QChem. DescriPyTor cites it as adjacent infrastructure, not a chemist-guided frame.",
+      "summary": "Open platform that chains quantum chemistry and machine-learning simulations. Relevant because DescriPyTor is a lighter, chemist-in-the-loop alternative: it does not try to own the full simulation stack, only the reference frame of each descriptor.",
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Other"
+      ],
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.jctc.5c01881",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Ian Migliaro",
+        "Mikayla G. S. Weiss",
+        "Alistair J. Sterling"
+      ],
+      "topics": [
+        "Automated featurization",
+        "Quantum chemistry workflows",
+        "Machine learning simulations",
+        "Interoperable platforms"
+      ],
+      "methods": [
+        "Automated QM workflows",
+        "Machine learning potentials",
+        "Interoperable simulation platform"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_crest_2024",
+      "label": "CREST: Exploration of Low-Energy Molecular Chemical Space",
+      "year": 2024,
+      "journal": "J. Chem. Phys.",
+      "doi": "10.1063/5.0197592",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "derived_authors": [
+        "Philipp Pracht",
+        "Stefan Grimme",
+        "Christoph Bannwarth",
+        "Fabian Bohle"
+      ],
+      "derived_topics": [
+        "Conformer sampling",
+        "Ground-state ensembles",
+        "xTB",
+        "Chemical space"
+      ],
+      "derived_methods": [
+        "CREST",
+        "GFNn-xTB",
+        "Metadynamics"
+      ],
+      "derived_workflows": [
+        "Structure",
+        "Ground-state conformers"
+      ],
+      "chemistry": "Ground-state conformational ensembles for molecules and complexes; not a TS-ensemble generator",
+      "data_regime": "Software paper; computational examples across drug-sized molecules",
+      "validation": "Benchmarked conformational coverage and timings versus earlier CREST/xTB workflows",
+      "why": "Canonical ground-state conformer tool. Distinct from racerTS: CREST samples minima (and can constrain TSs only at extra cost), not TS ensembles by default.",
+      "summary": "CREST is the workhorse for low-energy conformer–rotamer ensembles at GFN-xTB/GFN-FF cost. In a catalysis stack it belongs in the ground-state layer. Do not treat it as interchangeable with racerTS, which samples transition-state conformers.",
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Grimme"
+      ],
+      "stack_layer": "Ground-state conformers",
+      "type": "paper",
+      "url": "https://doi.org/10.1063/5.0197592",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Philipp Pracht",
+        "Stefan Grimme",
+        "Christoph Bannwarth",
+        "Fabian Bohle"
+      ],
+      "topics": [
+        "Conformer sampling",
+        "Ground-state ensembles",
+        "xTB",
+        "Chemical space"
+      ],
+      "methods": [
+        "CREST",
+        "GFNn-xTB",
+        "Metadynamics"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_autode_2021",
+      "label": "autodE: Automated Calculation of Reaction Energy Profiles",
+      "year": 2021,
+      "journal": "Angew. Chem. Int. Ed.",
+      "doi": "10.1002/anie.202011941",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "derived_authors": [
+        "Tom A. Young",
+        "Joseph J. Silcock",
+        "Alistair J. Sterling",
+        "Fernanda Duarte"
+      ],
+      "derived_topics": [
+        "Transition-state search",
+        "Reaction profiles",
+        "Organometallic reactions",
+        "Automation"
+      ],
+      "derived_methods": [
+        "autodE",
+        "NEB",
+        "DFT",
+        "xTB"
+      ],
+      "derived_workflows": [
+        "Structure",
+        "TS search",
+        "Thermochemistry"
+      ],
+      "chemistry": "Automated reaction-profile search for molecular and transition-metal reactions from SMILES-level input",
+      "data_regime": "Computational benchmarks on organic and organometallic reactions",
+      "validation": "Recovered literature TSs and reaction energies across a curated reaction set",
+      "why": "TS localization from a reaction string — the search step before ensemble sampling or descriptors. TS-tools sits on top of this layer.",
+      "summary": "autodE automates locating TSs and assembling reaction energy profiles for organic and organometallic chemistry. It is a TS-search tool, not a conformer sampler and not a supervised ML model.",
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Duarte"
+      ],
+      "stack_layer": "TS search",
+      "type": "paper",
+      "url": "https://doi.org/10.1002/anie.202011941",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Tom A. Young",
+        "Joseph J. Silcock",
+        "Alistair J. Sterling",
+        "Fernanda Duarte"
+      ],
+      "topics": [
+        "Transition-state search",
+        "Reaction profiles",
+        "Organometallic reactions",
+        "Automation"
+      ],
+      "methods": [
+        "autodE",
+        "NEB",
+        "DFT",
+        "xTB"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_tstools_2024",
+      "label": "TS-tools: Automated TS Localization from Reaction SMILES",
+      "year": 2024,
+      "journal": "J. Comput. Chem.",
+      "doi": "10.1002/jcc.27374",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "derived_authors": [
+        "Thijs Stuyver"
+      ],
+      "derived_topics": [
+        "Transition-state search",
+        "Reaction SMILES",
+        "xTB",
+        "Solvation"
+      ],
+      "derived_methods": [
+        "TS-tools",
+        "xTB",
+        "DFT",
+        "autodE"
+      ],
+      "derived_workflows": [
+        "Structure",
+        "TS search"
+      ],
+      "chemistry": "Automated TS searches including multi-molecular and solvent-sensitive pathways",
+      "data_regime": "Benchmark set of mono-, bi-, and multimolecular reactions",
+      "validation": "95% success already at xTB for mono/bimolecular TSs; DFT required more often for multimolecular paths",
+      "why": "Faster TS guesses from reaction SMILES. Complements autodE; still not a TS-conformer ensemble tool.",
+      "summary": "TS-tools locates transition states from textual reaction SMILES at xTB or DFT. High success on simple reactions; harder multi-molecular and solvent-switched mechanisms need DFT. Use it for TS search, then racerTS if you need a TS ensemble.",
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Stuyver"
+      ],
+      "stack_layer": "TS search",
+      "type": "paper",
+      "url": "https://doi.org/10.1002/jcc.27374",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Thijs Stuyver"
+      ],
+      "topics": [
+        "Transition-state search",
+        "Reaction SMILES",
+        "xTB",
+        "Solvation"
+      ],
+      "methods": [
+        "TS-tools",
+        "xTB",
+        "DFT",
+        "autodE"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_racerts_2026",
+      "label": "racerTS: Rapid Transition-State Conformer Ensembles",
+      "year": 2026,
+      "journal": "JCIM",
+      "doi": "10.1021/acs.jcim.5c02794",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Stefan P. Schmid",
+        "Henrik Seng",
+        "Thibault Kläy",
+        "Kjell Jorner"
+      ],
+      "derived_topics": [
+        "Transition-state conformers",
+        "Distance geometry",
+        "Catalyst design data",
+        "RDKit"
+      ],
+      "derived_methods": [
+        "racerTS",
+        "Constrained ETKDG",
+        "MMFF94",
+        "GFN2-xTB"
+      ],
+      "derived_workflows": [
+        "TS search",
+        "TS ensembles"
+      ],
+      "chemistry": "TS conformer ensembles for 20 diverse reactions, including catalysis-relevant TSs",
+      "data_regime": "Computational benchmark: 20 reaction TSs versus CREST and GOAT",
+      "validation": "Similar coverage to CREST, better DFT-optimized TS validity, median 0.17 kcal/mol low-energy error, far lower wall time",
+      "why": "This is the TS-ensemble layer. CREST/GOAT are expensive stand-ins; racerTS is built to sample TS conformers, not ground-state minima.",
+      "summary": "racerTS generates TS conformer ensembles with constrained distance geometry. It is not CREST: CREST explores ground-state chemical space; racerTS freezes the reaction center and samples the rest. Needed before TS-informed descriptors or MLIP datasets.",
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Jorner"
+      ],
+      "stack_layer": "TS ensembles",
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.jcim.5c02794",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Stefan P. Schmid",
+        "Henrik Seng",
+        "Thibault Kläy",
+        "Kjell Jorner"
+      ],
+      "topics": [
+        "Transition-state conformers",
+        "Distance geometry",
+        "Catalyst design data",
+        "RDKit"
+      ],
+      "methods": [
+        "racerTS",
+        "Constrained ETKDG",
+        "MMFF94",
+        "GFN2-xTB"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_goodvibes_2020",
+      "label": "GoodVibes: Automated Quasi-Harmonic Thermochemistry",
+      "year": 2020,
+      "journal": "F1000Research",
+      "doi": "10.12688/f1000research.22758.1",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "derived_authors": [
+        "Guilian Luchini",
+        "Juan V. Alegre-Requena",
+        "Ignacio Funes-Ardoiz",
+        "Robert S. Paton"
+      ],
+      "derived_topics": [
+        "Thermochemistry",
+        "Quasi-harmonic entropy",
+        "Frequency scaling",
+        "Reproducible DFT"
+      ],
+      "derived_methods": [
+        "GoodVibes",
+        "Grimme quasi-RRHO",
+        "Truhlar quasi-harmonic"
+      ],
+      "derived_workflows": [
+        "Thermochemistry"
+      ],
+      "chemistry": "Thermochemical corrections from Gaussian/ORCA/xTB frequency jobs used throughout homogeneous catalysis DFT",
+      "data_regime": "Software paper with worked catalytic reaction-path examples",
+      "validation": "Reproducible quasi-harmonic G values versus raw RRHO; community standard in Paton/Alegre-Requena workflows",
+      "why": "After a TS or minimum is found, free energies still need quasi-harmonic treatment. This is the thermochemistry layer, not a model.",
+      "summary": "GoodVibes applies Grimme/Truhlar quasi-harmonic corrections and frequency scaling to electronic-structure outputs. In the stack it sits after conformer/TS optimization and before descriptors or ΔG-based ranking. AQME/ROBERT often assume this step exists.",
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Paton",
+        "Alegre-Requena"
+      ],
+      "stack_layer": "Thermochemistry",
+      "type": "paper",
+      "url": "https://doi.org/10.12688/f1000research.22758.1",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Guilian Luchini",
+        "Juan V. Alegre-Requena",
+        "Ignacio Funes-Ardoiz",
+        "Robert S. Paton"
+      ],
+      "topics": [
+        "Thermochemistry",
+        "Quasi-harmonic entropy",
+        "Frequency scaling",
+        "Reproducible DFT"
+      ],
+      "methods": [
+        "GoodVibes",
+        "Grimme quasi-RRHO",
+        "Truhlar quasi-harmonic"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_thermomlip_2026",
+      "label": "thermoMLIP: MLIP-Enhanced Thermochemistry",
+      "year": 2026,
+      "journal": "J. Chem. Theory Comput.",
+      "doi": "10.1021/acs.jctc.6c00936",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "derived_authors": [
+        "Bowen Deng",
+        "Thijs Stuyver"
+      ],
+      "derived_topics": [
+        "Thermochemistry",
+        "MLIP",
+        "Conformer optimization",
+        "Active learning"
+      ],
+      "derived_methods": [
+        "thermoMLIP",
+        "MLIP geometry optimization",
+        "Evidential GNN"
+      ],
+      "derived_workflows": [
+        "Ground-state conformers",
+        "Thermochemistry",
+        "MLIP / mechanism"
+      ],
+      "chemistry": "Organic thermochemistry across chemical space; relevant when catalysis models need cheap, consistent ΔG",
+      "data_regime": "Computational organic chemical space plus an actively learned thermodynamic dataset",
+      "validation": "Near-DFT thermochemistry; MLIP conformer searches often find lower-energy structures than existing datasets",
+      "why": "MLIP replacement for the expensive DFT thermochemistry layer. Complements GoodVibes rather than replacing quasi-harmonic logic.",
+      "summary": "thermoMLIP uses MLIPs to optimize conformers and evaluate thermochemistry near DFT quality, then trains a fast GNN surrogate. Use it when the bottleneck is ΔG at scale, not when you need a TS ensemble (that is racerTS) or experiment selection (that is EDBO).",
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Stuyver"
+      ],
+      "stack_layer": "Thermochemistry",
+      "type": "paper",
+      "url": "https://doi.org/10.1021/acs.jctc.6c00936",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Bowen Deng",
+        "Thijs Stuyver"
+      ],
+      "topics": [
+        "Thermochemistry",
+        "MLIP",
+        "Conformer optimization",
+        "Active learning"
+      ],
+      "methods": [
+        "thermoMLIP",
+        "MLIP geometry optimization",
+        "Evidential GNN"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_edbo_2021",
+      "label": "EDBO: Bayesian Reaction Optimization for Chemical Synthesis",
+      "year": 2021,
+      "journal": "Nature",
+      "doi": "10.1038/s41586-021-03213-y",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Benjamin J. Shields",
+        "Jason M. Stevens",
+        "Jun Li",
+        "Marvin Parasram",
+        "Farhan Damani",
+        "Jesus I. Martinez Alvarado",
+        "Jacob M. Janey",
+        "Ryan P. Adams",
+        "Abigail G. Doyle"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "Reaction optimization",
+        "Experimental design",
+        "Direct arylation"
+      ],
+      "derived_methods": [
+        "EDBO",
+        "Gaussian process",
+        "Acquisition function"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "chemistry": "Pd-catalyzed direct arylation benchmark plus Mitsunobu and deoxyfluorination case studies",
+      "data_regime": "Large Pd arylation HTE benchmark plus closed-loop synthetic case studies versus expert chemists",
+      "validation": "Prospective comparison with expert human experiment selection; BO more efficient and more consistent",
+      "why": "EDBO chooses the next experiment. It is not a supervised yield model and not a descriptor engine.",
+      "summary": "Introduces Experimental Design via Bayesian Optimization (EDBO) and shows it can beat expert chemists at picking the next reaction conditions. Type this as experiment selection / BO, not as supervised ML on a static dataset.",
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Doyle"
+      ],
+      "stack_layer": "Experiment selection",
+      "type": "paper",
+      "url": "https://doi.org/10.1038/s41586-021-03213-y",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Benjamin J. Shields",
+        "Jason M. Stevens",
+        "Jun Li",
+        "Marvin Parasram",
+        "Farhan Damani",
+        "Jesus I. Martinez Alvarado",
+        "Jacob M. Janey",
+        "Ryan P. Adams",
+        "Abigail G. Doyle"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "Reaction optimization",
+        "Experimental design",
+        "Direct arylation"
+      ],
+      "methods": [
+        "EDBO",
+        "Gaussian process",
+        "Acquisition function"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_edboplus_2022",
+      "label": "EDBO+: Multi-Objective Active Learning for Reaction Optimization",
+      "year": 2022,
+      "journal": "JACS",
+      "doi": "10.1021/jacs.2c08592",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "derived_authors": [
+        "Jose A. Garrido Torres",
+        "Sii Hong Lau",
+        "Pranay Anchuri",
+        "Jason M. Stevens",
+        "Jose E. Tabora",
+        "Jun Li",
+        "Alina Borovika",
+        "Ryan P. Adams",
+        "Abigail G. Doyle"
+      ],
+      "derived_topics": [
+        "Multi-objective optimization",
+        "Bayesian optimization",
+        "Web app",
+        "Nickel photoredox"
+      ],
+      "derived_methods": [
+        "EDBO+",
+        "Expected hypervolume improvement",
+        "HTE"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "chemistry": "Ni/photoredox enantioselective cross-electrophile coupling as a real multi-objective test case",
+      "data_regime": "HTE and virtual-screening datasets plus a live Ni photoredox optimization campaign",
+      "validation": "Prospective multi-objective laboratory optimization; web app removes a coding barrier",
+      "why": "EDBO+ is still experiment selection, now Pareto-aware. Do not collapse it into the Ni 2024 application paper or into supervised regression.",
+      "summary": "EDBO+ extends EDBO to multiple objectives (yield vs selectivity vs cost) with a chemist-facing web app. Same stack layer as EDBO: choose the next experiment. The later Sigman/Doyle Ni reduction paper uses EDBO+; this is the method paper.",
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Doyle"
+      ],
+      "stack_layer": "Experiment selection",
+      "type": "paper",
+      "url": "https://doi.org/10.1021/jacs.2c08592",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jose A. Garrido Torres",
+        "Sii Hong Lau",
+        "Pranay Anchuri",
+        "Jason M. Stevens",
+        "Jose E. Tabora",
+        "Jun Li",
+        "Alina Borovika",
+        "Ryan P. Adams",
+        "Abigail G. Doyle"
+      ],
+      "topics": [
+        "Multi-objective optimization",
+        "Bayesian optimization",
+        "Web app",
+        "Nickel photoredox"
+      ],
+      "methods": [
+        "EDBO+",
+        "Expected hypervolume improvement",
+        "HTE"
+      ],
+      "focus": "",
+      "steps": [],
+      "group": "paper"
     }
   ],
   "edges": [
@@ -14653,6 +15939,31 @@
       "source": "workflow_direct_gnn_reaction_workflow",
       "target": "paper_cbs_2024",
       "relation": "exemplified_by"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_milo_vibrations_2014",
+      "relation": "includes_work"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_milo_science_2015",
+      "relation": "includes_work"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_santiago_milo_2016",
+      "relation": "includes_work"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_lustosa_milo_2022",
+      "relation": "includes_work"
+    },
+    {
+      "source": "program_anat_milo_work",
+      "target": "paper_milo_smalldata_2023",
+      "relation": "includes_work"
     }
   ],
   "paper_similarity_edges": [
@@ -14660,7 +15971,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_kraken_2022",
       "relation": "paper_similarity",
-      "score": 9.0,
+      "score": 9,
       "reason": "authors: Matthew S. Sigman; topics: Catalyst screening, Ligand descriptor libraries; workflow: Reusable ligand-space workflow",
       "density": "sparse"
     },
@@ -14676,7 +15987,7 @@
       "source": "paper_hda_2025",
       "target": "paper_kraken_2022",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "normal"
     },
@@ -14684,7 +15995,7 @@
       "source": "paper_kraken_2022",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "normal"
     },
@@ -14708,7 +16019,7 @@
       "source": "paper_ch_oxidation_2025",
       "target": "paper_kraken_2022",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: DFT descriptors",
       "density": "normal"
     },
@@ -14724,7 +16035,7 @@
       "source": "paper_ni_edbo_2024",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 9.0,
+      "score": 9,
       "reason": "authors: Abigail G. Doyle, Matthew S. Sigman; methods: Statistical modeling",
       "density": "sparse"
     },
@@ -14732,7 +16043,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: Matthew S. Sigman; topics: Conformer ensembles, Small data; methods: Statistical modeling",
       "density": "normal"
     },
@@ -14740,7 +16051,7 @@
       "source": "paper_sigman_gold_2026",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: Matthew S. Sigman, Simone Gallarati",
       "density": "sparse"
     },
@@ -14748,7 +16059,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 7.0,
+      "score": 7,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling; workflow: Mechanism-aware transfer workflow",
       "density": "normal"
     },
@@ -14772,7 +16083,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_bisphos_2025",
       "relation": "paper_similarity",
-      "score": 9.0,
+      "score": 9,
       "reason": "authors: Jamie A. Cadge, Matthew S. Sigman; methods: Statistical modeling",
       "density": "sparse"
     },
@@ -14780,7 +16091,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_hda_2025",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: Jamie A. Cadge, Matthew S. Sigman",
       "density": "sparse"
     },
@@ -14804,7 +16115,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_bunny_2026",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -14812,7 +16123,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_hda_2025",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: Jamie A. Cadge, Matthew S. Sigman",
       "density": "sparse"
     },
@@ -14820,7 +16131,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_hda_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "normal"
     },
@@ -14828,7 +16139,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_hda_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "normal"
     },
@@ -14836,7 +16147,7 @@
       "source": "paper_hda_2025",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "normal"
     },
@@ -14844,7 +16155,7 @@
       "source": "paper_hda_2025",
       "target": "paper_hyster_sigman_2023",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Experimental validation",
       "density": "dense"
     },
@@ -14852,7 +16163,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 9.0,
+      "score": 9,
       "reason": "authors: Abigail G. Doyle, Matthew S. Sigman; methods: Statistical modeling",
       "density": "sparse"
     },
@@ -14868,7 +16179,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 7.0,
+      "score": 7,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling; workflow: Reusable ligand-space workflow",
       "density": "sparse"
     },
@@ -14876,7 +16187,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_bunny_2026",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -14900,7 +16211,7 @@
       "source": "paper_pd_fluorination_2025",
       "target": "paper_qmworkflow_2026",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: David Dalmau, Matthew S. Sigman",
       "density": "normal"
     },
@@ -14908,7 +16219,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_qmworkflow_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -14916,7 +16227,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_qmworkflow_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -14932,7 +16243,7 @@
       "source": "paper_lowdata_workflows_2025",
       "target": "paper_pd_fluorination_2025",
       "relation": "paper_similarity",
-      "score": 9.0,
+      "score": 9,
       "reason": "authors: David Dalmau, Matthew S. Sigman; methods: Random forest",
       "density": "sparse"
     },
@@ -14948,7 +16259,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_lowdata_workflows_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -14956,7 +16267,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_lowdata_workflows_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -14972,7 +16283,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_sigman_gold_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "normal"
     },
@@ -14980,7 +16291,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_sigman_gold_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "normal"
     },
@@ -14988,7 +16299,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_sigman_gold_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -14996,7 +16307,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_sigman_gold_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15004,7 +16315,7 @@
       "source": "paper_ch_oxidation_2025",
       "target": "paper_sigman_gold_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15020,7 +16331,7 @@
       "source": "paper_fastcat_2024",
       "target": "paper_pd_fluorination_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "topics: Bayesian optimization, HTE; methods: Multi-objective Bayesian optimization; workflow: Autonomous HTE optimization workflow",
       "density": "normal"
     },
@@ -15028,7 +16339,7 @@
       "source": "paper_flexcat_2026",
       "target": "paper_pd_fluorination_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Bayesian optimization, HTE; workflow: Autonomous HTE optimization workflow",
       "density": "dense"
     },
@@ -15036,7 +16347,7 @@
       "source": "paper_bestpractices_2026",
       "target": "paper_pd_fluorination_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: David Dalmau",
       "density": "normal"
     },
@@ -15044,7 +16355,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_pd_fluorination_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15060,7 +16371,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_ch_oxidation_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "normal"
     },
@@ -15068,7 +16379,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_ch_oxidation_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15076,7 +16387,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_ch_oxidation_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15084,7 +16395,7 @@
       "source": "paper_ch_oxidation_2025",
       "target": "paper_hda_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15092,7 +16403,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 6.0,
+      "score": 6,
       "reason": "authors: Matthew S. Sigman; workflow: Reusable ligand-space workflow",
       "density": "sparse"
     },
@@ -15100,7 +16411,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15108,7 +16419,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15116,7 +16427,7 @@
       "source": "paper_hyster_sigman_2023",
       "target": "paper_noxyl_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15132,7 +16443,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_milo_hie_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Mechanistic discovery, Statistical modeling; workflow: Mechanism-aware transfer workflow",
       "density": "sparse"
     },
@@ -15148,7 +16459,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_denmark_catalyst_selection_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Asymmetric catalysis, Ligand optimization; workflow: Reusable ligand-space workflow",
       "density": "sparse"
     },
@@ -15156,7 +16467,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_denmark_catalyst_selection_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity; workflow: Reusable ligand-space workflow",
       "density": "sparse"
     },
@@ -15164,7 +16475,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_reid_local_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity; workflow: Target-specific active-learning workflow",
       "density": "sparse"
     },
@@ -15172,7 +16483,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_denmark_catalyst_selection_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15180,7 +16491,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_hartwig_ru_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15188,7 +16499,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_hcat_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Enantioselectivity, Ligand optimization",
       "density": "normal"
     },
@@ -15196,7 +16507,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_corminboeuf_flp_2026",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: Clemence Corminboeuf, Ruben Laplaza",
       "density": "sparse"
     },
@@ -15204,7 +16515,7 @@
       "source": "paper_compcat_ai_2026",
       "target": "paper_corminboeuf_bidentate_2024",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Clemence Corminboeuf",
       "density": "sparse"
     },
@@ -15212,7 +16523,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_mlips_dft_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Ruben Laplaza",
       "density": "sparse"
     },
@@ -15228,7 +16539,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_corminboeuf_bidentate_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15236,7 +16547,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_hartwig_ru_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "normal"
     },
@@ -15244,7 +16555,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 11.0,
+      "score": 11,
       "reason": "authors: Kyle A. Mack, Matthew S. Sigman; topics: Ligand optimization, Multi-objective optimization",
       "density": "sparse"
     },
@@ -15260,7 +16571,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15268,7 +16579,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15276,7 +16587,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_bisphosphine_multiobjective_2023",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Matthew S. Sigman",
       "density": "dense"
     },
@@ -15284,7 +16595,7 @@
       "source": "paper_bisphos_2025",
       "target": "paper_hyster_sigman_2023",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "normal"
     },
@@ -15292,7 +16603,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_hyster_sigman_2023",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "normal"
     },
@@ -15300,7 +16611,7 @@
       "source": "paper_hyster_sigman_2023",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "authors: Matthew S. Sigman; methods: Statistical modeling",
       "density": "dense"
     },
@@ -15324,7 +16635,7 @@
       "source": "paper_reid_local_2025",
       "target": "paper_target_data_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Dataset design, Small data; workflow: Target-specific active-learning workflow",
       "density": "normal"
     },
@@ -15332,7 +16643,7 @@
       "source": "paper_bunny_2026",
       "target": "paper_target_data_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Jules Schleinitz",
       "density": "normal"
     },
@@ -15340,7 +16651,7 @@
       "source": "paper_hda_2025",
       "target": "paper_target_data_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Sarah E. Reisman",
       "density": "dense"
     },
@@ -15348,7 +16659,7 @@
       "source": "paper_milo_hie_2025",
       "target": "paper_target_data_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Anat Milo",
       "density": "normal"
     },
@@ -15356,7 +16667,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_target_data_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Target-specific active-learning workflow",
       "density": "dense"
     },
@@ -15388,7 +16699,7 @@
       "source": "paper_pidko_rh_hte_2024",
       "target": "paper_reid_local_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "topics: Dataset design, Enantioselectivity; methods: Random forest",
       "density": "sparse"
     },
@@ -15404,7 +16715,7 @@
       "source": "paper_milo_hie_2025",
       "target": "paper_probability_scope_2025",
       "relation": "paper_similarity",
-      "score": 16.0,
+      "score": 16,
       "reason": "authors: Anat Milo, Inbal L. Eshel, Monica H. Perez-Temprano, Sergio Barranco",
       "density": "sparse"
     },
@@ -15412,7 +16723,7 @@
       "source": "paper_milo_hie_2025",
       "target": "paper_moleclip_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Anat Milo",
       "density": "normal"
     },
@@ -15420,7 +16731,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_milo_hie_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Mechanism-aware transfer workflow",
       "density": "dense"
     },
@@ -15428,7 +16739,7 @@
       "source": "paper_milo_hie_2025",
       "target": "paper_pdni_transfer_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Mechanism-aware transfer workflow",
       "density": "dense"
     },
@@ -15436,7 +16747,7 @@
       "source": "paper_milo_hie_2025",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Mechanism-aware transfer workflow",
       "density": "dense"
     },
@@ -15476,7 +16787,7 @@
       "source": "paper_hcat_2025",
       "target": "paper_moleclip_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Direct GNN reaction workflow",
       "density": "normal"
     },
@@ -15484,7 +16795,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_probability_scope_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Target-specific active-learning workflow",
       "density": "dense"
     },
@@ -15500,7 +16811,7 @@
       "source": "paper_flexcat_2026",
       "target": "paper_minerva_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Autonomous experimentation, Bayesian optimization; workflow: Autonomous HTE optimization workflow",
       "density": "sparse"
     },
@@ -15508,7 +16819,7 @@
       "source": "paper_minerva_2025",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Bayesian optimization, Multi-objective optimization; workflow: Autonomous HTE optimization workflow",
       "density": "normal"
     },
@@ -15516,7 +16827,7 @@
       "source": "paper_compcat_ai_2026",
       "target": "paper_minerva_2025",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Philippe Schwaller",
       "density": "normal"
     },
@@ -15556,7 +16867,7 @@
       "source": "paper_flexcat_2026",
       "target": "paper_ni_edbo_2024",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Bayesian optimization, Ligand optimization; workflow: Autonomous HTE optimization workflow",
       "density": "normal"
     },
@@ -15564,7 +16875,7 @@
       "source": "paper_compcat_ai_2026",
       "target": "paper_corminboeuf_flp_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Clemence Corminboeuf",
       "density": "sparse"
     },
@@ -15572,7 +16883,7 @@
       "source": "paper_compcat_ai_2026",
       "target": "paper_organocat_review_2024",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Kjell Jorner",
       "density": "sparse"
     },
@@ -15588,7 +16899,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_fastcat_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Ligand optimization, Multi-objective optimization",
       "density": "dense"
     },
@@ -15596,7 +16907,7 @@
       "source": "paper_ni_edbo_2024",
       "target": "paper_resource_hydroformylation_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Bayesian optimization, Ligand optimization; workflow: Autonomous HTE optimization workflow",
       "density": "normal"
     },
@@ -15620,7 +16931,7 @@
       "source": "paper_cats_2025",
       "target": "paper_duarte_almeta_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Reactive MLIP mechanism workflow",
       "density": "sparse"
     },
@@ -15652,7 +16963,7 @@
       "source": "paper_meta_selectivity_2025",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Enantioselectivity, Transfer learning",
       "density": "normal"
     },
@@ -15660,7 +16971,7 @@
       "source": "paper_meta_selectivity_2025",
       "target": "paper_moleclip_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Few-shot / meta-learning workflow",
       "density": "normal"
     },
@@ -15668,7 +16979,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_pdni_transfer_2025",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Asymmetric catalysis, Small data; workflow: Mechanism-aware transfer workflow",
       "density": "sparse"
     },
@@ -15676,7 +16987,7 @@
       "source": "paper_pdni_transfer_2025",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Small data, Transfer learning; workflow: Mechanism-aware transfer workflow",
       "density": "sparse"
     },
@@ -15692,7 +17003,7 @@
       "source": "paper_pdni_transfer_2025",
       "target": "paper_reid_local_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Small data",
       "density": "dense"
     },
@@ -15700,7 +17011,7 @@
       "source": "paper_pdni_transfer_2025",
       "target": "paper_sunoj_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Small data",
       "density": "dense"
     },
@@ -15708,7 +17019,7 @@
       "source": "paper_latent_transfer_2024",
       "target": "paper_moleclip_2025",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Few-shot / meta-learning workflow",
       "density": "normal"
     },
@@ -15740,7 +17051,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_sunoj_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15748,7 +17059,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_sunoj_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15756,7 +17067,7 @@
       "source": "paper_hartwig_ru_2026",
       "target": "paper_sunoj_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15764,7 +17075,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_transfer_nature_2026",
       "relation": "paper_similarity",
-      "score": 5.0,
+      "score": 5,
       "reason": "topics: Enantioselectivity, Small data; workflow: Mechanism-aware transfer workflow",
       "density": "normal"
     },
@@ -15780,7 +17091,7 @@
       "source": "paper_hartwig_ru_2026",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 8.0,
+      "score": 8,
       "reason": "authors: John F. Hartwig, Masha Elkin",
       "density": "sparse"
     },
@@ -15788,7 +17099,7 @@
       "source": "paper_bismuth_2025",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "methods: DFT; workflow: Mechanism-aware transfer workflow",
       "density": "normal"
     },
@@ -15796,7 +17107,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "methods: Machine learning; workflow: Mechanism-aware transfer workflow",
       "density": "normal"
     },
@@ -15804,7 +17115,7 @@
       "source": "paper_pdni_transfer_2025",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "workflow: Mechanism-aware transfer workflow",
       "density": "dense"
     },
@@ -15812,7 +17123,7 @@
       "source": "paper_rajaraman_2025",
       "target": "paper_sobo_2023",
       "relation": "paper_similarity",
-      "score": 2.0,
+      "score": 2,
       "reason": "methods: DFT, Machine learning",
       "density": "normal"
     },
@@ -15820,7 +17131,7 @@
       "source": "paper_hyster_sigman_2023",
       "target": "paper_reid_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Interpretable ML, Mechanistic discovery",
       "density": "sparse"
     },
@@ -15828,7 +17139,7 @@
       "source": "paper_ch_oxidation_2025",
       "target": "paper_denmark_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Enantioselectivity, Physical descriptors",
       "density": "sparse"
     },
@@ -15836,7 +17147,7 @@
       "source": "paper_hartwig_libra_2026",
       "target": "paper_hartwig_ru_2026",
       "relation": "paper_similarity",
-      "score": 37.0,
+      "score": 37,
       "reason": "authors: Gunther H. Weber, John F. Hartwig, Masha Elkin, Matthew Avaylon, Michael W. Mahoney, N. Ian Rinehart, Nicholas Hadler, Talita Perciano; topics: 3D molecular representation, Deep learning; workflow: TS-informed 3D deep-learning workflow",
       "density": "sparse"
     },
@@ -15844,7 +17155,7 @@
       "source": "paper_cbs_2024",
       "target": "paper_hartwig_ru_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "normal"
     },
@@ -15852,7 +17163,7 @@
       "source": "paper_hartwig_ru_2026",
       "target": "paper_pidko_rh_hte_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Enantioselectivity, HTE",
       "density": "normal"
     },
@@ -15860,7 +17171,7 @@
       "source": "paper_hartwig_ru_2026",
       "target": "paper_reid_local_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Enantioselectivity",
       "density": "dense"
     },
@@ -15868,7 +17179,7 @@
       "source": "paper_corminboeuf_bidentate_2024",
       "target": "paper_pidko_rh_hte_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Enantioselectivity, Ligand descriptors",
       "density": "sparse"
     },
@@ -15892,7 +17203,7 @@
       "source": "paper_delta_phosphine_2024",
       "target": "paper_shearilicine_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "topics: Ligand optimization, Virtual screening; methods: Virtual ligand screening",
       "density": "sparse"
     },
@@ -15900,7 +17211,7 @@
       "source": "paper_bisphosphine_multiobjective_2023",
       "target": "paper_shearilicine_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Ligand optimization",
       "density": "sparse"
     },
@@ -15908,7 +17219,7 @@
       "source": "paper_denmark_catalyst_selection_2024",
       "target": "paper_shearilicine_2026",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Ligand optimization",
       "density": "normal"
     },
@@ -15916,7 +17227,7 @@
       "source": "paper_kulik_space_2023",
       "target": "paper_rajaraman_2025",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Catalyst design, Transition-metal complexes",
       "density": "sparse"
     },
@@ -15948,7 +17259,7 @@
       "source": "paper_corminboeuf_flp_2026",
       "target": "paper_mlips_dft_2026",
       "relation": "paper_similarity",
-      "score": 4.0,
+      "score": 4,
       "reason": "authors: Ruben Laplaza",
       "density": "sparse"
     },
@@ -15964,9 +17275,369 @@
       "source": "paper_cbs_2024",
       "target": "paper_organocat_review_2024",
       "relation": "paper_similarity",
-      "score": 3.0,
+      "score": 3,
       "reason": "topics: Asymmetric catalysis, Catalyst design",
       "density": "sparse"
+    },
+    {
+      "source": "paper_harper_sterimol_2012",
+      "target": "paper_paton_sterimol_2019",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "Sterimol as a directional steric frame",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_harper_sterimol_2012",
+      "target": "paper_santiago_milo_2016",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Sterimol meets Hammett-type models",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_harper_sterimol_2012",
+      "target": "paper_smartpy_2025",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Sterimol lineage to cavity steric descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_harper_sterimol_2012",
+      "target": "paper_corminboeuf_bidentate_2024",
+      "relation": "paper_similarity",
+      "score": 5.5,
+      "reason": "Physical descriptors for enantioselectivity",
+      "density": "normal"
+    },
+    {
+      "source": "paper_milo_vibrations_2014",
+      "target": "paper_milo_science_2015",
+      "relation": "paper_similarity",
+      "score": 9,
+      "reason": "authors: Anat Milo, Matthew S. Sigman; site-anchored descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_milo_vibrations_2014",
+      "target": "paper_milo_hie_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors: Anat Milo; interpretable catalytic descriptors",
+      "density": "normal"
+    },
+    {
+      "source": "paper_milo_science_2015",
+      "target": "paper_santiago_milo_2016",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Anat Milo, Matthew S. Sigman",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_milo_science_2015",
+      "target": "paper_lustosa_milo_2022",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Anat Milo; small-data mechanistic models",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_santiago_milo_2016",
+      "target": "paper_santiago_mlr_2018",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Celine B. Santiago, Matthew S. Sigman",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_santiago_mlr_2018",
+      "target": "paper_reid_local_2025",
+      "relation": "paper_similarity",
+      "score": 5.5,
+      "reason": "MLR / local reaction-space modeling",
+      "density": "normal"
+    },
+    {
+      "source": "paper_santiago_mlr_2018",
+      "target": "paper_denmark_catalyst_selection_2024",
+      "relation": "paper_similarity",
+      "score": 5,
+      "reason": "Interpretable selectivity models",
+      "density": "normal"
+    },
+    {
+      "source": "paper_paton_sterimol_2019",
+      "target": "paper_bisphos_2025",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Conformer-dependent steric descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_paton_sterimol_2019",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Robert S. Paton; Sterimol software stack",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_autoqchem_2022",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Automated QM descriptor pipelines",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_autoqchem_2022",
+      "target": "paper_qmworkflow_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Cheap/automated descriptor generation",
+      "density": "normal"
+    },
+    {
+      "source": "paper_autoqchem_2022",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 5,
+      "reason": "Precomputed ligand/molecule descriptor infrastructure",
+      "density": "normal"
+    },
+    {
+      "source": "paper_lustosa_milo_2022",
+      "target": "paper_milo_smalldata_2023",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Anat Milo; small-data catalysis",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_lustosa_milo_2022",
+      "target": "paper_lowdata_workflows_2025",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Small-n catalytic modeling",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_lustosa_milo_2022",
+      "target": "paper_reid_local_2025",
+      "relation": "paper_similarity",
+      "score": 5.5,
+      "reason": "What small catalytic datasets can support",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aqme_2023",
+      "target": "paper_robert_2024",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Juan V. Alegre-Requena, Robert S. Paton",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_aqme_2023",
+      "target": "paper_qmworkflow_2026",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Automated QM descriptor workflows",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_milo_smalldata_2023",
+      "target": "paper_moleclip_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors: Anat Milo; small-data representations",
+      "density": "normal"
+    },
+    {
+      "source": "paper_milo_smalldata_2023",
+      "target": "paper_probability_scope_2025",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "authors: Anat Milo; small designed catalytic datasets",
+      "density": "normal"
+    },
+    {
+      "source": "paper_robert_2024",
+      "target": "paper_lowdata_workflows_2025",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: David Dalmau, Juan V. Alegre-Requena; ROBERT",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_robert_2024",
+      "target": "paper_bestpractices_2026",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Juan V. Alegre-Requena; chemistry ML practice",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_smartpy_2025",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "authors: Matthew S. Sigman; ligand steric descriptors",
+      "density": "normal"
+    },
+    {
+      "source": "paper_smartpy_2025",
+      "target": "paper_paton_sterimol_2019",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Steric descriptor software for catalysis",
+      "density": "normal"
+    },
+    {
+      "source": "paper_chemrefine_2026",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Automated QM/ML platforms",
+      "density": "normal"
+    },
+    {
+      "source": "paper_chemrefine_2026",
+      "target": "paper_qmworkflow_2026",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Interoperable QM descriptor workflows",
+      "density": "normal"
+    },
+    {
+      "source": "paper_crest_2024",
+      "target": "paper_racerts_2026",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Ground-state CREST vs TS-ensemble racerTS — same family of sampling, different layer",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_crest_2024",
+      "target": "paper_paton_sterimol_2019",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Conformer choice changes steric descriptors",
+      "density": "normal"
+    },
+    {
+      "source": "paper_autode_2021",
+      "target": "paper_tstools_2024",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "TS search tools; TS-tools uses autodE internals",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_autode_2021",
+      "target": "paper_duarte_almeta_2025",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Duarte lab: TS search then MLIP acceleration",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_tstools_2024",
+      "target": "paper_racerts_2026",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Find a TS, then sample its conformer ensemble",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_tstools_2024",
+      "target": "paper_thermomlip_2026",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Stuyver TS search then MLIP thermochemistry",
+      "density": "normal"
+    },
+    {
+      "source": "paper_racerts_2026",
+      "target": "paper_rmlp_2025",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "TS ensembles feed MLIP / TS-search datasets",
+      "density": "normal"
+    },
+    {
+      "source": "paper_racerts_2026",
+      "target": "paper_cats_2025",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "TS-centered catalyst screening needs ensembles",
+      "density": "normal"
+    },
+    {
+      "source": "paper_goodvibes_2020",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Paton thermochemistry then AQME descriptors",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_goodvibes_2020",
+      "target": "paper_thermomlip_2026",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Quasi-harmonic DFT vs MLIP thermochemistry",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_goodvibes_2020",
+      "target": "paper_robert_2024",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Alegre-Requena/Paton software layer",
+      "density": "normal"
+    },
+    {
+      "source": "paper_edbo_2021",
+      "target": "paper_edboplus_2022",
+      "relation": "paper_similarity",
+      "score": 9,
+      "reason": "EDBO then multi-objective EDBO+",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edbo_2021",
+      "target": "paper_ni_edbo_2024",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Method paper vs later Ni application of EDBO+",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edboplus_2022",
+      "target": "paper_ni_edbo_2024",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "EDBO+ software used in the Ni reduction campaign",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edboplus_2022",
+      "target": "paper_minerva_2025",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "Experiment-selection engines, not static predictors",
+      "density": "normal"
+    },
+    {
+      "source": "paper_edbo_2021",
+      "target": "paper_flexcat_2026",
+      "relation": "paper_similarity",
+      "score": 6,
+      "reason": "BO / closed-loop experiment selection",
+      "density": "normal"
     }
   ],
   "stories": {
@@ -16024,6 +17695,24 @@
       "description": "Anat Milo and surrounding small-data, mechanistic and representation-learning literature.",
       "groups": [
         "Milo"
+      ]
+    },
+    "chemist_frames": {
+      "label": "Chemist-guided descriptors",
+      "description": "Where a descriptor is read: Sterimol, cavities, vibrations, and the AQME / Auto-QChem / ROBERT platforms DescriPyTor is written against.",
+      "keywords": [
+        "sterimol",
+        "cavity",
+        "aqme",
+        "auto-qchem",
+        "robert",
+        "smartpy",
+        "chemrefine",
+        "physical-organic",
+        "descriptor pipeline",
+        "chemist-guided",
+        "vibrations",
+        "hammett"
       ]
     }
   }

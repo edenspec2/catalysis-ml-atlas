@@ -41,6 +41,7 @@
         <option value="year">Layout: timeline</option>
         <option value="paradigm">Layout: paradigms</option>
         <option value="representation">Layout: representation</option>
+        <option value="stack">Layout: stack layer</option>
         <option value="group">Layout: PI / group</option>
       </select>
     </label>
@@ -48,6 +49,7 @@
       <select id="colorby">
         <option value="paradigm" selected>Color: paradigm</option>
         <option value="representation">Color: representation</option>
+        <option value="stack">Color: stack layer</option>
         <option value="group">Color: PI / group</option>
         <option value="year">Color: year</option>
         <option value="type">Color: node type</option>
@@ -55,6 +57,7 @@
     </label>
     <label><span>Chemistry</span><select id="chemistry"><option value="all">All chemistry</option></select></label>
     <label><span>Representation</span><select id="representation"><option value="all">All representations</option></select></label>
+    <label><span>Stack</span><select id="stack"><option value="all">All stack layers</option></select></label>
     <label><span>Year</span>
       <select id="year">
         <option value="all">All years</option>
@@ -122,7 +125,7 @@
   <img id="figbox-img" alt="">
   <p id="figbox-cap" class="muted"></p>
 </dialog>
-<script src="atlas.js?v=17"></script>
+<script src="atlas.js?v=18"></script>
 <script>
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>

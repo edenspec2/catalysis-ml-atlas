@@ -93,3 +93,19 @@ body.atlas-page header{position:static}
 #figbox{width:calc(100% - 8px);max-height:100dvh;padding:12px;border-radius:12px}
 #figbox img{max-height:82dvh}
 }
+.toolbar{grid-template-columns:minmax(180px,1.4fr) repeat(5,minmax(108px,1fr))}
+.facts,.fact-strip{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px}
+.fact,.fact-strip span{font-size:12px;background:#15202c;border:1px solid var(--line);border-radius:8px;padding:6px 8px;line-height:1.3}
+.fact i,.fact-strip i{display:block;font-style:normal;color:var(--muted);font-size:10px;letter-spacing:.4px;text-transform:uppercase}
+.inspect-wrap{margin-top:4px}
+table.inspect{min-width:980px;font-size:13px}
+table.inspect th,table.inspect td{padding:10px 12px;vertical-align:top}
+table.inspect thead th{position:sticky;top:0;z-index:1;background:#111923;white-space:nowrap}
+table.inspect thead button{min-height:0;padding:0;border:0;background:none;font:inherit;font-weight:700;color:inherit;text-align:left}
+table.inspect tbody tr{cursor:pointer}
+table.inspect tbody tr:hover,table.inspect tbody tr:focus{background:#13242a;outline:none}
+table.inspect td:nth-child(1){white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
+@media(max-width:700px){
+.toolbar{grid-template-columns:1fr 1fr}
+.inspect-wrap{margin-left:-18px;margin-right:-18px}
+}

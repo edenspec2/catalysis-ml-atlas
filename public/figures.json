@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T11:15:31.785Z",
+  "checked_at": "2026-09-06T12:04:02.146Z",
   "records": {
     "paper_target_data_2025": {
       "src": "figures/paper_target_data_2025.jpg",
@@ -306,23 +306,41 @@
       "pmcid": "",
       "bytes": 93369,
       "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fnchem.1297/MediaObjects/41557_2012_Article_BFnchem1297_Fig1_HTML.jpg"
+    },
+    "paper_milo_vibrations_2014": {
+      "src": "figures/paper_milo_vibrations_2014.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 161690,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fnature13019/MediaObjects/41586_2014_Article_BFnature13019_Fig1_HTML.jpg"
+    },
+    "paper_edbo_2021": {
+      "src": "figures/paper_edbo_2021.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 289526,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-021-03213-y/MediaObjects/41586_2021_3213_Fig1_HTML.png"
     }
   },
   "failures": [
-    {
-      "id": "paper_kraken_2022",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_reid_2025",
-      "reason": "not openly available"
-    },
     {
       "id": "paper_bunny_2026",
       "reason": "not openly available"
     },
     {
       "id": "paper_hda_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kraken_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_reid_2025",
       "reason": "not openly available"
     },
     {
@@ -334,7 +352,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_hartwig_ru_2026",
+      "id": "paper_cats_2025",
       "reason": "not openly available"
     },
     {
@@ -342,11 +360,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_cats_2025",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_rmlp_2025",
+      "id": "paper_hartwig_ru_2026",
       "reason": "not openly available"
     },
     {
@@ -358,11 +372,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_rajaraman_2025",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_pd_fluorination_2025",
+      "id": "paper_rmlp_2025",
       "reason": "not openly available"
     },
     {
@@ -370,7 +380,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_denmark_catalyst_selection_2024",
+      "id": "paper_pd_fluorination_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_rajaraman_2025",
       "reason": "not openly available"
     },
     {
@@ -378,11 +392,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_delta_phosphine_2024",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_palladaelectro_2024",
+      "id": "paper_denmark_catalyst_selection_2024",
       "reason": "not openly available"
     },
     {
@@ -390,7 +400,15 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_delta_phosphine_2024",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_kulik_space_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_palladaelectro_2024",
       "reason": "not openly available"
     },
     {
@@ -402,14 +420,6 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_santiago_milo_2016",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_milo_vibrations_2014",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_autoqchem_2022",
       "reason": "not openly available"
     },
@@ -418,11 +428,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_lustosa_milo_2022",
+      "id": "paper_santiago_milo_2016",
       "reason": "not openly available"
     },
     {
-      "id": "paper_robert_2024",
+      "id": "paper_lustosa_milo_2022",
       "reason": "not openly available"
     },
     {
@@ -434,14 +444,46 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_robert_2024",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_smartpy_2025",
       "reason": "not openly available"
     },
     {
       "id": "paper_chemrefine_2026",
       "reason": "not openly available"
+    },
+    {
+      "id": "paper_tstools_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_autode_2021",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_crest_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_goodvibes_2020",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_thermomlip_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_racerts_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_edboplus_2022",
+      "reason": "not openly available"
     }
   ],
-  "found": 34,
-  "tried": 67
+  "found": 36,
+  "tried": 75
 }

@@ -27,6 +27,18 @@ export const CHEMISTRY_CLASSES = [
   'Reaction mechanism / methodology'
 ];
 
+export const STACK_LAYERS = [
+  'Ground-state conformers',
+  'TS search',
+  'TS ensembles',
+  'Thermochemistry',
+  'Descriptors',
+  'Supervised model',
+  'Experiment selection',
+  'MLIP / mechanism',
+  'Overview'
+];
+
 const GROUP_PATCH = {
   paper_flower_2025: ['Coley'],
   paper_duarte_almeta_2025: ['Duarte'],
@@ -45,7 +57,15 @@ const GROUP_PATCH = {
   paper_paton_sterimol_2019: ['Paton'],
   paper_harper_sterimol_2012: ['Sigman'],
   paper_santiago_mlr_2018: ['Sigman'],
-  paper_smartpy_2025: ['Sigman']
+  paper_smartpy_2025: ['Sigman'],
+  paper_crest_2024: ['Grimme'],
+  paper_autode_2021: ['Duarte'],
+  paper_tstools_2024: ['Stuyver'],
+  paper_racerts_2026: ['Jorner'],
+  paper_goodvibes_2020: ['Paton', 'Alegre-Requena'],
+  paper_thermomlip_2026: ['Stuyver'],
+  paper_edbo_2021: ['Doyle'],
+  paper_edboplus_2022: ['Doyle']
 };
 
 const ALIASES = {'M. Abolhasani': 'Milad Abolhasani', 'Z. Wang': 'Zhihao Wang'};
@@ -118,7 +138,94 @@ const REPRESENTATION = {
   paper_milo_smalldata_2023: 'Overview / mixed',
   paper_robert_2024: 'Overview / mixed',
   paper_smartpy_2025: 'Physical / chemist descriptors',
-  paper_chemrefine_2026: 'Overview / mixed'
+  paper_chemrefine_2026: 'Overview / mixed',
+  paper_crest_2024: 'Conformer / ensemble descriptors',
+  paper_autode_2021: 'MLIP / physics acceleration',
+  paper_tstools_2024: 'MLIP / physics acceleration',
+  paper_racerts_2026: 'MLIP / physics acceleration',
+  paper_goodvibes_2020: 'Physical / chemist descriptors',
+  paper_thermomlip_2026: 'MLIP / physics acceleration',
+  paper_edbo_2021: 'Dataset / experimental loop',
+  paper_edboplus_2022: 'Dataset / experimental loop'
+};
+
+const STACK_LAYER = {
+  paper_crest_2024: 'Ground-state conformers',
+  paper_autode_2021: 'TS search',
+  paper_tstools_2024: 'TS search',
+  paper_racerts_2026: 'TS ensembles',
+  paper_goodvibes_2020: 'Thermochemistry',
+  paper_thermomlip_2026: 'Thermochemistry',
+  paper_edbo_2021: 'Experiment selection',
+  paper_edboplus_2022: 'Experiment selection',
+  paper_ni_edbo_2024: 'Experiment selection',
+  paper_target_data_2025: 'Experiment selection',
+  paper_minerva_2025: 'Experiment selection',
+  paper_flexcat_2026: 'Experiment selection',
+  paper_fastcat_2024: 'Experiment selection',
+  paper_cernak_2026: 'Experiment selection',
+  paper_pidko_rh_hte_2024: 'Experiment selection',
+  paper_resource_hydroformylation_2025: 'Experiment selection',
+  paper_palladaelectro_2024: 'Experiment selection',
+  paper_probability_scope_2025: 'Experiment selection',
+  paper_kraken_2022: 'Descriptors',
+  paper_bunny_2026: 'Descriptors',
+  paper_corminboeuf_bidentate_2024: 'Descriptors',
+  paper_bisphosphine_multiobjective_2023: 'Descriptors',
+  paper_kulik_space_2023: 'Descriptors',
+  paper_kulik_manybody_2024: 'Descriptors',
+  paper_bisphos_2025: 'Descriptors',
+  paper_pd_fluorination_2025: 'Descriptors',
+  paper_sigman_gold_2026: 'Descriptors',
+  paper_ch_oxidation_2025: 'Descriptors',
+  paper_noxyl_2025: 'Descriptors',
+  paper_denmark_2025: 'Descriptors',
+  paper_denmark_catalyst_selection_2024: 'Descriptors',
+  paper_hda_2025: 'Descriptors',
+  paper_reid_local_2025: 'Descriptors',
+  paper_sunoj_2026: 'Descriptors',
+  paper_delta_phosphine_2024: 'Descriptors',
+  paper_hyster_sigman_2023: 'Descriptors',
+  paper_harper_sterimol_2012: 'Descriptors',
+  paper_milo_vibrations_2014: 'Descriptors',
+  paper_milo_science_2015: 'Descriptors',
+  paper_santiago_milo_2016: 'Descriptors',
+  paper_santiago_mlr_2018: 'Descriptors',
+  paper_paton_sterimol_2019: 'Descriptors',
+  paper_autoqchem_2022: 'Descriptors',
+  paper_lustosa_milo_2022: 'Descriptors',
+  paper_aqme_2023: 'Descriptors',
+  paper_smartpy_2025: 'Descriptors',
+  paper_shearilicine_2026: 'Descriptors',
+  paper_robert_2024: 'Descriptors',
+  paper_chemrefine_2026: 'Descriptors',
+  paper_reid_2025: 'Supervised model',
+  paper_milo_hie_2025: 'Supervised model',
+  paper_pdni_transfer_2025: 'Supervised model',
+  paper_transfer_nature_2026: 'Supervised model',
+  paper_bismuth_2025: 'Supervised model',
+  paper_sobo_2023: 'Supervised model',
+  paper_cbs_2024: 'Supervised model',
+  paper_hartwig_ru_2026: 'Supervised model',
+  paper_hartwig_libra_2026: 'Supervised model',
+  paper_hcat_2025: 'Supervised model',
+  paper_moleclip_2025: 'Supervised model',
+  paper_flower_2025: 'Supervised model',
+  paper_meta_selectivity_2025: 'Supervised model',
+  paper_rajaraman_2025: 'MLIP / mechanism',
+  paper_duarte_almeta_2025: 'MLIP / mechanism',
+  paper_cats_2025: 'MLIP / mechanism',
+  paper_rmlp_2025: 'MLIP / mechanism',
+  paper_mlips_dft_2026: 'MLIP / mechanism',
+  paper_compcat_ai_2026: 'MLIP / mechanism',
+  paper_corminboeuf_flp_2026: 'Overview',
+  paper_qmworkflow_2026: 'Overview',
+  paper_lowdata_workflows_2025: 'Overview',
+  paper_latent_transfer_2024: 'Overview',
+  paper_ai_homocat_review_2025: 'Overview',
+  paper_bestpractices_2026: 'Overview',
+  paper_organocat_review_2024: 'Overview',
+  paper_milo_smalldata_2023: 'Overview'
 };
 
 function chemistryClass(p){
@@ -126,9 +233,9 @@ function chemistryClass(p){
   if(/n2|ammonia|n2-to-nh3/.test(t))return 'CO2 / N2 small-molecule catalysis';
   if(/co2|frustrated lewis/.test(t))return 'CO2 / N2 small-molecule catalysis';
   if(/hydroformyl/.test(t))return 'Hydroformylation';
-  if(/electro/.test(t))return 'Electrocatalysis';
+  if(/electrocatal|electrochem/.test(t))return 'Electrocatalysis';
   if(/biocatal|ene-reductase/.test(t))return 'Biocatalysis';
-  if(/organo/.test(t))return 'Organocatalysis';
+  if(/organocatal/.test(t))return 'Organocatalysis';
   if(/bismuth|frustrated/.test(t))return 'Main-group catalysis';
   if(/fluorination|suzuki|buchwald|c–n|c-n|cross[- ]coupl|arylation|negishi/.test(t))return 'Cross-coupling';
   if(/c–h|c-h|borylation|deuteration|hydrogen isotope|hat |methylene/.test(t))return 'C–H functionalization';
@@ -163,6 +270,21 @@ function validationType(p){
   if(/random split/.test(t))return 'random split';
   if(/retrospective|case stud/.test(t))return 'retrospective';
   return 'mixed / unspecified';
+}
+
+function stackLayer(p){
+  if(STACK_LAYER[p.id])return STACK_LAYER[p.id];
+  if(p.stack_layer)return p.stack_layer;
+  const t=`${p.label} ${p.representation_class||''} ${p.paradigm||''} ${(p.derived_methods||[]).join(' ')} ${(p.derived_workflows||[]).join(' ')} ${p.paper_type||''}`.toLowerCase();
+  if(/review|perspective|viewpoint/.test(p.paper_type||'')||p.representation_class==='Overview / mixed')return 'Overview';
+  if(/racerts|ts ensemble|transition-state conformer/.test(t))return 'TS ensembles';
+  if(/autode|ts-tools|ts search|transition-state search|\bneb\b/.test(t))return 'TS search';
+  if(/crest|goat|conformer sampling|conformer–rotamer|ground-state conformer/.test(t))return 'Ground-state conformers';
+  if(/goodvibes|thermomlip|quasi-harmonic|thermochem/.test(t))return 'Thermochemistry';
+  if(/\bedbo\b|bayesian optimization|experiment selection|closed-loop|self-driving|\bhte\b/.test(t)||p.representation_class==='Dataset / experimental loop')return 'Experiment selection';
+  if(/mlip|interatomic/.test(t)||p.representation_class==='MLIP / physics acceleration')return 'MLIP / mechanism';
+  if(['Physical / chemist descriptors','Conformer / ensemble descriptors','Reusable ligand library'].includes(p.representation_class))return 'Descriptors';
+  return 'Supervised model';
 }
 
 function secondaryParadigms(p){
@@ -274,6 +396,7 @@ export function buildInsights(papers){
     chemistry: tally(papers, 'chemistry_class'),
     data_size: tally(papers, 'data_size_bin'),
     validation: tally(papers, 'validation_type'),
+    stack: tally(papers, 'stack_layer'),
     groups: tally(papers, p => (p.groups || []).filter(g => g !== 'Other')[0] || 'Other / mixed'),
     heatmap,
     gaps,
@@ -289,7 +412,7 @@ export function buildInsights(papers){
 
 export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v11',features_version:11,updated:'2026-09-06',enrichment:'Figure 1 thumbnails, DescriPyTor neighborhood, summaries'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v12',features_version:12,updated:'2026-09-06',enrichment:'Inspect table, stack layers, computational-stack papers'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -328,6 +451,7 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
     p.secondary_paradigms=secondaryParadigms(p);
     p.data_size_bin=dataSizeBin(p);
     p.validation_type=validationType(p);
+    p.stack_layer=stackLayer(p);
     p.summary=paperSummary(p);
     p.brief=paperBrief(p);
     p.ask_next=askNext(p);
@@ -353,6 +477,17 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
         'Catalyst-state / mechanistic',
         'Learned 3D / TS GNN',
         'Pretrained learned representation'
+      ]
+    },
+    computational_stack:{
+      label:'Computational stack',
+      description:'Structures → conformers → TS search → TS ensembles → thermochemistry → descriptors → model → experiment selection. CREST/GOAT are ground-state; racerTS is TS ensembles. EDBO is experiment selection, not supervised ML.',
+      ids:[
+        'paper_crest_2024','paper_autode_2021','paper_tstools_2024','paper_racerts_2026',
+        'paper_goodvibes_2020','paper_thermomlip_2026','paper_edbo_2021','paper_edboplus_2022',
+        'paper_ni_edbo_2024','paper_aqme_2023','paper_robert_2024','paper_autoqchem_2022',
+        'paper_paton_sterimol_2019','paper_duarte_almeta_2025','paper_rmlp_2025','paper_cats_2025',
+        'paper_minerva_2025','paper_flexcat_2026','paper_pidko_rh_hte_2024'
       ]
     }
   };

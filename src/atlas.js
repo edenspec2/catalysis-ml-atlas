@@ -15,15 +15,21 @@ const representationColors = {
   'Catalyst-state / mechanistic':'#69d1b2','Learned 3D / TS GNN':'#d88cff','Pretrained learned representation':'#c2a3ff',
   'MLIP / physics acceleration':'#51c5dd','Dataset / experimental loop':'#ff5fa2','Overview / mixed':'#9aa7b8'
 };
+const stackColors = {
+  'Ground-state conformers':'#7ad5a7','TS search':'#f0b45b','TS ensembles':'#ff8d72','Thermochemistry':'#78a9ff',
+  'Descriptors':'#d68dff','Supervised model':'#68a9ff','Experiment selection':'#ff5fa2','MLIP / mechanism':'#51c5dd','Overview':'#9aa7b8'
+};
 const groupColors = {
   Milo:'#38c8ea',Sigman:'#f2bc5c',Doyle:'#d68dff',Hartwig:'#68a9ff',Kulik:'#7ad5a7',Corminboeuf:'#ff8d72',
   Schwaller:'#e078bc',Denmark:'#a0d66f',Reid:'#c2a3ff',Abolhasani:'#54d7c1',Sunoj:'#f3cd78',Pidko:'#7f9cff',
   Hong:'#ff9d78',Coley:'#9ad0ff',Duarte:'#7fd0b5',Cernak:'#e0a36b',Rajaraman:'#c9a6ff',Nova:'#7fb3d8',
-  Glorius:'#f0c27a',Schreiner:'#8fd0a8',Woodward:'#f2a0b6','Alegre-Requena':'#9bb7e8',Other:'#9aa7b8'
+  Glorius:'#f0c27a',Schreiner:'#8fd0a8',Woodward:'#f2a0b6','Alegre-Requena':'#9bb7e8',Paton:'#b7c8ee',
+  Jorner:'#7ec8ff',Stuyver:'#c9e07a',Grimme:'#e8a06a',Other:'#9aa7b8'
 };
 const typeColors = { paper:'#f0c867', author:'#63a8ff', topic:'#64d59e', method:'#b991f0', workflow:'#ed80a5', program:'#34c9e8' };
 const yearColors = { '2026':'#72a8ff','2025':'#7fd0b5','2024':'#edbf6a','2023':'#d590e8','2022':'#e47d78', Unknown:'#9aa7b8' };
 const REPS = Object.keys(representationColors);
+const STACKS = Object.keys(stackColors);
 const VIEWS = { full:['paper','author','topic','method','workflow','program'], papers:['paper'], papers_authors:['paper','author'], papers_topics:['paper','topic'], papers_methods:['paper','method'], papers_workflows:['paper','workflow'] };
 
 let ALL = [], META = [], PAPER_LINKS = [], STORIES = {};
@@ -36,11 +42,11 @@ let lastLayoutSize = { w: 0, h: 0 };
 let relayouting = false;
 
 const primaryGroup = n => n.type === 'paper' ? (n.groups?.[0] || 'Other') : 'Other';
-const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.why, p.summary, p.brief, p.ask_next, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.stack_layer, p.data_size_bin, p.validation_type, p.why, p.summary, p.brief, p.ask_next, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 
 function colorMap() {
   const mode = $('colorby').value;
-  return mode === 'paradigm' ? paradigmColors : mode === 'representation' ? representationColors : mode === 'group' ? groupColors : mode === 'year' ? yearColors : typeColors;
+  return mode === 'paradigm' ? paradigmColors : mode === 'representation' ? representationColors : mode === 'stack' ? stackColors : mode === 'group' ? groupColors : mode === 'year' ? yearColors : typeColors;
 }
 function nodeColor(n) {
   const mode = $('colorby').value;
@@ -49,6 +55,7 @@ function nodeColor(n) {
   if (mode === 'type' || n.type !== 'paper') return typeColors[n.type] || '#9aa7b8';
   if (mode === 'paradigm') return paradigmColors[n.paradigm] || '#9aa7b8';
   if (mode === 'representation') return representationColors[n.representation_class] || '#9aa7b8';
+  if (mode === 'stack') return stackColors[n.stack_layer] || '#9aa7b8';
   if (mode === 'group') return groupColors[primaryGroup(n)] || groupColors.Other;
   if (mode === 'year') return yearColors[String(n.year)] || yearColors.Unknown;
   return '#9aa7b8';
@@ -58,6 +65,8 @@ function storyMatch(p) {
   const s = STORIES[activeStory]; if (!s) return true;
   if (s.filter?.years && !s.filter.years.includes(Number(p.year))) return false;
   if (s.filter?.relevance && !s.filter.relevance.includes(p.relevance)) return false;
+  if (s.ids && !s.ids.includes(p.id)) return false;
+  if (s.layers && !s.layers.includes(p.stack_layer)) return false;
   if (s.paradigms && !s.paradigms.includes(p.paradigm)) return false;
   if (s.representations && !s.representations.includes(p.representation_class)) return false;
   if (s.groups && !p.groups?.some(g => s.groups.includes(g))) return false;
@@ -70,6 +79,7 @@ function paperVisible(n) {
   if ($('hideReviews').checked && ['review','perspective','viewpoint'].includes((n.paper_type || '').toLowerCase())) return false;
   if ($('chemistry').value !== 'all' && n.chemistry_class !== $('chemistry').value) return false;
   if ($('representation').value !== 'all' && n.representation_class !== $('representation').value) return false;
+  if ($('stack') && $('stack').value !== 'all' && n.stack_layer !== $('stack').value) return false;
   if (!storyMatch(n)) return false;
   if (q && !paperText(n).includes(q) && !(n.type !== 'paper' && String(n.label || '').toLowerCase().includes(q))) return false;
   return true;
@@ -92,6 +102,7 @@ function persist() {
     localStorage.setItem('cml:atlas', JSON.stringify({
       q:$('q').value, view:$('view').value, layout:$('layout').value, colorby:$('colorby').value,
       year:$('year').value, chemistry:$('chemistry').value, representation:$('representation').value,
+      stack:$('stack')?.value || 'all',
       density:$('density').value, labels:$('labels').value, story:activeStory,
       showFigs:$('showFigs')?.checked !== false
     }));
@@ -198,9 +209,9 @@ function applyLayout(mode) {
       const cx = (yi - (years.length - 1) / 2) * colW;
       packRect(members, cx - colW * 0.42, -h * 0.4, cx + colW * 0.42, h * 0.4);
     });
-  } else if (mode === 'paradigm' || mode === 'representation' || mode === 'group') {
-    const cats = mode === 'paradigm' ? Object.keys(paradigmColors) : mode === 'representation' ? REPS : Object.keys(groupColors);
-    const key = n => mode === 'paradigm' ? n.paradigm : mode === 'representation' ? n.representation_class : primaryGroup(n);
+  } else if (mode === 'paradigm' || mode === 'representation' || mode === 'group' || mode === 'stack') {
+    const cats = mode === 'paradigm' ? Object.keys(paradigmColors) : mode === 'representation' ? REPS : mode === 'stack' ? STACKS : Object.keys(groupColors);
+    const key = n => mode === 'paradigm' ? n.paradigm : mode === 'representation' ? n.representation_class : mode === 'stack' ? n.stack_layer : primaryGroup(n);
     const list = cats.filter(c => ps.some(p => key(p) === c));
     const cols = Math.max(1, Math.ceil(Math.sqrt(list.length * (w / Math.max(h, 1)))));
     const rows = Math.max(1, Math.ceil(list.length / cols));
@@ -442,6 +453,7 @@ function updateHud() {
   else if ($('colorby').value === 'group') papers.forEach(n => used.add(primaryGroup(n)));
   else if ($('colorby').value === 'year') papers.forEach(n => used.add(String(n.year || 'Unknown')));
   else if ($('colorby').value === 'representation') papers.forEach(n => used.add(n.representation_class));
+  else if ($('colorby').value === 'stack') papers.forEach(n => used.add(n.stack_layer));
   else papers.forEach(n => used.add(n.paradigm));
   $('legend').innerHTML = `<b>Color: ${esc($('colorby').value)}</b>` + Object.entries(cmap).filter(([k]) => used.has(k)).slice(0, 12).map(([k,v]) => `<div class="legendrow"><span class="swatch" style="background:${v}"></span>${esc(k)}</div>`).join('');
 }
@@ -451,7 +463,7 @@ function renderPapers() {
   $('paper-count').textContent = papers.length;
   $('papers').classList.toggle('fig-list', figs);
   $('papers').innerHTML = papers.length
-    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}${figs && p.figure ? ' has-fig' : ''}" data-node="${esc(p.id)}">${figs ? figureButton(p, false) : ''}<span class="row-text"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></span></button>`).join('')
+    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}${figs && p.figure ? ' has-fig' : ''}" data-node="${esc(p.id)}">${figs ? figureButton(p, false) : ''}<span class="row-text"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.stack_layer || p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></span></button>`).join('')
     : '<p class="muted">No papers match these filters.</p>';
 }
 function similarPapers(id) {
@@ -506,14 +518,16 @@ function renderSelection() {
     <h2>${esc(n.label)}</h2>
     ${figureButton(n, true)}
     ${n.full_title && n.full_title !== n.label ? `<p class="sel-full muted">${esc(n.full_title)}</p>` : ''}
+    <p class="fact-strip"><span><i>n</i>${esc(n.data_size_bin || 'unspecified')}</span><span><i>Checked</i>${esc(n.validation_type || 'unspecified')}</span><span><i>Layer</i>${esc(n.stack_layer || 'unspecified')}</span></p>
     <p class="summary">${esc(n.summary || n.why || '')}</p>
     <p class="prompt">${esc(n.ask_next || '')}</p>
     <p class="muted">${esc(n.use_for || '')}</p>
     <dl class="mini">
+      ${n.stack_layer ? `<dt>Layer</dt><dd>${esc(n.stack_layer)}</dd>` : ''}
       ${n.data_regime ? `<dt>Data</dt><dd>${esc(n.data_size_bin ? n.data_size_bin + ' · ' : '')}${esc(n.data_regime)}</dd>` : ''}
       ${n.validation ? `<dt>Checked</dt><dd>${esc(n.validation_type ? n.validation_type + ' · ' : '')}${esc(n.validation)}</dd>` : ''}
     </dl>
-    <div class="tags">${[n.chemistry_class, n.representation_class, n.paradigm, ...(n.groups||[]).filter(g => g !== 'Other')].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <div class="tags">${[n.chemistry_class, n.representation_class, n.stack_layer, n.paradigm, ...(n.groups||[]).filter(g => g !== 'Other')].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
     ${near.length ? `<p class="eyebrow">Nearby papers</p><div class="near">${near.map(p => `<button type="button" class="rowitem" data-node="${esc(p.id)}"><span>${esc(p.label)}</span><span class="muted">${esc(p.reason || '')}</span></button>`).join('')}</div>` : ''}
     <div class="actions"><a class="primary" href="${esc(url(n.url))}" target="_blank" rel="noopener">Read paper ↗</a><button type="button" id="clear-focus">Clear focus</button></div></div>`;
 }
@@ -577,8 +591,10 @@ function fillFilters(papers) {
   [...new Set(papers.map(p => p.chemistry_class).filter(Boolean))].sort().forEach(c => chem.insertAdjacentHTML('beforeend', `<option>${esc(c)}</option>`));
   const rep = $('representation');
   REPS.filter(r => papers.some(p => p.representation_class === r)).forEach(r => rep.insertAdjacentHTML('beforeend', `<option>${esc(r)}</option>`));
+  const stack = $('stack');
+  if (stack) STACKS.filter(s => papers.some(p => p.stack_layer === s)).forEach(s => stack.insertAdjacentHTML('beforeend', `<option>${esc(s)}</option>`));
   const bar = $('storybar');
-  const order = ['milo','chemist_frames','representation','small_data','automation','physics','frontier_2026'];
+  const order = ['milo','chemist_frames','computational_stack','representation','small_data','automation','physics','frontier_2026'];
   [...new Set([...order, ...Object.keys(STORIES)])].forEach(id => {
     const s = STORIES[id]; if (!s) return;
     const b = document.createElement('button');
@@ -618,8 +634,8 @@ function bindGraph() {
   }, { passive:false });
 }
 function bind() {
-  ['q','view','year','density','chemistry','representation','hideReviews','hideIsolates'].forEach(id =>
-    $(id).addEventListener(id === 'q' ? 'input' : 'change', () => { clearSelection(); buildData(); }));
+  ['q','view','year','density','chemistry','representation','stack','hideReviews','hideIsolates'].forEach(id =>
+    $(id)?.addEventListener(id === 'q' ? 'input' : 'change', () => { clearSelection(); buildData(); }));
   $('showFigs')?.addEventListener('change', () => { applyLayout($('layout').value); renderPapers(); persist(); });
   $('layout').addEventListener('change', () => { persist(); applyLayout($('layout').value); });
   $('colorby').addEventListener('change', () => { paintGraph(); persist(); });
@@ -628,7 +644,9 @@ function bind() {
   $('center').addEventListener('click', () => fitGraph(true));
   $('reset').addEventListener('click', () => {
     $('q').value = ''; $('view').value = 'papers'; $('layout').value = 'free'; $('colorby').value = 'paradigm';
-    $('year').value = 'all'; $('chemistry').value = 'all'; $('representation').value = 'all'; $('density').value = 'normal';
+    $('year').value = 'all'; $('chemistry').value = 'all'; $('representation').value = 'all';
+    if ($('stack')) $('stack').value = 'all';
+    $('density').value = 'normal';
     $('labels').value = 'papers'; $('focus').value = '1'; $('hideReviews').checked = false; $('hideIsolates').checked = false;
     if ($('showFigs')) $('showFigs').checked = true;
     activeStory = null; document.querySelectorAll('[data-story]').forEach(x => x.classList.remove('active'));

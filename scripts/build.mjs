@@ -11,7 +11,7 @@ try{figures=JSON.parse(await readFile('public/figures.json','utf8'))}catch{}
 const graph=enrichGraph(source,{metadata,authors,figures});
 await writeFile('dist/graph.json',JSON.stringify(graph));
 for(const [src,dst] of [['three/build/three.min.js','three.min.js'],['3d-force-graph/dist/3d-force-graph.min.js','3d-force-graph.min.js'],['three-spritetext/dist/three-spritetext.min.js','three-spritetext.min.js']])await copyFile('node_modules/'+src,'dist/vendor/'+dst);
-const cols=['id','year','published_date','label','full_title','doi','url','paradigm','secondary_paradigms','representation_class','chemistry_class','chemistry','data_size_bin','data_regime','validation_type','validation'];
+const cols=['id','year','published_date','label','full_title','doi','url','paradigm','secondary_paradigms','representation_class','stack_layer','chemistry_class','chemistry','data_size_bin','data_regime','validation_type','validation'];
 await writeFile('dist/papers.csv',cols.join(',')+'\n'+graph.nodes.filter(p=>p.type==='paper').map(p=>cols.map(k=>'"'+String(Array.isArray(p[k])?p[k].join('; '):p[k]??'').replaceAll('"','""')+'"').join(',')).join('\n'));
 await writeFile('dist/.nojekyll','');
 const papers=graph.nodes.filter(p=>p.type==='paper');

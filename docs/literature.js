@@ -33,9 +33,16 @@ export function uniqueWorks(works){
  });
 }
 export function paperText(p){
- return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.why,p.summary,p.brief,p.ask_next,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+ return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.stack_layer,p.data_size_bin,p.validation_type,p.why,p.summary,p.brief,p.ask_next,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 }
-export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},chemistry='',representation=''}={}){
+function focusMatch(p,focus,text){
+ if(!focus)return true;
+ if(focus==='milo')return (p.groups||[]).includes('Milo')||(p.derived_authors||[]).some(a=>/anat milo/i.test(a));
+ if(focus==='stack')return ['Ground-state conformers','TS search','TS ensembles','Thermochemistry'].includes(p.stack_layer)||/crest|autode|ts-tools|racerts|goodvibes|thermomlip|\bedbo\b/.test(text);
+ const re={small:/small.data|sparse|few.shot|low.data|transfer/,representation:/descriptor|representation|conformer|3d|ligand.space|ligand library/,autonomous:/autonom|bayesian|active.learning|self.driving|hte/,mechanism:/mechanis|mlip|interatomic|transition.state/}[focus];
+ return !re||re.test(text);
+}
+export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},chemistry='',representation='',stack=''}={}){
  return papers.filter(p=>{
   const text=paperText(p);
   return(!q||text.includes(q.toLowerCase()))
@@ -43,7 +50,8 @@ export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},
    &&(!unread||!read[p.id])
    &&(!chemistry||p.chemistry_class===chemistry)
    &&(!representation||p.representation_class===representation)
-   &&(!focus||(focus==='milo'?((p.groups||[]).includes('Milo')||(p.derived_authors||[]).some(a=>/anat milo/i.test(a))):({small:/small.data|sparse|few.shot|low.data|transfer/,representation:/descriptor|representation|conformer|3d|ligand.space|ligand library/,autonomous:/autonom|bayesian|active.learning|self.driving|hte/,mechanism:/mechanis|mlip|interatomic|transition.state/}[focus]?.test(text))));
+   &&(!stack||p.stack_layer===stack)
+   &&focusMatch(p,focus,text);
  });
 }
 export function discoveryQueries(scope){return scope==='milo'?['Anat Milo']:scope==='chemistry'?['machine learning chemistry','molecular representation learning','generative chemistry','machine learning interatomic potentials']:['machine learning catalysis','ligand design machine learning','Bayesian reaction optimization','autonomous catalysis']}

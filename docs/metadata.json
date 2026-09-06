@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T10:00:11.145Z",
+  "checked_at": "2026-09-06T12:03:22.955Z",
   "records": {
     "paper_kraken_2022": {
       "title": "A Comprehensive Discovery Platform for Organophosphorus Ligands for Catalysis",
@@ -402,6 +402,54 @@
       "published_date": "2026-02-10",
       "doi": "10.1021/acs.jctc.5c01881",
       "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.5c01881"
+    },
+    "paper_crest_2024": {
+      "title": "CREST—A program for the exploration of low-energy molecular chemical space",
+      "published_date": "2024-03-21",
+      "doi": "10.1063/5.0197592",
+      "source": "https://api.crossref.org/works/10.1063%2F5.0197592"
+    },
+    "paper_autode_2021": {
+      "title": "autodE: Automated Calculation of Reaction Energy Profiles— Application to Organic and Organometallic Reactions",
+      "published_date": "2020-12-22",
+      "doi": "10.1002/anie.202011941",
+      "source": "https://api.crossref.org/works/10.1002%2Fanie.202011941"
+    },
+    "paper_tstools_2024": {
+      "title": "TS‐tools: Rapid and automated localization of transition states based on a textual reaction SMILES input",
+      "published_date": "2024-06-08",
+      "doi": "10.1002/jcc.27374",
+      "source": "https://api.crossref.org/works/10.1002%2Fjcc.27374"
+    },
+    "paper_racerts_2026": {
+      "title": "Rapid Generation of Transition-State Conformer Ensembles via Constrained Distance Geometry",
+      "published_date": "2026-02-12",
+      "doi": "10.1021/acs.jcim.5c02794",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jcim.5c02794"
+    },
+    "paper_goodvibes_2020": {
+      "title": "GoodVibes: automated thermochemistry for heterogeneous computational chemistry data",
+      "published_date": "2020-04-24",
+      "doi": "10.12688/f1000research.22758.1",
+      "source": "https://api.crossref.org/works/10.12688%2Ff1000research.22758.1"
+    },
+    "paper_thermomlip_2026": {
+      "title": "MLIP-Enhanced Thermochemistry Predictions across Organic Chemical Space",
+      "published_date": "2026-08-31",
+      "doi": "10.1021/acs.jctc.6c00936",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.6c00936"
+    },
+    "paper_edbo_2021": {
+      "title": "Bayesian reaction optimization as a tool for chemical synthesis",
+      "published_date": "2021-02-03",
+      "doi": "10.1038/s41586-021-03213-y",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41586-021-03213-y"
+    },
+    "paper_edboplus_2022": {
+      "title": "A Multi-Objective Active Learning Platform and Web App for Reaction Optimization",
+      "published_date": "2022-10-19",
+      "doi": "10.1021/jacs.2c08592",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.2c08592"
     }
   },
   "failures": []
