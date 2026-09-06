@@ -28,8 +28,8 @@ const VIEWS = { full:['paper','author','topic','method','workflow','program'], p
 
 let ALL = [], META = [], PAPER_LINKS = [], STORIES = {};
 let currentData = { nodes:[], links:[] }, currentSelection = null, activeStory = null;
-let canvas, ctx, hoverId = null, layoutTicks = 0;
-const cam = { yaw: 0.55, pitch: 0.32, zoom: 1, autoRotate };
+let canvas, ctx, hoverId = null, layoutTicks = 0, layoutKind = 'free';
+const cam = { yaw: 0.42, pitch: 0.18, zoom: 1, autoRotate };
 const pointer = { down:false, x:0, y:0, moved:false, id:null };
 
 const primaryGroup = n => n.type === 'paper' ? (n.groups?.[0] || 'Other') : 'Other';
@@ -119,45 +119,53 @@ function openFigure(id) {
   if (!$('figbox').open) $('figbox').showModal();
 }
 function seedPositions(nodes) {
-  nodes.forEach(n => {
-    const a = (hash(n.id) / 0xffffffff) * Math.PI * 2;
-    const b = (hash(n.id + 'p') / 0xffffffff) * Math.PI;
-    const r = 48 + (hash(n.id + 'r') % 28);
-    n.x = r * Math.sin(b) * Math.cos(a);
-    n.y = r * Math.cos(b);
-    n.z = r * Math.sin(b) * Math.sin(a);
+  const N = Math.max(1, nodes.length);
+  const minSep = 40;
+  const R = minSep * Math.sqrt(N / Math.PI) * 1.2;
+  nodes.slice().sort((a,b) => hash(a.id) - hash(b.id)).forEach((n, i) => {
+    const k = i + 0.5;
+    const r = R * Math.sqrt(k / N);
+    const theta = Math.PI * (1 + Math.sqrt(5)) * k;
+    n.x = r * Math.cos(theta);
+    n.y = r * Math.sin(theta);
+    n.z = ((hash(n.id) % 100) / 100 - .5) * 10;
     n.vx = n.vy = n.vz = 0;
   });
 }
 function applyLayout(mode) {
+  layoutKind = mode || 'free';
   const nodes = currentData.nodes;
   const ps = nodes.filter(n => n.type === 'paper');
   seedPositions(nodes);
   if (mode === 'year') {
     const years = [...new Set(ps.map(p => Number(p.year) || 0))].sort((a,b) => a - b);
     const yi = Object.fromEntries(years.map((y,i) => [y,i]));
+    const col = Math.max(90, 520 / Math.max(1, years.length));
     nodes.forEach(n => {
       if (n.type !== 'paper') return;
-      n.x = (yi[Number(n.year) || 0] - (years.length - 1) / 2) * 72;
-      n.y = ((hash(n.id) % 1000) / 1000 - .5) * 110;
-      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 70;
+      n.x = (yi[Number(n.year) || 0] - (years.length - 1) / 2) * col;
+      n.y = ((hash(n.id) % 1000) / 1000 - .5) * 220;
+      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 36;
       n.vx = n.vy = n.vz = 0;
     });
-    layoutTicks = 28;
+    layoutTicks = 20;
   } else if (mode === 'paradigm' || mode === 'representation' || mode === 'group') {
     const cats = mode === 'paradigm' ? Object.keys(paradigmColors) : mode === 'representation' ? REPS : Object.keys(groupColors);
     const key = n => mode === 'paradigm' ? n.paradigm : mode === 'representation' ? n.representation_class : primaryGroup(n);
-    const ci = Object.fromEntries(cats.map((x,i) => [x,i]));
+    const list = cats.filter(c => ps.some(p => key(p) === c));
+    const ci = Object.fromEntries(list.map((x,i) => [x,i]));
+    const ring = Math.max(140, 22 * Math.sqrt(ps.length));
     nodes.forEach(n => {
       if (n.type !== 'paper') return;
-      const a = 2 * Math.PI * (ci[key(n)] || 0) / cats.length, r = 110;
-      n.x = r * Math.cos(a) + ((hash(n.id) % 100) / 100 - .5) * 36;
-      n.y = r * Math.sin(a) + ((hash(n.id + 'y') % 100) / 100 - .5) * 36;
-      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 50;
+      const a = 2 * Math.PI * (ci[key(n)] || 0) / Math.max(1, list.length);
+      const jitter = 18 + (hash(n.id) % 28);
+      n.x = ring * Math.cos(a) + ((hash(n.id) % 100) / 100 - .5) * jitter;
+      n.y = ring * Math.sin(a) + ((hash(n.id + 'y') % 100) / 100 - .5) * jitter;
+      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 40;
       n.vx = n.vy = n.vz = 0;
     });
-    layoutTicks = 32;
-  } else layoutTicks = 48;
+    layoutTicks = 20;
+  } else layoutTicks = 0;
   fitGraph(true);
 }
 function stepForces() {
@@ -165,40 +173,52 @@ function stepForces() {
   layoutTicks--;
   const nodes = currentData.nodes, links = currentData.links, n = nodes.length;
   if (!n) return;
+  const clustered = layoutKind !== 'free';
   const byId = new Map(nodes.map(x => [x.id, x]));
+  const minD = clustered ? 28 : 36;
+  const bound = Math.max(260, 18 * Math.sqrt(n) * 4);
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j < n; j++) {
       const a = nodes[i], b = nodes[j];
       let dx = a.x - b.x, dy = a.y - b.y, dz = a.z - b.z;
       let d2 = dx * dx + dy * dy + dz * dz;
-      if (d2 < 25) d2 = 25;
-      const inv = Math.min(0.12, 12 / d2);
-      a.vx += dx * inv; a.vy += dy * inv; a.vz += dz * inv;
-      b.vx -= dx * inv; b.vy -= dy * inv; b.vz -= dz * inv;
+      if (d2 < 1) d2 = 1;
+      const d = Math.sqrt(d2);
+      const rep = Math.min(0.06, 36 / d2);
+      a.vx += dx * rep; a.vy += dy * rep; a.vz += dz * rep * 0.4;
+      b.vx -= dx * rep; b.vy -= dy * rep; b.vz -= dz * rep * 0.4;
+      if (d < minD) {
+        const push = (minD - d) * 0.08;
+        a.vx += (dx / d) * push; a.vy += (dy / d) * push;
+        b.vx -= (dx / d) * push; b.vy -= (dy / d) * push;
+      }
     }
   }
+  const rest = clustered ? 48 : 70;
+  const linkK = clustered ? 0.002 : 0.0025;
   for (const l of links) {
     const a = byId.get(eid(l.source)), b = byId.get(eid(l.target)); if (!a || !b) continue;
     const dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
     const dist = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
-    const k = (dist - 52) * 0.01;
-    a.vx += dx * k; a.vy += dy * k; a.vz += dz * k;
-    b.vx -= dx * k; b.vy -= dy * k; b.vz -= dz * k;
+    const k = (dist - rest) * linkK;
+    a.vx += dx * k; a.vy += dy * k; a.vz += dz * k * 0.3;
+    b.vx -= dx * k; b.vy -= dy * k; b.vz -= dz * k * 0.3;
   }
+  const grav = clustered ? 0.0008 : 0.0006;
   for (const p of nodes) {
-    p.vx = (p.vx - p.x * 0.035) * 0.62;
-    p.vy = (p.vy - p.y * 0.035) * 0.62;
-    p.vz = (p.vz - p.z * 0.035) * 0.62;
-    p.x = Math.max(-140, Math.min(140, p.x + p.vx));
-    p.y = Math.max(-140, Math.min(140, p.y + p.vy));
-    p.z = Math.max(-140, Math.min(140, p.z + p.vz));
+    p.vx = (p.vx - p.x * grav) * 0.8;
+    p.vy = (p.vy - p.y * grav) * 0.8;
+    p.vz = (p.vz - p.z * grav) * 0.8;
+    p.x = Math.max(-bound, Math.min(bound, p.x + p.vx));
+    p.y = Math.max(-bound, Math.min(bound, p.y + p.vy));
+    p.z = Math.max(-28, Math.min(28, p.z + p.vz));
     if (!Number.isFinite(p.x) || !Number.isFinite(p.y) || !Number.isFinite(p.z)) {
       const a = (hash(p.id) / 0xffffffff) * Math.PI * 2;
-      p.x = Math.cos(a) * 70; p.y = Math.sin(a) * 70; p.z = ((hash(p.id) % 100) / 100 - .5) * 36;
+      p.x = Math.cos(a) * 80; p.y = Math.sin(a) * 80; p.z = 0;
       p.vx = p.vy = p.vz = 0;
     }
   }
-  if (layoutTicks % 8 === 0) fitGraph(false);
+  if (layoutTicks === 0) fitGraph(false);
 }
 function project(n, w, h) {
   const cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
@@ -208,7 +228,7 @@ function project(n, w, h) {
   const z2 = Math.max(-520, n.y * sp + z1 * cp);
   const depth = 900 / (900 + z2);
   const s = depth * cam.zoom;
-  const r = (n.type === 'paper' ? 9 : 6) * Math.min(1.35, depth) * (n._selected ? 1.4 : 1);
+  const r = (n.type === 'paper' ? 12 : 7) * Math.min(1.35, depth) * (n._selected ? 1.35 : 1);
   return { x: w / 2 + x1 * s, y: h / 2 + y2 * s, r, z: z2, depth };
 }
 function sizeCanvas() {
@@ -228,7 +248,7 @@ function fitGraph(resetAngles) {
   const el = $('graph');
   const w = el?.clientWidth || canvas?.clientWidth || 800;
   const h = el?.clientHeight || canvas?.clientHeight || 500;
-  if (resetAngles) { cam.yaw = 0.55; cam.pitch = 0.32; }
+  if (resetAngles) { cam.yaw = 0.42; cam.pitch = 0.18; }
   if (!currentData.nodes.length) { cam.zoom = 1.2; return; }
   const prev = cam.zoom;
   cam.zoom = 1;
@@ -241,7 +261,7 @@ function fitGraph(resetAngles) {
   }
   if (!Number.isFinite(minX)) { cam.zoom = prev || 1.2; return; }
   const bw = Math.max(48, maxX - minX), bh = Math.max(48, maxY - minY);
-  cam.zoom = Math.max(0.55, Math.min(3.4, Math.min((w * 0.82) / bw, (h * 0.82) / bh)));
+  cam.zoom = Math.max(0.45, Math.min(4.2, Math.min((w * 0.88) / bw, (h * 0.86) / bh)));
 }
 function draw() {
   if (!ctx) { requestAnimationFrame(draw); return; }
@@ -267,15 +287,18 @@ function draw() {
     const ordered = currentData.nodes.slice().sort((a,b) => (proj.get(a.id)?.z || 0) - (proj.get(b.id)?.z || 0));
     const labels = $('labels')?.value || 'papers';
     const labeled = new Set();
+    const papers = ordered.filter(n => n.type === 'paper');
     if (labels === 'papers') {
-      ordered.filter(n => n.type === 'paper').slice(-12).forEach(n => labeled.add(n.id));
+      const cap = w < 720 ? 14 : papers.length <= 80 ? papers.length : 28;
+      papers.slice(-cap).forEach(n => labeled.add(n.id));
     }
+    const boxes = [];
     for (const n of ordered) {
       const p = proj.get(n.id);
       if (!p || !Number.isFinite(p.x) || !Number.isFinite(p.r)) continue;
       const col = nodeColor(n);
       ctx.beginPath();
-      ctx.arc(p.x, p.y, Math.max(5.5, Math.min(18, p.r)), 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, Math.max(6.5, Math.min(20, p.r)), 0, Math.PI * 2);
       ctx.fillStyle = col;
       ctx.globalAlpha = n._dim ? 0.28 : 1;
       ctx.fill();
@@ -286,12 +309,16 @@ function draw() {
       const show = labels === 'all' || (labels === 'papers' && labeled.has(n.id)) || (labels === 'selected' && n._selected) || n.id === hoverId;
       if (show) {
         ctx.font = (n._selected ? '700 ' : '600 ') + (n.type === 'paper' ? '12px ' : '11px ') + 'system-ui,sans-serif';
-        const text = String(n.label || n.id).slice(0, 34);
+        const text = String(n.label || n.id).slice(0, 36);
         const tw = ctx.measureText(text).width;
+        const lx = p.x + p.r + 4, ly = p.y - 9, lw = tw + 10, lh = 18;
+        const hit = boxes.some(b => lx < b.x + b.w && lx + lw > b.x && ly < b.y + b.h && ly + lh > b.y);
+        if (hit && n.id !== hoverId && !n._selected) continue;
+        boxes.push({x:lx,y:ly,w:lw,h:lh});
         ctx.fillStyle = 'rgba(8,12,18,.82)';
-        ctx.fillRect(p.x + p.r + 4, p.y - 9, tw + 10, 18);
+        ctx.fillRect(lx, ly, lw, lh);
         ctx.fillStyle = '#eef4fb';
-        ctx.fillText(text, p.x + p.r + 9, p.y + 4);
+        ctx.fillText(text, lx + 5, p.y + 4);
       }
     }
   } catch (err) {
@@ -363,7 +390,7 @@ function renderSelection() {
     box.innerHTML = papers.length ? `<div class="sel-card"><p class="eyebrow">This view</p>
       <p class="view-stats"><b>${s.n}</b> papers · <b>${papers.filter(p=>p.figure).length}</b> with Figure 1 · <b>${s.hard}</b> prospective/OOD/closed-loop</p>
       <p class="muted">${s.topChem ? `Most papers: ${esc(s.topChem[0])} (${s.topChem[1]}).` : ''} ${s.topRep ? `Dominant representation: ${esc(s.topRep[0])}.` : ''}</p>
-      <p class="prompt">Tap a node to see Figure 1. Tap the figure to enlarge it for the train or plane.</p></div>` : '';
+      <p class="prompt">All ${s.n} papers are in the graph and in the list. Use Fit if they look bunched. Timeline or paradigm layouts spread them further.</p></div>` : '';
     if (!papers.length) box.hidden = true;
     return;
   }
@@ -489,7 +516,7 @@ function bindGraph() {
   });
   canvas.addEventListener('wheel', e => {
     e.preventDefault();
-    cam.zoom = Math.max(0.45, Math.min(3.2, cam.zoom * (e.deltaY > 0 ? 0.92 : 1.08)));
+    cam.zoom = Math.max(0.45, Math.min(4.2, cam.zoom * (e.deltaY > 0 ? 0.92 : 1.08)));
   }, { passive:false });
 }
 function bind() {
