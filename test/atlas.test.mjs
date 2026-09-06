@@ -1,5 +1,5 @@
 
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey} from '../src/literature.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey,looksLikeDoi,searchCrossrefURL,searchWorks} from '../src/literature.js';
 test('DOI normalization and deduplication',()=>{assert.equal(doiKey('https://doi.org/10.ABC/XYZ'),'10.abc/xyz');assert.equal(uniqueWorks([{doi:'10.ABC/x'},{doi:'10.abc/X'}]).length,1);assert.equal(uniqueWorks([{doi:'10.a/1',label:'Same Title'},{doi:'10.b/2',label:'Same Title'}]).length,1);assert.ok(titleKey('Hello, World!'))});
 test('catalysis discovery drops protein/drug ligand papers and keeps catalytic ligand work',()=>{
  const keep=normalizeWork({title:['Bayesian Optimization for Accelerated Ligand Selection in Atroposelective Negishi Coupling'],DOI:'10.keep/1'});
@@ -13,6 +13,16 @@ test('discovery excludes unrelated and future work, tolerates partial failure',a
 test('all-provider failure is surfaced',async()=>{await assert.rejects(discover({fetcher:async()=>{throw Error('offline')}}),/unavailable/)});
 test('Milo filtering requires Anat Milo, not other Milo authors',()=>{assert.equal(relevant(normalizeWork({author:[{given:'Anat',family:'Milo'}]}),'milo'),true);assert.equal(relevant(normalizeWork({author:[{given:'Peter',family:'Milo'}]}),'milo'),false)});
 test('feed query uses date bounds and relevance before local date sort',()=>{const u=new URL(crossrefURL('ligand machine learning','catalysis',30,new Date('2026-09-06')));assert.equal(u.searchParams.get('filter'),'from-pub-date:2026-08-07,until-pub-date:2026-09-06');assert.equal(u.searchParams.get('sort'),'relevance')});
+test('DOI or title search hits Crossref and can return a work',async()=>{
+ assert.equal(looksLikeDoi('https://doi.org/10.1021/jacs.1c09718'),true);
+ assert.equal(looksLikeDoi('ligand GNN hydroformylation'),false);
+ const doiURL=searchCrossrefURL('https://doi.org/10.1021/jacs.1c09718');
+ assert.ok(doiURL.endsWith('/works/10.1021%2Fjacs.1c09718'));
+ const qURL=new URL(searchCrossrefURL('hydroformylation GNN',3650,new Date('2026-09-06')));
+ assert.equal(qURL.searchParams.get('query'),'hydroformylation GNN');
+ const found=await searchWorks({q:'10.1234/add.1',fetcher:async()=>({ok:true,json:async()=>({message:{DOI:'10.1234/add.1',title:['A catalytic ML paper'],author:[{given:'A',family:'B'}]}})})});
+ assert.equal(found.doi,true);assert.equal(found.papers.length,1);assert.equal(found.papers[0].doi,'10.1234/add.1');
+});
 test('corpus integrity and preserved atlas',async()=>{const g=JSON.parse(await readFile('dist/graph.json','utf8'));const ps=g.nodes.filter(p=>p.type==='paper');assert.equal(ps.length,55);assert.equal(new Set(ps.filter(p=>p.doi).map(p=>doiKey(p.doi))).size,54);assert.equal(ps.filter(p=>p.published_date).length,54);assert.ok(ps.every(p=>p.summary&&p.summary.length>24&&p.ask_next&&p.brief&&p.use_for));
 assert.ok(g.insights?.stats?.papers===55);
 assert.ok(g.insights.gaps.length>=3);
@@ -22,6 +32,7 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  const dom=new JSDOM(html,{url:'https://atlas.test/',runScripts:'outside-only'}),w=dom.window;
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};
  w.discover=async()=>{throw Error('offline')};w.filterPapers=filterPapers;w.doiKey=doiKey;
+ w.searchWorks=async({q})=>({papers:[{id:'doi:10.1234/add.1',doi:'10.1234/add.1',label:'Machine learning for a new catalytic ligand',full_title:'Machine learning for a new catalytic ligand',candidate:true,derived_authors:['Test Author'],journal:'JACS',year:2025,published_date:'2025-06-01',url:'https://doi.org/10.1234/add.1',derived_methods:[],derived_topics:[],groups:[]}],fetched_at:'2026-09-06T00:00:00Z',query:q,doi:true});
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('graph.json')?graph:{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
  w.eval((await readFile('src/app.js','utf8')).replace(/^\s*import .*?;\s*/,''));
  await new Promise(r=>setTimeout(r,20));
@@ -35,6 +46,10 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  q('#detail-body [data-read]').click();assert.ok(w.localStorage.getItem('cml:read').includes(id));
  q('#detail-body [data-compare]').click();q('#close-detail').click();q('[data-view="compare"]').click();assert.ok(q('#comparison table').textContent.includes('Validation'));
  q('[data-view="latest"]').click();await new Promise(r=>setTimeout(r,20));assert.ok(q('#feed-status').textContent.includes('snapshot'));assert.equal(q('#refresh').disabled,false);
+ q('#find').value='10.1234/add.1';q('#find-go').click();await new Promise(r=>setTimeout(r,20));
+ assert.ok(q('[data-add]'));q('[data-add]').click();assert.ok(w.localStorage.getItem('cml:added').includes('10.1234/add.1'));
+ q('#focus').value='';q('#focus').dispatchEvent(new w.Event('change'));q('[data-view="library"]').click();
+ assert.ok([...w.document.querySelectorAll('.paper')].some(el=>el.textContent.includes('new catalytic ligand')));
  dom.window.close();
 });
 

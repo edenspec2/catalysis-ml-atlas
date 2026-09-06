@@ -52,6 +52,27 @@ export function crossrefURL(query,scope,days,now=new Date()){
  const p=new URLSearchParams({[scope==='milo'?'query.author':'query.title']:query,filter:`from-pub-date:${start.toISOString().slice(0,10)},until-pub-date:${until}`,rows:'100',sort:'relevance',order:'desc',select:'DOI,title,author,container-title,published,published-online,issued,type,publisher'});
  return 'https://api.crossref.org/works?'+p;
 }
+export function looksLikeDoi(value){
+ return /^10\.\d{4,9}\/\S+$/i.test(doiKey(value));
+}
+export function searchCrossrefURL(q, days=3650, now=new Date()){
+ q=clean(q);
+ if(looksLikeDoi(q))return 'https://api.crossref.org/works/'+encodeURIComponent(doiKey(q));
+ const until=now.toISOString().slice(0,10),start=new Date(now);start.setUTCDate(start.getUTCDate()-Number(days||3650));
+ const p=new URLSearchParams({query:q,filter:`from-pub-date:${start.toISOString().slice(0,10)},until-pub-date:${until}`,rows:'40',sort:'relevance',order:'desc',select:'DOI,title,author,container-title,published,published-online,issued,type,publisher'});
+ return 'https://api.crossref.org/works?'+p;
+}
+export async function searchWorks({q='',days=3650,fetcher=fetch,now=new Date()}={}){
+ q=clean(q);
+ if(!q)throw Error('Enter a DOI, title, or author.');
+ const r=await fetcher(searchCrossrefURL(q,days,now),{signal:AbortSignal.timeout(20000)});
+ if(!r.ok)throw Error('Crossref is unavailable. Please try again shortly.');
+ const data=await r.json();
+ const items=looksLikeDoi(q)?(data.message?[data.message]:[]):data.message?.items;
+ if(!Array.isArray(items))throw Error('Invalid Crossref response');
+ const papers=uniqueWorks(items.map(normalizeWork).filter(w=>w.doi));
+ return {papers,fetched_at:now.toISOString(),query:q,doi:looksLikeDoi(q)};
+}
 export async function discover({scope='catalysis',days=90,fetcher=fetch,now=new Date()}={}){
  const queries=discoveryQueries(scope),works=[];let failed=0;
  // Two in flight at most; a failing query does not discard successful results.

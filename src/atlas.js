@@ -385,7 +385,7 @@ function buildData() {
   if ($('hideIsolates').checked) {
     const deg = new Set();
     links.forEach(l => { deg.add(l.source); deg.add(l.target); });
-    nodes = nodes.filter(n => deg.has(n.id));
+    nodes = nodes.filter(n => deg.has(n.id) || n.added);
     const keep = new Set(nodes.map(n => n.id));
     links = links.filter(l => keep.has(l.source) && keep.has(l.target));
   }
@@ -501,6 +501,16 @@ async function init() {
     if (!r.ok) throw Error();
     const graph = await r.json();
     ALL = graph.nodes; META = graph.edges || []; PAPER_LINKS = graph.paper_similarity_edges || []; STORIES = graph.stories || {};
+    try {
+      const added = JSON.parse(localStorage.getItem('cml:added') || '{}');
+      const have = new Set(ALL.filter(n => n.type === 'paper' && n.doi).map(n => String(n.doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').trim().toLowerCase()));
+      for (const p of Object.values(added)) {
+        const d = String(p.doi || '').replace(/^https?:\/\/(dx\.)?doi\.org\//i, '').trim().toLowerCase();
+        if (!d || have.has(d)) continue;
+        ALL.push({ ...p, type: 'paper', added: true, id: p.id || ('doi:' + d), paradigm: p.paradigm || 'Other / mixed' });
+        have.add(d);
+      }
+    } catch {}
     fillFilters(ALL.filter(n => n.type === 'paper'));
     restore();
     if ($('labels').value === 'selected') $('labels').value = 'papers';
