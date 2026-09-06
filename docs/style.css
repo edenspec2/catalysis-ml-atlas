@@ -25,7 +25,7 @@ body.atlas-page .brand span:last-child{margin-left:10px}
 .atlas-shell{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 340px}
 .atlas-stage{position:relative;min-width:0;min-height:0;background:#080c12}
 #graph{position:absolute;inset:0;overflow:hidden}
-#graph canvas{display:block}
+#graph canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
 .atlas-hud{position:absolute;left:12px;bottom:40px;z-index:3;display:grid;gap:8px;pointer-events:none;max-width:min(280px,calc(100% - 24px))}
 .hudbox{background:rgba(11,17,24,.82);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.45;pointer-events:auto}
 #legend{max-height:220px;overflow:auto}
