@@ -1,0 +1,43 @@
+{
+  "project": "Catalysis ML Atlas",
+  "version": "v7-agent-handoff",
+  "created": "2026-09-06",
+  "paper_count": 55,
+  "node_count": 555,
+  "metadata_edge_count": 767,
+  "paper_similarity_edge_count": 164,
+  "files": {
+    "AGENT_HANDOFF.md": {
+      "size_bytes": 15330,
+      "sha256": "f8d102a065818d5f03d62260fbc27afe2b6a9ff0c5fe5af2a82b66160d03c8a7"
+    },
+    "DATA_SCHEMA.md": {
+      "size_bytes": 1017,
+      "sha256": "02b0f8904e56c7de152604b5e2103847b86ccc9caa3fd186ba1d150d6e7d3f4a"
+    },
+    "NEXT_STEPS.md": {
+      "size_bytes": 887,
+      "sha256": "4fc5c0b4e21947083cda0f9ab001413ecdc168ace4f4c0921a0845aac11a99ab"
+    },
+    "README.md": {
+      "size_bytes": 350,
+      "sha256": "1042e729966a21398f889d6198130e26dbc293ac681632eab280868ce7e4632d"
+    },
+    "catalysis_ml_atlas_v7.html": {
+      "size_bytes": 338622,
+      "sha256": "b14f35c78aa31b7045f5287a710ce9e632ad4bf049846fc4ddf18940a1f1d8b8"
+    },
+    "catalysis_ml_literature_knowledge_base.md": {
+      "size_bytes": 72193,
+      "sha256": "861c6d01b6de155531cf29aaaedd974ad607352aeff3542b9776998c36ff43f4"
+    },
+    "graph_catalysis_v7.json": {
+      "size_bytes": 409232,
+      "sha256": "b09e1e308fb3f6997a4f5a980d6783816a73349f3d787a85c70f3257a9976151"
+    },
+    "papers_catalysis_v7.csv": {
+      "size_bytes": 40267,
+      "sha256": "e6bc133536ed653d90a907f68df59a6385aaf0dc7bee6787e3b07a980c1bb3c3"
+    }
+  }
+}

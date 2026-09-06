@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-09-06T07:37:56.056Z",
+  "records": {
+    "paper_flower_2025": {
+      "doi": "10.1038/s41586-025-09426-9",
+      "title": "Electron flow matching for generative reaction mechanism prediction",
+      "authors": [
+        "Joonyoung F. Joung",
+        "Mun Hong Fong",
+        "Nicholas Casetti",
+        "Jordan P. Liles",
+        "Ne S. Dassanayake",
+        "Connor W. Coley"
+      ]
+    },
+    "paper_meta_selectivity_2025": {
+      "doi": "10.1038/s41467-025-58854-8",
+      "title": "A meta-learning approach for selectivity prediction in asymmetric catalysis",
+      "authors": [
+        "Sukriti Singh",
+        "José Miguel Hernández-Lobato"
+      ]
+    },
+    "paper_reid_2025": {
+      "doi": "10.1021/acscatal.5c02264",
+      "title": "Machine Learning Enables a Top-Down Approach to Mechanistic Elucidation in Asymmetric Catalysis",
+      "authors": [
+        "Isaiah O. Betinol",
+        "Yutao Kuang",
+        "Junshan Lai",
+        "Christopher Yousofi",
+        "Jolene P. Reid"
+      ]
+    },
+    "paper_denmark_2025": {
+      "doi": "10.1021/acscentsci.5c00900",
+      "title": "Data-Driven Prediction of Enantioselectivity for the Sharpless Asymmetric Dihydroxylation: Model Development and Experimental Validation",
+      "authors": [
+        "Blake E. Ocampo",
+        "Bilal Altundas",
+        "Matthew J. Bock",
+        "Sara Feiz",
+        "Scott E. Denmark"
+      ]
+    },
+    "paper_reid_local_2025": {
+      "doi": "10.1021/acscatal.5c01051",
+      "title": "Evaluating Predictive Accuracy in Asymmetric Catalysis: A Machine Learning Perspective on Local Reaction Space",
+      "authors": [
+        "Isaiah O. Betinol",
+        "Aleksandra Demchenko",
+        "Jolene P. Reid"
+      ]
+    },
+    "paper_shearilicine_2026": {
+      "doi": "10.1021/jacs.5c21637",
+      "title": "Concise Total Synthesis\nof (+)-Shearilicine: A Machine\nLearning-Assisted Strategy for Ligand Optimization of an Enantioselective\nPalladium-Catalyzed α-Arylation",
+      "authors": [
+        "Fu-Qiang Ni",
+        "Zhihao Wang",
+        "Zhenxun Li",
+        "Bing-Feng Zhang",
+        "Pengpeng Zhang",
+        "Hai-Hua Lu"
+      ]
+    },
+    "paper_flexcat_2026": {
+      "doi": "10.1038/s41467-026-74425-x",
+      "title": "An autonomous lab for data-driven homogeneous catalysis",
+      "authors": [
+        "J. A. Bennett",
+        "N. Orouji",
+        "A. Velayati",
+        "Eamon F. Reynolds",
+        "Matthew E. Porowski",
+        "M. Saha",
+        "D. Billodeaux",
+        "Alexander J. M. Miller",
+        "M. Abolhasani"
+      ]
+    },
+    "paper_latent_transfer_2024": {
+      "doi": "10.1021/jacsau.3c00419",
+      "title": "Latent Variable Machine Learning Framework for Catalysis: General Models, Transfer Learning, and Interpretability",
+      "authors": [
+        "Gbolade O. Kayode",
+        "Matthew M. Montemore"
+      ]
+    }
+  }
+}

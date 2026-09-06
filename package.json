@@ -1,0 +1,19 @@
+{
+  "name": "catalysis-ml-atlas",
+  "version": "8.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test --test-isolation=none test/atlas.test.mjs"
+  },
+  "dependencies": {
+    "3d-force-graph": "1.79.0",
+    "three": "0.160.0",
+    "three-spritetext": "1.10.0"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}
