@@ -1,4 +1,4 @@
-const CACHE = 'cml-atlas-v14';
+const CACHE = 'cml-atlas-v16';
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', './atlas.html', './graph.json', './figures.json', './style.css', './atlas.js'])));

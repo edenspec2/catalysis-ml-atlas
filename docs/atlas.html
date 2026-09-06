@@ -67,7 +67,7 @@
     </label>
     <button type="button" id="center">Fit</button>
     <button type="button" id="reset">Reset</button>
-    <label class="check"><input type="checkbox" id="showFigs" checked> Figure 1</label>
+    <label class="check"><input type="checkbox" id="showFigs" checked> Figures</label>
   </div>
   <details class="atlas-more">
     <summary>More graph options</summary>
@@ -106,7 +106,7 @@
       <div class="hudbox" id="status">Loading atlas…</div>
       <div class="hudbox" id="legend"></div>
     </div>
-    <p class="atlas-hint">Drag to rotate · pinch to zoom · Fit spreads the view. Auto-rotate stays off.</p>
+    <p class="atlas-hint">Tiles are Figure 1 or the graphical abstract when an open copy exists. Drag to rotate · Fit spreads the view.</p>
   </div>
   <aside id="side">
     <div id="selection" hidden></div>
@@ -122,7 +122,7 @@
   <img id="figbox-img" alt="">
   <p id="figbox-cap" class="muted"></p>
 </dialog>
-<script src="atlas.js?v=15"></script>
+<script src="atlas.js?v=17"></script>
 <script>
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>

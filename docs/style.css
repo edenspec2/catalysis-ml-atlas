@@ -68,13 +68,14 @@ body.atlas-page .brand span:last-child{margin-left:10px}
 #figbox img{display:block;width:100%;max-height:78dvh;object-fit:contain;background:#000;border-radius:8px}
 #side.has-fig-sel{grid-template-rows:minmax(0,1.15fr) auto minmax(0,.85fr)}
 #selection.has-fig{max-height:none}
+.fig-kind{display:inline-block;font-size:10px;letter-spacing:.4px;text-transform:uppercase;border:1px solid #365647;color:var(--accent);padding:2px 6px;border-radius:4px;margin-right:6px}
 .glabel{background:#0b1320;color:#fff;border:1px solid #33425a;border-radius:8px;padding:7px 9px;font-size:13px}
 @media(max-width:900px){
 body.atlas-page{height:100dvh;overflow:hidden;grid-template-rows:auto auto minmax(0,1fr)}
 body.atlas-page header{position:static}
 .atlas-controls{position:static}
 .atlas-shell{grid-template-columns:1fr;grid-template-rows:minmax(34dvh,1fr) minmax(220px,48%)}
-.atlas-shell.has-paper-fig{grid-template-rows:minmax(22dvh,28%) minmax(0,1fr)}
+.atlas-shell.has-paper-fig{grid-template-rows:minmax(38dvh,42%) minmax(0,1fr)}
 .atlas-stage{height:auto;min-height:0}
 .atlas-top{flex-wrap:wrap}
 .atlas-search{max-width:none;flex-basis:100%}

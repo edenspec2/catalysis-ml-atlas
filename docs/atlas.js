@@ -29,8 +29,11 @@ const VIEWS = { full:['paper','author','topic','method','workflow','program'], p
 let ALL = [], META = [], PAPER_LINKS = [], STORIES = {};
 let currentData = { nodes:[], links:[] }, currentSelection = null, activeStory = null;
 let canvas, ctx, hoverId = null, layoutTicks = 0, layoutKind = 'free';
-const cam = { yaw: 0.42, pitch: 0.18, zoom: 1, autoRotate };
+const cam = { yaw: 0, pitch: 0, zoom: 1, autoRotate };
 const pointer = { down:false, x:0, y:0, moved:false, id:null };
+const figImgs = new Map();
+let lastLayoutSize = { w: 0, h: 0 };
+let relayouting = false;
 
 const primaryGroup = n => n.type === 'paper' ? (n.groups?.[0] || 'Other') : 'Other';
 const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.why, p.summary, p.brief, p.ask_next, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
@@ -104,68 +107,111 @@ function restore() {
     }
   } catch {}
 }
+function figuresOn() { return $('showFigs')?.checked !== false; }
+function figCaption(p) {
+  if (p?.figure?.kind === 'toc') return p.figure.caption || 'Graphical abstract';
+  return p?.figure?.caption || 'Figure 1';
+}
+function figImage(n) {
+  if (!n?.figure?.src || !figuresOn()) return null;
+  let im = figImgs.get(n.id);
+  if (!im) {
+    im = new Image();
+    im.decoding = 'async';
+    im.src = n.figure.src;
+    figImgs.set(n.id, im);
+  }
+  return im.complete && im.naturalWidth > 0 ? im : null;
+}
+function stageSize() {
+  const el = $('graph');
+  return {
+    w: Math.max(280, el?.clientWidth || canvas?.clientWidth || 800),
+    h: Math.max(220, el?.clientHeight || canvas?.clientHeight || 500)
+  };
+}
+function sunflower(count, i) {
+  const k = i + 0.5;
+  const u = Math.sqrt(k / Math.max(1, count));
+  const theta = Math.PI * (1 + Math.sqrt(5)) * k;
+  return { x: u * Math.cos(theta), y: u * Math.sin(theta) };
+}
+function packRect(members, x0, y0, x1, y1) {
+  const N = Math.max(1, members.length);
+  const W = Math.max(40, x1 - x0), H = Math.max(40, y1 - y0);
+  const cols = Math.max(1, Math.ceil(Math.sqrt(N * (W / H))));
+  const rows = Math.max(1, Math.ceil(N / cols));
+  const dx = W / cols, dy = H / rows;
+  members.slice().sort((a, b) => hash(a.id) - hash(b.id)).forEach((n, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    n.x = x0 + (col + 0.5) * dx + ((hash(n.id) % 100) / 100 - 0.5) * dx * 0.18;
+    n.y = y0 + (row + 0.5) * dy + ((hash(n.id + 'y') % 100) / 100 - 0.5) * dy * 0.18;
+    n.z = 0;
+    n.vx = n.vy = n.vz = 0;
+    n._rw = Math.min(dx, dy * 1.35) * (figuresOn() && n.figure?.src ? 0.38 : 0.16);
+    n._rh = Math.min(dy, dx * 0.8) * (figuresOn() && n.figure?.src ? 0.36 : 0.16);
+  });
+  return { dx, dy };
+}
+function seedPositions(nodes) {
+  const { w, h } = stageSize();
+  const papers = nodes.filter(n => n.type === 'paper');
+  const extras = nodes.filter(n => n.type !== 'paper');
+  packRect(papers, -w * 0.46, -h * 0.44, w * 0.46, h * 0.44);
+  extras.forEach((n, i) => {
+    const s = sunflower(Math.max(extras.length, 8), i);
+    n.x = w * 0.5 * s.x;
+    n.y = h * 0.48 * s.y;
+    n.z = 10;
+    n._rw = n._rh = 8;
+    n.vx = n.vy = n.vz = 0;
+  });
+  lastLayoutSize = { w, h };
+}
 function figureButton(p, large) {
   if (!p.figure?.src) return large ? '<p class="fig-missing muted">No open Figure 1 or abstract image for this paper.</p>' : '';
-  const cap = p.figure.caption || (p.figure.kind === 'toc' ? 'Graphical abstract' : 'Figure 1');
-  if (!large) return `<img class="fig-sm" src="${esc(p.figure.src)}" alt="" loading="lazy" decoding="async">`;
-  return `<button type="button" class="fig fig-lg" data-fig="${esc(p.id)}" aria-label="Enlarge ${esc(cap)}"><img src="${esc(p.figure.src)}" alt="${esc(cap)}" loading="eager" decoding="async"></button><p class="fig-cap">${esc(cap)}</p>`;
+  const cap = figCaption(p);
+  const kind = p.figure.kind === 'toc' ? 'Graphical abstract' : 'Figure 1';
+  if (!large) return `<img class="fig-sm" src="${esc(p.figure.src)}" alt="${esc(cap)}" loading="lazy" decoding="async">`;
+  return `<button type="button" class="fig fig-lg" data-fig="${esc(p.id)}" aria-label="Enlarge ${esc(cap)}"><img src="${esc(p.figure.src)}" alt="${esc(cap)}" loading="eager" decoding="async"></button><p class="fig-cap"><span class="fig-kind">${esc(kind)}</span>${esc(cap)}</p>`;
 }
 function openFigure(id) {
   const n = ALL.find(x => x.id === id);
   if (!n?.figure?.src || !$('figbox')) return;
   $('figbox-img').src = n.figure.src;
-  $('figbox-img').alt = n.figure.caption || 'Figure 1';
-  $('figbox-cap').textContent = (n.full_title || n.label) + ' · ' + (n.figure.caption || 'Figure 1');
+  $('figbox-img').alt = figCaption(n);
+  $('figbox-cap').textContent = (n.full_title || n.label) + ' · ' + figCaption(n);
   if (!$('figbox').open) $('figbox').showModal();
-}
-function seedPositions(nodes) {
-  const N = Math.max(1, nodes.length);
-  const minSep = 40;
-  const R = minSep * Math.sqrt(N / Math.PI) * 1.2;
-  nodes.slice().sort((a,b) => hash(a.id) - hash(b.id)).forEach((n, i) => {
-    const k = i + 0.5;
-    const r = R * Math.sqrt(k / N);
-    const theta = Math.PI * (1 + Math.sqrt(5)) * k;
-    n.x = r * Math.cos(theta);
-    n.y = r * Math.sin(theta);
-    n.z = ((hash(n.id) % 100) / 100 - .5) * 10;
-    n.vx = n.vy = n.vz = 0;
-  });
 }
 function applyLayout(mode) {
   layoutKind = mode || 'free';
   const nodes = currentData.nodes;
   const ps = nodes.filter(n => n.type === 'paper');
+  const { w, h } = stageSize();
   seedPositions(nodes);
   if (mode === 'year') {
-    const years = [...new Set(ps.map(p => Number(p.year) || 0))].sort((a,b) => a - b);
-    const yi = Object.fromEntries(years.map((y,i) => [y,i]));
-    const col = Math.max(90, 520 / Math.max(1, years.length));
-    nodes.forEach(n => {
-      if (n.type !== 'paper') return;
-      n.x = (yi[Number(n.year) || 0] - (years.length - 1) / 2) * col;
-      n.y = ((hash(n.id) % 1000) / 1000 - .5) * 220;
-      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 36;
-      n.vx = n.vy = n.vz = 0;
+    const years = [...new Set(ps.map(p => Number(p.year) || 0))].sort((a, b) => a - b);
+    const colW = Math.max(88, (w * 0.86) / Math.max(1, years.length));
+    years.forEach((y, yi) => {
+      const members = ps.filter(p => (Number(p.year) || 0) === y);
+      const cx = (yi - (years.length - 1) / 2) * colW;
+      packRect(members, cx - colW * 0.42, -h * 0.4, cx + colW * 0.42, h * 0.4);
     });
-    layoutTicks = 20;
   } else if (mode === 'paradigm' || mode === 'representation' || mode === 'group') {
     const cats = mode === 'paradigm' ? Object.keys(paradigmColors) : mode === 'representation' ? REPS : Object.keys(groupColors);
     const key = n => mode === 'paradigm' ? n.paradigm : mode === 'representation' ? n.representation_class : primaryGroup(n);
     const list = cats.filter(c => ps.some(p => key(p) === c));
-    const ci = Object.fromEntries(list.map((x,i) => [x,i]));
-    const ring = Math.max(140, 22 * Math.sqrt(ps.length));
-    nodes.forEach(n => {
-      if (n.type !== 'paper') return;
-      const a = 2 * Math.PI * (ci[key(n)] || 0) / Math.max(1, list.length);
-      const jitter = 18 + (hash(n.id) % 28);
-      n.x = ring * Math.cos(a) + ((hash(n.id) % 100) / 100 - .5) * jitter;
-      n.y = ring * Math.sin(a) + ((hash(n.id + 'y') % 100) / 100 - .5) * jitter;
-      n.z = ((hash(n.id + 'z') % 1000) / 1000 - .5) * 40;
-      n.vx = n.vy = n.vz = 0;
+    const cols = Math.max(1, Math.ceil(Math.sqrt(list.length * (w / Math.max(h, 1)))));
+    const rows = Math.max(1, Math.ceil(list.length / cols));
+    const cw = (w * 0.88) / cols, ch = (h * 0.84) / rows;
+    list.forEach((c, i) => {
+      const col = i % cols, row = Math.floor(i / cols);
+      const x0 = -w * 0.44 + col * cw, y0 = -h * 0.42 + row * ch;
+      packRect(ps.filter(p => key(p) === c), x0 + 8, y0 + 8, x0 + cw - 8, y0 + ch - 8);
     });
-    layoutTicks = 20;
-  } else layoutTicks = 0;
+  }
+  layoutTicks = 0;
   fitGraph(true);
 }
 function stepForces() {
@@ -220,6 +266,17 @@ function stepForces() {
   }
   if (layoutTicks === 0) fitGraph(false);
 }
+function figBox(n, s) {
+  const hasFig = figuresOn() && n.type === 'paper' && n.figure?.src;
+  const zoom = n._selected ? 1.16 : 1;
+  if (hasFig) {
+    const rw = Math.max(16, (n._rw || 28) * s * zoom);
+    const rh = Math.max(12, (n._rh || 20) * s * zoom);
+    return { r: rw, rw, rh, hasFig: true };
+  }
+  const r = Math.max(6, (n._rw || (n.type === 'paper' ? 11 : 7)) * s * zoom);
+  return { r, rw: r, rh: r, hasFig: false };
+}
 function project(n, w, h) {
   const cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw), cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
   const x1 = n.x * cy - n.z * sy;
@@ -228,11 +285,12 @@ function project(n, w, h) {
   const z2 = Math.max(-520, n.y * sp + z1 * cp);
   const depth = 900 / (900 + z2);
   const s = depth * cam.zoom;
-  const r = (n.type === 'paper' ? 12 : 7) * Math.min(1.35, depth) * (n._selected ? 1.35 : 1);
-  return { x: w / 2 + x1 * s, y: h / 2 + y2 * s, r, z: z2, depth };
+  const box = figBox(n, s);
+  return { x: w / 2 + x1 * s, y: h / 2 + y2 * s, z: z2, depth, ...box };
 }
 function sizeCanvas() {
   const el = $('graph');
+  if (!el || !canvas || !ctx) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const w = Math.max(1, el.clientWidth), h = Math.max(1, el.clientHeight);
   const bw = Math.round(w * dpr), bh = Math.round(h * dpr);
@@ -243,25 +301,68 @@ function sizeCanvas() {
   canvas.style.width = w + 'px';
   canvas.style.height = h + 'px';
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (!relayouting && currentData.nodes.length && lastLayoutSize.w) {
+    if (Math.abs(w - lastLayoutSize.w) > 48 || Math.abs(h - lastLayoutSize.h) > 36) {
+      relayouting = true;
+      applyLayout(layoutKind);
+      relayouting = false;
+    }
+  }
 }
 function fitGraph(resetAngles) {
-  const el = $('graph');
-  const w = el?.clientWidth || canvas?.clientWidth || 800;
-  const h = el?.clientHeight || canvas?.clientHeight || 500;
-  if (resetAngles) { cam.yaw = 0.42; cam.pitch = 0.18; }
-  if (!currentData.nodes.length) { cam.zoom = 1.2; return; }
+  const { w, h } = stageSize();
+  if (resetAngles) { cam.yaw = 0; cam.pitch = 0; }
+  if (!currentData.nodes.length) { cam.zoom = 1; return; }
   const prev = cam.zoom;
   cam.zoom = 1;
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
   for (const n of currentData.nodes) {
     const p = project(n, w, h);
     if (!Number.isFinite(p.x) || !Number.isFinite(p.y)) continue;
-    minX = Math.min(minX, p.x - p.r); maxX = Math.max(maxX, p.x + p.r);
-    minY = Math.min(minY, p.y - p.r); maxY = Math.max(maxY, p.y + p.r);
+    minX = Math.min(minX, p.x - p.rw); maxX = Math.max(maxX, p.x + p.rw);
+    minY = Math.min(minY, p.y - p.rh); maxY = Math.max(maxY, p.y + p.rh);
   }
-  if (!Number.isFinite(minX)) { cam.zoom = prev || 1.2; return; }
+  if (!Number.isFinite(minX)) { cam.zoom = prev || 1; return; }
   const bw = Math.max(48, maxX - minX), bh = Math.max(48, maxY - minY);
-  cam.zoom = Math.max(0.45, Math.min(4.2, Math.min((w * 0.88) / bw, (h * 0.86) / bh)));
+  cam.zoom = Math.max(0.28, Math.min(2.8, Math.min((w * 0.94) / bw, (h * 0.92) / bh)));
+}
+function nodePath(p) {
+  ctx.beginPath();
+  if (p.hasFig) {
+    const x = p.x - p.rw, y = p.y - p.rh, ww = p.rw * 2, hh = p.rh * 2;
+    if (typeof ctx.roundRect === 'function') ctx.roundRect(x, y, ww, hh, 7);
+    else ctx.rect(x, y, ww, hh);
+  } else ctx.arc(p.x, p.y, Math.max(6, p.r), 0, Math.PI * 2);
+}
+function drawNode(n, p) {
+  const col = nodeColor(n);
+  const im = p.hasFig ? figImage(n) : null;
+  ctx.save();
+  ctx.globalAlpha = n._dim ? (im ? 0.48 : 0.28) : 1;
+  nodePath(p);
+  ctx.fillStyle = '#0b1118';
+  ctx.fill();
+  if (im) {
+    ctx.save();
+    nodePath(p);
+    ctx.clip();
+    const ir = im.naturalWidth / im.naturalHeight;
+    const br = (p.rw * 2) / Math.max(1, p.rh * 2);
+    let dw, dh;
+    if (ir > br) { dh = p.rh * 2; dw = dh * ir; }
+    else { dw = p.rw * 2; dh = dw / ir; }
+    ctx.drawImage(im, p.x - dw / 2, p.y - dh / 2, dw, dh);
+    ctx.restore();
+  } else {
+    nodePath(p);
+    ctx.fillStyle = col;
+    ctx.fill();
+  }
+  nodePath(p);
+  ctx.lineWidth = n._selected || n.id === hoverId ? 3 : (p.hasFig ? 1.6 : 1);
+  ctx.strokeStyle = n._selected ? '#fff' : (p.hasFig ? col : 'rgba(8,12,18,.7)');
+  ctx.stroke();
+  ctx.restore();
 }
 function draw() {
   if (!ctx) { requestAnimationFrame(draw); return; }
@@ -280,8 +381,8 @@ function draw() {
       if (!a || !b || !Number.isFinite(a.x) || !Number.isFinite(b.x)) continue;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = l._highlight ? 'rgba(141,227,193,.95)' : 'rgba(170,200,230,.55)';
-      ctx.lineWidth = l._highlight ? 2.4 : 1.6;
+      ctx.strokeStyle = l._highlight ? 'rgba(141,227,193,.9)' : 'rgba(170,200,230,.18)';
+      ctx.lineWidth = l._highlight ? 2.2 : 1;
       ctx.stroke();
     }
     const ordered = currentData.nodes.slice().sort((a,b) => (proj.get(a.id)?.z || 0) - (proj.get(b.id)?.z || 0));
@@ -289,37 +390,32 @@ function draw() {
     const labeled = new Set();
     const papers = ordered.filter(n => n.type === 'paper');
     if (labels === 'papers') {
-      const cap = w < 720 ? 14 : papers.length <= 80 ? papers.length : 28;
-      papers.slice(-cap).forEach(n => labeled.add(n.id));
+      papers.filter(n => n._selected || n.id === hoverId).forEach(n => labeled.add(n.id));
+      if (!figuresOn()) {
+        const cap = w < 720 ? 12 : 18;
+        papers.slice(-cap).forEach(n => labeled.add(n.id));
+      } else {
+        papers.slice(-6).forEach(n => labeled.add(n.id));
+      }
     }
     const boxes = [];
     for (const n of ordered) {
       const p = proj.get(n.id);
       if (!p || !Number.isFinite(p.x) || !Number.isFinite(p.r)) continue;
-      const col = nodeColor(n);
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, Math.max(6.5, Math.min(20, p.r)), 0, Math.PI * 2);
-      ctx.fillStyle = col;
-      ctx.globalAlpha = n._dim ? 0.28 : 1;
-      ctx.fill();
-      ctx.globalAlpha = 1;
-      ctx.lineWidth = n._selected || n.id === hoverId ? 2.5 : 1;
-      ctx.strokeStyle = n._selected ? '#fff' : 'rgba(8,12,18,.7)';
-      ctx.stroke();
+      drawNode(n, p);
       const show = labels === 'all' || (labels === 'papers' && labeled.has(n.id)) || (labels === 'selected' && n._selected) || n.id === hoverId;
-      if (show) {
-        ctx.font = (n._selected ? '700 ' : '600 ') + (n.type === 'paper' ? '12px ' : '11px ') + 'system-ui,sans-serif';
-        const text = String(n.label || n.id).slice(0, 36);
-        const tw = ctx.measureText(text).width;
-        const lx = p.x + p.r + 4, ly = p.y - 9, lw = tw + 10, lh = 18;
-        const hit = boxes.some(b => lx < b.x + b.w && lx + lw > b.x && ly < b.y + b.h && ly + lh > b.y);
-        if (hit && n.id !== hoverId && !n._selected) continue;
-        boxes.push({x:lx,y:ly,w:lw,h:lh});
-        ctx.fillStyle = 'rgba(8,12,18,.82)';
-        ctx.fillRect(lx, ly, lw, lh);
-        ctx.fillStyle = '#eef4fb';
-        ctx.fillText(text, lx + 5, p.y + 4);
-      }
+      if (!show) continue;
+      ctx.font = (n._selected ? '700 ' : '600 ') + (n.type === 'paper' ? '12px ' : '11px ') + 'system-ui,sans-serif';
+      const text = String(n.label || n.id).slice(0, 36);
+      const tw = ctx.measureText(text).width;
+      const lx = p.x + p.rw + 4, ly = p.y - 9, lw = tw + 10, lh = 18;
+      const hit = boxes.some(b => lx < b.x + b.w && lx + lw > b.x && ly < b.y + b.h && ly + lh > b.y);
+      if (hit && n.id !== hoverId && !n._selected) continue;
+      boxes.push({x:lx,y:ly,w:lw,h:lh});
+      ctx.fillStyle = 'rgba(8,12,18,.82)';
+      ctx.fillRect(lx, ly, lw, lh);
+      ctx.fillStyle = '#eef4fb';
+      ctx.fillText(text, lx + 5, p.y + 4);
     }
   } catch (err) {
     if ($('status')) $('status').textContent = 'Graph error: ' + (err.message || err);
@@ -331,8 +427,10 @@ function hitTest(x, y) {
   let best = null, bestD = 18;
   for (const n of currentData.nodes) {
     const p = project(n, w, h);
+    const dx = Math.abs(p.x - x) / Math.max(8, p.rw + 4);
+    const dy = Math.abs(p.y - y) / Math.max(8, p.rh + 4);
     const d = Math.hypot(p.x - x, p.y - y);
-    if (d < Math.max(bestD, p.r + 6)) { best = n; bestD = d; }
+    if (dx <= 1 && dy <= 1 && d < Math.max(bestD, p.r + 10)) { best = n; bestD = d; }
   }
   return best;
 }
@@ -516,13 +614,13 @@ function bindGraph() {
   });
   canvas.addEventListener('wheel', e => {
     e.preventDefault();
-    cam.zoom = Math.max(0.45, Math.min(4.2, cam.zoom * (e.deltaY > 0 ? 0.92 : 1.08)));
+    cam.zoom = Math.max(0.28, Math.min(2.8, cam.zoom * (e.deltaY > 0 ? 0.92 : 1.08)));
   }, { passive:false });
 }
 function bind() {
   ['q','view','year','density','chemistry','representation','hideReviews','hideIsolates'].forEach(id =>
     $(id).addEventListener(id === 'q' ? 'input' : 'change', () => { clearSelection(); buildData(); }));
-  $('showFigs')?.addEventListener('change', () => { renderPapers(); persist(); });
+  $('showFigs')?.addEventListener('change', () => { applyLayout($('layout').value); renderPapers(); persist(); });
   $('layout').addEventListener('change', () => { persist(); applyLayout($('layout').value); });
   $('colorby').addEventListener('change', () => { paintGraph(); persist(); });
   $('labels').addEventListener('change', persist);
@@ -556,7 +654,7 @@ async function init() {
   window.addEventListener('resize', sizeCanvas);
   bindGraph();
   requestAnimationFrame(draw);
-  window.__atlasDebug = () => ({ nodes: currentData.nodes.map(n => ({id:n.id, x:n.x, y:n.y, z:n.z})), cam: { ...cam } });
+  window.__atlasDebug = () => ({ nodes: currentData.nodes.map(n => ({id:n.id, x:n.x, y:n.y, z:n.z, hasFig:!!n.figure?.src})), cam: { ...cam }, size: lastLayoutSize });
   try {
     const r = await fetch('graph.json');
     if (!r.ok) throw Error();
