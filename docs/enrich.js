@@ -38,7 +38,14 @@ const GROUP_PATCH = {
   paper_hcat_2025: ['Woodward'],
   paper_bestpractices_2026: ['Alegre-Requena'],
   paper_mlips_dft_2026: ['Corminboeuf'],
-  paper_resource_hydroformylation_2025: ['Abolhasani']
+  paper_resource_hydroformylation_2025: ['Abolhasani'],
+  paper_aqme_2023: ['Paton', 'Alegre-Requena'],
+  paper_robert_2024: ['Alegre-Requena', 'Paton'],
+  paper_autoqchem_2022: ['Doyle'],
+  paper_paton_sterimol_2019: ['Paton'],
+  paper_harper_sterimol_2012: ['Sigman'],
+  paper_santiago_mlr_2018: ['Sigman'],
+  paper_smartpy_2025: ['Sigman']
 };
 
 const ALIASES = {'M. Abolhasani': 'Milad Abolhasani', 'Z. Wang': 'Zhihao Wang'};
@@ -98,7 +105,20 @@ const REPRESENTATION = {
   paper_latent_transfer_2024: 'Overview / mixed',
   paper_ai_homocat_review_2025: 'Overview / mixed',
   paper_bestpractices_2026: 'Overview / mixed',
-  paper_organocat_review_2024: 'Overview / mixed'
+  paper_organocat_review_2024: 'Overview / mixed',
+  paper_harper_sterimol_2012: 'Physical / chemist descriptors',
+  paper_milo_vibrations_2014: 'Physical / chemist descriptors',
+  paper_milo_science_2015: 'Physical / chemist descriptors',
+  paper_santiago_milo_2016: 'Physical / chemist descriptors',
+  paper_santiago_mlr_2018: 'Physical / chemist descriptors',
+  paper_paton_sterimol_2019: 'Conformer / ensemble descriptors',
+  paper_autoqchem_2022: 'Physical / chemist descriptors',
+  paper_lustosa_milo_2022: 'Physical / chemist descriptors',
+  paper_aqme_2023: 'Physical / chemist descriptors',
+  paper_milo_smalldata_2023: 'Overview / mixed',
+  paper_robert_2024: 'Overview / mixed',
+  paper_smartpy_2025: 'Physical / chemist descriptors',
+  paper_chemrefine_2026: 'Overview / mixed'
 };
 
 function chemistryClass(p){
@@ -269,7 +289,7 @@ export function buildInsights(papers){
 
 export function enrichGraph(graph, {metadata={}, authors={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v9',features_version:9,updated:'2026-09-06',enrichment:'summaries, ask_next prompts, chemistry/representation analysis'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v10',features_version:10,updated:'2026-09-06',enrichment:'DescriPyTor neighborhood, summaries, chemistry/representation analysis'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -316,6 +336,11 @@ export function enrichGraph(graph, {metadata={}, authors={}} = {}){
 
   g.stories={
     ...g.stories,
+    chemist_frames:{
+      label:'Chemist-guided descriptors',
+      description:'Where a descriptor is read: Sterimol, cavities, vibrations, and the AQME / Auto-QChem / ROBERT platforms DescriPyTor sits against.',
+      keywords:['sterimol','cavity','aqme','auto-qchem','robert','smartpy','chemrefine','physical-organic','descriptor pipeline','chemist-guided','vibrations','hammett']
+    },
     representation:{
       label:'Representation battle',
       description:'Free-ligand libraries vs ensemble descriptors vs catalyst-state features vs 3D/TS learned representations.',

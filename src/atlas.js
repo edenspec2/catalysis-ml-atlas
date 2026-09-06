@@ -425,7 +425,7 @@ function fillFilters(papers) {
   const rep = $('representation');
   REPS.filter(r => papers.some(p => p.representation_class === r)).forEach(r => rep.insertAdjacentHTML('beforeend', `<option>${esc(r)}</option>`));
   const bar = $('storybar');
-  const order = ['milo','representation','small_data','automation','physics','frontier_2026'];
+  const order = ['milo','chemist_frames','representation','small_data','automation','physics','frontier_2026'];
   [...new Set([...order, ...Object.keys(STORIES)])].forEach(id => {
     const s = STORIES[id]; if (!s) return;
     const b = document.createElement('button');

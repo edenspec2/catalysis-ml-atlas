@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T06:57:16.306Z",
+  "checked_at": "2026-09-06T10:00:11.145Z",
   "records": {
     "paper_kraken_2022": {
       "title": "A Comprehensive Discovery Platform for Organophosphorus Ligands for Catalysis",
@@ -324,6 +324,84 @@
       "published_date": "2024-09-10",
       "doi": "10.3762/bjoc.20.196",
       "source": "https://api.crossref.org/works/10.3762%2Fbjoc.20.196"
+    },
+    "paper_harper_sterimol_2012": {
+      "title": "Multidimensional steric parameters in the analysis of asymmetric catalytic reactions",
+      "published_date": "2012-03-18",
+      "doi": "10.1038/nchem.1297",
+      "source": "https://api.crossref.org/works/10.1038%2Fnchem.1297"
+    },
+    "paper_milo_vibrations_2014": {
+      "title": "Interrogating selectivity in catalysis using molecular vibrations",
+      "published_date": "2014-03-12",
+      "doi": "10.1038/nature13019",
+      "source": "https://api.crossref.org/works/10.1038%2Fnature13019"
+    },
+    "paper_milo_science_2015": {
+      "title": "A data-intensive approach to mechanistic elucidation applied to chiral anion catalysis",
+      "published_date": "2015-02-13",
+      "doi": "10.1126/science.1261043",
+      "source": "https://api.crossref.org/works/10.1126%2Fscience.1261043"
+    },
+    "paper_santiago_milo_2016": {
+      "title": "Developing a Modern Approach To Account for Steric Effects in Hammett-Type Correlations",
+      "published_date": "2016-10-03",
+      "doi": "10.1021/jacs.6b08799",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.6b08799"
+    },
+    "paper_santiago_mlr_2018": {
+      "title": "Predictive and mechanistic multivariate linear regression models for reaction development",
+      "published_date": "2018",
+      "doi": "10.1039/c7sc04679k",
+      "source": "https://api.crossref.org/works/10.1039%2FC7SC04679K"
+    },
+    "paper_paton_sterimol_2019": {
+      "title": "Conformational Effects on Physical-Organic Descriptors: The Case of Sterimol Steric Parameters",
+      "published_date": "2019-01-25",
+      "doi": "10.1021/acscatal.8b04043",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.8b04043"
+    },
+    "paper_autoqchem_2022": {
+      "title": "Auto-QChem: an automated workflow for the generation and storage of DFT calculations for organic molecules",
+      "published_date": "2022",
+      "doi": "10.1039/d2re00030j",
+      "source": "https://api.crossref.org/works/10.1039%2FD2RE00030J"
+    },
+    "paper_lustosa_milo_2022": {
+      "title": "Mechanistic Inference from Statistical Models at Different Data-Size Regimes",
+      "published_date": "2022-06-17",
+      "doi": "10.1021/acscatal.2c01741",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.2c01741"
+    },
+    "paper_aqme_2023": {
+      "title": "AQME: Automated quantum mechanical environments for researchers and educators",
+      "published_date": "2023-02-26",
+      "doi": "10.1002/wcms.1663",
+      "source": "https://api.crossref.org/works/10.1002%2Fwcms.1663"
+    },
+    "paper_milo_smalldata_2023": {
+      "title": "Small Data Can Play a Big Role in Chemical Discovery",
+      "published_date": "2023-04-26",
+      "doi": "10.1002/anie.202219070",
+      "source": "https://api.crossref.org/works/10.1002%2Fanie.202219070"
+    },
+    "paper_robert_2024": {
+      "title": "ROBERT : Bridging the Gap Between Machine Learning and Chemistry",
+      "published_date": "2024-10-22",
+      "doi": "10.1002/wcms.1733",
+      "source": "https://api.crossref.org/works/10.1002%2Fwcms.1733"
+    },
+    "paper_smartpy_2025": {
+      "title": "SMARTpy: a Python package for the generation of cavity steric molecular descriptors and applications to diverse systems",
+      "published_date": "2025",
+      "doi": "10.1039/d4dd00329b",
+      "source": "https://api.crossref.org/works/10.1039%2FD4DD00329B"
+    },
+    "paper_chemrefine_2026": {
+      "title": "ChemRefine: An Open-Source Automated and Interoperable Platform for Machine Learning and Quantum Chemistry Simulations",
+      "published_date": "2026-02-10",
+      "doi": "10.1021/acs.jctc.5c01881",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.5c01881"
     }
   },
   "failures": []

@@ -14,14 +14,20 @@ function libraryPapers(){
  return curated().concat(Object.values(state.added).filter(p=>p.doi&&!have.has(doiKey(p.doi))));
 }
 function stampAdded(p){
- return {...p,type:'paper',added:true,candidate:true,full_title:p.full_title||p.label,summary:p.summary||((p.derived_authors||[]).slice(0,3).join(', ')+(p.derived_authors?.length?' · ':'')+'Crossref record added on this device; not yet curated.'),brief:p.brief||'Added from Crossref',ask_next:p.ask_next||'Read it and decide whether it belongs in the shared 55-paper atlas.',use_for:p.use_for||'Personal shelf only until it is curated.'};
+ return {...p,type:'paper',added:true,candidate:true,full_title:p.full_title||p.label,summary:p.summary||((p.derived_authors||[]).slice(0,3).join(', ')+(p.derived_authors?.length?' · ':'')+'Crossref record added on this device; not yet curated.'),brief:p.brief||'Added from Crossref',ask_next:p.ask_next||'Read it and decide whether it belongs in the shared curated atlas.',use_for:p.use_for||'Personal shelf only until it is curated.'};
 }
 const date=p=>!p.published_date?p.year+' · exact date unverified':p.published_date.length===10?new Date(p.published_date+'T12:00:00Z').toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}):p.published_date;
 const button=(attr,id,label,selected=false)=>'<button '+attr+'="'+esc(id)+'" class="'+(selected?'selected':'')+'" aria-pressed="'+selected+'">'+label+'</button>';
 const ORDER=['Reusable ligand library','Physical / chemist descriptors','Conformer / ensemble descriptors','Catalyst-state / mechanistic','Learned 3D / TS GNN','Pretrained learned representation','MLIP / physics acceleration','Dataset / experimental loop','Overview / mixed'];
 const CHEMS=['Asymmetric hydrogenation / reduction','C–H functionalization','Cross-coupling','Hydroformylation','Asymmetric C–C / oxidation','Organocatalysis','Biocatalysis','Main-group catalysis','Electrocatalysis','CO2 / N2 small-molecule catalysis','Ligand space / homogeneous method','Reaction mechanism / methodology'];
 function fillSelects(){
- const chem=$('#chemistry'),rep=$('#representation');
+ const chem=$('#chemistry'),rep=$('#representation'),year=$('#year');
+ if(year){
+  const keep=year.value;
+  const years=[...new Set(state.papers.map(p=>String(p.year)).filter(y=>/^\d{4}$/.test(y)))].sort((a,b)=>b.localeCompare(a));
+  year.innerHTML='<option value="">All years</option>'+years.map(y=>'<option>'+esc(y)+'</option>').join('');
+  if(keep&&[...year.options].some(o=>o.value===keep))year.value=keep;
+ }
  if(!chem||chem.options.length>1)return;
  [...new Set(state.papers.map(p=>p.chemistry_class).filter(Boolean))].sort().forEach(c=>chem.insertAdjacentHTML('beforeend','<option>'+esc(c)+'</option>'));
  ORDER.filter(r=>state.papers.some(p=>p.representation_class===r)).forEach(r=>rep.insertAdjacentHTML('beforeend','<option>'+esc(r)+'</option>'));

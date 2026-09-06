@@ -23,10 +23,14 @@ test('DOI or title search hits Crossref and can return a work',async()=>{
  const found=await searchWorks({q:'10.1234/add.1',fetcher:async()=>({ok:true,json:async()=>({message:{DOI:'10.1234/add.1',title:['A catalytic ML paper'],author:[{given:'A',family:'B'}]}})})});
  assert.equal(found.doi,true);assert.equal(found.papers.length,1);assert.equal(found.papers[0].doi,'10.1234/add.1');
 });
-test('corpus integrity and preserved atlas',async()=>{const g=JSON.parse(await readFile('dist/graph.json','utf8'));const ps=g.nodes.filter(p=>p.type==='paper');assert.equal(ps.length,55);assert.equal(new Set(ps.filter(p=>p.doi).map(p=>doiKey(p.doi))).size,54);assert.equal(ps.filter(p=>p.published_date).length,54);assert.ok(ps.every(p=>p.summary&&p.summary.length>24&&p.ask_next&&p.brief&&p.use_for));
-assert.ok(g.insights?.stats?.papers===55);
+test('corpus integrity and preserved atlas',async()=>{const g=JSON.parse(await readFile('dist/graph.json','utf8'));const ps=g.nodes.filter(p=>p.type==='paper');assert.equal(ps.length,68);assert.equal(new Set(ps.filter(p=>p.doi).map(p=>doiKey(p.doi))).size,67);assert.equal(ps.filter(p=>p.published_date).length,67);assert.ok(ps.every(p=>p.summary&&p.summary.length>24&&p.ask_next&&p.brief&&p.use_for));
+assert.ok(g.insights?.stats?.papers===68);
+assert.ok(ps.some(p=>p.id==='paper_harper_sterimol_2012'));
+assert.ok(ps.some(p=>p.id==='paper_aqme_2023'));
+assert.ok(ps.some(p=>p.id==='paper_lustosa_milo_2022'));
+assert.ok(g.stories?.chemist_frames);
 assert.ok(g.insights.gaps.length>=3);
-assert.ok(g.insights.heatmap.length>20);assert.ok(filterPapers(ps,{focus:'milo'}).length>=4);assert.ok(filterPapers(ps,{representation:'Learned 3D / TS GNN'}).length>=3);const ids=new Set(g.nodes.map(n=>n.id));for(const e of g.edges){assert.ok(ids.has(e.source));assert.ok(ids.has(e.target))}const h=await readFile('dist/atlas.html','utf8');const js=await readFile('dist/atlas.js','utf8');const css=await readFile('dist/style.css','utf8');assert.ok(!h.includes('https://unpkg.com'));assert.ok(js.includes('autoRotate = false'));assert.ok(css.includes('#side{display:grid'));assert.ok(h.includes('id="chemistry"'));assert.ok(h.includes('Color: representation'));assert.ok(h.includes('atlas.js'));assert.ok(!h.includes('ALL_NODES='));new vm.Script(js)});
+assert.ok(g.insights.heatmap.length>20);assert.ok(filterPapers(ps,{focus:'milo'}).length>=8);assert.ok(filterPapers(ps,{representation:'Learned 3D / TS GNN'}).length>=3);const ids=new Set(g.nodes.map(n=>n.id));for(const e of g.edges){assert.ok(ids.has(e.source));assert.ok(ids.has(e.target))}const h=await readFile('dist/atlas.html','utf8');const js=await readFile('dist/atlas.js','utf8');const css=await readFile('dist/style.css','utf8');assert.ok(!h.includes('https://unpkg.com'));assert.ok(js.includes('autoRotate = false'));assert.ok(css.includes('#side{display:grid'));assert.ok(h.includes('id="chemistry"'));assert.ok(h.includes('Color: representation'));assert.ok(h.includes('atlas.js'));assert.ok(!h.includes('ALL_NODES='));new vm.Script(js)});
 test('reading UI: search, filter, details, save, read, compare and discovery failure',async()=>{
  const html=await readFile('src/index.html','utf8'),graph=JSON.parse(await readFile('dist/graph.json','utf8'));
  const dom=new JSDOM(html,{url:'https://atlas.test/',runScripts:'outside-only'}),w=dom.window;
@@ -36,7 +40,7 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('graph.json')?graph:{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
  w.eval((await readFile('src/app.js','utf8')).replace(/^\s*import .*?;\s*/,''));
  await new Promise(r=>setTimeout(r,20));
- const q=s=>w.document.querySelector(s);assert.equal(w.document.querySelectorAll('.paper').length,55);
+ const q=s=>w.document.querySelector(s);assert.equal(w.document.querySelectorAll('.paper').length,68);
  q('#focus').value='milo';q('#focus').dispatchEvent(new w.Event('change'));assert.ok(w.document.querySelectorAll('.paper').length>=4);
  q('[data-detail]').click();assert.equal(q('#detail').open,true);assert.ok(q('#detail-body').textContent.includes('Summary'));assert.ok(q('#detail-body').textContent.includes('Ask next'));
  q('#close-detail').click();q('[data-view="board"]').click();assert.ok(q('.heat'));assert.ok(q('#results').textContent.includes('Open cells'));
