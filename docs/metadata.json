@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T12:52:00.988Z",
+  "checked_at": "2026-09-06T13:20:53.241Z",
   "records": {
     "paper_kraken_2022": {
       "title": "A Comprehensive Discovery Platform for Organophosphorus Ligands for Catalysis",
@@ -492,6 +492,408 @@
       "published_date": "2019-02-25",
       "doi": "10.1021/acs.chemrev.8b00588",
       "source": "https://api.crossref.org/works/10.1021%2Facs.chemrev.8b00588"
+    },
+    "paper_sdl_rise_2023": {
+      "title": "The rise of self-driving labs in chemical and materials sciences",
+      "published_date": "2023-01-30",
+      "doi": "10.1038/s44160-022-00231-0",
+      "source": "https://api.crossref.org/works/10.1038%2Fs44160-022-00231-0"
+    },
+    "paper_safe_sdl_2025": {
+      "title": "Steering towards safe self-driving laboratories",
+      "published_date": "2025-08-18",
+      "doi": "10.1038/s41570-025-00747-x",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41570-025-00747-x"
+    },
+    "paper_autonomous_catalysis_2025": {
+      "title": "Autonomous catalysis research with human–AI–robot collaboration",
+      "published_date": "2025-11-05",
+      "doi": "10.1038/s41929-025-01430-6",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41929-025-01430-6"
+    },
+    "paper_sdl_atlas_brain_2025": {
+      "title": "Atlas: a brain for self-driving laboratories",
+      "published_date": "2025",
+      "doi": "10.1039/d4dd00115j",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4dd00115j"
+    },
+    "paper_chemos2_2024": {
+      "title": "ChemOS 2.0: An orchestration architecture for chemical self-driving laboratories",
+      "published_date": "2024-09",
+      "doi": "10.1016/j.matt.2024.04.022",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.matt.2024.04.022"
+    },
+    "paper_affordable_sdl_2026": {
+      "title": "A flexible and affordable self-driving laboratory for automated reaction optimization",
+      "published_date": "2026-04-13",
+      "doi": "10.1038/s44160-026-01053-0",
+      "source": "https://api.crossref.org/works/10.1038%2Fs44160-026-01053-0"
+    },
+    "paper_bo_icl_catalysis_2026": {
+      "title": "Bayesian Optimization of Catalysis with In-Context Learning",
+      "published_date": "2026-04-14",
+      "doi": "10.1021/acscentsci.5c02418",
+      "source": "https://api.crossref.org/works/10.1021%2Facscentsci.5c02418"
+    },
+    "paper_cost_bo_2024": {
+      "title": "Cost-informed Bayesian reaction optimization",
+      "published_date": "2024",
+      "doi": "10.1039/d4dd00225c",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4dd00225c"
+    },
+    "paper_bo_beyond_onehot_2024": {
+      "title": "Bayesian optimisation for additive screening and yield improvements – beyond one-hot encoding",
+      "published_date": "2024",
+      "doi": "10.1039/d3dd00096f",
+      "source": "https://api.crossref.org/works/10.1039%2Fd3dd00096f"
+    },
+    "paper_chiddo_2022": {
+      "title": "Chemically-informed data-driven optimization (ChIDDO): leveraging physical models and Bayesian learning to accelerate chemical research",
+      "published_date": "2022",
+      "doi": "10.1039/d2re00005a",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2re00005a"
+    },
+    "paper_photo_closedloop_2024": {
+      "title": "Autonomous closed-loop photochemical reaction optimization for the synthesis of various angiotensin II receptor blocker molecules",
+      "published_date": "2024",
+      "doi": "10.1039/d4re00138a",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4re00138a"
+    },
+    "paper_capbo_2023": {
+      "title": "CAPBO: A cost‐aware parallelized Bayesian optimization method for chemical reaction optimization",
+      "published_date": "2023-12-03",
+      "doi": "10.1002/aic.18316",
+      "source": "https://api.crossref.org/works/10.1002%2Faic.18316"
+    },
+    "paper_sdl_reason_2026": {
+      "title": "Catalyst: When self-driving labs begin to reason",
+      "published_date": "2026-08",
+      "doi": "10.1016/j.chempr.2026.103108",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.chempr.2026.103108"
+    },
+    "paper_swarm_opt_2026": {
+      "title": "Swarm intelligence for chemical reaction optimization",
+      "published_date": "2026-04",
+      "doi": "10.1016/j.chempr.2026.103035",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.chempr.2026.103035"
+    },
+    "paper_aminoxyl_generality_2023": {
+      "title": "Generality-oriented optimization of enantioselective aminoxyl radical catalysis",
+      "published_date": "2023-05-19",
+      "doi": "10.1126/science.adf6177",
+      "source": "https://api.crossref.org/works/10.1126%2Fscience.adf6177"
+    },
+    "paper_ir_hte_ml_2023": {
+      "title": "High‐Throughput Experimentation and Machine Learning‐Assisted Optimization of Iridium‐Catalyzed Cross‐Dimerization of Sulfoxonium Ylides",
+      "published_date": "2023-10-20",
+      "doi": "10.1002/anie.202313638",
+      "source": "https://api.crossref.org/works/10.1002%2Fanie.202313638"
+    },
+    "paper_ni_dimers_ml_2023": {
+      "title": "Machine Learning-Guided Development of Trialkylphosphine Ni (I) Dimers and Applications in Site-Selective Catalysis",
+      "published_date": "2023-07-06",
+      "doi": "10.1021/jacs.3c03403",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.3c03403"
+    },
+    "paper_pd_sulfonimidamide_2023": {
+      "title": "Data Science-Enabled Palladium-Catalyzed Enantioselective Aryl-Carbonylation of Sulfonimidamides",
+      "published_date": "2023-09-01",
+      "doi": "10.1021/jacs.3c06674",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.3c06674"
+    },
+    "paper_entdecker_2024": {
+      "title": "EnTdecker − A Machine Learning-Based Platform for Guiding Substrate Discovery in Energy Transfer Catalysis",
+      "published_date": "2024-05-02",
+      "doi": "10.1021/jacs.4c01352",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.4c01352"
+    },
+    "paper_mg_asymmetric_ml_2024": {
+      "title": "Machine Learning Algorithm Guides Catalyst Choices for Magnesium‐Catalyzed Asymmetric Reactions",
+      "published_date": "2024-08-12",
+      "doi": "10.1002/anie.202318487",
+      "source": "https://api.crossref.org/works/10.1002%2Fanie.202318487"
+    },
+    "paper_cu_deaminative_hte_2022": {
+      "title": "Development of copper-catalyzed deaminative esterification using high-throughput experimentation",
+      "published_date": "2022-07-19",
+      "doi": "10.1038/s42004-022-00698-0",
+      "source": "https://api.crossref.org/works/10.1038%2Fs42004-022-00698-0"
+    },
+    "paper_monophosphine_set_2022": {
+      "title": "Design and Application of a Screening Set for Monophosphine Ligands in Cross-Coupling",
+      "published_date": "2022-06-16",
+      "doi": "10.1021/acscatal.2c01970",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.2c01970"
+    },
+    "paper_aryl_pyrrolidine_hbd_2022": {
+      "title": "Exploring Structure–Function Relationships of Aryl Pyrrolidine-Based Hydrogen-Bond Donors in Asymmetric Catalysis Using Data-Driven Techniques",
+      "published_date": "2022-11-22",
+      "doi": "10.1021/acscatal.2c04824",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.2c04824"
+    },
+    "paper_spectroscopic_desc_2023": {
+      "title": "Interpretable Catalysis Models Using Machine Learning with Spectroscopic Descriptors",
+      "published_date": "2023-05-18",
+      "doi": "10.1021/acscatal.3c00611",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.3c00611"
+    },
+    "paper_tep_ml_2023": {
+      "title": "Tolman Electronic Parameter Predictions from a Machine Learning Model Provide Insight into Phosphine Ligand Electronic Effects",
+      "published_date": "2023-12-28",
+      "doi": "10.1021/acs.organomet.3c00432",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.organomet.3c00432"
+    },
+    "paper_hemilabile_ml_2023": {
+      "title": "Classification of Hemilabile Ligands Using Machine Learning",
+      "published_date": "2023-12-05",
+      "doi": "10.1021/acs.jpclett.3c02828",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jpclett.3c02828"
+    },
+    "paper_qtaim_gnn_2025": {
+      "title": "Multi-level QTAIM-enriched graph neural networks for resolving properties of transition metal complexes",
+      "published_date": "2025",
+      "doi": "10.1039/d5dd00220f",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5dd00220f"
+    },
+    "paper_kulik_gnn_coord_2025": {
+      "title": "Graph neural networks for predicting metal–ligand coordination of transition metal complexes",
+      "published_date": "2025-10-06",
+      "doi": "10.1073/pnas.2415658122",
+      "source": "https://api.crossref.org/works/10.1073%2Fpnas.2415658122"
+    },
+    "paper_tm_spin_pred_2024": {
+      "title": "Automated prediction of ground state spin for transition metal complexes",
+      "published_date": "2024",
+      "doi": "10.1039/d4dd00093e",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4dd00093e"
+    },
+    "paper_ir_phosphor_ml_2023": {
+      "title": "Low-cost machine learning prediction of excited state properties of iridium-centered phosphors",
+      "published_date": "2023",
+      "doi": "10.1039/d2sc06150c",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2sc06150c"
+    },
+    "paper_mlr_feature_select_2026": {
+      "title": "Feature Selection in Multivariate Linear Regression Models for Data-Efficient Reaction Optimization",
+      "published_date": "2026-09-04",
+      "doi": "10.1021/acscatal.6c04292",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.6c04292"
+    },
+    "paper_ml_descriptors_review_2023": {
+      "title": "Machine Learning Descriptors for Data‐Driven Catalysis Study",
+      "published_date": "2023-05-16",
+      "doi": "10.1002/advs.202301020",
+      "source": "https://api.crossref.org/works/10.1002%2Fadvs.202301020"
+    },
+    "paper_kulik_calc_outcome_2022": {
+      "title": "Machine Learning Models Predict Calculation Outcomes with the Transferability Necessary for Computational Catalysis",
+      "published_date": "2022-06-23",
+      "doi": "10.1021/acs.jctc.2c00331",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.2c00331"
+    },
+    "paper_ch_borylation_desc_2026": {
+      "title": "Chemically Intuitive Descriptors for Predicting CH Borylation Regioselectivity",
+      "published_date": "2026-08-25",
+      "doi": "10.1002/ceur.70354",
+      "source": "https://api.crossref.org/works/10.1002%2Fceur.70354"
+    },
+    "paper_grubbs_initiation_2026": {
+      "title": "Data-driven modelling of Hoveyda–Grubbs-II-type olefin metathesis precatalyst initiation: mechanistic insights and predictive models",
+      "published_date": "2026",
+      "doi": "10.1039/d6cy00508j",
+      "source": "https://api.crossref.org/works/10.1039%2Fd6cy00508j"
+    },
+    "paper_ml_ts_review_2025": {
+      "title": "Machine learning approaches for transition state prediction",
+      "published_date": "2025-08",
+      "doi": "10.1016/j.checat.2025.101458",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.checat.2025.101458"
+    },
+    "paper_ts_structure_ml_2023": {
+      "title": "Prediction of transition state structures of gas-phase chemical reactions via machine learning",
+      "published_date": "2023-03-01",
+      "doi": "10.1038/s41467-023-36823-3",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41467-023-36823-3"
+    },
+    "paper_reiher_networks_2022": {
+      "title": "Autonomous Reaction Network Exploration in Homogeneous and Heterogeneous Catalysis",
+      "published_date": "2022-01-13",
+      "doi": "10.1007/s11244-021-01543-9",
+      "source": "https://api.crossref.org/works/10.1007%2Fs11244-021-01543-9"
+    },
+    "paper_margraf_networks_2023": {
+      "title": "Exploring catalytic reaction networks with machine learning",
+      "published_date": "2023-01-26",
+      "doi": "10.1038/s41929-022-00896-y",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41929-022-00896-y"
+    },
+    "paper_mlip_ligand_exchange_2025": {
+      "title": "Modelling ligand exchange in metal complexes with machine learning potentials",
+      "published_date": "2025",
+      "doi": "10.1039/d4fd00140k",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4fd00140k"
+    },
+    "paper_mlip_catalysis_set_2025": {
+      "title": "A Machine Learning Interatomic Potential Data Set and Model for Catalysis with Local Fine-Tuning to Chemical Accuracy",
+      "published_date": "2025-11-23",
+      "doi": "10.1021/jacsau.5c01112",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacsau.5c01112"
+    },
+    "paper_kulik_dft_reparam_2026": {
+      "title": "System-Specific Reparameterization of Density Functionals with Machine Learning: Application to Spin-Splitting Energies of Transition Metal Complexes",
+      "published_date": "2026-02-17",
+      "doi": "10.1021/acs.jctc.5c01833",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.5c01833"
+    },
+    "paper_gen_suzuki_2023": {
+      "title": "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions",
+      "published_date": "2023",
+      "doi": "10.1039/d2dd00125j",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2dd00125j"
+    },
+    "paper_paton_dl_asymm_2026": {
+      "title": "Deep learning for asymmetric catalysis",
+      "published_date": "2026-02-10",
+      "doi": "10.1038/s43588-026-00954-6",
+      "source": "https://api.crossref.org/works/10.1038%2Fs43588-026-00954-6"
+    },
+    "paper_genetic_homocat_2022": {
+      "title": "Genetic Optimization of Homogeneous Catalysts",
+      "published_date": "2022-03-04",
+      "doi": "10.1002/cmtd.202100107",
+      "source": "https://api.crossref.org/works/10.1002%2Fcmtd.202100107"
+    },
+    "paper_llm_catalysis_lit_2025": {
+      "title": "Distilling Knowledge from Catalysis Literature with Long-Context Large Language Model Agents",
+      "published_date": "2025-10-20",
+      "doi": "10.1021/acscatal.5c06431",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.5c06431"
+    },
+    "paper_llm_extract_shallow_2025": {
+      "title": "Accelerating Catalysis Understanding via Large Language Model Data Extraction and Shallow Machine Learning Techniques",
+      "published_date": "2025-10-21",
+      "doi": "10.1021/jacsau.5c01087",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacsau.5c01087"
+    },
+    "paper_askcos_2025": {
+      "title": "ASKCOS: Open-Source, Data-Driven Synthesis Planning",
+      "published_date": "2025-05-21",
+      "doi": "10.1021/acs.accounts.5c00155",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.accounts.5c00155"
+    },
+    "paper_predictive_chem_2023": {
+      "title": "Predictive chemistry: machine learning for reaction deployment, reaction development, and reaction discovery",
+      "published_date": "2023",
+      "doi": "10.1039/d2sc05089g",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2sc05089g"
+    },
+    "paper_kg_llm_relay_2025": {
+      "title": "Synergizing a knowledge graph and large language model for relay catalysis pathway recommendation",
+      "published_date": "2025-07-14",
+      "doi": "10.1093/nsr/nwaf271",
+      "source": "https://api.crossref.org/works/10.1093%2Fnsr%2Fnwaf271"
+    },
+    "paper_predictive_catalysis_2023": {
+      "title": "Predictive catalysis: a valuable step towards machine learning",
+      "published_date": "2023-12",
+      "doi": "10.1016/j.trechm.2023.10.005",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.trechm.2023.10.005"
+    },
+    "paper_ml_exp_homocat_2024": {
+      "title": "Recent advances of machine learning applications in the development of experimental homogeneous catalysis",
+      "published_date": "2024-06",
+      "doi": "10.1016/j.aichem.2024.100068",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.aichem.2024.100068"
+    },
+    "paper_ml_meets_mln_2023": {
+      "title": "ML meets MLn: Machine learning in ligand promoted homogeneous catalysis",
+      "published_date": "2023-12",
+      "doi": "10.1016/j.aichem.2023.100006",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.aichem.2023.100006"
+    },
+    "paper_physical_insights_ml_2022": {
+      "title": "Finding physical insights in catalysis with machine learning",
+      "published_date": "2022-09",
+      "doi": "10.1016/j.coche.2022.100832",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.coche.2022.100832"
+    },
+    "paper_bayesian_catalysis_2022": {
+      "title": "Bayesian statistics in catalysis: a perspective",
+      "published_date": "2022-06",
+      "doi": "10.1016/j.coche.2022.100820",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.coche.2022.100820"
+    },
+    "paper_doe_ml_knowledge_2022": {
+      "title": "Knowledge extraction in catalysis utilizing design of experiments and machine learning",
+      "published_date": "2022-06",
+      "doi": "10.1016/j.coche.2021.100781",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.coche.2021.100781"
+    },
+    "paper_catalysis_meets_ml_2025": {
+      "title": "Catalysis meets machine learning: a guide to data-driven discovery and design",
+      "published_date": "2025",
+      "doi": "10.1039/d5cc05274b",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5cc05274b"
+    },
+    "paper_digital_age_catalysis_2024": {
+      "title": "Catalysis in the digital age: Unlocking the power of data with machine learning",
+      "published_date": "2024-09-20",
+      "doi": "10.1002/wcms.1730",
+      "source": "https://api.crossref.org/works/10.1002%2Fwcms.1730"
+    },
+    "paper_ml_bridge_physics_2025": {
+      "title": "Machine learning for catalysis: Bridging data-driven discovery and physical insight",
+      "published_date": "2025-10",
+      "doi": "10.1016/j.mtchem.2025.103051",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.mtchem.2025.103051"
+    },
+    "paper_catalyseed_2026": {
+      "title": "CatalySeed: A Reaction Database for Ruthenium-Catalyzed Ethenolysis of Seed Oils with Applications in Machine Learning",
+      "published_date": "2026-01-19",
+      "doi": "10.1021/acscatal.5c06483",
+      "source": "https://api.crossref.org/works/10.1021%2Facscatal.5c06483"
+    },
+    "paper_kulik_mbe_mlst_2025": {
+      "title": "Many-body expansion based machine learning models for octahedral transition metal complexes",
+      "published_date": "2025-01-06",
+      "doi": "10.1088/2632-2153/ad9f22",
+      "source": "https://api.crossref.org/works/10.1088%2F2632-2153%2Fad9f22"
+    },
+    "paper_piecewise_tm_2023": {
+      "title": "Insights into the deviation from piecewise linearity in transition metal complexes from supervised machine learning models",
+      "published_date": "2023",
+      "doi": "10.1039/d3cp00258f",
+      "source": "https://api.crossref.org/works/10.1039%2Fd3cp00258f"
+    },
+    "paper_hitl_sdl_hetero_2025": {
+      "title": "Role of the human-in-the-loop in emerging self-driving laboratories for heterogeneous catalysis",
+      "published_date": "2025-01-29",
+      "doi": "10.1038/s41929-024-01275-5",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41929-024-01275-5"
+    },
+    "paper_sdl_industry_2026": {
+      "title": "Self-driving labs for research and development in industry",
+      "published_date": "2026-05-22",
+      "doi": "10.1038/s44160-026-01084-7",
+      "source": "https://api.crossref.org/works/10.1038%2Fs44160-026-01084-7"
+    },
+    "paper_nitration_hte_ml_2025": {
+      "title": "Investigation of arene and heteroarene nitration supported by high-throughput experimentation and machine learning",
+      "published_date": "2025",
+      "doi": "10.1039/d5dd00086f",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5dd00086f"
+    },
+    "paper_hein_bayes_ir_2026": {
+      "title": "Improving the univariate calibration approach with Bayesian modeling for IR reaction monitoring",
+      "published_date": "2026",
+      "doi": "10.1039/d5re00400d",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5re00400d"
+    },
+    "paper_negishi_bo_ligand_2026": {
+      "title": "Leveraging Bayesian Optimization for Accelerated Ligand Selection in Atroposelective Negishi Coupling",
+      "published_date": "2026-07-07",
+      "doi": "10.1021/acs.orglett.6c02314",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.orglett.6c02314"
     }
   },
   "failures": []

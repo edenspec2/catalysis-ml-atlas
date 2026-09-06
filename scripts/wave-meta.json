@@ -1,0 +1,1015 @@
+[
+  {
+    "doi": "10.1038/s44160-022-00231-0",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Nature Synthesis",
+    "title": "The rise of self-driving labs in chemical and materials sciences",
+    "authors": [
+      "Milad Abolhasani",
+      "Eugenia Kumacheva"
+    ],
+    "cites": 532
+  },
+  {
+    "doi": "10.1038/s41570-025-00747-x",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Nature Reviews Chemistry",
+    "title": "Steering towards safe self-driving laboratories",
+    "authors": [
+      "Shi Xuan Leong",
+      "Caleb E. Griesbach",
+      "Rui Zhang",
+      "Kourosh Darvish",
+      "Yuchi Zhao",
+      "Abhijoy Mandal",
+      "Yunheng Zou",
+      "Han Hao"
+    ],
+    "cites": 37
+  },
+  {
+    "doi": "10.1038/s41929-025-01430-6",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Nature Catalysis",
+    "title": "Autonomous catalysis research with human–AI–robot collaboration",
+    "authors": [
+      "Negin Orouji",
+      "Jeffrey A. Bennett",
+      "Richard B. Canty",
+      "Long Qi",
+      "Shijing Sun",
+      "Paulami Majumdar",
+      "Chong Liu",
+      "Núria López"
+    ],
+    "cites": 35
+  },
+  {
+    "doi": "10.1039/d4dd00115j",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Atlas: a brain for self-driving laboratories",
+    "authors": [
+      "Riley J. Hickman",
+      "Malcolm Sim",
+      "Sergio Pablo-García",
+      "Gary Tom",
+      "Ivan Woolhouse",
+      "Han Hao",
+      "Zeqing Bao",
+      "Pauric Bannigan"
+    ],
+    "cites": 35
+  },
+  {
+    "doi": "10.1016/j.matt.2024.04.022",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Matter",
+    "title": "ChemOS 2.0: An orchestration architecture for chemical self-driving laboratories",
+    "authors": [
+      "Malcolm Sim",
+      "Mohammad Ghazi Vakili",
+      "Felix Strieth-Kalthoff",
+      "Han Hao",
+      "Riley J. Hickman",
+      "Santiago Miret",
+      "Sergio Pablo-García",
+      "Alán Aspuru-Guzik"
+    ],
+    "cites": 77
+  },
+  {
+    "doi": "10.1038/s44160-026-01053-0",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Nature Synthesis",
+    "title": "A flexible and affordable self-driving laboratory for automated reaction optimization",
+    "authors": [
+      "Simone Pilon",
+      "Elia Savino",
+      "Oliver M. Bayley",
+      "Michael Vanzella",
+      "Miguel Claros",
+      "Petros Siasiaridis",
+      "Junsong Liu",
+      "Florian Lukas"
+    ],
+    "cites": 11
+  },
+  {
+    "doi": "10.1021/acscentsci.5c02418",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "ACS Central Science",
+    "title": "Bayesian Optimization of Catalysis with In-Context Learning",
+    "authors": [
+      "Mayk Caldas Ramos",
+      "Shane S. Michtavy",
+      "Andrew D. White",
+      "Marc D. Porosoff"
+    ],
+    "cites": 7
+  },
+  {
+    "doi": "10.1039/d4dd00225c",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Cost-informed Bayesian reaction optimization",
+    "authors": [
+      "Alexandre A. Schoepfer",
+      "Jan Weinreich",
+      "Ruben Laplaza",
+      "Jerome Waser",
+      "Clemence Corminboeuf"
+    ],
+    "cites": 14
+  },
+  {
+    "doi": "10.1039/d3dd00096f",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Bayesian optimisation for additive screening and yield improvements – beyond one-hot encoding",
+    "authors": [
+      "Bojana Ranković",
+      "Ryan-Rhys Griffiths",
+      "Henry B. Moss",
+      "Philippe Schwaller"
+    ],
+    "cites": 29
+  },
+  {
+    "doi": "10.1039/d2re00005a",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Reaction Chemistry &amp; Engineering",
+    "title": "Chemically-informed data-driven optimization (ChIDDO): leveraging physical models and Bayesian learning to accelerate chemical research",
+    "authors": [
+      "Daniel Frey",
+      "Ju Hee Shin",
+      "Christopher Musco",
+      "Miguel A. Modestino"
+    ],
+    "cites": 20
+  },
+  {
+    "doi": "10.1039/d4re00138a",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Reaction Chemistry &amp; Engineering",
+    "title": "Autonomous closed-loop photochemical reaction optimization for the synthesis of various angiotensin II receptor blocker molecules",
+    "authors": [
+      "Dnyaneshwar Aand",
+      "Abhilash Rana",
+      "Amirreza Mottafegh",
+      "Dong Pyo Kim",
+      "Ajay K. Singh"
+    ],
+    "cites": 8
+  },
+  {
+    "doi": "10.1002/aic.18316",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "AIChE Journal",
+    "title": "CAPBO: A cost‐aware parallelized Bayesian optimization method for chemical reaction optimization",
+    "authors": [
+      "Runzhe Liang",
+      "Haoyang Hu",
+      "Yueheng Han",
+      "Bingzhen Chen",
+      "Zhihong Yuan"
+    ],
+    "cites": 14
+  },
+  {
+    "doi": "10.1016/j.chempr.2026.103108",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Chem",
+    "title": "Catalyst: When self-driving labs begin to reason",
+    "authors": [
+      "Milad Abolhasani"
+    ],
+    "cites": 1
+  },
+  {
+    "doi": "10.1016/j.chempr.2026.103035",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Chem",
+    "title": "Swarm intelligence for chemical reaction optimization",
+    "authors": [
+      "Rémi Schlama",
+      "Joshua W. Sin",
+      "Ryan P. Burwood",
+      "Kurt Püntener",
+      "Raphael Bigler",
+      "Philippe Schwaller"
+    ],
+    "cites": 1
+  },
+  {
+    "doi": "10.1126/science.adf6177",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Science",
+    "title": "Generality-oriented optimization of enantioselective aminoxyl radical catalysis",
+    "authors": [
+      "Jonas Rein",
+      "Soren D. Rozema",
+      "Olivia C. Langner",
+      "Samson B. Zacate",
+      "Melissa A. Hardy",
+      "Juno C. Siu",
+      "Brandon Q. Mercado",
+      "Matthew S. Sigman"
+    ],
+    "cites": 92
+  },
+  {
+    "doi": "10.1002/anie.202313638",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Angewandte Chemie International Edition",
+    "title": "High‐Throughput Experimentation and Machine Learning‐Assisted Optimization of Iridium‐Catalyzed Cross‐Dimerization of Sulfoxonium Ylides",
+    "authors": [
+      "Yougen Xu",
+      "Yadong Gao",
+      "Lebin Su",
+      "Haiting Wu",
+      "Hao Tian",
+      "Majian Zeng",
+      "Chunqiu Xu",
+      "Xinwei Zhu"
+    ],
+    "cites": 50
+  },
+  {
+    "doi": "10.1021/jacs.3c03403",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Journal of the American Chemical Society",
+    "title": "Machine Learning-Guided Development of Trialkylphosphine Ni <sup>(I)</sup> Dimers and Applications in Site-Selective Catalysis",
+    "authors": [
+      "Teresa M. Karl",
+      "Samir Bouayad-Gervais",
+      "Julian A. Hueffel",
+      "Theresa Sperger",
+      "Sebastian Wellig",
+      "Sherif J. Kaldas",
+      "Uladzislava Dabranskaya",
+      "Jas S. Ward"
+    ],
+    "cites": 42
+  },
+  {
+    "doi": "10.1021/jacs.3c06674",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Journal of the American Chemical Society",
+    "title": "Data Science-Enabled Palladium-Catalyzed Enantioselective Aryl-Carbonylation of Sulfonimidamides",
+    "authors": [
+      "Lucy van Dijk",
+      "Brittany C. Haas",
+      "Ngiap-Kie Lim",
+      "Kyle Clagg",
+      "Jordan J. Dotson",
+      "Sean M. Treacy",
+      "Katarzyna A. Piechowicz",
+      "Vladislav A. Roytman"
+    ],
+    "cites": 64
+  },
+  {
+    "doi": "10.1021/jacs.4c01352",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Journal of the American Chemical Society",
+    "title": "EnTdecker − A Machine Learning-Based Platform for Guiding Substrate Discovery in Energy Transfer Catalysis",
+    "authors": [
+      "Leon Schlosser",
+      "Debanjan Rana",
+      "Philipp Pflüger",
+      "Felix Katzenburg",
+      "Frank Glorius"
+    ],
+    "cites": 41
+  },
+  {
+    "doi": "10.1002/anie.202318487",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Angewandte Chemie International Edition",
+    "title": "Machine Learning Algorithm Guides Catalyst Choices for Magnesium‐Catalyzed Asymmetric Reactions",
+    "authors": [
+      "Paulina Baczewska",
+      "Michał Kulczykowski",
+      "Bartosz Zambroń",
+      "Joanna Jaszczewska‐Adamczak",
+      "Zbigniew Pakulski",
+      "Rafał Roszak",
+      "Bartosz A. Grzybowski",
+      "Jacek Mlynarski"
+    ],
+    "cites": 29
+  },
+  {
+    "doi": "10.1038/s42004-022-00698-0",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Communications Chemistry",
+    "title": "Development of copper-catalyzed deaminative esterification using high-throughput experimentation",
+    "authors": [
+      "Yuning Shen",
+      "Babak Mahjour",
+      "Tim Cernak"
+    ],
+    "cites": 20
+  },
+  {
+    "doi": "10.1021/acscatal.2c01970",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "Design and Application of a Screening Set for Monophosphine Ligands in Cross-Coupling",
+    "authors": [
+      "Tobias Gensch",
+      "Sleight R. Smith",
+      "Thomas J. Colacot",
+      "Yam N. Timsina",
+      "Guolin Xu",
+      "Ben W. Glasspoole",
+      "Matthew S. Sigman"
+    ],
+    "cites": 52
+  },
+  {
+    "doi": "10.1021/acscatal.2c04824",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "Exploring Structure–Function Relationships of Aryl Pyrrolidine-Based Hydrogen-Bond Donors in Asymmetric Catalysis Using Data-Driven Techniques",
+    "authors": [
+      "Mohammad H. Samha",
+      "Julie L. H. Wahlman",
+      "Jacquelyne A. Read",
+      "Jacob Werth",
+      "Eric N. Jacobsen",
+      "Matthew S. Sigman"
+    ],
+    "cites": 16
+  },
+  {
+    "doi": "10.1021/acscatal.3c00611",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "Interpretable Catalysis Models Using Machine Learning with Spectroscopic Descriptors",
+    "authors": [
+      "Song Wang",
+      "Jun Jiang"
+    ],
+    "cites": 69
+  },
+  {
+    "doi": "10.1021/acs.organomet.3c00432",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Organometallics",
+    "title": "Tolman Electronic Parameter Predictions from a Machine Learning Model Provide Insight into Phosphine Ligand Electronic Effects",
+    "authors": [
+      "Harlan P. Stevens",
+      "Jeffrey Olsen",
+      "Justin K. Kirkland",
+      "Daniel H. Ess"
+    ],
+    "cites": 9
+  },
+  {
+    "doi": "10.1021/acs.jpclett.3c02828",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "The Journal of Physical Chemistry Letters",
+    "title": "Classification of Hemilabile Ligands Using Machine Learning",
+    "authors": [
+      "Ilia Kevlishvili",
+      "Chenru Duan",
+      "Heather J. Kulik"
+    ],
+    "cites": 14
+  },
+  {
+    "doi": "10.1039/d5dd00220f",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Multi-level QTAIM-enriched graph neural networks for resolving properties of transition metal complexes",
+    "authors": [
+      "Winston Gee",
+      "Abigail Doyle",
+      "Santiago Vargas",
+      "Anastassia N. Alexandrova"
+    ],
+    "cites": 9
+  },
+  {
+    "doi": "10.1073/pnas.2415658122",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "title": "Graph neural networks for predicting metal–ligand coordination of transition metal complexes",
+    "authors": [
+      "Jacob W. Toney",
+      "Roland G. St. Michel",
+      "Aaron G. Garrison",
+      "Ilia Kevlishvili",
+      "Heather J. Kulik"
+    ],
+    "cites": 19
+  },
+  {
+    "doi": "10.1039/d4dd00093e",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Automated prediction of ground state spin for transition metal complexes",
+    "authors": [
+      "Yuri Cho",
+      "Ruben Laplaza",
+      "Sergi Vela",
+      "Clémence Corminboeuf"
+    ],
+    "cites": 14
+  },
+  {
+    "doi": "10.1039/d2sc06150c",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Chemical Science",
+    "title": "Low-cost machine learning prediction of excited state properties of iridium-centered phosphors",
+    "authors": [
+      "Gianmarco G. Terrones",
+      "Chenru Duan",
+      "Aditya Nandy",
+      "Heather J. Kulik"
+    ],
+    "cites": 37
+  },
+  {
+    "doi": "10.1021/acscatal.6c04292",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "Feature Selection in Multivariate Linear Regression Models for Data-Efficient Reaction Optimization",
+    "authors": [
+      "Alexandre A. Schoepfer",
+      "Ruben Laplaza",
+      "Jerome Waser",
+      "Clemence Corminboeuf"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1002/advs.202301020",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Advanced Science",
+    "title": "Machine Learning Descriptors for Data‐Driven Catalysis Study",
+    "authors": [
+      "Li‐Hui Mou",
+      "TianTian Han",
+      "Pieter E. S. Smith",
+      "Edward Sharman",
+      "Jun Jiang"
+    ],
+    "cites": 152
+  },
+  {
+    "doi": "10.1021/acs.jctc.2c00331",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Journal of Chemical Theory and Computation",
+    "title": "Machine Learning Models Predict Calculation Outcomes with the Transferability Necessary for Computational Catalysis",
+    "authors": [
+      "Chenru Duan",
+      "Aditya Nandy",
+      "Husain Adamji",
+      "Yuriy Roman-Leshkov",
+      "Heather J. Kulik"
+    ],
+    "cites": 19
+  },
+  {
+    "doi": "10.1002/ceur.70354",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "ChemistryEurope",
+    "title": "Chemically Intuitive Descriptors for Predicting CH Borylation Regioselectivity",
+    "authors": [
+      "Rasmus M. Borup",
+      "Kjell Jorner",
+      "Jan H. Jensen"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1039/d6cy00508j",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Catalysis Science &amp; Technology",
+    "title": "Data-driven modelling of Hoveyda–Grubbs-II-type olefin metathesis precatalyst initiation: mechanistic insights and predictive models",
+    "authors": [
+      "Henning Remm",
+      "Viktoria H. Gessner",
+      "Tobias Gensch"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1016/j.checat.2025.101458",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Chem Catalysis",
+    "title": "Machine learning approaches for transition state prediction",
+    "authors": [
+      "Xingyu Wang",
+      "Yu Mao",
+      "Ziyun Wang"
+    ],
+    "cites": 7
+  },
+  {
+    "doi": "10.1038/s41467-023-36823-3",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Nature Communications",
+    "title": "Prediction of transition state structures of gas-phase chemical reactions via machine learning",
+    "authors": [
+      "Sunghwan Choi"
+    ],
+    "cites": 56
+  },
+  {
+    "doi": "10.1007/s11244-021-01543-9",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Topics in Catalysis",
+    "title": "Autonomous Reaction Network Exploration in Homogeneous and Heterogeneous Catalysis",
+    "authors": [
+      "Miguel Steiner",
+      "Markus Reiher"
+    ],
+    "cites": 63
+  },
+  {
+    "doi": "10.1038/s41929-022-00896-y",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Nature Catalysis",
+    "title": "Exploring catalytic reaction networks with machine learning",
+    "authors": [
+      "Johannes T. Margraf",
+      "Hyunwook Jung",
+      "Christoph Scheurer",
+      "Karsten Reuter"
+    ],
+    "cites": 148
+  },
+  {
+    "doi": "10.1039/d4fd00140k",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Faraday Discussions",
+    "title": "Modelling ligand exchange in metal complexes with machine learning potentials",
+    "authors": [
+      "Veronika Juraskova",
+      "Gers Tusha",
+      "Hanwen Zhang",
+      "Lars V. Schäfer",
+      "Fernanda Duarte"
+    ],
+    "cites": 13
+  },
+  {
+    "doi": "10.1021/jacsau.5c01112",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "JACS Au",
+    "title": "A Machine Learning Interatomic Potential Data Set and Model for Catalysis with Local Fine-Tuning to Chemical Accuracy",
+    "authors": [
+      "Zhihong Wu",
+      "Lei Zhou",
+      "Pengfei Hou",
+      "Yuyan Liu",
+      "Ruixing Wang",
+      "Taoli Guo",
+      "Jin-Cheng Liu"
+    ],
+    "cites": 10
+  },
+  {
+    "doi": "10.1021/acs.jctc.5c01833",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Journal of Chemical Theory and Computation",
+    "title": "System-Specific Reparameterization of Density Functionals with Machine Learning: Application to Spin-Splitting Energies of Transition Metal Complexes",
+    "authors": [
+      "Aaron G. Garrison",
+      "Heather J. Kulik"
+    ],
+    "cites": 1
+  },
+  {
+    "doi": "10.1039/d2dd00125j",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions",
+    "authors": [
+      "Oliver Schilter",
+      "Alain Vaucher",
+      "Philippe Schwaller",
+      "Teodoro Laino"
+    ],
+    "cites": 44
+  },
+  {
+    "doi": "10.1038/s43588-026-00954-6",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Nature Computational Science",
+    "title": "Deep learning for asymmetric catalysis",
+    "authors": [
+      "Robert S. Paton",
+      "Seonah Kim"
+    ],
+    "cites": 1
+  },
+  {
+    "doi": "10.1002/cmtd.202100107",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Chemistry–Methods",
+    "title": "Genetic Optimization of Homogeneous Catalysts",
+    "authors": [
+      "Ruben Laplaza",
+      "Simone Gallarati",
+      "Clemence Corminboeuf"
+    ],
+    "cites": 42
+  },
+  {
+    "doi": "10.1021/acscatal.5c06431",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "Distilling Knowledge from Catalysis Literature with Long-Context Large Language Model Agents",
+    "authors": [
+      "Honghao Chen",
+      "Hongxuan Liu",
+      "Yishen Tew",
+      "Xiaotian Ren",
+      "Xiaojin Tang",
+      "Xiaonan Wang"
+    ],
+    "cites": 22
+  },
+  {
+    "doi": "10.1021/jacsau.5c01087",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "JACS Au",
+    "title": "Accelerating Catalysis Understanding via Large Language Model Data Extraction and Shallow Machine Learning Techniques",
+    "authors": [
+      "Brianna R. Farris",
+      "Kevin C. Leonard"
+    ],
+    "cites": 6
+  },
+  {
+    "doi": "10.1021/acs.accounts.5c00155",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Accounts of Chemical Research",
+    "title": "ASKCOS: Open-Source, Data-Driven Synthesis Planning",
+    "authors": [
+      "Zhengkai Tu",
+      "Sourabh J. Choure",
+      "Mun Hong Fong",
+      "Jihye Roh",
+      "Itai Levin",
+      "Kevin Yu",
+      "Joonyoung F. Joung",
+      "Nathan Morgan"
+    ],
+    "cites": 72
+  },
+  {
+    "doi": "10.1039/d2sc05089g",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Chemical Science",
+    "title": "Predictive chemistry: machine learning for reaction deployment, reaction development, and reaction discovery",
+    "authors": [
+      "Zhengkai Tu",
+      "Thijs Stuyver",
+      "Connor W. Coley"
+    ],
+    "cites": 135
+  },
+  {
+    "doi": "10.1093/nsr/nwaf271",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "National Science Review",
+    "title": "Synergizing a knowledge graph and large language model for relay catalysis pathway recommendation",
+    "authors": [
+      "Fei Fu",
+      "Qing-Qing Li",
+      "Fangrong Wang",
+      "Jie Hu",
+      "Tian-Tian Wang",
+      "Yun-Pei Liu",
+      "Weihong Xu",
+      "Zhili Lin"
+    ],
+    "cites": 15
+  },
+  {
+    "doi": "10.1016/j.trechm.2023.10.005",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Trends in Chemistry",
+    "title": "Predictive catalysis: a valuable step towards machine learning",
+    "authors": [
+      "Roger Monreal-Corona",
+      "Anna Pla-Quintana",
+      "Albert Poater"
+    ],
+    "cites": 44
+  },
+  {
+    "doi": "10.1016/j.aichem.2024.100068",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "Artificial Intelligence Chemistry",
+    "title": "Recent advances of machine learning applications in the development of experimental homogeneous catalysis",
+    "authors": [
+      "Nil Sanosa",
+      "David Dalmau",
+      "Diego Sampedro",
+      "Juan V. Alegre-Requena",
+      "Ignacio Funes-Ardoiz"
+    ],
+    "cites": 17
+  },
+  {
+    "doi": "10.1016/j.aichem.2023.100006",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Artificial Intelligence Chemistry",
+    "title": "ML meets MLn: Machine learning in ligand promoted homogeneous catalysis",
+    "authors": [
+      "Jonathan D. Hirst",
+      "Samuel Boobier",
+      "Jennifer Coughlan",
+      "Jessica Streets",
+      "Philippa L. Jacob",
+      "Oska Pugh",
+      "Ender Özcan",
+      "Simon Woodward"
+    ],
+    "cites": 13
+  },
+  {
+    "doi": "10.1016/j.coche.2022.100832",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Current Opinion in Chemical Engineering",
+    "title": "Finding physical insights in catalysis with machine learning",
+    "authors": [
+      "Chun-Yen Liu",
+      "Thomas P Senftle"
+    ],
+    "cites": 26
+  },
+  {
+    "doi": "10.1016/j.coche.2022.100820",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Current Opinion in Chemical Engineering",
+    "title": "Bayesian statistics in catalysis: a perspective",
+    "authors": [
+      "Eric A Walker"
+    ],
+    "cites": 10
+  },
+  {
+    "doi": "10.1016/j.coche.2021.100781",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Current Opinion in Chemical Engineering",
+    "title": "Knowledge extraction in catalysis utilizing design of experiments and machine learning",
+    "authors": [
+      "Blake MacQueen",
+      "Rasika Jayarathna",
+      "Jochen Lauterbach"
+    ],
+    "cites": 30
+  },
+  {
+    "doi": "10.1039/d5cc05274b",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Chemical Communications",
+    "title": "Catalysis meets machine learning: a guide to data-driven discovery and design",
+    "authors": [
+      "Eleonora Casillo",
+      "Thomas Scattolin",
+      "Steven P. Nolan"
+    ],
+    "cites": 21
+  },
+  {
+    "doi": "10.1002/wcms.1730",
+    "year": 2024,
+    "type": "journal-article",
+    "journal": "WIREs Computational Molecular Science",
+    "title": "Catalysis in the digital age: Unlocking the power of data with machine learning",
+    "authors": [
+      "Bokinala Moses Abraham",
+      "Mullapudi V. Jyothirmai",
+      "Priyanka Sinha",
+      "Francesc Viñes",
+      "Jayant K. Singh",
+      "Francesc Illas"
+    ],
+    "cites": 69
+  },
+  {
+    "doi": "10.1016/j.mtchem.2025.103051",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Materials Today Chemistry",
+    "title": "Machine learning for catalysis: Bridging data-driven discovery and physical insight",
+    "authors": [
+      "Hongjing Wu",
+      "Shangkang Xie",
+      "Xurui Li",
+      "Yashuang Zhao",
+      "Lixia Guo",
+      "Xinlei Tu",
+      "Feiyu Feng",
+      "Qingtao Wang"
+    ],
+    "cites": 9
+  },
+  {
+    "doi": "10.1021/acscatal.5c06483",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "ACS Catalysis",
+    "title": "CatalySeed: A Reaction Database for Ruthenium-Catalyzed Ethenolysis of Seed Oils with Applications in Machine Learning",
+    "authors": [
+      "Albert Poater",
+      "Susana P. García-Abellán",
+      "Juan V. Alegre-Requena",
+      "Bartosz Trzaskowski",
+      "J. Pablo Martínez"
+    ],
+    "cites": 4
+  },
+  {
+    "doi": "10.1088/2632-2153/ad9f22",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Machine Learning: Science and Technology",
+    "title": "Many-body expansion based machine learning models for octahedral transition metal complexes",
+    "authors": [
+      "Ralf Meyer",
+      "Daniel B K Chu",
+      "Heather J Kulik"
+    ],
+    "cites": 2
+  },
+  {
+    "doi": "10.1039/d3cp00258f",
+    "year": 2023,
+    "type": "journal-article",
+    "journal": "Physical Chemistry Chemical Physics",
+    "title": "Insights into the deviation from piecewise linearity in transition metal complexes from supervised machine learning models",
+    "authors": [
+      "Yael Cytter",
+      "Aditya Nandy",
+      "Chenru Duan",
+      "Heather J. Kulik"
+    ],
+    "cites": 4
+  },
+  {
+    "doi": "10.1038/s41929-024-01275-5",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Nature Catalysis",
+    "title": "Role of the human-in-the-loop in emerging self-driving laboratories for heterogeneous catalysis",
+    "authors": [
+      "Christoph Scheurer",
+      "Karsten Reuter"
+    ],
+    "cites": 46
+  },
+  {
+    "doi": "10.1021/jacs.2c08592",
+    "year": 2022,
+    "type": "journal-article",
+    "journal": "Journal of the American Chemical Society",
+    "title": "A Multi-Objective Active Learning Platform and Web App for Reaction Optimization",
+    "authors": [
+      "Jose Antonio Garrido Torres",
+      "Sii Hong Lau",
+      "Pranay Anchuri",
+      "Jason M. Stevens",
+      "Jose E. Tabora",
+      "Jun Li",
+      "Alina Borovika",
+      "Ryan P. Adams"
+    ],
+    "cites": 180
+  },
+  {
+    "doi": "10.1038/s44160-026-01084-7",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Nature Synthesis",
+    "title": "Self-driving labs for research and development in industry",
+    "authors": [
+      "Jet-Sing Lee"
+    ],
+    "cites": 1
+  },
+  {
+    "doi": "10.1038/s44160-026-01120-6",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Nature Synthesis",
+    "title": "Self-driving laboratories need an autonomy safety harness",
+    "authors": [
+      "Linjiang Chen",
+      "Xiaobo Li",
+      "Quan Lin",
+      "Jun Jiang"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1039/d5dd00086f",
+    "year": 2025,
+    "type": "journal-article",
+    "journal": "Digital Discovery",
+    "title": "Investigation of arene and heteroarene nitration supported by high-throughput experimentation and machine learning",
+    "authors": [
+      "Taline Kerackian",
+      "Clément Wespiser",
+      "Matthieu Daniel",
+      "Eric Pasquinet",
+      "Eugénie Romero"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1039/d5re00400d",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Reaction Chemistry &amp; Engineering",
+    "title": "Improving the univariate calibration approach with Bayesian modeling for IR reaction monitoring",
+    "authors": [
+      "Jiayu Zhang",
+      "Jason E. Hein"
+    ],
+    "cites": 0
+  },
+  {
+    "doi": "10.1021/acs.orglett.6c02314",
+    "year": 2026,
+    "type": "journal-article",
+    "journal": "Organic Letters",
+    "title": "Leveraging Bayesian Optimization for Accelerated Ligand Selection in Atroposelective Negishi Coupling",
+    "authors": [
+      "Yujing Zhou",
+      "Richard C. Walroth",
+      "Lin Deng",
+      "Kyle A. Mack",
+      "Theresa Cravillion",
+      "Chong Han",
+      "Francis Gosselin"
+    ],
+    "cites": 0
+  }
+]

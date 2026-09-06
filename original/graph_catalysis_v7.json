@@ -5,10 +5,10 @@
     "citation_note": "Citation counts are OpenAlex 'cited by' counts where verified. Blank means not verified in this pass, not zero.",
     "citation_snapshot": "2026-09-03",
     "updated": "2026-09-06",
-    "new_papers_added": 44,
-    "paper_count": 83,
+    "new_papers_added": 111,
+    "paper_count": 150,
     "features_version": 7,
-    "note": "DescriPyTor neighborhood plus comparators: molli, SambVca, %Vbur, Sigman Accounts, LKB-P, Fey ligand-descriptor review."
+    "note": "Curated 2022–2026 wave: leading-group and high-impact ML-catalysis papers on new representations and workflows (SDL/BO, descriptors, TS/MLIP, generative/LLM)."
   },
   "nodes": [
     {
@@ -12537,6 +12537,4080 @@
       "focus": "",
       "steps": [],
       "group": "paper"
+    },
+    {
+      "id": "paper_sdl_rise_2023",
+      "label": "The Rise of Self-Driving Labs",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Nature Synthesis",
+      "doi": "10.1038/s44160-022-00231-0",
+      "url": "https://doi.org/10.1038/s44160-022-00231-0",
+      "paper_type": "review",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Milad Abolhasani",
+        "Eugenia Kumacheva"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Closed-loop optimization",
+        "Automation",
+        "Reaction optimization"
+      ],
+      "methods": [
+        "Bayesian optimization",
+        "Robotic experimentation",
+        "Closed-loop control"
+      ],
+      "chemistry": "Self-driving laboratories for chemical and catalytic reaction optimization; overview of closed-loop discovery",
+      "data_regime": "n/a overview of SDL platforms and closed-loop campaigns",
+      "validation": "N/A",
+      "why": "The high-impact map of SDLs as a workflow, not a model class. Use it to place later ChemOS / Atlas-brain papers.",
+      "summary": "Surveys how self-driving laboratories couple robotics, Bayesian selection and chemistry into closed loops. Landmark orientation for catalytic SDL work: the product is a campaign, not a static yield model.",
+      "derived_authors": [
+        "Milad Abolhasani",
+        "Eugenia Kumacheva"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Closed-loop optimization",
+        "Automation",
+        "Reaction optimization"
+      ],
+      "derived_methods": [
+        "Bayesian optimization",
+        "Robotic experimentation",
+        "Closed-loop control"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Abolhasani"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_safe_sdl_2025",
+      "label": "Steering Towards Safe Self-Driving Laboratories",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Nat. Rev. Chem.",
+      "doi": "10.1038/s41570-025-00747-x",
+      "url": "https://doi.org/10.1038/s41570-025-00747-x",
+      "paper_type": "review",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Shi Xuan Leong",
+        "Caleb E. Griesbach",
+        "Rui Zhang",
+        "Kourosh Darvish",
+        "Yuchi Zhao",
+        "Abhijoy Mandal",
+        "Yunheng Zou",
+        "Han Hao"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Safety",
+        "Human-in-the-loop",
+        "Autonomous chemistry"
+      ],
+      "methods": [
+        "Constrained optimization",
+        "Risk-aware autonomy"
+      ],
+      "chemistry": "Safety constraints and human oversight for autonomous chemical and catalytic laboratories",
+      "data_regime": "n/a overview of SDL safety and governance",
+      "validation": "N/A",
+      "why": "Adds the missing constraint layer: autonomy is not just an acquisition function.",
+      "summary": "Reviews how self-driving labs stay safe as they take more experimental decisions. Complements ChemOS/Atlas orchestration papers with the policy and constraint side of closed-loop catalysis.",
+      "derived_authors": [
+        "Shi Xuan Leong",
+        "Caleb E. Griesbach",
+        "Rui Zhang",
+        "Kourosh Darvish",
+        "Yuchi Zhao",
+        "Abhijoy Mandal",
+        "Yunheng Zou",
+        "Han Hao"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Safety",
+        "Human-in-the-loop",
+        "Autonomous chemistry"
+      ],
+      "derived_methods": [
+        "Constrained optimization",
+        "Risk-aware autonomy"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Aspuru"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_autonomous_catalysis_2025",
+      "label": "Autonomous Catalysis with Human–AI–Robot Collaboration",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Nature Catalysis",
+      "doi": "10.1038/s41929-025-01430-6",
+      "url": "https://doi.org/10.1038/s41929-025-01430-6",
+      "paper_type": "perspective",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Negin Orouji",
+        "Jeffrey A. Bennett",
+        "Richard B. Canty",
+        "Long Qi",
+        "Shijing Sun",
+        "Paulami Majumdar",
+        "Chong Liu",
+        "Núria López"
+      ],
+      "topics": [
+        "Autonomous catalysis",
+        "Human–AI collaboration",
+        "Robotics",
+        "Closed-loop"
+      ],
+      "methods": [
+        "Self-driving labs",
+        "Human-in-the-loop",
+        "AI planning"
+      ],
+      "chemistry": "Autonomous catalysis research; human–AI–robot loops for catalytic discovery",
+      "data_regime": "n/a overview of autonomous catalysis campaigns",
+      "validation": "N/A",
+      "why": "Nature Catalysis framing of catalysis as a three-way human–model–robot workflow.",
+      "summary": "Argues autonomous catalysis is a collaboration among chemist, model and robot rather than a fully lights-out loop. High-impact workflow paper for how catalytic SDLs should actually be staffed.",
+      "derived_authors": [
+        "Negin Orouji",
+        "Jeffrey A. Bennett",
+        "Richard B. Canty",
+        "Long Qi",
+        "Shijing Sun",
+        "Paulami Majumdar",
+        "Chong Liu",
+        "Núria López"
+      ],
+      "derived_topics": [
+        "Autonomous catalysis",
+        "Human–AI collaboration",
+        "Robotics",
+        "Closed-loop"
+      ],
+      "derived_methods": [
+        "Self-driving labs",
+        "Human-in-the-loop",
+        "AI planning"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Abolhasani"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sdl_atlas_brain_2025",
+      "label": "Atlas: A Brain for Self-Driving Laboratories",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d4dd00115j",
+      "url": "https://doi.org/10.1039/d4dd00115j",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Riley J. Hickman",
+        "Malcolm Sim",
+        "Sergio Pablo-García",
+        "Gary Tom",
+        "Ivan Woolhouse",
+        "Han Hao",
+        "Zeqing Bao",
+        "Pauric Bannigan"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Orchestration",
+        "Closed-loop",
+        "Software"
+      ],
+      "methods": [
+        "SDL orchestration",
+        "Bayesian experiment selection"
+      ],
+      "chemistry": "Orchestration software for chemical self-driving laboratories, including catalytic closed loops",
+      "data_regime": "Software paper; SDL orchestration architecture rather than a single catalytic n",
+      "validation": "Demonstrated as the decision/orchestration layer across SDL components",
+      "why": "The decision layer for SDLs. Name collision with this app is fine: this is Aspuru-lab infrastructure.",
+      "summary": "Atlas is an orchestration “brain” that coordinates instruments, models and campaign logic in self-driving labs. A workflow paper: how experiments are chosen and routed, not a new ligand descriptor.",
+      "derived_authors": [
+        "Riley J. Hickman",
+        "Malcolm Sim",
+        "Sergio Pablo-García",
+        "Gary Tom",
+        "Ivan Woolhouse",
+        "Han Hao",
+        "Zeqing Bao",
+        "Pauric Bannigan"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Orchestration",
+        "Closed-loop",
+        "Software"
+      ],
+      "derived_methods": [
+        "SDL orchestration",
+        "Bayesian experiment selection"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Aspuru"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_chemos2_2024",
+      "label": "ChemOS 2.0: Orchestration for Chemical SDLs",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Matter",
+      "doi": "10.1016/j.matt.2024.04.022",
+      "url": "https://doi.org/10.1016/j.matt.2024.04.022",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Malcolm Sim",
+        "Mohammad Ghazi Vakili",
+        "Felix Strieth-Kalthoff",
+        "Han Hao",
+        "Riley J. Hickman",
+        "Santiago Miret",
+        "Sergio Pablo-García",
+        "Alán Aspuru-Guzik"
+      ],
+      "topics": [
+        "ChemOS",
+        "Self-driving labs",
+        "Orchestration",
+        "Automation"
+      ],
+      "methods": [
+        "Modular SDL architecture",
+        "Closed-loop orchestration"
+      ],
+      "chemistry": "Orchestration architecture for chemical self-driving laboratories and automated reaction optimization",
+      "data_regime": "Software architecture paper with SDL case studies",
+      "validation": "Deployed orchestration across modular SDL hardware and algorithms",
+      "why": "The Aspuru-lab operating system for closed-loop chemistry. Pair with Atlas-brain.",
+      "summary": "ChemOS 2.0 is a modular orchestration stack for chemical self-driving laboratories. It is infrastructure for catalytic closed loops: scheduling, data, and algorithm plug-ins rather than a new representation.",
+      "derived_authors": [
+        "Malcolm Sim",
+        "Mohammad Ghazi Vakili",
+        "Felix Strieth-Kalthoff",
+        "Han Hao",
+        "Riley J. Hickman",
+        "Santiago Miret",
+        "Sergio Pablo-García",
+        "Alán Aspuru-Guzik"
+      ],
+      "derived_topics": [
+        "ChemOS",
+        "Self-driving labs",
+        "Orchestration",
+        "Automation"
+      ],
+      "derived_methods": [
+        "Modular SDL architecture",
+        "Closed-loop orchestration"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Aspuru"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_affordable_sdl_2026",
+      "label": "A Flexible Affordable Self-Driving Laboratory",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Nature Synthesis",
+      "doi": "10.1038/s44160-026-01053-0",
+      "url": "https://doi.org/10.1038/s44160-026-01053-0",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Simone Pilon",
+        "Elia Savino",
+        "Oliver M. Bayley",
+        "Michael Vanzella",
+        "Miguel Claros",
+        "Petros Siasiaridis",
+        "Junsong Liu",
+        "Florian Lukas"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Reaction optimization",
+        "Low-cost automation"
+      ],
+      "methods": [
+        "Closed-loop optimization",
+        "Robotic experimentation"
+      ],
+      "chemistry": "Automated reaction optimization in a low-cost flexible self-driving laboratory",
+      "data_regime": "Closed-loop experimental campaigns on a compact SDL platform",
+      "validation": "Autonomous closed-loop reaction optimization on the described hardware",
+      "why": "Shows SDL workflows without a national-lab budget. Useful contrast to ChemOS-scale platforms.",
+      "summary": "Builds a flexible, cheaper self-driving laboratory and uses it for automated reaction optimization. The feature is accessibility of the loop, not a new surrogate model.",
+      "derived_authors": [
+        "Simone Pilon",
+        "Elia Savino",
+        "Oliver M. Bayley",
+        "Michael Vanzella",
+        "Miguel Claros",
+        "Petros Siasiaridis",
+        "Junsong Liu",
+        "Florian Lukas"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Reaction optimization",
+        "Low-cost automation"
+      ],
+      "derived_methods": [
+        "Closed-loop optimization",
+        "Robotic experimentation"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_bo_icl_catalysis_2026",
+      "label": "Bayesian Optimization of Catalysis with In-Context Learning",
+      "type": "paper",
+      "year": 2026,
+      "journal": "ACS Central Science",
+      "doi": "10.1021/acscentsci.5c02418",
+      "url": "https://doi.org/10.1021/acscentsci.5c02418",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Mayk Caldas Ramos",
+        "Shane S. Michtavy",
+        "Andrew D. White",
+        "Marc D. Porosoff"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "In-context learning",
+        "LLMs",
+        "Catalysis"
+      ],
+      "methods": [
+        "Bayesian optimization",
+        "In-context learning",
+        "LLM prompting"
+      ],
+      "chemistry": "Catalytic reaction optimization combining Bayesian optimization with in-context LLM suggestions",
+      "data_regime": "Closed-loop / iterative catalytic optimization with language-model proposals",
+      "validation": "Catalysis case studies comparing BO with in-context learning against standard BO",
+      "why": "New workflow: BO plus a language model as the prior, not one-hot conditions.",
+      "summary": "Pairs Bayesian optimization with in-context learning so a language model can propose catalytic experiments. The new feature is the hybrid acquisition loop, not another fingerprint of the ligand.",
+      "derived_authors": [
+        "Mayk Caldas Ramos",
+        "Shane S. Michtavy",
+        "Andrew D. White",
+        "Marc D. Porosoff"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "In-context learning",
+        "LLMs",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "Bayesian optimization",
+        "In-context learning",
+        "LLM prompting"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "White"
+      ],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_cost_bo_2024",
+      "label": "Cost-Informed Bayesian Reaction Optimization",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d4dd00225c",
+      "url": "https://doi.org/10.1039/d4dd00225c",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Alexandre A. Schoepfer",
+        "Jan Weinreich",
+        "Ruben Laplaza",
+        "Jerome Waser",
+        "Clemence Corminboeuf"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "Cost-aware acquisition",
+        "Reaction optimization"
+      ],
+      "methods": [
+        "Cost-informed BO",
+        "Batch Bayesian optimization"
+      ],
+      "chemistry": "Homogeneous catalytic reaction optimization with explicit experimental cost in the acquisition function",
+      "data_regime": "Reaction-optimization campaigns with cost-aware batch suggestions",
+      "validation": "Retrospective and simulated campaigns versus cost-agnostic Bayesian optimization",
+      "why": "EDBO-class loop with a real budget. Acquisition is the product.",
+      "summary": "Makes experimental cost part of Bayesian reaction optimization rather than optimizing yield alone. A Corminboeuf/Waser workflow paper: the loop spends the budget, not just the next-best predicted yield.",
+      "derived_authors": [
+        "Alexandre A. Schoepfer",
+        "Jan Weinreich",
+        "Ruben Laplaza",
+        "Jerome Waser",
+        "Clemence Corminboeuf"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "Cost-aware acquisition",
+        "Reaction optimization"
+      ],
+      "derived_methods": [
+        "Cost-informed BO",
+        "Batch Bayesian optimization"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Corminboeuf"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_bo_beyond_onehot_2024",
+      "label": "Bayesian Optimisation Beyond One-Hot Encoding",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d3dd00096f",
+      "url": "https://doi.org/10.1039/d3dd00096f",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Bojana Ranković",
+        "Ryan-Rhys Griffiths",
+        "Henry B. Moss",
+        "Philippe Schwaller"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "Molecular encodings",
+        "Additive screening",
+        "Yield"
+      ],
+      "methods": [
+        "Bayesian optimization",
+        "Learned molecular representations"
+      ],
+      "chemistry": "Additive screening and yield improvement in catalytic reactions using learned encodings instead of one-hot conditions",
+      "data_regime": "Additive-screening datasets with Bayesian optimization campaigns",
+      "validation": "Yield improvements versus one-hot Bayesian optimization on additive screens",
+      "why": "The representation inside BO matters. Direct upgrade path from EDBO-style one-hot loops.",
+      "summary": "Shows Bayesian optimisation of additives and yield works better when the encoding is chemical, not one-hot. Schwaller-lab workflow: the surrogate sees molecules, not dummy variables.",
+      "derived_authors": [
+        "Bojana Ranković",
+        "Ryan-Rhys Griffiths",
+        "Henry B. Moss",
+        "Philippe Schwaller"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "Molecular encodings",
+        "Additive screening",
+        "Yield"
+      ],
+      "derived_methods": [
+        "Bayesian optimization",
+        "Learned molecular representations"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Schwaller"
+      ],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_chiddo_2022",
+      "label": "ChIDDO: Chemically-Informed Data-Driven Optimization",
+      "type": "paper",
+      "year": 2022,
+      "journal": "React. Chem. Eng.",
+      "doi": "10.1039/d2re00005a",
+      "url": "https://doi.org/10.1039/d2re00005a",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Daniel Frey",
+        "Ju Hee Shin",
+        "Christopher Musco",
+        "Miguel A. Modestino"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "Physical models",
+        "Hybrid surrogates"
+      ],
+      "methods": [
+        "ChIDDO",
+        "Bayesian learning",
+        "Physics-informed surrogates"
+      ],
+      "chemistry": "Chemically informed Bayesian optimization of chemical reactions using physical models plus data",
+      "data_regime": "Reaction-optimization campaigns that inject physical models into the surrogate",
+      "validation": "Closed-loop / case-study optimization versus purely statistical BO",
+      "why": "Hybrid BO: put a physical model in the loop instead of a black-box GP on conditions.",
+      "summary": "ChIDDO folds physical models into Bayesian reaction optimization so the surrogate is chemically informed. Early 2022 workflow for not treating catalytic BO as a one-hot black box.",
+      "derived_authors": [
+        "Daniel Frey",
+        "Ju Hee Shin",
+        "Christopher Musco",
+        "Miguel A. Modestino"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "Physical models",
+        "Hybrid surrogates"
+      ],
+      "derived_methods": [
+        "ChIDDO",
+        "Bayesian learning",
+        "Physics-informed surrogates"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_photo_closedloop_2024",
+      "label": "Autonomous Closed-Loop Photochemical Optimization",
+      "type": "paper",
+      "year": 2024,
+      "journal": "React. Chem. Eng.",
+      "doi": "10.1039/d4re00138a",
+      "url": "https://doi.org/10.1039/d4re00138a",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Dnyaneshwar Aand",
+        "Abhilash Rana",
+        "Amirreza Mottafegh",
+        "Dong Pyo Kim",
+        "Ajay K. Singh"
+      ],
+      "topics": [
+        "Photochemistry",
+        "Closed-loop",
+        "Autonomous optimization"
+      ],
+      "methods": [
+        "Closed-loop optimization",
+        "Photochemical flow"
+      ],
+      "chemistry": "Autonomous closed-loop photochemical reaction optimization, including catalytic photochemistry for ARB synthesis",
+      "data_regime": "Closed-loop photochemical campaigns across multiple substrates",
+      "validation": "Autonomous closed-loop optimization of photochemical reactions",
+      "why": "A real closed photochemical loop, not a retrospective BO demo.",
+      "summary": "Runs an autonomous closed-loop photochemical optimizer and uses it to make angiotensin-receptor-blocker intermediates. Workflow evidence that catalytic photochemistry can sit inside an SDL, not only a 96-well plate.",
+      "derived_authors": [
+        "Dnyaneshwar Aand",
+        "Abhilash Rana",
+        "Amirreza Mottafegh",
+        "Dong Pyo Kim",
+        "Ajay K. Singh"
+      ],
+      "derived_topics": [
+        "Photochemistry",
+        "Closed-loop",
+        "Autonomous optimization"
+      ],
+      "derived_methods": [
+        "Closed-loop optimization",
+        "Photochemical flow"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_capbo_2023",
+      "label": "CAPBO: Cost-Aware Parallel Bayesian Optimization",
+      "type": "paper",
+      "year": 2023,
+      "journal": "AIChE J.",
+      "doi": "10.1002/aic.18316",
+      "url": "https://doi.org/10.1002/aic.18316",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Runzhe Liang",
+        "Haoyang Hu",
+        "Yueheng Han",
+        "Bingzhen Chen",
+        "Zhihong Yuan"
+      ],
+      "topics": [
+        "Bayesian optimization",
+        "Parallel experiments",
+        "Cost-aware acquisition"
+      ],
+      "methods": [
+        "CAPBO",
+        "Batch Bayesian optimization"
+      ],
+      "chemistry": "Cost-aware parallel Bayesian optimization for chemical and catalytic reaction optimization",
+      "data_regime": "Simulated and experimental reaction-optimization campaigns with parallel batches",
+      "validation": "Benchmarks versus standard BO on reaction-optimization tasks",
+      "why": "Parallel + cost-aware BO for reaction campaigns. Algorithm paper with catalytic use.",
+      "summary": "CAPBO parallelizes Bayesian reaction optimization while tracking experimental cost. Useful when the loop can run several catalytic experiments at once and the budget is not uniform.",
+      "derived_authors": [
+        "Runzhe Liang",
+        "Haoyang Hu",
+        "Yueheng Han",
+        "Bingzhen Chen",
+        "Zhihong Yuan"
+      ],
+      "derived_topics": [
+        "Bayesian optimization",
+        "Parallel experiments",
+        "Cost-aware acquisition"
+      ],
+      "derived_methods": [
+        "CAPBO",
+        "Batch Bayesian optimization"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sdl_reason_2026",
+      "label": "When Self-Driving Labs Begin to Reason",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Chem",
+      "doi": "10.1016/j.chempr.2026.103108",
+      "url": "https://doi.org/10.1016/j.chempr.2026.103108",
+      "paper_type": "viewpoint",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Milad Abolhasani"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Reasoning models",
+        "Autonomous science"
+      ],
+      "methods": [
+        "LLM agents",
+        "Closed-loop planning"
+      ],
+      "chemistry": "Opinion on reasoning-capable self-driving laboratories for chemical and catalytic discovery",
+      "data_regime": "n/a overview of next-generation SDL reasoning",
+      "validation": "N/A",
+      "why": "Abolhasani’s 2026 claim: SDLs need to plan, not only acquire.",
+      "summary": "Argues self-driving labs are moving from black-box acquisition to systems that can reason about experiments. Short Chem Catalyst piece that frames the 2026 SDL workflow shift.",
+      "derived_authors": [
+        "Milad Abolhasani"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Reasoning models",
+        "Autonomous science"
+      ],
+      "derived_methods": [
+        "LLM agents",
+        "Closed-loop planning"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Abolhasani"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_swarm_opt_2026",
+      "label": "Swarm Intelligence for Chemical Reaction Optimization",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Chem",
+      "doi": "10.1016/j.chempr.2026.103035",
+      "url": "https://doi.org/10.1016/j.chempr.2026.103035",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Rémi Schlama",
+        "Joshua W. Sin",
+        "Ryan P. Burwood",
+        "Kurt Püntener",
+        "Raphael Bigler",
+        "Philippe Schwaller"
+      ],
+      "topics": [
+        "Swarm intelligence",
+        "Reaction optimization",
+        "Global search"
+      ],
+      "methods": [
+        "Swarm optimization",
+        "Reaction optimization"
+      ],
+      "chemistry": "Swarm-intelligence algorithms for chemical and catalytic reaction optimization",
+      "data_regime": "Reaction-optimization case studies using swarm search",
+      "validation": "Comparisons of swarm search with Bayesian and related optimizers on reactions",
+      "why": "A non-BO closed-loop searcher from Schwaller/Roche. New workflow, not another GP.",
+      "summary": "Uses swarm intelligence as the searcher for chemical reaction optimization. Alternative to standard Bayesian loops when the catalytic landscape is rugged or the surrogate is a poor match.",
+      "derived_authors": [
+        "Rémi Schlama",
+        "Joshua W. Sin",
+        "Ryan P. Burwood",
+        "Kurt Püntener",
+        "Raphael Bigler",
+        "Philippe Schwaller"
+      ],
+      "derived_topics": [
+        "Swarm intelligence",
+        "Reaction optimization",
+        "Global search"
+      ],
+      "derived_methods": [
+        "Swarm optimization",
+        "Reaction optimization"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Schwaller"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_aminoxyl_generality_2023",
+      "label": "Generality-Oriented Aminoxyl Radical Catalysis",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Science",
+      "doi": "10.1126/science.adf6177",
+      "url": "https://doi.org/10.1126/science.adf6177",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jonas Rein",
+        "Soren D. Rozema",
+        "Olivia C. Langner",
+        "Samson B. Zacate",
+        "Melissa A. Hardy",
+        "Juno C. Siu",
+        "Brandon Q. Mercado",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Generality",
+        "Aminoxyl catalysis",
+        "Enantioselectivity",
+        "Data-driven optimization"
+      ],
+      "methods": [
+        "Physical-organic descriptors",
+        "Multidimensional analysis",
+        "HTE-style substrate panels"
+      ],
+      "chemistry": "Enantioselective aminoxyl radical catalysis; generality-oriented optimization across substrates",
+      "data_regime": "Designed catalytic substrate/catalyst sets; small-to-moderate experimental n",
+      "validation": "Prospective generality tests across a broad substrate panel",
+      "why": "Sigman-lab Science paper: optimize for generality, not a single champion substrate.",
+      "summary": "Optimizes enantioselective aminoxyl catalysis for substrate generality rather than a single high ee. High-impact Sigman workflow: the objective function is the scope, and chemist descriptors still run the model.",
+      "derived_authors": [
+        "Jonas Rein",
+        "Soren D. Rozema",
+        "Olivia C. Langner",
+        "Samson B. Zacate",
+        "Melissa A. Hardy",
+        "Juno C. Siu",
+        "Brandon Q. Mercado",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Generality",
+        "Aminoxyl catalysis",
+        "Enantioselectivity",
+        "Data-driven optimization"
+      ],
+      "derived_methods": [
+        "Physical-organic descriptors",
+        "Multidimensional analysis",
+        "HTE-style substrate panels"
+      ],
+      "derived_workflows": [
+        "Descriptors",
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ir_hte_ml_2023",
+      "label": "HTE and ML Optimization of Iridium Cross-Dimerization",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Angew. Chem. Int. Ed.",
+      "doi": "10.1002/anie.202313638",
+      "url": "https://doi.org/10.1002/anie.202313638",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Yougen Xu",
+        "Yadong Gao",
+        "Lebin Su",
+        "Haiting Wu",
+        "Hao Tian",
+        "Majian Zeng",
+        "Chunqiu Xu",
+        "Xinwei Zhu"
+      ],
+      "topics": [
+        "HTE",
+        "Iridium catalysis",
+        "Reaction optimization",
+        "Machine learning"
+      ],
+      "methods": [
+        "High-throughput experimentation",
+        "Supervised ML",
+        "Reaction optimization"
+      ],
+      "chemistry": "Iridium-catalyzed cross-dimerization of sulfoxonium ylides; HTE plus machine-learning optimization",
+      "data_regime": "High-throughput experimental arrays with ML-guided follow-up",
+      "validation": "Prospective experimental optimization of an Ir-catalyzed dimerization",
+      "why": "Angew case of HTE+ML on a homogeneous Ir reaction, not a ligand-library paper.",
+      "summary": "Combines high-throughput experimentation with machine learning to optimize iridium-catalyzed cross-dimerization. A 2023 homogeneous workflow: plate data in, next conditions out.",
+      "derived_authors": [
+        "Yougen Xu",
+        "Yadong Gao",
+        "Lebin Su",
+        "Haiting Wu",
+        "Hao Tian",
+        "Majian Zeng",
+        "Chunqiu Xu",
+        "Xinwei Zhu"
+      ],
+      "derived_topics": [
+        "HTE",
+        "Iridium catalysis",
+        "Reaction optimization",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "High-throughput experimentation",
+        "Supervised ML",
+        "Reaction optimization"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ni_dimers_ml_2023",
+      "label": "ML-Guided Ni(I) Phosphine Dimers",
+      "type": "paper",
+      "year": 2023,
+      "journal": "JACS",
+      "doi": "10.1021/jacs.3c03403",
+      "url": "https://doi.org/10.1021/jacs.3c03403",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Teresa M. Karl",
+        "Samir Bouayad-Gervais",
+        "Julian A. Hueffel",
+        "Theresa Sperger",
+        "Sebastian Wellig",
+        "Sherif J. Kaldas",
+        "Uladzislava Dabranskaya",
+        "Jas S. Ward"
+      ],
+      "topics": [
+        "Nickel catalysis",
+        "Phosphine ligands",
+        "Ni(I) dimers",
+        "Site-selective catalysis"
+      ],
+      "methods": [
+        "Machine learning",
+        "Organometallic descriptors",
+        "Catalytic validation"
+      ],
+      "chemistry": "Trialkylphosphine Ni(I) dimers developed with ML and used in site-selective homogeneous catalysis",
+      "data_regime": "Experimental organonickel series plus computational descriptors; modest n",
+      "validation": "Prospective catalytic applications of ML-prioritized Ni(I) dimers",
+      "why": "Schoenebeck-lab ML on a real catalytic intermediate, not a free-ligand library.",
+      "summary": "Uses machine learning to develop trialkylphosphine Ni(I) dimers and then runs site-selective catalysis. Feature is the catalyst-state species: the model is aimed at the dimer that actually does the chemistry.",
+      "derived_authors": [
+        "Teresa M. Karl",
+        "Samir Bouayad-Gervais",
+        "Julian A. Hueffel",
+        "Theresa Sperger",
+        "Sebastian Wellig",
+        "Sherif J. Kaldas",
+        "Uladzislava Dabranskaya",
+        "Jas S. Ward"
+      ],
+      "derived_topics": [
+        "Nickel catalysis",
+        "Phosphine ligands",
+        "Ni(I) dimers",
+        "Site-selective catalysis"
+      ],
+      "derived_methods": [
+        "Machine learning",
+        "Organometallic descriptors",
+        "Catalytic validation"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Schoenebeck"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_pd_sulfonimidamide_2023",
+      "label": "Data-Science Pd Aryl-Carbonylation of Sulfonimidamides",
+      "type": "paper",
+      "year": 2023,
+      "journal": "JACS",
+      "doi": "10.1021/jacs.3c06674",
+      "url": "https://doi.org/10.1021/jacs.3c06674",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Lucy van Dijk",
+        "Brittany C. Haas",
+        "Ngiap-Kie Lim",
+        "Kyle Clagg",
+        "Jordan J. Dotson",
+        "Sean M. Treacy",
+        "Katarzyna A. Piechowicz",
+        "Vladislav A. Roytman"
+      ],
+      "topics": [
+        "Palladium catalysis",
+        "Sulfonimidamides",
+        "Enantioselectivity",
+        "Data science"
+      ],
+      "methods": [
+        "Multivariable modeling",
+        "Physical-organic descriptors"
+      ],
+      "chemistry": "Palladium-catalyzed enantioselective aryl-carbonylation of sulfonimidamides; data-science ligand/condition design",
+      "data_regime": "Designed Pd-catalysis dataset with physical-organic descriptors",
+      "validation": "Prospective enantioselective aryl-carbonylation examples",
+      "why": "Sigman-style data science on a contemporary Pd reaction, not a review.",
+      "summary": "Applies data science to palladium-catalyzed enantioselective aryl-carbonylation of sulfonimidamides. Classic chemist-descriptor workflow on a 2023 homogeneous problem.",
+      "derived_authors": [
+        "Lucy van Dijk",
+        "Brittany C. Haas",
+        "Ngiap-Kie Lim",
+        "Kyle Clagg",
+        "Jordan J. Dotson",
+        "Sean M. Treacy",
+        "Katarzyna A. Piechowicz",
+        "Vladislav A. Roytman"
+      ],
+      "derived_topics": [
+        "Palladium catalysis",
+        "Sulfonimidamides",
+        "Enantioselectivity",
+        "Data science"
+      ],
+      "derived_methods": [
+        "Multivariable modeling",
+        "Physical-organic descriptors"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_entdecker_2024",
+      "label": "EnTdecker: ML Platform for Energy-Transfer Substrates",
+      "type": "paper",
+      "year": 2024,
+      "journal": "JACS",
+      "doi": "10.1021/jacs.4c01352",
+      "url": "https://doi.org/10.1021/jacs.4c01352",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Leon Schlosser",
+        "Debanjan Rana",
+        "Philipp Pflüger",
+        "Felix Katzenburg",
+        "Frank Glorius"
+      ],
+      "topics": [
+        "Energy transfer",
+        "Photocatalysis",
+        "Substrate discovery",
+        "Machine learning"
+      ],
+      "methods": [
+        "EnTdecker",
+        "Supervised ML",
+        "Substrate scoring"
+      ],
+      "chemistry": "Energy-transfer catalysis; machine-learning platform for substrate discovery",
+      "data_regime": "Experimental energy-transfer dataset used to train a substrate-recommendation model",
+      "validation": "Prospective substrate discoveries in energy-transfer catalysis",
+      "why": "Glorius platform paper: the model recommends substrates, not ligands.",
+      "summary": "EnTdecker is a machine-learning platform that guides substrate discovery in energy-transfer catalysis. New workflow: score the organic substrate for EnT, not only the photocatalyst structure.",
+      "derived_authors": [
+        "Leon Schlosser",
+        "Debanjan Rana",
+        "Philipp Pflüger",
+        "Felix Katzenburg",
+        "Frank Glorius"
+      ],
+      "derived_topics": [
+        "Energy transfer",
+        "Photocatalysis",
+        "Substrate discovery",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "EnTdecker",
+        "Supervised ML",
+        "Substrate scoring"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Glorius"
+      ],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_mg_asymmetric_ml_2024",
+      "label": "ML Guides Magnesium-Catalyzed Asymmetric Reactions",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Angew. Chem. Int. Ed.",
+      "doi": "10.1002/anie.202318487",
+      "url": "https://doi.org/10.1002/anie.202318487",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Paulina Baczewska",
+        "Michał Kulczykowski",
+        "Bartosz Zambroń",
+        "Joanna Jaszczewska‐Adamczak",
+        "Zbigniew Pakulski",
+        "Rafał Roszak",
+        "Bartosz A. Grzybowski",
+        "Jacek Mlynarski"
+      ],
+      "topics": [
+        "Magnesium catalysis",
+        "Asymmetric catalysis",
+        "Catalyst selection"
+      ],
+      "methods": [
+        "Supervised ML",
+        "Catalyst recommendation"
+      ],
+      "chemistry": "Magnesium-catalyzed asymmetric reactions with ML-guided catalyst choices",
+      "data_regime": "Experimental magnesium-catalysis set used to train catalyst-choice models",
+      "validation": "Prospective catalyst choices on magnesium-catalyzed asymmetric reactions",
+      "why": "Main-group asymmetric catalysis with an ML chooser. Not a TM ligand library.",
+      "summary": "Trains a machine-learning algorithm to pick catalysts for magnesium-catalyzed asymmetric reactions. Shows the same selection workflow on main-group Lewis-acid catalysis rather than Pd/Ni phosphines.",
+      "derived_authors": [
+        "Paulina Baczewska",
+        "Michał Kulczykowski",
+        "Bartosz Zambroń",
+        "Joanna Jaszczewska‐Adamczak",
+        "Zbigniew Pakulski",
+        "Rafał Roszak",
+        "Bartosz A. Grzybowski",
+        "Jacek Mlynarski"
+      ],
+      "derived_topics": [
+        "Magnesium catalysis",
+        "Asymmetric catalysis",
+        "Catalyst selection"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "Catalyst recommendation"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Grzybowski"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_cu_deaminative_hte_2022",
+      "label": "HTE Copper-Catalyzed Deaminative Esterification",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Commun. Chem.",
+      "doi": "10.1038/s42004-022-00698-0",
+      "url": "https://doi.org/10.1038/s42004-022-00698-0",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Yuning Shen",
+        "Babak Mahjour",
+        "Tim Cernak"
+      ],
+      "topics": [
+        "Copper catalysis",
+        "HTE",
+        "Deaminative coupling"
+      ],
+      "methods": [
+        "High-throughput experimentation",
+        "Reaction screening"
+      ],
+      "chemistry": "Copper-catalyzed deaminative esterification developed with high-throughput experimentation",
+      "data_regime": "HTE arrays for Cu-catalyzed deaminative esterification",
+      "validation": "Prospective experimental development of the Cu-catalyzed method",
+      "why": "Cernak HTE workflow on a homogeneous Cu reaction. Data-generation layer, not a GNN.",
+      "summary": "Develops copper-catalyzed deaminative esterification with high-throughput experimentation. A 2022 Cernak plate-to-method paper: the feature is the experimental loop that finds the reaction.",
+      "derived_authors": [
+        "Yuning Shen",
+        "Babak Mahjour",
+        "Tim Cernak"
+      ],
+      "derived_topics": [
+        "Copper catalysis",
+        "HTE",
+        "Deaminative coupling"
+      ],
+      "derived_methods": [
+        "High-throughput experimentation",
+        "Reaction screening"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Cernak"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_monophosphine_set_2022",
+      "label": "A Screening Set for Monophosphine Ligands",
+      "type": "paper",
+      "year": 2022,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.2c01970",
+      "url": "https://doi.org/10.1021/acscatal.2c01970",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Tobias Gensch",
+        "Sleight R. Smith",
+        "Thomas J. Colacot",
+        "Yam N. Timsina",
+        "Guolin Xu",
+        "Ben W. Glasspoole",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Phosphine ligands",
+        "Ligand screening",
+        "Cross-coupling",
+        "HTE"
+      ],
+      "methods": [
+        "Designed ligand set",
+        "HTE screening",
+        "Descriptor-informed selection"
+      ],
+      "chemistry": "Monophosphine ligands for homogeneous cross-coupling; designed experimental screening set",
+      "data_regime": "Designed ligand screening set applied in cross-coupling",
+      "validation": "Application of the screening set to cross-coupling case studies",
+      "why": "How to pick a phosphine plate. Complements Kraken: experimental set, not only a virtual library.",
+      "summary": "Designs and applies a practical screening set of monophosphine ligands for cross-coupling. Sigman/Colacot workflow: a curated experimental library rather than enumerating all of ligand space.",
+      "derived_authors": [
+        "Tobias Gensch",
+        "Sleight R. Smith",
+        "Thomas J. Colacot",
+        "Yam N. Timsina",
+        "Guolin Xu",
+        "Ben W. Glasspoole",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Phosphine ligands",
+        "Ligand screening",
+        "Cross-coupling",
+        "HTE"
+      ],
+      "derived_methods": [
+        "Designed ligand set",
+        "HTE screening",
+        "Descriptor-informed selection"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Sigman"
+      ],
+      "representation_class": "Reusable ligand library",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_aryl_pyrrolidine_hbd_2022",
+      "label": "Data-Driven Aryl Pyrrolidine H-Bond Donors",
+      "type": "paper",
+      "year": 2022,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.2c04824",
+      "url": "https://doi.org/10.1021/acscatal.2c04824",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Mohammad H. Samha",
+        "Julie L. H. Wahlman",
+        "Jacquelyne A. Read",
+        "Jacob Werth",
+        "Eric N. Jacobsen",
+        "Matthew S. Sigman"
+      ],
+      "topics": [
+        "Organocatalysis",
+        "Hydrogen-bond donors",
+        "Physical-organic descriptors"
+      ],
+      "methods": [
+        "Data-driven modeling",
+        "Descriptor analysis"
+      ],
+      "chemistry": "Aryl pyrrolidine hydrogen-bond donors in asymmetric organocatalysis; structure–function from data-driven models",
+      "data_regime": "Designed organocatalyst series with physical-organic descriptors",
+      "validation": "Structure–function models on asymmetric H-bond-donor catalysis",
+      "why": "Sigman/Jacobsen parameterization of an H-bond-donor catalyst class.",
+      "summary": "Uses data-driven techniques to map structure–function in aryl pyrrolidine hydrogen-bond donors. Chemist descriptors on organocatalysis, not a learned 3D embedding.",
+      "derived_authors": [
+        "Mohammad H. Samha",
+        "Julie L. H. Wahlman",
+        "Jacquelyne A. Read",
+        "Jacob Werth",
+        "Eric N. Jacobsen",
+        "Matthew S. Sigman"
+      ],
+      "derived_topics": [
+        "Organocatalysis",
+        "Hydrogen-bond donors",
+        "Physical-organic descriptors"
+      ],
+      "derived_methods": [
+        "Data-driven modeling",
+        "Descriptor analysis"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Sigman"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_spectroscopic_desc_2023",
+      "label": "Interpretable Catalysis Models from Spectroscopic Descriptors",
+      "type": "paper",
+      "year": 2023,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.3c00611",
+      "url": "https://doi.org/10.1021/acscatal.3c00611",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Song Wang",
+        "Jun Jiang"
+      ],
+      "topics": [
+        "Spectroscopic descriptors",
+        "Interpretable ML",
+        "Catalysis"
+      ],
+      "methods": [
+        "Spectroscopic features",
+        "Interpretable ML"
+      ],
+      "chemistry": "Interpretable machine-learning catalysis models that take spectroscopic descriptors as features",
+      "data_regime": "Spectroscopic feature tables for catalytic systems; computational/experimental mix",
+      "validation": "Interpretable models compared with black-box alternatives on catalysis endpoints",
+      "why": "Read the spectrum as the descriptor. Same philosophy as IR frequencies, different instrument.",
+      "summary": "Builds interpretable catalysis models from spectroscopic descriptors rather than from SMILES or one-hots. Feature paper: the representation is a measured or computed spectrum the chemist can argue with.",
+      "derived_authors": [
+        "Song Wang",
+        "Jun Jiang"
+      ],
+      "derived_topics": [
+        "Spectroscopic descriptors",
+        "Interpretable ML",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "Spectroscopic features",
+        "Interpretable ML"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Jiang"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_tep_ml_2023",
+      "label": "ML Prediction of the Tolman Electronic Parameter",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Organometallics",
+      "doi": "10.1021/acs.organomet.3c00432",
+      "url": "https://doi.org/10.1021/acs.organomet.3c00432",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Harlan P. Stevens",
+        "Jeffrey Olsen",
+        "Justin K. Kirkland",
+        "Daniel H. Ess"
+      ],
+      "topics": [
+        "Tolman electronic parameter",
+        "Phosphine ligands",
+        "Electronic descriptors"
+      ],
+      "methods": [
+        "Supervised ML",
+        "TEP prediction"
+      ],
+      "chemistry": "Phosphine ligand electronic effects; machine-learning prediction of the Tolman electronic parameter",
+      "data_regime": "Computational/experimental TEP examples across phosphine ligands",
+      "validation": "Held-out prediction of TEP values versus experiment/DFT",
+      "why": "A learned shortcut to a canonical ligand number. Not a replacement for a chemist frame.",
+      "summary": "Predicts Tolman electronic parameters for phosphines with a machine-learning model. Useful when you want TEP-scale electronics without a new IR experiment on every ligand.",
+      "derived_authors": [
+        "Harlan P. Stevens",
+        "Jeffrey Olsen",
+        "Justin K. Kirkland",
+        "Daniel H. Ess"
+      ],
+      "derived_topics": [
+        "Tolman electronic parameter",
+        "Phosphine ligands",
+        "Electronic descriptors"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "TEP prediction"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Ess"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_hemilabile_ml_2023",
+      "label": "ML Classification of Hemilabile Ligands",
+      "type": "paper",
+      "year": 2023,
+      "journal": "J. Phys. Chem. Lett.",
+      "doi": "10.1021/acs.jpclett.3c02828",
+      "url": "https://doi.org/10.1021/acs.jpclett.3c02828",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Ilia Kevlishvili",
+        "Chenru Duan",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "Hemilabile ligands",
+        "Transition-metal complexes",
+        "Ligand classification"
+      ],
+      "methods": [
+        "Supervised classification",
+        "TMC descriptors"
+      ],
+      "chemistry": "Hemilabile ligands on transition-metal complexes classified with machine learning",
+      "data_regime": "Virtual / computational ligand and TMC dataset for hemilability labels",
+      "validation": "Classification performance on held-out hemilabile ligands",
+      "why": "Kulik feature: hemilability as a label you can learn, not only a mechanism cartoon.",
+      "summary": "Classifies hemilabile ligands with machine learning on transition-metal complexes. A representation/label paper: the model decides whether the ligand can open a site, which is often the catalytic feature that matters.",
+      "derived_authors": [
+        "Ilia Kevlishvili",
+        "Chenru Duan",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "Hemilabile ligands",
+        "Transition-metal complexes",
+        "Ligand classification"
+      ],
+      "derived_methods": [
+        "Supervised classification",
+        "TMC descriptors"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Reusable ligand library",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_qtaim_gnn_2025",
+      "label": "QTAIM-Enriched GNNs for Transition-Metal Complexes",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d5dd00220f",
+      "url": "https://doi.org/10.1039/d5dd00220f",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Winston Gee",
+        "Abigail Doyle",
+        "Santiago Vargas",
+        "Anastassia N. Alexandrova"
+      ],
+      "topics": [
+        "QTAIM",
+        "Graph neural networks",
+        "Transition-metal complexes"
+      ],
+      "methods": [
+        "QTAIM",
+        "GNNs",
+        "Multi-level graphs"
+      ],
+      "chemistry": "Transition-metal complexes; QTAIM-enriched graph neural networks for catalytic properties",
+      "data_regime": "Virtual / computational TMC property dataset with QTAIM features",
+      "validation": "Property prediction versus GNNs without QTAIM enrichment",
+      "why": "Doyle/Alexandrova: inject quantum topology into the GNN, not only the 3D graph.",
+      "summary": "Enriches graph neural networks with QTAIM features to predict properties of transition-metal complexes. New representation: topology of the electron density sits on the graph the model sees.",
+      "derived_authors": [
+        "Winston Gee",
+        "Abigail Doyle",
+        "Santiago Vargas",
+        "Anastassia N. Alexandrova"
+      ],
+      "derived_topics": [
+        "QTAIM",
+        "Graph neural networks",
+        "Transition-metal complexes"
+      ],
+      "derived_methods": [
+        "QTAIM",
+        "GNNs",
+        "Multi-level graphs"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "3D / deep learning",
+      "groups": [
+        "Doyle"
+      ],
+      "representation_class": "Learned 3D / TS GNN",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_kulik_gnn_coord_2025",
+      "label": "GNNs for Metal–Ligand Coordination",
+      "type": "paper",
+      "year": 2025,
+      "journal": "PNAS",
+      "doi": "10.1073/pnas.2415658122",
+      "url": "https://doi.org/10.1073/pnas.2415658122",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jacob W. Toney",
+        "Roland G. St. Michel",
+        "Aaron G. Garrison",
+        "Ilia Kevlishvili",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "Coordination chemistry",
+        "Graph neural networks",
+        "Transition-metal complexes"
+      ],
+      "methods": [
+        "GNNs",
+        "Coordination prediction"
+      ],
+      "chemistry": "Graph neural networks that predict metal–ligand coordination in transition-metal complexes",
+      "data_regime": "Virtual / computational TMC coordination dataset",
+      "validation": "Coordination prediction on held-out transition-metal complexes",
+      "why": "Kulik PNAS: learn the coordination graph itself. Upstream of any energy model.",
+      "summary": "Predicts metal–ligand coordination of transition-metal complexes with graph neural networks. The new feature is the coordination assignment, which is often the first error in TMC ML.",
+      "derived_authors": [
+        "Jacob W. Toney",
+        "Roland G. St. Michel",
+        "Aaron G. Garrison",
+        "Ilia Kevlishvili",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "Coordination chemistry",
+        "Graph neural networks",
+        "Transition-metal complexes"
+      ],
+      "derived_methods": [
+        "GNNs",
+        "Coordination prediction"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "3D / deep learning",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Learned 3D / TS GNN",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_tm_spin_pred_2024",
+      "label": "Automated Ground-State Spin of TM Complexes",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d4dd00093e",
+      "url": "https://doi.org/10.1039/d4dd00093e",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Yuri Cho",
+        "Ruben Laplaza",
+        "Sergi Vela",
+        "Clémence Corminboeuf"
+      ],
+      "topics": [
+        "Spin states",
+        "Transition-metal complexes",
+        "Automated prediction"
+      ],
+      "methods": [
+        "Supervised ML",
+        "Spin-state classification"
+      ],
+      "chemistry": "Automated prediction of ground-state spin for transition-metal complexes relevant to homogeneous catalysis",
+      "data_regime": "Virtual / computational TMC spin dataset",
+      "validation": "Spin-state classification versus DFT labels on held-out complexes",
+      "why": "Wrong spin, wrong catalyst. Corminboeuf automation of a TMC prerequisite.",
+      "summary": "Automates prediction of ground-state spin for transition-metal complexes. A catalyst-state feature: get the spin right before you trust any downstream energy or descriptor model.",
+      "derived_authors": [
+        "Yuri Cho",
+        "Ruben Laplaza",
+        "Sergi Vela",
+        "Clémence Corminboeuf"
+      ],
+      "derived_topics": [
+        "Spin states",
+        "Transition-metal complexes",
+        "Automated prediction"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "Spin-state classification"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Corminboeuf"
+      ],
+      "representation_class": "Catalyst-state / mechanistic",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ir_phosphor_ml_2023",
+      "label": "ML Prediction of Ir Phosphor Excited States",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Chemical Science",
+      "doi": "10.1039/d2sc06150c",
+      "url": "https://doi.org/10.1039/d2sc06150c",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Gianmarco G. Terrones",
+        "Chenru Duan",
+        "Aditya Nandy",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "Iridium phosphors",
+        "Excited states",
+        "Photoredox-adjacent design"
+      ],
+      "methods": [
+        "Supervised ML",
+        "DFT labels",
+        "Low-cost surrogates"
+      ],
+      "chemistry": "Iridium-centered phosphors; low-cost ML prediction of excited-state properties used in photoredox-adjacent design",
+      "data_regime": "Virtual / computational Ir phosphor dataset with DFT excited-state labels",
+      "validation": "Held-out prediction of excited-state properties versus DFT",
+      "why": "Kulik excited-state surrogate for Ir complexes. Useful when photoredox design is the bottleneck.",
+      "summary": "Predicts excited-state properties of iridium-centered phosphors with low-cost machine learning. A 2023 Kulik surrogate: skip a DFT excited-state job when you are enumerating Ir photocatalysts.",
+      "derived_authors": [
+        "Gianmarco G. Terrones",
+        "Chenru Duan",
+        "Aditya Nandy",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "Iridium phosphors",
+        "Excited states",
+        "Photoredox-adjacent design"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "DFT labels",
+        "Low-cost surrogates"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "3D / deep learning",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_mlr_feature_select_2026",
+      "label": "Feature Selection in MLR for Data-Efficient Optimization",
+      "type": "paper",
+      "year": 2026,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.6c04292",
+      "url": "https://doi.org/10.1021/acscatal.6c04292",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Alexandre A. Schoepfer",
+        "Ruben Laplaza",
+        "Jerome Waser",
+        "Clemence Corminboeuf"
+      ],
+      "topics": [
+        "Feature selection",
+        "Multivariate linear regression",
+        "Small data",
+        "Reaction optimization"
+      ],
+      "methods": [
+        "MLR",
+        "Feature selection"
+      ],
+      "chemistry": "Feature selection inside multivariate linear regression for data-efficient homogeneous reaction optimization",
+      "data_regime": "Small experimental catalytic n; data-efficient MLR with pruned features",
+      "validation": "Data-efficient reaction optimization versus unpruned linear models",
+      "why": "2026 reminder: on small catalytic n, which features you keep is the model.",
+      "summary": "Shows how feature selection inside MLR makes reaction optimization data-efficient. Directly on-mission for small-n homogeneous catalysis: prune the chemist-designed pool instead of adding a deeper network.",
+      "derived_authors": [
+        "Alexandre A. Schoepfer",
+        "Ruben Laplaza",
+        "Jerome Waser",
+        "Clemence Corminboeuf"
+      ],
+      "derived_topics": [
+        "Feature selection",
+        "Multivariate linear regression",
+        "Small data",
+        "Reaction optimization"
+      ],
+      "derived_methods": [
+        "MLR",
+        "Feature selection"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Corminboeuf"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ml_descriptors_review_2023",
+      "label": "Machine Learning Descriptors for Data-Driven Catalysis",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Adv. Sci.",
+      "doi": "10.1002/advs.202301020",
+      "url": "https://doi.org/10.1002/advs.202301020",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Li‐Hui Mou",
+        "TianTian Han",
+        "Pieter E. S. Smith",
+        "Edward Sharman",
+        "Jun Jiang"
+      ],
+      "topics": [
+        "Descriptors",
+        "Machine learning",
+        "Catalysis"
+      ],
+      "methods": [
+        "Review of descriptor classes"
+      ],
+      "chemistry": "Overview of machine-learning descriptors used in data-driven catalysis, including homogeneous examples",
+      "data_regime": "n/a overview of catalysis descriptor families",
+      "validation": "N/A",
+      "why": "Highly cited 2023 map of what people call a catalysis descriptor.",
+      "summary": "Reviews machine-learning descriptors for data-driven catalysis. Use it as a landscape paper: fingerprints, physical-organic numbers, spectra and learned graphs in one place.",
+      "derived_authors": [
+        "Li‐Hui Mou",
+        "TianTian Han",
+        "Pieter E. S. Smith",
+        "Edward Sharman",
+        "Jun Jiang"
+      ],
+      "derived_topics": [
+        "Descriptors",
+        "Machine learning",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "Review of descriptor classes"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Jiang"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_kulik_calc_outcome_2022",
+      "label": "ML Prediction of DFT Calculation Outcomes",
+      "type": "paper",
+      "year": 2022,
+      "journal": "JCTC",
+      "doi": "10.1021/acs.jctc.2c00331",
+      "url": "https://doi.org/10.1021/acs.jctc.2c00331",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Chenru Duan",
+        "Aditya Nandy",
+        "Husain Adamji",
+        "Yuriy Roman-Leshkov",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "DFT reliability",
+        "Transferability",
+        "Transition-metal complexes"
+      ],
+      "methods": [
+        "Supervised ML",
+        "Calculation-outcome prediction"
+      ],
+      "chemistry": "Machine-learning models that predict DFT calculation outcomes with transferability needed for computational catalysis on TM complexes",
+      "data_regime": "Virtual / computational TMC DFT jobs labeled by success/failure and related outcomes",
+      "validation": "Transfer tests of calculation-outcome models across catalytic TMC space",
+      "why": "Kulik workflow: predict whether the calculation will even finish. Upstream of descriptors.",
+      "summary": "Predicts DFT calculation outcomes with enough transferability for computational catalysis. A 2022 Kulik feature: filter doomed TMC jobs before you burn the queue.",
+      "derived_authors": [
+        "Chenru Duan",
+        "Aditya Nandy",
+        "Husain Adamji",
+        "Yuriy Roman-Leshkov",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "DFT reliability",
+        "Transferability",
+        "Transition-metal complexes"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "Calculation-outcome prediction"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Transfer / few-shot",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Catalyst-state / mechanistic",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ch_borylation_desc_2026",
+      "label": "Chemically Intuitive Descriptors for C–H Borylation",
+      "type": "paper",
+      "year": 2026,
+      "journal": "ChemistryEurope",
+      "doi": "10.1002/ceur.70354",
+      "url": "https://doi.org/10.1002/ceur.70354",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Rasmus M. Borup",
+        "Kjell Jorner",
+        "Jan H. Jensen"
+      ],
+      "topics": [
+        "C–H borylation",
+        "Regioselectivity",
+        "Interpretable descriptors"
+      ],
+      "methods": [
+        "Chemically intuitive descriptors",
+        "Supervised modeling"
+      ],
+      "chemistry": "C–H borylation regioselectivity predicted from chemically intuitive descriptors",
+      "data_regime": "Regioselectivity dataset for catalytic C–H borylation; modest experimental/computational n",
+      "validation": "Regioselectivity prediction versus less interpretable feature sets",
+      "why": "Jorner/Jensen: keep the features chemically readable on a C–H reaction.",
+      "summary": "Predicts C–H borylation regioselectivity with chemically intuitive descriptors. 2026 small-data feature paper: the chemist can still name the steric/electronic terms that rank sites.",
+      "derived_authors": [
+        "Rasmus M. Borup",
+        "Kjell Jorner",
+        "Jan H. Jensen"
+      ],
+      "derived_topics": [
+        "C–H borylation",
+        "Regioselectivity",
+        "Interpretable descriptors"
+      ],
+      "derived_methods": [
+        "Chemically intuitive descriptors",
+        "Supervised modeling"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Jorner",
+        "Jensen"
+      ],
+      "representation_class": "Physical / chemist descriptors",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_grubbs_initiation_2026",
+      "label": "Data-Driven Hoveyda–Grubbs Initiation Models",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Catal. Sci. Technol.",
+      "doi": "10.1039/d6cy00508j",
+      "url": "https://doi.org/10.1039/d6cy00508j",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Henning Remm",
+        "Viktoria H. Gessner",
+        "Tobias Gensch"
+      ],
+      "topics": [
+        "Olefin metathesis",
+        "Precatalyst initiation",
+        "Hoveyda–Grubbs"
+      ],
+      "methods": [
+        "Data-driven mechanistic modeling",
+        "Supervised ML"
+      ],
+      "chemistry": "Data-driven modelling of Hoveyda–Grubbs-II-type olefin metathesis precatalyst initiation",
+      "data_regime": "Computational/experimental initiation data for Grubbs-type precatalysts",
+      "validation": "Mechanistic models of initiation versus experimental initiation trends",
+      "why": "Metathesis initiation as the modeled event, not a yield fit.",
+      "summary": "Builds data-driven models of Hoveyda–Grubbs-II initiation and extracts mechanistic insight. Catalyst-state paper: the feature is the precatalyst opening step that gates metathesis.",
+      "derived_authors": [
+        "Henning Remm",
+        "Viktoria H. Gessner",
+        "Tobias Gensch"
+      ],
+      "derived_topics": [
+        "Olefin metathesis",
+        "Precatalyst initiation",
+        "Hoveyda–Grubbs"
+      ],
+      "derived_methods": [
+        "Data-driven mechanistic modeling",
+        "Supervised ML"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [],
+      "representation_class": "Catalyst-state / mechanistic",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ml_ts_review_2025",
+      "label": "Machine Learning Approaches for Transition-State Prediction",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Chem Catalysis",
+      "doi": "10.1016/j.checat.2025.101458",
+      "url": "https://doi.org/10.1016/j.checat.2025.101458",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Xingyu Wang",
+        "Yu Mao",
+        "Ziyun Wang"
+      ],
+      "topics": [
+        "Transition states",
+        "Machine learning",
+        "Mechanism"
+      ],
+      "methods": [
+        "Review of TS-ML methods"
+      ],
+      "chemistry": "Overview of machine-learning methods for predicting transition states in catalytic and molecular reactions",
+      "data_regime": "n/a overview of ML transition-state methods",
+      "validation": "N/A",
+      "why": "2025 map of TS-ML. Place autodE / racerTS / Hartwig 3D papers against it.",
+      "summary": "Reviews machine-learning approaches for transition-state prediction. Use it to sort TS-search tools from TS-GNN energy models before you pick a stack layer.",
+      "derived_authors": [
+        "Xingyu Wang",
+        "Yu Mao",
+        "Ziyun Wang"
+      ],
+      "derived_topics": [
+        "Transition states",
+        "Machine learning",
+        "Mechanism"
+      ],
+      "derived_methods": [
+        "Review of TS-ML methods"
+      ],
+      "derived_workflows": [
+        "TS search"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [],
+      "representation_class": "Learned 3D / TS GNN",
+      "stack_layer": "TS search",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ts_structure_ml_2023",
+      "label": "ML Prediction of Transition-State Structures",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Nature Communications",
+      "doi": "10.1038/s41467-023-36823-3",
+      "url": "https://doi.org/10.1038/s41467-023-36823-3",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Sunghwan Choi"
+      ],
+      "topics": [
+        "Transition-state structures",
+        "Machine learning",
+        "Reaction mechanisms"
+      ],
+      "methods": [
+        "Supervised TS prediction",
+        "3D ML"
+      ],
+      "chemistry": "Machine-learning prediction of transition-state structures for gas-phase chemical reactions, including catalytic elementary steps",
+      "data_regime": "Virtual / computational TS-structure dataset for gas-phase reactions",
+      "validation": "TS-structure recovery versus quantum-chemical references",
+      "why": "High-impact 2023 TS-structure predictor. Method layer above autodE.",
+      "summary": "Predicts transition-state structures of gas-phase reactions with machine learning. A 2023 Nat Commun method: guess the TS geometry before a full quantum search.",
+      "derived_authors": [
+        "Sunghwan Choi"
+      ],
+      "derived_topics": [
+        "Transition-state structures",
+        "Machine learning",
+        "Reaction mechanisms"
+      ],
+      "derived_methods": [
+        "Supervised TS prediction",
+        "3D ML"
+      ],
+      "derived_workflows": [
+        "TS search"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [],
+      "representation_class": "Learned 3D / TS GNN",
+      "stack_layer": "TS search",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_reiher_networks_2022",
+      "label": "Autonomous Reaction Network Exploration",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Top. Catal.",
+      "doi": "10.1007/s11244-021-01543-9",
+      "url": "https://doi.org/10.1007/s11244-021-01543-9",
+      "paper_type": "review",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Miguel Steiner",
+        "Markus Reiher"
+      ],
+      "topics": [
+        "Reaction networks",
+        "Autonomous exploration",
+        "Homogeneous catalysis"
+      ],
+      "methods": [
+        "Automated reaction discovery",
+        "TS search"
+      ],
+      "chemistry": "Autonomous reaction-network exploration in homogeneous and heterogeneous catalysis",
+      "data_regime": "n/a overview of automated reaction-network methods",
+      "validation": "N/A",
+      "why": "Reiher’s 2022 network-exploration playbook. Mechanism search as a workflow.",
+      "summary": "Reviews autonomous exploration of catalytic reaction networks in homogeneous and heterogeneous systems. Landmark Reiher workflow: the graph of elementary steps is the object, not a single fitted yield.",
+      "derived_authors": [
+        "Miguel Steiner",
+        "Markus Reiher"
+      ],
+      "derived_topics": [
+        "Reaction networks",
+        "Autonomous exploration",
+        "Homogeneous catalysis"
+      ],
+      "derived_methods": [
+        "Automated reaction discovery",
+        "TS search"
+      ],
+      "derived_workflows": [
+        "TS search"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Reiher"
+      ],
+      "representation_class": "MLIP / physics acceleration",
+      "stack_layer": "TS search",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_margraf_networks_2023",
+      "label": "Exploring Catalytic Reaction Networks with ML",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Nature Catalysis",
+      "doi": "10.1038/s41929-022-00896-y",
+      "url": "https://doi.org/10.1038/s41929-022-00896-y",
+      "paper_type": "review",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Johannes T. Margraf",
+        "Hyunwook Jung",
+        "Christoph Scheurer",
+        "Karsten Reuter"
+      ],
+      "topics": [
+        "Reaction networks",
+        "Machine learning",
+        "Mechanism exploration"
+      ],
+      "methods": [
+        "Network exploration",
+        "ML potentials"
+      ],
+      "chemistry": "Machine learning for catalytic reaction networks spanning homogeneous and heterogeneous mechanisms",
+      "data_regime": "n/a overview of ML for catalytic reaction networks",
+      "validation": "N/A",
+      "why": "Nature Catalysis landmark on ML reaction networks. Hetero-leaning but the workflow is shared.",
+      "summary": "Surveys how machine learning explores catalytic reaction networks. High-impact Margraf/Reuter piece: mechanism space is searched, not just a descriptor table of ligands.",
+      "derived_authors": [
+        "Johannes T. Margraf",
+        "Hyunwook Jung",
+        "Christoph Scheurer",
+        "Karsten Reuter"
+      ],
+      "derived_topics": [
+        "Reaction networks",
+        "Machine learning",
+        "Mechanism exploration"
+      ],
+      "derived_methods": [
+        "Network exploration",
+        "ML potentials"
+      ],
+      "derived_workflows": [
+        "MLIP / mechanism"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Margraf"
+      ],
+      "representation_class": "MLIP / physics acceleration",
+      "stack_layer": "MLIP / mechanism",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_mlip_ligand_exchange_2025",
+      "label": "MLIP Modelling of Ligand Exchange",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Faraday Discuss.",
+      "doi": "10.1039/d4fd00140k",
+      "url": "https://doi.org/10.1039/d4fd00140k",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Veronika Juraskova",
+        "Gers Tusha",
+        "Hanwen Zhang",
+        "Lars V. Schäfer",
+        "Fernanda Duarte"
+      ],
+      "topics": [
+        "Ligand exchange",
+        "Machine-learning potentials",
+        "Metal complexes"
+      ],
+      "methods": [
+        "MLIPs",
+        "Ligand-exchange dynamics"
+      ],
+      "chemistry": "Ligand exchange in metal complexes modelled with machine-learning interatomic potentials",
+      "data_regime": "Virtual / computational MLIP trajectories for metal-complex ligand exchange",
+      "validation": "MLIP ligand-exchange pathways compared with quantum-chemical references",
+      "why": "Duarte: MLIPs on the elementary step that every homogeneous mechanism starts with.",
+      "summary": "Models ligand exchange in metal complexes with machine-learning potentials. A homogeneous MLIP feature: the potential has to survive ligand on/off events, not only bulk crystals.",
+      "derived_authors": [
+        "Veronika Juraskova",
+        "Gers Tusha",
+        "Hanwen Zhang",
+        "Lars V. Schäfer",
+        "Fernanda Duarte"
+      ],
+      "derived_topics": [
+        "Ligand exchange",
+        "Machine-learning potentials",
+        "Metal complexes"
+      ],
+      "derived_methods": [
+        "MLIPs",
+        "Ligand-exchange dynamics"
+      ],
+      "derived_workflows": [
+        "MLIP / mechanism"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Duarte"
+      ],
+      "representation_class": "MLIP / physics acceleration",
+      "stack_layer": "MLIP / mechanism",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_mlip_catalysis_set_2025",
+      "label": "An MLIP Dataset and Model for Catalysis",
+      "type": "paper",
+      "year": 2025,
+      "journal": "JACS Au",
+      "doi": "10.1021/jacsau.5c01112",
+      "url": "https://doi.org/10.1021/jacsau.5c01112",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Zhihong Wu",
+        "Lei Zhou",
+        "Pengfei Hou",
+        "Yuyan Liu",
+        "Ruixing Wang",
+        "Taoli Guo",
+        "Jin-Cheng Liu"
+      ],
+      "topics": [
+        "MLIP datasets",
+        "Fine-tuning",
+        "Catalysis"
+      ],
+      "methods": [
+        "MLIPs",
+        "Local fine-tuning"
+      ],
+      "chemistry": "Machine-learning interatomic potential dataset and model for catalysis, with local fine-tuning to chemical accuracy",
+      "data_regime": "Virtual / computational catalysis MLIP dataset with local fine-tuning splits",
+      "validation": "Fine-tuned MLIP accuracy versus DFT on catalytic local environments",
+      "why": "A catalysis-specific MLIP dataset plus local fine-tuning. Infrastructure, not a yield model.",
+      "summary": "Releases a catalysis MLIP dataset and a model that can be locally fine-tuned toward chemical accuracy. Workflow: train general, then adapt to the catalytic pocket you actually care about.",
+      "derived_authors": [
+        "Zhihong Wu",
+        "Lei Zhou",
+        "Pengfei Hou",
+        "Yuyan Liu",
+        "Ruixing Wang",
+        "Taoli Guo",
+        "Jin-Cheng Liu"
+      ],
+      "derived_topics": [
+        "MLIP datasets",
+        "Fine-tuning",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "MLIPs",
+        "Local fine-tuning"
+      ],
+      "derived_workflows": [
+        "MLIP / mechanism"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [],
+      "representation_class": "MLIP / physics acceleration",
+      "stack_layer": "MLIP / mechanism",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_kulik_dft_reparam_2026",
+      "label": "ML Reparameterization of DFT for TM Spin Splitting",
+      "type": "paper",
+      "year": 2026,
+      "journal": "JCTC",
+      "doi": "10.1021/acs.jctc.5c01833",
+      "url": "https://doi.org/10.1021/acs.jctc.5c01833",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Aaron G. Garrison",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "DFT reparameterization",
+        "Spin splitting",
+        "Transition-metal complexes"
+      ],
+      "methods": [
+        "Machine-learned functionals",
+        "Spin-splitting benchmarks"
+      ],
+      "chemistry": "System-specific machine-learning reparameterization of density functionals for spin-splitting energies of transition-metal complexes",
+      "data_regime": "Virtual / computational TMC spin-splitting dataset used to reparameterize DFT",
+      "validation": "Spin-splitting accuracy versus unmodified functionals on TM complexes",
+      "why": "Kulik 2026: change the functional, not only the surrogate, for TM catalysis.",
+      "summary": "Reparameterizes density functionals with machine learning for spin-splitting energies of transition-metal complexes. Physics-layer feature: fix the electronic-structure method that every downstream descriptor inherits.",
+      "derived_authors": [
+        "Aaron G. Garrison",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "DFT reparameterization",
+        "Spin splitting",
+        "Transition-metal complexes"
+      ],
+      "derived_methods": [
+        "Machine-learned functionals",
+        "Spin-splitting benchmarks"
+      ],
+      "derived_workflows": [
+        "MLIP / mechanism"
+      ],
+      "paradigm": "MLIP / TS acceleration",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "MLIP / physics acceleration",
+      "stack_layer": "MLIP / mechanism",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_gen_suzuki_2023",
+      "label": "Deep Generative Design of Suzuki Catalysts",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d2dd00125j",
+      "url": "https://doi.org/10.1039/d2dd00125j",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Oliver Schilter",
+        "Alain Vaucher",
+        "Philippe Schwaller",
+        "Teodoro Laino"
+      ],
+      "topics": [
+        "Generative models",
+        "Suzuki coupling",
+        "Catalyst design"
+      ],
+      "methods": [
+        "Deep generative models",
+        "Computational labels"
+      ],
+      "chemistry": "Deep generative models trained on computational data to design catalysts, with a Suzuki cross-coupling case study",
+      "data_regime": "Virtual / computational Suzuki catalyst/ligand structures for generative training",
+      "validation": "Generated Suzuki catalyst candidates scored against computational labels",
+      "why": "Schwaller/Laino inverse design on a homogeneous workhorse reaction.",
+      "summary": "Designs catalysts with deep generative models on computational data, demonstrated on Suzuki cross-coupling. Inverse-design workflow: sample new catalysts, do not only rank a purchased ligand kit.",
+      "derived_authors": [
+        "Oliver Schilter",
+        "Alain Vaucher",
+        "Philippe Schwaller",
+        "Teodoro Laino"
+      ],
+      "derived_topics": [
+        "Generative models",
+        "Suzuki coupling",
+        "Catalyst design"
+      ],
+      "derived_methods": [
+        "Deep generative models",
+        "Computational labels"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Inverse / generative",
+      "groups": [
+        "Schwaller"
+      ],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_paton_dl_asymm_2026",
+      "label": "Deep Learning for Asymmetric Catalysis",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Nat. Comput. Sci.",
+      "doi": "10.1038/s43588-026-00954-6",
+      "url": "https://doi.org/10.1038/s43588-026-00954-6",
+      "paper_type": "perspective",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Robert S. Paton",
+        "Seonah Kim"
+      ],
+      "topics": [
+        "Deep learning",
+        "Asymmetric catalysis",
+        "Enantioselectivity"
+      ],
+      "methods": [
+        "Deep learning review"
+      ],
+      "chemistry": "Perspective on deep learning for asymmetric homogeneous catalysis",
+      "data_regime": "n/a overview of deep learning in asymmetric catalysis",
+      "validation": "N/A",
+      "why": "Paton/Kim 2026: where DL actually helps enantioselective catalysis.",
+      "summary": "A Nature Computational Science perspective on deep learning for asymmetric catalysis. Use it to separate 3D/TS models that can see a stereodetermining geometry from fingerprints that cannot.",
+      "derived_authors": [
+        "Robert S. Paton",
+        "Seonah Kim"
+      ],
+      "derived_topics": [
+        "Deep learning",
+        "Asymmetric catalysis",
+        "Enantioselectivity"
+      ],
+      "derived_methods": [
+        "Deep learning review"
+      ],
+      "derived_workflows": [],
+      "paradigm": "3D / deep learning",
+      "groups": [
+        "Paton"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_genetic_homocat_2022",
+      "label": "Genetic Optimization of Homogeneous Catalysts",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Chemistry–Methods",
+      "doi": "10.1002/cmtd.202100107",
+      "url": "https://doi.org/10.1002/cmtd.202100107",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Ruben Laplaza",
+        "Simone Gallarati",
+        "Clemence Corminboeuf"
+      ],
+      "topics": [
+        "Genetic algorithms",
+        "Homogeneous catalysis",
+        "Inverse design"
+      ],
+      "methods": [
+        "Genetic optimization",
+        "Computational scoring"
+      ],
+      "chemistry": "Genetic algorithms for optimizing homogeneous catalysts in ligand/catalyst space",
+      "data_regime": "Virtual / computational evolutionary searches over homogeneous catalyst structures",
+      "validation": "Evolutionary trajectories recovering known or improved homogeneous catalyst motifs",
+      "why": "Corminboeuf 2022 inverse design: evolve the catalyst, do not only screen a list.",
+      "summary": "Applies genetic optimization to homogeneous catalysts. Early inverse-design workflow from Laplaza/Corminboeuf: the search operator is evolutionary, the score is still chemistry.",
+      "derived_authors": [
+        "Ruben Laplaza",
+        "Simone Gallarati",
+        "Clemence Corminboeuf"
+      ],
+      "derived_topics": [
+        "Genetic algorithms",
+        "Homogeneous catalysis",
+        "Inverse design"
+      ],
+      "derived_methods": [
+        "Genetic optimization",
+        "Computational scoring"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Inverse / generative",
+      "groups": [
+        "Corminboeuf"
+      ],
+      "representation_class": "Reusable ligand library",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_llm_catalysis_lit_2025",
+      "label": "LLM Agents Distill Catalysis Literature",
+      "type": "paper",
+      "year": 2025,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.5c06431",
+      "url": "https://doi.org/10.1021/acscatal.5c06431",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Honghao Chen",
+        "Hongxuan Liu",
+        "Yishen Tew",
+        "Xiaotian Ren",
+        "Xiaojin Tang",
+        "Xiaonan Wang"
+      ],
+      "topics": [
+        "Large language models",
+        "Literature mining",
+        "Catalysis knowledge"
+      ],
+      "methods": [
+        "Long-context LLM agents",
+        "Knowledge distillation"
+      ],
+      "chemistry": "Long-context LLM agents that distill knowledge from the catalysis literature",
+      "data_regime": "Literature-scale catalysis corpus processed by long-context agents",
+      "validation": "Extraction/distillation quality on catalysis papers versus manual reading",
+      "why": "New literature workflow: agents read catalysis papers at context-window scale.",
+      "summary": "Uses long-context LLM agents to distill knowledge from catalysis literature. Feature is the reading loop: structured facts out of papers, not a new Sterimol.",
+      "derived_authors": [
+        "Honghao Chen",
+        "Hongxuan Liu",
+        "Yishen Tew",
+        "Xiaotian Ren",
+        "Xiaojin Tang",
+        "Xiaonan Wang"
+      ],
+      "derived_topics": [
+        "Large language models",
+        "Literature mining",
+        "Catalysis knowledge"
+      ],
+      "derived_methods": [
+        "Long-context LLM agents",
+        "Knowledge distillation"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Other / mixed",
+      "groups": [],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_llm_extract_shallow_2025",
+      "label": "LLM Extraction plus Shallow Models for Catalysis",
+      "type": "paper",
+      "year": 2025,
+      "journal": "JACS Au",
+      "doi": "10.1021/jacsau.5c01087",
+      "url": "https://doi.org/10.1021/jacsau.5c01087",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Brianna R. Farris",
+        "Kevin C. Leonard"
+      ],
+      "topics": [
+        "LLM extraction",
+        "Shallow ML",
+        "Catalysis datasets"
+      ],
+      "methods": [
+        "LLM information extraction",
+        "Shallow supervised models"
+      ],
+      "chemistry": "Large language models extract catalysis data that then train shallow machine-learning models",
+      "data_regime": "Literature-extracted catalysis tables feeding shallow models",
+      "validation": "Shallow models trained on LLM-extracted catalysis data versus hand-curated tables",
+      "why": "Two-step workflow: LLM as curator, linear/shallow model as the chemist-facing fit.",
+      "summary": "Extracts catalysis data with a language model, then fits shallow machine-learning models. Practical 2025 workflow when the bottleneck is getting a table, not inventing a GNN.",
+      "derived_authors": [
+        "Brianna R. Farris",
+        "Kevin C. Leonard"
+      ],
+      "derived_topics": [
+        "LLM extraction",
+        "Shallow ML",
+        "Catalysis datasets"
+      ],
+      "derived_methods": [
+        "LLM information extraction",
+        "Shallow supervised models"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Other / mixed",
+      "groups": [],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_askcos_2025",
+      "label": "ASKCOS: Open-Source Data-Driven Synthesis Planning",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Acc. Chem. Res.",
+      "doi": "10.1021/acs.accounts.5c00155",
+      "url": "https://doi.org/10.1021/acs.accounts.5c00155",
+      "paper_type": "review",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Zhengkai Tu",
+        "Sourabh J. Choure",
+        "Mun Hong Fong",
+        "Jihye Roh",
+        "Itai Levin",
+        "Kevin Yu",
+        "Joonyoung F. Joung",
+        "Nathan Morgan"
+      ],
+      "topics": [
+        "Synthesis planning",
+        "ASKCOS",
+        "Reaction prediction"
+      ],
+      "methods": [
+        "ASKCOS",
+        "Data-driven planning"
+      ],
+      "chemistry": "Open-source data-driven synthesis planning (ASKCOS), including catalytic reaction prediction as a planning step",
+      "data_regime": "n/a overview of ASKCOS software and synthesis-planning campaigns",
+      "validation": "N/A",
+      "why": "Coley Accounts: the planning stack that catalytic ML papers keep assuming exists.",
+      "summary": "Accounts of ASKCOS as open-source, data-driven synthesis planning. Adjacent but high-impact: many catalytic ML workflows sit downstream of a planner that proposes the reaction in the first place.",
+      "derived_authors": [
+        "Zhengkai Tu",
+        "Sourabh J. Choure",
+        "Mun Hong Fong",
+        "Jihye Roh",
+        "Itai Levin",
+        "Kevin Yu",
+        "Joonyoung F. Joung",
+        "Nathan Morgan"
+      ],
+      "derived_topics": [
+        "Synthesis planning",
+        "ASKCOS",
+        "Reaction prediction"
+      ],
+      "derived_methods": [
+        "ASKCOS",
+        "Data-driven planning"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Inverse / generative",
+      "groups": [
+        "Coley"
+      ],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_predictive_chem_2023",
+      "label": "Predictive Chemistry: ML for Reaction Deployment",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Chemical Science",
+      "doi": "10.1039/d2sc05089g",
+      "url": "https://doi.org/10.1039/d2sc05089g",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Zhengkai Tu",
+        "Thijs Stuyver",
+        "Connor W. Coley"
+      ],
+      "topics": [
+        "Predictive chemistry",
+        "Reaction development",
+        "Machine learning"
+      ],
+      "methods": [
+        "Review of reaction ML"
+      ],
+      "chemistry": "Machine learning for reaction deployment, development and discovery, including catalytic reactions",
+      "data_regime": "n/a overview of predictive chemistry workflows",
+      "validation": "N/A",
+      "why": "Coley/Stuyver Chem Sci map of predictive chemistry. High-cite orientation.",
+      "summary": "Reviews machine learning for reaction deployment, development and discovery. Coley-lab landscape paper that places catalytic optimization inside a broader predictive-chemistry workflow.",
+      "derived_authors": [
+        "Zhengkai Tu",
+        "Thijs Stuyver",
+        "Connor W. Coley"
+      ],
+      "derived_topics": [
+        "Predictive chemistry",
+        "Reaction development",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "Review of reaction ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Other / mixed",
+      "groups": [
+        "Coley"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_kg_llm_relay_2025",
+      "label": "Knowledge Graph plus LLM for Relay Catalysis",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Natl. Sci. Rev.",
+      "doi": "10.1093/nsr/nwaf271",
+      "url": "https://doi.org/10.1093/nsr/nwaf271",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Fei Fu",
+        "Qing-Qing Li",
+        "Fangrong Wang",
+        "Jie Hu",
+        "Tian-Tian Wang",
+        "Yun-Pei Liu",
+        "Weihong Xu",
+        "Zhili Lin"
+      ],
+      "topics": [
+        "Knowledge graphs",
+        "LLMs",
+        "Relay catalysis",
+        "Pathway recommendation"
+      ],
+      "methods": [
+        "Knowledge graph",
+        "LLM reasoning"
+      ],
+      "chemistry": "Knowledge graph combined with a large language model to recommend relay catalysis pathways",
+      "data_regime": "Literature-derived catalysis knowledge graph used for pathway recommendation",
+      "validation": "Relay-catalysis pathway recommendations versus known multi-step catalytic routes",
+      "why": "New multi-step workflow: KG + LLM for relay catalysis, not a single-reaction yield model.",
+      "summary": "Combines a knowledge graph with a large language model to recommend relay catalysis pathways. Feature is multi-step catalytic planning rather than a one-pot descriptor fit.",
+      "derived_authors": [
+        "Fei Fu",
+        "Qing-Qing Li",
+        "Fangrong Wang",
+        "Jie Hu",
+        "Tian-Tian Wang",
+        "Yun-Pei Liu",
+        "Weihong Xu",
+        "Zhili Lin"
+      ],
+      "derived_topics": [
+        "Knowledge graphs",
+        "LLMs",
+        "Relay catalysis",
+        "Pathway recommendation"
+      ],
+      "derived_methods": [
+        "Knowledge graph",
+        "LLM reasoning"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Other / mixed",
+      "groups": [],
+      "representation_class": "Pretrained learned representation",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_predictive_catalysis_2023",
+      "label": "Predictive Catalysis as a Step Towards ML",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Trends Chem.",
+      "doi": "10.1016/j.trechm.2023.10.005",
+      "url": "https://doi.org/10.1016/j.trechm.2023.10.005",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Roger Monreal-Corona",
+        "Anna Pla-Quintana",
+        "Albert Poater"
+      ],
+      "topics": [
+        "Predictive catalysis",
+        "Descriptors",
+        "Machine learning"
+      ],
+      "methods": [
+        "Review of predictive workflows"
+      ],
+      "chemistry": "Predictive homogeneous catalysis as the stepping stone into machine learning",
+      "data_regime": "n/a overview of predictive catalysis",
+      "validation": "N/A",
+      "why": "Poater: DFT/predictive catalysis is already ML’s on-ramp.",
+      "summary": "Argues predictive catalysis is the practical step toward machine learning rather than a leap into black boxes. Useful homogeneous overview from the Poater/Cavallo descriptor tradition.",
+      "derived_authors": [
+        "Roger Monreal-Corona",
+        "Anna Pla-Quintana",
+        "Albert Poater"
+      ],
+      "derived_topics": [
+        "Predictive catalysis",
+        "Descriptors",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "Review of predictive workflows"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Poater"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ml_exp_homocat_2024",
+      "label": "ML in Experimental Homogeneous Catalysis",
+      "type": "paper",
+      "year": 2024,
+      "journal": "Artif. Intell. Chem.",
+      "doi": "10.1016/j.aichem.2024.100068",
+      "url": "https://doi.org/10.1016/j.aichem.2024.100068",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Nil Sanosa",
+        "David Dalmau",
+        "Diego Sampedro",
+        "Juan V. Alegre-Requena",
+        "Ignacio Funes-Ardoiz"
+      ],
+      "topics": [
+        "Homogeneous catalysis",
+        "Experimental ML",
+        "Reaction optimization"
+      ],
+      "methods": [
+        "Review of experimental ML"
+      ],
+      "chemistry": "Recent machine-learning applications in experimental homogeneous catalysis",
+      "data_regime": "n/a overview of experimental homogeneous ML case studies",
+      "validation": "N/A",
+      "why": "Alegre-Requena/Funes-Ardoiz: ML that actually touched a flask.",
+      "summary": "Reviews machine-learning applications in experimental homogeneous catalysis. Sharper than generic catalysis-ML surveys: the papers had to run a reaction, not only a DFT dataset.",
+      "derived_authors": [
+        "Nil Sanosa",
+        "David Dalmau",
+        "Diego Sampedro",
+        "Juan V. Alegre-Requena",
+        "Ignacio Funes-Ardoiz"
+      ],
+      "derived_topics": [
+        "Homogeneous catalysis",
+        "Experimental ML",
+        "Reaction optimization"
+      ],
+      "derived_methods": [
+        "Review of experimental ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Alegre-Requena"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ml_meets_mln_2023",
+      "label": "ML Meets MLn: Ligand-Promoted Homogeneous Catalysis",
+      "type": "paper",
+      "year": 2023,
+      "journal": "Artif. Intell. Chem.",
+      "doi": "10.1016/j.aichem.2023.100006",
+      "url": "https://doi.org/10.1016/j.aichem.2023.100006",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jonathan D. Hirst",
+        "Samuel Boobier",
+        "Jennifer Coughlan",
+        "Jessica Streets",
+        "Philippa L. Jacob",
+        "Oska Pugh",
+        "Ender Özcan",
+        "Simon Woodward"
+      ],
+      "topics": [
+        "Ligands",
+        "Homogeneous catalysis",
+        "Machine learning"
+      ],
+      "methods": [
+        "Review of ligand ML"
+      ],
+      "chemistry": "Machine learning in ligand-promoted homogeneous catalysis (MLn complexes)",
+      "data_regime": "n/a overview of ML for ligand-promoted homogeneous catalysis",
+      "validation": "N/A",
+      "why": "Woodward: the ligand is the variable. Matches this atlas’s homogeneous core.",
+      "summary": "Reviews machine learning for ligand-promoted homogeneous catalysis. Title joke aside, it is a focused MLn survey rather than another electrocatalysis HEA review.",
+      "derived_authors": [
+        "Jonathan D. Hirst",
+        "Samuel Boobier",
+        "Jennifer Coughlan",
+        "Jessica Streets",
+        "Philippa L. Jacob",
+        "Oska Pugh",
+        "Ender Özcan",
+        "Simon Woodward"
+      ],
+      "derived_topics": [
+        "Ligands",
+        "Homogeneous catalysis",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "Review of ligand ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Woodward"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_physical_insights_ml_2022",
+      "label": "Finding Physical Insights in Catalysis with ML",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Curr. Opin. Chem. Eng.",
+      "doi": "10.1016/j.coche.2022.100832",
+      "url": "https://doi.org/10.1016/j.coche.2022.100832",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Chun-Yen Liu",
+        "Thomas P Senftle"
+      ],
+      "topics": [
+        "Interpretability",
+        "Physical insight",
+        "Catalysis ML"
+      ],
+      "methods": [
+        "Interpretable ML"
+      ],
+      "chemistry": "How machine learning can return physical insight in catalysis rather than only a score",
+      "data_regime": "n/a overview of interpretable catalysis ML",
+      "validation": "N/A",
+      "why": "2022 reminder that catalysis ML should explain a mechanism, not only rank a plate.",
+      "summary": "Perspective on extracting physical insight from catalysis machine learning. Use it when a paper’s claim is interpretability: what would count as a real mechanistic return.",
+      "derived_authors": [
+        "Chun-Yen Liu",
+        "Thomas P Senftle"
+      ],
+      "derived_topics": [
+        "Interpretability",
+        "Physical insight",
+        "Catalysis ML"
+      ],
+      "derived_methods": [
+        "Interpretable ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_bayesian_catalysis_2022",
+      "label": "Bayesian Statistics in Catalysis",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Curr. Opin. Chem. Eng.",
+      "doi": "10.1016/j.coche.2022.100820",
+      "url": "https://doi.org/10.1016/j.coche.2022.100820",
+      "paper_type": "perspective",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Eric A Walker"
+      ],
+      "topics": [
+        "Bayesian statistics",
+        "Uncertainty",
+        "Catalysis"
+      ],
+      "methods": [
+        "Bayesian inference"
+      ],
+      "chemistry": "Bayesian statistics as a framework for catalysis experiments and models",
+      "data_regime": "n/a overview of Bayesian methods in catalysis",
+      "validation": "N/A",
+      "why": "Puts EDBO-style loops in a broader Bayesian statistics frame.",
+      "summary": "A perspective on Bayesian statistics in catalysis, from uncertainty to sequential design. Background reading for every closed-loop paper in this wave.",
+      "derived_authors": [
+        "Eric A Walker"
+      ],
+      "derived_topics": [
+        "Bayesian statistics",
+        "Uncertainty",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "Bayesian inference"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_doe_ml_knowledge_2022",
+      "label": "DoE plus ML for Knowledge Extraction in Catalysis",
+      "type": "paper",
+      "year": 2022,
+      "journal": "Curr. Opin. Chem. Eng.",
+      "doi": "10.1016/j.coche.2021.100781",
+      "url": "https://doi.org/10.1016/j.coche.2021.100781",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Blake MacQueen",
+        "Rasika Jayarathna",
+        "Jochen Lauterbach"
+      ],
+      "topics": [
+        "Design of experiments",
+        "Knowledge extraction",
+        "Catalysis"
+      ],
+      "methods": [
+        "DoE",
+        "Machine learning"
+      ],
+      "chemistry": "Design of experiments combined with machine learning to extract knowledge in catalysis",
+      "data_regime": "n/a overview of DoE+ML catalysis campaigns",
+      "validation": "N/A",
+      "why": "DoE is still the other experiment-selection language besides BO.",
+      "summary": "Reviews knowledge extraction in catalysis using design of experiments and machine learning. Useful contrast to Bayesian closed loops: factorial structure versus acquisition functions.",
+      "derived_authors": [
+        "Blake MacQueen",
+        "Rasika Jayarathna",
+        "Jochen Lauterbach"
+      ],
+      "derived_topics": [
+        "Design of experiments",
+        "Knowledge extraction",
+        "Catalysis"
+      ],
+      "derived_methods": [
+        "DoE",
+        "Machine learning"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_catalysis_meets_ml_2025",
+      "label": "Catalysis Meets Machine Learning: A Guide",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Chem. Commun.",
+      "doi": "10.1039/d5cc05274b",
+      "url": "https://doi.org/10.1039/d5cc05274b",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Eleonora Casillo",
+        "Thomas Scattolin",
+        "Steven P. Nolan"
+      ],
+      "topics": [
+        "Data-driven design",
+        "Homogeneous catalysis",
+        "Machine learning"
+      ],
+      "methods": [
+        "Guide to catalysis ML"
+      ],
+      "chemistry": "A guide to data-driven discovery and design in homogeneous catalysis",
+      "data_regime": "n/a overview of data-driven catalysis design",
+      "validation": "N/A",
+      "why": "Nolan-lab 2025 field guide. Accessible entry for experimental groups.",
+      "summary": "A Chemical Communications guide to data-driven discovery and design in catalysis. Practical orientation from an organometallic group rather than a methods lab.",
+      "derived_authors": [
+        "Eleonora Casillo",
+        "Thomas Scattolin",
+        "Steven P. Nolan"
+      ],
+      "derived_topics": [
+        "Data-driven design",
+        "Homogeneous catalysis",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "Guide to catalysis ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Nolan"
+      ],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_digital_age_catalysis_2024",
+      "label": "Catalysis in the Digital Age",
+      "type": "paper",
+      "year": 2024,
+      "journal": "WIREs Comput. Mol. Sci.",
+      "doi": "10.1002/wcms.1730",
+      "url": "https://doi.org/10.1002/wcms.1730",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Bokinala Moses Abraham",
+        "Mullapudi V. Jyothirmai",
+        "Priyanka Sinha",
+        "Francesc Viñes",
+        "Jayant K. Singh",
+        "Francesc Illas"
+      ],
+      "topics": [
+        "Digital catalysis",
+        "Data",
+        "Machine learning"
+      ],
+      "methods": [
+        "Review of digital workflows"
+      ],
+      "chemistry": "Machine learning and data for catalysis in the digital age, spanning homogeneous and computational workflows",
+      "data_regime": "n/a overview of digital catalysis",
+      "validation": "N/A",
+      "why": "High-cite 2024 WIREs landscape of digital catalysis.",
+      "summary": "WIREs review of catalysis in the digital age: data, models and what still fails. Broad, highly cited context for the more homogeneous papers in this atlas.",
+      "derived_authors": [
+        "Bokinala Moses Abraham",
+        "Mullapudi V. Jyothirmai",
+        "Priyanka Sinha",
+        "Francesc Viñes",
+        "Jayant K. Singh",
+        "Francesc Illas"
+      ],
+      "derived_topics": [
+        "Digital catalysis",
+        "Data",
+        "Machine learning"
+      ],
+      "derived_methods": [
+        "Review of digital workflows"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Other / mixed",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_ml_bridge_physics_2025",
+      "label": "ML for Catalysis: Bridging Data and Physics",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Mater. Today Chem.",
+      "doi": "10.1016/j.mtchem.2025.103051",
+      "url": "https://doi.org/10.1016/j.mtchem.2025.103051",
+      "paper_type": "review",
+      "relevance": "overview",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Hongjing Wu",
+        "Shangkang Xie",
+        "Xurui Li",
+        "Yashuang Zhao",
+        "Lixia Guo",
+        "Xinlei Tu",
+        "Feiyu Feng",
+        "Qingtao Wang"
+      ],
+      "topics": [
+        "Physics-informed ML",
+        "Catalysis",
+        "Data-driven discovery"
+      ],
+      "methods": [
+        "Review of hybrid ML"
+      ],
+      "chemistry": "Machine learning for catalysis that tries to bridge purely data-driven discovery with physical insight",
+      "data_regime": "n/a overview of physics-informed catalysis ML",
+      "validation": "N/A",
+      "why": "2025 framing of the data-versus-physics split this atlas already uses.",
+      "summary": "Reviews machine learning for catalysis as a bridge between data-driven discovery and physical insight. Aligns with the atlas split between chemist descriptors, loops and MLIPs.",
+      "derived_authors": [
+        "Hongjing Wu",
+        "Shangkang Xie",
+        "Xurui Li",
+        "Yashuang Zhao",
+        "Lixia Guo",
+        "Xinlei Tu",
+        "Feiyu Feng",
+        "Qingtao Wang"
+      ],
+      "derived_topics": [
+        "Physics-informed ML",
+        "Catalysis",
+        "Data-driven discovery"
+      ],
+      "derived_methods": [
+        "Review of hybrid ML"
+      ],
+      "derived_workflows": [],
+      "paradigm": "Physical / interpretable",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_catalyseed_2026",
+      "label": "CatalySeed: Ru Ethenolysis Dataset for ML",
+      "type": "paper",
+      "year": 2026,
+      "journal": "ACS Catalysis",
+      "doi": "10.1021/acscatal.5c06483",
+      "url": "https://doi.org/10.1021/acscatal.5c06483",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Albert Poater",
+        "Susana P. García-Abellán",
+        "Juan V. Alegre-Requena",
+        "Bartosz Trzaskowski",
+        "J. Pablo Martínez"
+      ],
+      "topics": [
+        "Olefin metathesis",
+        "Ethenolysis",
+        "Reaction databases"
+      ],
+      "methods": [
+        "Reaction database",
+        "Machine learning"
+      ],
+      "chemistry": "Ruthenium-catalyzed ethenolysis of seed oils; reaction database built for machine learning",
+      "data_regime": "Curated Ru ethenolysis reaction database for ML applications",
+      "validation": "ML demonstrations on the CatalySeed ethenolysis table",
+      "why": "Poater/Alegre-Requena: a homogeneous metathesis dataset, not another materials HEA dump.",
+      "summary": "CatalySeed is a reaction database for ruthenium-catalyzed ethenolysis of seed oils, released for machine learning. Dataset-as-feature: the workflow starts with a clean homogeneous table.",
+      "derived_authors": [
+        "Albert Poater",
+        "Susana P. García-Abellán",
+        "Juan V. Alegre-Requena",
+        "Bartosz Trzaskowski",
+        "J. Pablo Martínez"
+      ],
+      "derived_topics": [
+        "Olefin metathesis",
+        "Ethenolysis",
+        "Reaction databases"
+      ],
+      "derived_methods": [
+        "Reaction database",
+        "Machine learning"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Poater"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_kulik_mbe_mlst_2025",
+      "label": "Many-Body Expansion ML for Octahedral TMCs",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Mach. Learn. Sci. Technol.",
+      "doi": "10.1088/2632-2153/ad9f22",
+      "url": "https://doi.org/10.1088/2632-2153/ad9f22",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Ralf Meyer",
+        "Daniel B K Chu",
+        "Heather J Kulik"
+      ],
+      "topics": [
+        "Many-body expansion",
+        "Octahedral complexes",
+        "Transition-metal complexes"
+      ],
+      "methods": [
+        "Many-body expansion",
+        "Supervised ML"
+      ],
+      "chemistry": "Many-body-expansion machine-learning models for octahedral transition-metal complexes",
+      "data_regime": "Virtual / computational octahedral TMC dataset with many-body expansion labels",
+      "validation": "Many-body ML accuracy on octahedral TMCs versus full-complex labels",
+      "why": "Follow-up to the Kulik JCIM many-body paper already in the atlas, now as an MLST model.",
+      "summary": "Builds many-body-expansion machine-learning models for octahedral transition-metal complexes. Structured representation: ligand–ligand terms, not a flat fingerprint of the whole complex.",
+      "derived_authors": [
+        "Ralf Meyer",
+        "Daniel B K Chu",
+        "Heather J Kulik"
+      ],
+      "derived_topics": [
+        "Many-body expansion",
+        "Octahedral complexes",
+        "Transition-metal complexes"
+      ],
+      "derived_methods": [
+        "Many-body expansion",
+        "Supervised ML"
+      ],
+      "derived_workflows": [
+        "Descriptors"
+      ],
+      "paradigm": "Ligand-space / screening",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Reusable ligand library",
+      "stack_layer": "Descriptors",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_piecewise_tm_2023",
+      "label": "ML on Piecewise-Linearity Deviations in TMCs",
+      "type": "paper",
+      "year": 2023,
+      "journal": "PCCP",
+      "doi": "10.1039/d3cp00258f",
+      "url": "https://doi.org/10.1039/d3cp00258f",
+      "paper_type": "research",
+      "relevance": "catalysis-enabling methodology",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Yael Cytter",
+        "Aditya Nandy",
+        "Chenru Duan",
+        "Heather J. Kulik"
+      ],
+      "topics": [
+        "Delocalization error",
+        "Transition-metal complexes",
+        "DFT diagnostics"
+      ],
+      "methods": [
+        "Supervised ML",
+        "DFT diagnostics"
+      ],
+      "chemistry": "Supervised machine learning of deviations from piecewise linearity in transition-metal complexes",
+      "data_regime": "Virtual / computational TMC DFT dataset labeled by delocalization-error diagnostics",
+      "validation": "Supervised models of piecewise-linearity deviations on TM complexes",
+      "why": "Kulik: learn when DFT is lying about a TMC. Methodology for computational catalysis.",
+      "summary": "Uses supervised models to inspect deviations from piecewise linearity in transition-metal complexes. A DFT-reliability feature that computational catalysis inherits before any yield model.",
+      "derived_authors": [
+        "Yael Cytter",
+        "Aditya Nandy",
+        "Chenru Duan",
+        "Heather J. Kulik"
+      ],
+      "derived_topics": [
+        "Delocalization error",
+        "Transition-metal complexes",
+        "DFT diagnostics"
+      ],
+      "derived_methods": [
+        "Supervised ML",
+        "DFT diagnostics"
+      ],
+      "derived_workflows": [
+        "Supervised model"
+      ],
+      "paradigm": "Physical / interpretable",
+      "groups": [
+        "Kulik"
+      ],
+      "representation_class": "Catalyst-state / mechanistic",
+      "stack_layer": "Supervised model",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_hitl_sdl_hetero_2025",
+      "label": "Human-in-the-Loop SDLs for Heterogeneous Catalysis",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Nature Catalysis",
+      "doi": "10.1038/s41929-024-01275-5",
+      "url": "https://doi.org/10.1038/s41929-024-01275-5",
+      "paper_type": "perspective",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Christoph Scheurer",
+        "Karsten Reuter"
+      ],
+      "topics": [
+        "Human-in-the-loop",
+        "Self-driving labs",
+        "Heterogeneous catalysis"
+      ],
+      "methods": [
+        "SDL design",
+        "Human oversight"
+      ],
+      "chemistry": "Role of the human-in-the-loop in self-driving laboratories for heterogeneous catalysis, with lessons for catalytic SDLs generally",
+      "data_regime": "n/a overview of human-in-the-loop SDL practice",
+      "validation": "N/A",
+      "why": "Reuter/Scheurer: keep the chemist in the loop. Adjacent hetero, shared SDL workflow.",
+      "summary": "Discusses the human-in-the-loop in emerging self-driving laboratories for heterogeneous catalysis. Included as a workflow paper: autonomy still needs a chemist, including in homogeneous SDLs.",
+      "derived_authors": [
+        "Christoph Scheurer",
+        "Karsten Reuter"
+      ],
+      "derived_topics": [
+        "Human-in-the-loop",
+        "Self-driving labs",
+        "Heterogeneous catalysis"
+      ],
+      "derived_methods": [
+        "SDL design",
+        "Human oversight"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [
+        "Margraf"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_sdl_industry_2026",
+      "label": "Self-Driving Labs for Industrial R&D",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Nature Synthesis",
+      "doi": "10.1038/s44160-026-01084-7",
+      "url": "https://doi.org/10.1038/s44160-026-01084-7",
+      "paper_type": "perspective",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jet-Sing Lee"
+      ],
+      "topics": [
+        "Self-driving labs",
+        "Industry",
+        "Process R&D"
+      ],
+      "methods": [
+        "Industrial SDL"
+      ],
+      "chemistry": "Industrial research-and-development use of self-driving laboratories, including catalytic process development",
+      "data_regime": "n/a overview of industrial SDL deployments",
+      "validation": "N/A",
+      "why": "Nature Synthesis 2026: what an SDL looks like when it is not a campus demo.",
+      "summary": "Perspectives on self-driving labs for industrial R&D. Workflow context for catalytic process chemistry: the loop has to survive scale, IP and plant constraints.",
+      "derived_authors": [
+        "Jet-Sing Lee"
+      ],
+      "derived_topics": [
+        "Self-driving labs",
+        "Industry",
+        "Process R&D"
+      ],
+      "derived_methods": [
+        "Industrial SDL"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [],
+      "representation_class": "Overview / mixed",
+      "stack_layer": "Overview",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_nitration_hte_ml_2025",
+      "label": "HTE and ML for Arene Nitration",
+      "type": "paper",
+      "year": 2025,
+      "journal": "Digital Discovery",
+      "doi": "10.1039/d5dd00086f",
+      "url": "https://doi.org/10.1039/d5dd00086f",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Taline Kerackian",
+        "Clément Wespiser",
+        "Matthieu Daniel",
+        "Eric Pasquinet",
+        "Eugénie Romero"
+      ],
+      "topics": [
+        "Nitration",
+        "HTE",
+        "Regioselectivity"
+      ],
+      "methods": [
+        "High-throughput experimentation",
+        "Supervised ML"
+      ],
+      "chemistry": "Arene and heteroarene nitration supported by high-throughput experimentation and machine learning",
+      "data_regime": "HTE nitration arrays with ML analysis of regioselectivity/yield",
+      "validation": "Experimental HTE plus ML models of nitration outcomes",
+      "why": "A 2025 HTE+ML reaction-development loop on a classical electrophilic reaction.",
+      "summary": "Supports arene/heteroarene nitration with high-throughput experimentation and machine learning. Included as a modern HTE workflow even though the chemistry is electrophilic aromatic substitution rather than TM catalysis.",
+      "derived_authors": [
+        "Taline Kerackian",
+        "Clément Wespiser",
+        "Matthieu Daniel",
+        "Eric Pasquinet",
+        "Eugénie Romero"
+      ],
+      "derived_topics": [
+        "Nitration",
+        "HTE",
+        "Regioselectivity"
+      ],
+      "derived_methods": [
+        "High-throughput experimentation",
+        "Supervised ML"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Autonomous / HTE",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_hein_bayes_ir_2026",
+      "label": "Bayesian IR Reaction Monitoring",
+      "type": "paper",
+      "year": 2026,
+      "journal": "React. Chem. Eng.",
+      "doi": "10.1039/d5re00400d",
+      "url": "https://doi.org/10.1039/d5re00400d",
+      "paper_type": "research",
+      "relevance": "adjacent method",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Jiayu Zhang",
+        "Jason E. Hein"
+      ],
+      "topics": [
+        "Reaction monitoring",
+        "Infrared spectroscopy",
+        "Bayesian calibration"
+      ],
+      "methods": [
+        "Bayesian modeling",
+        "IR calibration"
+      ],
+      "chemistry": "Bayesian modeling that improves univariate IR calibration for reaction monitoring, including catalytic processes",
+      "data_regime": "In-situ IR reaction-monitoring traces with Bayesian calibration",
+      "validation": "Bayesian IR calibration versus univariate methods on reaction monitoring",
+      "why": "Hein-lab sensing workflow: the closed loop is only as good as the analytical model.",
+      "summary": "Improves IR reaction monitoring with Bayesian calibration instead of a brittle univariate curve. Sensing-layer workflow from the Hein group: closed-loop catalysis needs a trustworthy in-situ readout.",
+      "derived_authors": [
+        "Jiayu Zhang",
+        "Jason E. Hein"
+      ],
+      "derived_topics": [
+        "Reaction monitoring",
+        "Infrared spectroscopy",
+        "Bayesian calibration"
+      ],
+      "derived_methods": [
+        "Bayesian modeling",
+        "IR calibration"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [
+        "Hein"
+      ],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
+    },
+    {
+      "id": "paper_negishi_bo_ligand_2026",
+      "label": "Bayesian Ligand Selection for Atroposelective Negishi",
+      "type": "paper",
+      "year": 2026,
+      "journal": "Org. Lett.",
+      "doi": "10.1021/acs.orglett.6c02314",
+      "url": "https://doi.org/10.1021/acs.orglett.6c02314",
+      "paper_type": "research",
+      "relevance": "core catalysis",
+      "citations": "",
+      "citation_date": "2026-09-06",
+      "authors": [
+        "Yujing Zhou",
+        "Richard C. Walroth",
+        "Lin Deng",
+        "Kyle A. Mack",
+        "Theresa Cravillion",
+        "Chong Han",
+        "Francis Gosselin"
+      ],
+      "topics": [
+        "Negishi coupling",
+        "Atropisomerism",
+        "Ligand selection",
+        "Bayesian optimization"
+      ],
+      "methods": [
+        "Bayesian optimization",
+        "Ligand screening"
+      ],
+      "chemistry": "Bayesian optimization for accelerated ligand selection in atroposelective Negishi coupling",
+      "data_regime": "Iterative ligand-selection campaign on an atroposelective Negishi reaction",
+      "validation": "Prospective Bayesian ligand selection versus a larger screen",
+      "why": "2026 Org. Lett. BO on a homogeneous ligand problem. Direct EDBO descendant.",
+      "summary": "Uses Bayesian optimization to pick ligands faster for an atroposelective Negishi coupling. Process-chemistry workflow: the acquisition loop is the ligand screen.",
+      "derived_authors": [
+        "Yujing Zhou",
+        "Richard C. Walroth",
+        "Lin Deng",
+        "Kyle A. Mack",
+        "Theresa Cravillion",
+        "Chong Han",
+        "Francis Gosselin"
+      ],
+      "derived_topics": [
+        "Negishi coupling",
+        "Atropisomerism",
+        "Ligand selection",
+        "Bayesian optimization"
+      ],
+      "derived_methods": [
+        "Bayesian optimization",
+        "Ligand screening"
+      ],
+      "derived_workflows": [
+        "Experiment selection"
+      ],
+      "paradigm": "Bayesian / active learning",
+      "groups": [],
+      "representation_class": "Dataset / experimental loop",
+      "stack_layer": "Experiment selection",
+      "focus": "",
+      "steps": [],
+      "group": "paper"
     }
   ],
   "edges": [
@@ -18221,6 +22295,894 @@
       "relation": "paper_similarity",
       "score": 5.5,
       "reason": "Library descriptors vs chemist-designed Sterimol",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_rise_2023",
+      "target": "paper_chemos2_2024",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "SDL platforms and orchestration",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sdl_atlas_brain_2025",
+      "target": "paper_chemos2_2024",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Riley J. Hickman, Alán Aspuru-Guzik; SDL brain vs ChemOS",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sdl_rise_2023",
+      "target": "paper_autonomous_catalysis_2025",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "Self-driving labs for catalysis",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edboplus_2022",
+      "target": "paper_bo_beyond_onehot_2024",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "Bayesian reaction optimization beyond one-hot encodings",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edboplus_2022",
+      "target": "paper_cost_bo_2024",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "Bayesian reaction optimization with a real experimental budget",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edboplus_2022",
+      "target": "paper_negishi_bo_ligand_2026",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "Bayesian ligand selection as an EDBO-style loop",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_edbo_2021",
+      "target": "paper_chiddo_2022",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Chemically informed vs black-box Bayesian reaction optimization",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_kraken_2022",
+      "target": "paper_monophosphine_set_2022",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Matthew S. Sigman, Tobias Gensch; phosphine libraries vs plates",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_kulik_space_2023",
+      "target": "paper_hemilabile_ml_2023",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Heather J. Kulik; TMC ligand-space labels",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_kulik_space_2023",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Heather J. Kulik; TMC space to coordination GNNs",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_kulik_manybody_2024",
+      "target": "paper_kulik_mbe_mlst_2025",
+      "relation": "paper_similarity",
+      "score": 8.5,
+      "reason": "authors: Heather J. Kulik, Ralf Meyer; many-body TMC models",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_autode_2021",
+      "target": "paper_reiher_networks_2022",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "Automated TS / reaction-network exploration",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_racerts_2026",
+      "target": "paper_ml_ts_review_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "TS ensembles versus the broader TS-ML map",
+      "density": "normal"
+    },
+    {
+      "source": "paper_hartwig_ru_2026",
+      "target": "paper_ts_structure_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Learned 3D / TS geometry models",
+      "density": "normal"
+    },
+    {
+      "source": "paper_duarte_almeta_2025",
+      "target": "paper_mlip_ligand_exchange_2025",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Fernanda Duarte; MLIPs on organometallic dynamics",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_sigman_accounts_2016",
+      "target": "paper_aminoxyl_generality_2023",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Matthew S. Sigman; generality-oriented descriptor workflows",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_organocat_review_2024",
+      "target": "paper_entdecker_2024",
+      "relation": "paper_similarity",
+      "score": 8,
+      "reason": "authors: Frank Glorius; energy-transfer / organocatalysis ML",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_corminboeuf_bidentate_2024",
+      "target": "paper_genetic_homocat_2022",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Clemence Corminboeuf; inverse / ligand-space homogeneous design",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_mlips_dft_2026",
+      "target": "paper_kulik_dft_reparam_2026",
+      "relation": "paper_similarity",
+      "score": 7,
+      "reason": "ML-corrected electronic structure for catalysis",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_ai_homocat_review_2025",
+      "target": "paper_ml_exp_homocat_2024",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "Experimental homogeneous catalysis ML overviews",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_flower_2025",
+      "target": "paper_askcos_2025",
+      "relation": "paper_similarity",
+      "score": 7.5,
+      "reason": "authors: Connor W. Coley; synthesis-planning / reaction-prediction stack",
+      "density": "sparse"
+    },
+    {
+      "source": "paper_resource_hydroformylation_2025",
+      "target": "paper_affordable_sdl_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Closed-loop catalytic optimization platforms",
+      "density": "normal"
+    },
+    {
+      "source": "paper_minerva_2025",
+      "target": "paper_bo_icl_catalysis_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "Bayesian / language-model catalytic experiment selection",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aminoxyl_generality_2023",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aminoxyl_generality_2023",
+      "target": "paper_transfer_nature_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aminoxyl_generality_2023",
+      "target": "paper_bisphos_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aminoxyl_generality_2023",
+      "target": "paper_hda_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_pd_sulfonimidamide_2023",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_pd_sulfonimidamide_2023",
+      "target": "paper_transfer_nature_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_pd_sulfonimidamide_2023",
+      "target": "paper_bisphos_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_pd_sulfonimidamide_2023",
+      "target": "paper_hda_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_monophosphine_set_2022",
+      "target": "paper_transfer_nature_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_monophosphine_set_2022",
+      "target": "paper_bisphos_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_monophosphine_set_2022",
+      "target": "paper_hda_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aryl_pyrrolidine_hbd_2022",
+      "target": "paper_kraken_2022",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aryl_pyrrolidine_hbd_2022",
+      "target": "paper_transfer_nature_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aryl_pyrrolidine_hbd_2022",
+      "target": "paper_bisphos_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_aryl_pyrrolidine_hbd_2022",
+      "target": "paper_hda_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Sigman",
+      "density": "normal"
+    },
+    {
+      "source": "paper_bo_beyond_onehot_2024",
+      "target": "paper_minerva_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_bo_beyond_onehot_2024",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_bo_beyond_onehot_2024",
+      "target": "paper_swarm_opt_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_bo_beyond_onehot_2024",
+      "target": "paper_gen_suzuki_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_swarm_opt_2026",
+      "target": "paper_minerva_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_swarm_opt_2026",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_swarm_opt_2026",
+      "target": "paper_gen_suzuki_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_gen_suzuki_2023",
+      "target": "paper_minerva_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_gen_suzuki_2023",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Schwaller",
+      "density": "normal"
+    },
+    {
+      "source": "paper_qtaim_gnn_2025",
+      "target": "paper_transfer_nature_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Doyle",
+      "density": "normal"
+    },
+    {
+      "source": "paper_qtaim_gnn_2025",
+      "target": "paper_bunny_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Doyle",
+      "density": "normal"
+    },
+    {
+      "source": "paper_qtaim_gnn_2025",
+      "target": "paper_ni_edbo_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Doyle",
+      "density": "normal"
+    },
+    {
+      "source": "paper_qtaim_gnn_2025",
+      "target": "paper_autoqchem_2022",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Doyle",
+      "density": "normal"
+    },
+    {
+      "source": "paper_cost_bo_2024",
+      "target": "paper_corminboeuf_flp_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_cost_bo_2024",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_cost_bo_2024",
+      "target": "paper_corminboeuf_bidentate_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_cost_bo_2024",
+      "target": "paper_tm_spin_pred_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_tm_spin_pred_2024",
+      "target": "paper_corminboeuf_flp_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_tm_spin_pred_2024",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_tm_spin_pred_2024",
+      "target": "paper_corminboeuf_bidentate_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_mlr_feature_select_2026",
+      "target": "paper_corminboeuf_flp_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_mlr_feature_select_2026",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_mlr_feature_select_2026",
+      "target": "paper_corminboeuf_bidentate_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_mlr_feature_select_2026",
+      "target": "paper_cost_bo_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_genetic_homocat_2022",
+      "target": "paper_corminboeuf_flp_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_genetic_homocat_2022",
+      "target": "paper_compcat_ai_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_genetic_homocat_2022",
+      "target": "paper_cost_bo_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Corminboeuf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_rise_2023",
+      "target": "paper_flexcat_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_rise_2023",
+      "target": "paper_fastcat_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_rise_2023",
+      "target": "paper_sdl_reason_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_autonomous_catalysis_2025",
+      "target": "paper_flexcat_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_autonomous_catalysis_2025",
+      "target": "paper_fastcat_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_autonomous_catalysis_2025",
+      "target": "paper_sdl_reason_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_reason_2026",
+      "target": "paper_flexcat_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_sdl_reason_2026",
+      "target": "paper_fastcat_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Abolhasani",
+      "density": "normal"
+    },
+    {
+      "source": "paper_hemilabile_ml_2023",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_hemilabile_ml_2023",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_hemilabile_ml_2023",
+      "target": "paper_ir_phosphor_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_gnn_coord_2025",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_gnn_coord_2025",
+      "target": "paper_ir_phosphor_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ir_phosphor_ml_2023",
+      "target": "paper_kulik_space_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ir_phosphor_ml_2023",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_calc_outcome_2022",
+      "target": "paper_kulik_space_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_calc_outcome_2022",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_calc_outcome_2022",
+      "target": "paper_hemilabile_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_calc_outcome_2022",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_dft_reparam_2026",
+      "target": "paper_kulik_space_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_dft_reparam_2026",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_dft_reparam_2026",
+      "target": "paper_hemilabile_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_dft_reparam_2026",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_mbe_mlst_2025",
+      "target": "paper_kulik_space_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_mbe_mlst_2025",
+      "target": "paper_hemilabile_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_kulik_mbe_mlst_2025",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_piecewise_tm_2023",
+      "target": "paper_kulik_space_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_piecewise_tm_2023",
+      "target": "paper_kulik_manybody_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_piecewise_tm_2023",
+      "target": "paper_hemilabile_ml_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_piecewise_tm_2023",
+      "target": "paper_kulik_gnn_coord_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Kulik",
+      "density": "normal"
+    },
+    {
+      "source": "paper_paton_dl_asymm_2026",
+      "target": "paper_paton_sterimol_2019",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Paton",
+      "density": "normal"
+    },
+    {
+      "source": "paper_paton_dl_asymm_2026",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Paton",
+      "density": "normal"
+    },
+    {
+      "source": "paper_paton_dl_asymm_2026",
+      "target": "paper_robert_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Paton",
+      "density": "normal"
+    },
+    {
+      "source": "paper_paton_dl_asymm_2026",
+      "target": "paper_goodvibes_2020",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Paton",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ml_exp_homocat_2024",
+      "target": "paper_aqme_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Alegre-Requena",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ml_exp_homocat_2024",
+      "target": "paper_robert_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Alegre-Requena",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ml_exp_homocat_2024",
+      "target": "paper_goodvibes_2020",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Alegre-Requena",
+      "density": "normal"
+    },
+    {
+      "source": "paper_mlip_ligand_exchange_2025",
+      "target": "paper_autode_2021",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Duarte",
+      "density": "normal"
+    },
+    {
+      "source": "paper_ch_borylation_desc_2026",
+      "target": "paper_racerts_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Jorner",
+      "density": "normal"
+    },
+    {
+      "source": "paper_catalysis_meets_ml_2025",
+      "target": "paper_vbur_2010",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Nolan",
+      "density": "normal"
+    },
+    {
+      "source": "paper_safe_sdl_2025",
+      "target": "paper_sdl_atlas_brain_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Aspuru",
+      "density": "normal"
+    },
+    {
+      "source": "paper_safe_sdl_2025",
+      "target": "paper_chemos2_2024",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Aspuru",
+      "density": "normal"
+    },
+    {
+      "source": "paper_spectroscopic_desc_2023",
+      "target": "paper_ml_descriptors_review_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Jiang",
+      "density": "normal"
+    },
+    {
+      "source": "paper_margraf_networks_2023",
+      "target": "paper_hitl_sdl_hetero_2025",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Margraf",
+      "density": "normal"
+    },
+    {
+      "source": "paper_askcos_2025",
+      "target": "paper_predictive_chem_2023",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Coley",
+      "density": "normal"
+    },
+    {
+      "source": "paper_predictive_catalysis_2023",
+      "target": "paper_catalyseed_2026",
+      "relation": "paper_similarity",
+      "score": 6.5,
+      "reason": "authors / group: Poater",
       "density": "normal"
     }
   ],

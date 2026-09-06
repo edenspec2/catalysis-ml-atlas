@@ -24,7 +24,9 @@ const groupColors = {
   Schwaller:'#e078bc',Denmark:'#a0d66f',Reid:'#c2a3ff',Abolhasani:'#54d7c1',Sunoj:'#f3cd78',Pidko:'#7f9cff',
   Hong:'#ff9d78',Coley:'#9ad0ff',Duarte:'#7fd0b5',Cernak:'#e0a36b',Rajaraman:'#c9a6ff',Nova:'#7fb3d8',
   Glorius:'#f0c27a',Schreiner:'#8fd0a8',Woodward:'#f2a0b6','Alegre-Requena':'#9bb7e8',Paton:'#b7c8ee',
-  Jorner:'#7ec8ff',Stuyver:'#c9e07a',Grimme:'#e8a06a',Cavallo:'#d4a574',Nolan:'#8ec4c0',Fey:'#b8a0e8',Other:'#9aa7b8'
+  Jorner:'#7ec8ff',Stuyver:'#c9e07a',Grimme:'#e8a06a',Cavallo:'#d4a574',Nolan:'#8ec4c0',Fey:'#b8a0e8',
+  Aspuru:'#6ad0c8',White:'#c4b0ff',Reiher:'#8ab4f8',Margraf:'#f0a070',Hein:'#7ec8b8',Schoenebeck:'#e8b07a',
+  Grzybowski:'#d080a8',Jensen:'#90c070',Poater:'#c8a060',Ess:'#a0c8e0',Jiang:'#b0a8d0',Other:'#9aa7b8'
 };
 const typeColors = { paper:'#f0c867', author:'#63a8ff', topic:'#64d59e', method:'#b991f0', workflow:'#ed80a5', program:'#34c9e8' };
 const yearColors = { '2026':'#72a8ff','2025':'#7fd0b5','2024':'#edbf6a','2023':'#d590e8','2022':'#e47d78', Unknown:'#9aa7b8' };

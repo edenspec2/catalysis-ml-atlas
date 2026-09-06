@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T12:52:38.832Z",
+  "checked_at": "2026-09-06T13:22:16.221Z",
   "records": {
     "paper_target_data_2025": {
       "src": "figures/paper_target_data_2025.jpg",
@@ -342,6 +342,222 @@
       "pmcid": "",
       "bytes": 104155,
       "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41557-019-0319-5/MediaObjects/41557_2019_319_Fig1_HTML.png"
+    },
+    "paper_sdl_rise_2023": {
+      "src": "figures/paper_sdl_rise_2023.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 54449,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs44160-022-00231-0/MediaObjects/44160_2022_231_Fig1_HTML.png"
+    },
+    "paper_autonomous_catalysis_2025": {
+      "src": "figures/paper_autonomous_catalysis_2025.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 106970,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41929-025-01430-6/MediaObjects/41929_2025_1430_Fig1_HTML.png"
+    },
+    "paper_safe_sdl_2025": {
+      "src": "figures/paper_safe_sdl_2025.png",
+      "caption": "Graphical abstract",
+      "kind": "toc",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 108901,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41570-025-00747-x/MediaObjects/41570_2025_747_Figa_HTML.png"
+    },
+    "paper_bo_icl_catalysis_2026": {
+      "src": "figures/paper_bo_icl_catalysis_2026.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC13220214",
+      "bytes": 54902,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0718/13220214/abbd2fdb4a42/oc5c02418_0013.jpg"
+    },
+    "paper_affordable_sdl_2026": {
+      "src": "figures/paper_affordable_sdl_2026.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 1141804,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs44160-026-01053-0/MediaObjects/44160_2026_1053_Fig1_HTML.png"
+    },
+    "paper_cost_bo_2024": {
+      "src": "figures/paper_cost_bo_2024.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC11465108",
+      "bytes": 93187,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f8b2/11465108/c03b5bb07519/d4dd00225c-f1.jpg"
+    },
+    "paper_cu_deaminative_hte_2022": {
+      "src": "figures/paper_cu_deaminative_hte_2022.jpg",
+      "caption": "Fig. 1 HTE enabled amine–acid esterification and its application in drug molecules.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC9814592",
+      "bytes": 105252,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1c0a/9814592/db1c00e93332/42004_2022_698_Fig1_HTML.jpg"
+    },
+    "paper_kulik_gnn_coord_2025": {
+      "src": "figures/paper_kulik_gnn_coord_2025.jpg",
+      "caption": "Fig. 1.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12541316",
+      "bytes": 125473,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a217/12541316/809ba6c8d623/pnas.2415658122fig01.jpg"
+    },
+    "paper_qtaim_gnn_2025": {
+      "src": "figures/paper_qtaim_gnn_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12538384",
+      "bytes": 114404,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bf85/12538384/fd4c0215ea88/d5dd00220f-f1.jpg"
+    },
+    "paper_tm_spin_pred_2024": {
+      "src": "figures/paper_tm_spin_pred_2024.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC11305380",
+      "bytes": 179287,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3386/11305380/63f95552a8ef/d4dd00093e-f1.jpg"
+    },
+    "paper_ml_descriptors_review_2023": {
+      "src": "figures/paper_ml_descriptors_review_2023.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC10401178",
+      "bytes": 28270,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5443/10401178/b42b27785301/ADVS-10-2301020-g013.jpg"
+    },
+    "paper_ts_structure_ml_2023": {
+      "src": "figures/paper_ts_structure_ml_2023.jpg",
+      "caption": "Fig. 1 Schematic representations of machine learning (ML) models.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC9977841",
+      "bytes": 121562,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f4c0/9977841/f2d7e8050943/41467_2023_36823_Fig1_HTML.jpg"
+    },
+    "paper_reiher_networks_2022": {
+      "src": "figures/paper_reiher_networks_2022.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC8816766",
+      "bytes": 31420,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9f56/8816766/e4bc7b12103c/11244_2021_1543_Fig1_HTML.jpg"
+    },
+    "paper_mlip_ligand_exchange_2025": {
+      "src": "figures/paper_mlip_ligand_exchange_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC11417676",
+      "bytes": 134592,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5a97/11417676/8e1725481160/d4fd00140k-f1.jpg"
+    },
+    "paper_margraf_networks_2023": {
+      "src": "figures/paper_margraf_networks_2023.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 549082,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41929-022-00896-y/MediaObjects/41929_2022_896_Fig1_HTML.png"
+    },
+    "paper_gen_suzuki_2023": {
+      "src": "figures/paper_gen_suzuki_2023.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC10259369",
+      "bytes": 95079,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/18c6/10259369/1ecbd4985a71/d2dd00125j-f1.jpg"
+    },
+    "paper_mlip_catalysis_set_2025": {
+      "src": "figures/paper_mlip_catalysis_set_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12728600",
+      "bytes": 115526,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a66a/12728600/c0d7105704ed/au5c01112_0010.jpg"
+    },
+    "paper_paton_dl_asymm_2026": {
+      "src": "figures/paper_paton_dl_asymm_2026.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 236238,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs43588-026-00954-6/MediaObjects/43588_2026_954_Fig1_HTML.png"
+    },
+    "paper_askcos_2025": {
+      "src": "figures/paper_askcos_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12140107",
+      "bytes": 71979,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4b7f/12140107/bd5a2ba129d1/ar5c00155_0007.jpg"
+    },
+    "paper_llm_extract_shallow_2025": {
+      "src": "figures/paper_llm_extract_shallow_2025.jpg",
+      "caption": "1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12648316",
+      "bytes": 147800,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5dd5/12648316/d0def5fc5fc1/au5c01087_0001.jpg"
+    },
+    "paper_predictive_chem_2023": {
+      "src": "figures/paper_predictive_chem_2023.jpg",
+      "caption": "Fig. 1 Overview of the three main categories of predictive chemistry tasks discussed throughout this review: reaction deployment, development, and discovery. It is useful to consider the extent to which each task represents an extrapolation from known reactivity to new reactivity.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC9811563",
+      "bytes": 78535,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3101/9811563/5328b7926ecd/d2sc05089g-f1.jpg"
+    },
+    "paper_kg_llm_relay_2025": {
+      "src": "figures/paper_kg_llm_relay_2025.jpg",
+      "caption": "Figure 1.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12374726",
+      "bytes": 118849,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1577/12374726/ac3cb98e5f6c/nwaf271fig1.jpg"
+    },
+    "paper_hitl_sdl_hetero_2025": {
+      "src": "figures/paper_hitl_sdl_hetero_2025.png",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 202438,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41929-024-01275-5/MediaObjects/41929_2024_1275_Fig1_HTML.png"
+    },
+    "paper_sdl_industry_2026": {
+      "src": "figures/paper_sdl_industry_2026.png",
+      "caption": "Graphical abstract",
+      "kind": "toc",
+      "source": "springer",
+      "pmcid": "",
+      "bytes": 686091,
+      "origin": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs44160-026-01084-7/MediaObjects/44160_2026_1084_Figa_HTML.png"
     }
   },
   "failures": [
@@ -350,15 +566,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_kraken_2022",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_hda_2025",
       "reason": "not openly available"
     },
     {
-      "id": "paper_qmworkflow_2026",
+      "id": "paper_kraken_2022",
       "reason": "not openly available"
     },
     {
@@ -366,11 +578,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_reid_local_2025",
+      "id": "paper_qmworkflow_2026",
       "reason": "not openly available"
     },
     {
-      "id": "paper_cats_2025",
+      "id": "paper_reid_local_2025",
       "reason": "not openly available"
     },
     {
@@ -378,11 +590,11 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_hartwig_ru_2026",
+      "id": "paper_cats_2025",
       "reason": "not openly available"
     },
     {
-      "id": "paper_shearilicine_2026",
+      "id": "paper_hartwig_ru_2026",
       "reason": "not openly available"
     },
     {
@@ -391,6 +603,10 @@
     },
     {
       "id": "paper_rmlp_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_shearilicine_2026",
       "reason": "not openly available"
     },
     {
@@ -406,19 +622,15 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_denmark_catalyst_selection_2024",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_ni_edbo_2024",
       "reason": "not openly available"
     },
     {
-      "id": "paper_cbs_2024",
+      "id": "paper_denmark_catalyst_selection_2024",
       "reason": "not openly available"
     },
     {
-      "id": "paper_delta_phosphine_2024",
+      "id": "paper_cbs_2024",
       "reason": "not openly available"
     },
     {
@@ -427,6 +639,10 @@
     },
     {
       "id": "paper_kulik_space_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_delta_phosphine_2024",
       "reason": "not openly available"
     },
     {
@@ -454,7 +670,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_aqme_2023",
+      "id": "paper_robert_2024",
       "reason": "not openly available"
     },
     {
@@ -462,7 +678,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_robert_2024",
+      "id": "paper_aqme_2023",
       "reason": "not openly available"
     },
     {
@@ -478,10 +694,6 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_autode_2021",
-      "reason": "not openly available"
-    },
-    {
       "id": "paper_tstools_2024",
       "reason": "not openly available"
     },
@@ -490,7 +702,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_edboplus_2022",
+      "id": "paper_autode_2021",
       "reason": "not openly available"
     },
     {
@@ -502,11 +714,7 @@
       "reason": "not openly available"
     },
     {
-      "id": "paper_sambvca2_2016",
-      "reason": "not openly available"
-    },
-    {
-      "id": "paper_lkb_p_2005",
+      "id": "paper_edboplus_2022",
       "reason": "not openly available"
     },
     {
@@ -518,10 +726,190 @@
       "reason": "not openly available"
     },
     {
+      "id": "paper_sambvca2_2016",
+      "reason": "not openly available"
+    },
+    {
       "id": "paper_fey_ligand_rev_2019",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_lkb_p_2005",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_sdl_atlas_brain_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_chemos2_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_bo_beyond_onehot_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_chiddo_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_capbo_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_sdl_reason_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_photo_closedloop_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_swarm_opt_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ir_hte_ml_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_aminoxyl_generality_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ni_dimers_ml_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_pd_sulfonimidamide_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_entdecker_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_monophosphine_set_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_mg_asymmetric_ml_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_spectroscopic_desc_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_tep_ml_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_aryl_pyrrolidine_hbd_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_hemilabile_ml_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_mlr_feature_select_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ir_phosphor_ml_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ch_borylation_desc_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kulik_calc_outcome_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ml_ts_review_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_grubbs_initiation_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kulik_dft_reparam_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_llm_catalysis_lit_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_genetic_homocat_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_predictive_catalysis_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ml_exp_homocat_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_physical_insights_ml_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_bayesian_catalysis_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ml_meets_mln_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_doe_ml_knowledge_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_catalysis_meets_ml_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_digital_age_catalysis_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_catalyseed_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kulik_mbe_mlst_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ml_bridge_physics_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_piecewise_tm_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_negishi_bo_ligand_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_nitration_hte_ml_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_hein_bayes_ir_2026",
       "reason": "not openly available"
     }
   ],
-  "found": 38,
-  "tried": 82
+  "found": 62,
+  "tried": 149
 }

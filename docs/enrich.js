@@ -292,7 +292,7 @@ function chemistryClass(p){
   if(/organocatal/.test(t))return 'Organocatalysis';
   if(/bismuth|frustrated/.test(t))return 'Main-group catalysis';
   if(/fluorination|suzuki|buchwald|c–n|c-n|cross[- ]coupl|arylation|negishi/.test(t))return 'Cross-coupling';
-  if(/c–h|c-h|borylation|deuteration|hydrogen isotope|hat |methylene/.test(t))return 'C–H functionalization';
+  if(/c–h|c-h|borylation|deuteration|hydrogen isotope|\bhat\b|hydrogen.atom.transfer|methylene/.test(t))return 'C–H functionalization';
   if(/hydrogenat|cbs reduction|enol tosylate|ketone hydrogenation/.test(t))return 'Asymmetric hydrogenation / reduction';
   if(/dihydroxylation|aldol|diels|alkene|gold\(i\)/.test(t))return 'Asymmetric C–C / oxidation';
   if(/mechanism|methodology|overview|best practices|computational catalysis|molecular ml|transition-metal complex/.test(t))return 'Reaction mechanism / methodology';
@@ -466,7 +466,7 @@ export function buildInsights(papers){
 
 export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v13',features_version:13,updated:'2026-09-06',enrichment:'DescriPyTor ranked filter, comparator papers, Inspect vs column'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v14',features_version:14,updated:'2026-09-06',enrichment:'2022–2026 leading-group wave, DescriPyTor ranked filter, Inspect vs column'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -501,7 +501,7 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
       p.groups=[...new Set([...(p.groups||[]).filter(x=>x!=='Other'),...GROUP_PATCH[p.id]])];
     }
     p.chemistry_class=chemistryClass(p);
-    p.representation_class=REPRESENTATION[p.id]||'Overview / mixed';
+    p.representation_class=REPRESENTATION[p.id]||p.representation_class||'Overview / mixed';
     p.secondary_paradigms=secondaryParadigms(p);
     p.data_size_bin=dataSizeBin(p);
     p.validation_type=validationType(p);
@@ -552,7 +552,9 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
         'paper_goodvibes_2020','paper_thermomlip_2026','paper_edbo_2021','paper_edboplus_2022',
         'paper_ni_edbo_2024','paper_aqme_2023','paper_robert_2024','paper_autoqchem_2022',
         'paper_paton_sterimol_2019','paper_duarte_almeta_2025','paper_rmlp_2025','paper_cats_2025',
-        'paper_minerva_2025','paper_flexcat_2026','paper_pidko_rh_hte_2024'
+        'paper_minerva_2025','paper_flexcat_2026','paper_pidko_rh_hte_2024',
+        'paper_chemos2_2024','paper_sdl_atlas_brain_2025','paper_bo_beyond_onehot_2024',
+        'paper_mlip_ligand_exchange_2025','paper_reiher_networks_2022','paper_kulik_gnn_coord_2025'
       ]
     }
   };
