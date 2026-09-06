@@ -89,7 +89,8 @@ function persist() {
     localStorage.setItem('cml:atlas', JSON.stringify({
       q:$('q').value, view:$('view').value, layout:$('layout').value, colorby:$('colorby').value,
       year:$('year').value, chemistry:$('chemistry').value, representation:$('representation').value,
-      density:$('density').value, labels:$('labels').value, story:activeStory
+      density:$('density').value, labels:$('labels').value, story:activeStory,
+      showFigs:$('showFigs')?.checked !== false
     }));
   } catch {}
 }
@@ -98,9 +99,24 @@ function restore() {
     const s = JSON.parse(localStorage.getItem('cml:atlas') || 'null'); if (!s) return;
     for (const [k, v] of Object.entries(s)) {
       if (k === 'story') { activeStory = v; continue; }
+      if (k === 'showFigs') { if ($('showFigs')) $('showFigs').checked = v !== false; continue; }
       const el = $(k); if (el && v != null) el.value = v;
     }
   } catch {}
+}
+function figureButton(p, large) {
+  if (!p.figure?.src) return large ? '<p class="fig-missing muted">Figure 1 is not in an open source for this paper.</p>' : '';
+  const cap = p.figure.caption || 'Figure 1';
+  if (!large) return `<img class="fig-sm" src="${esc(p.figure.src)}" alt="" loading="lazy" decoding="async">`;
+  return `<button type="button" class="fig fig-lg" data-fig="${esc(p.id)}" aria-label="Enlarge ${esc(cap)}"><img src="${esc(p.figure.src)}" alt="${esc(cap)}" loading="eager" decoding="async"></button><p class="fig-cap">${esc(cap)}</p>`;
+}
+function openFigure(id) {
+  const n = ALL.find(x => x.id === id);
+  if (!n?.figure?.src || !$('figbox')) return;
+  $('figbox-img').src = n.figure.src;
+  $('figbox-img').alt = n.figure.caption || 'Figure 1';
+  $('figbox-cap').textContent = (n.full_title || n.label) + ' · ' + (n.figure.caption || 'Figure 1');
+  if (!$('figbox').open) $('figbox').showModal();
 }
 function seedPositions(nodes) {
   nodes.forEach(n => {
@@ -306,9 +322,11 @@ function updateHud() {
 }
 function renderPapers() {
   const papers = currentData.nodes.filter(n => n.type === 'paper').sort((a,b) => (b.year||0) - (a.year||0) || a.label.localeCompare(b.label));
+  const figs = $('showFigs')?.checked !== false;
   $('paper-count').textContent = papers.length;
+  $('papers').classList.toggle('fig-list', figs);
   $('papers').innerHTML = papers.length
-    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}" data-node="${esc(p.id)}"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></button>`).join('')
+    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}${figs && p.figure ? ' has-fig' : ''}" data-node="${esc(p.id)}">${figs ? figureButton(p, false) : ''}<span class="row-text"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></span></button>`).join('')
     : '<p class="muted">No papers match these filters.</p>';
 }
 function similarPapers(id) {
@@ -339,20 +357,30 @@ function renderSelection() {
     const papers = currentData.nodes.filter(x => x.type === 'paper');
     const s = viewStats(papers);
     box.hidden = false;
+    $('side')?.classList.remove('has-fig-sel');
+    document.querySelector('.atlas-shell')?.classList.remove('has-paper-fig');
+    box.classList.remove('has-fig');
     box.innerHTML = papers.length ? `<div class="sel-card"><p class="eyebrow">This view</p>
-      <p class="view-stats"><b>${s.n}</b> papers · <b>${s.hard}</b> prospective/OOD/closed-loop · <b>${s.small}</b> with n&lt;50</p>
+      <p class="view-stats"><b>${s.n}</b> papers · <b>${papers.filter(p=>p.figure).length}</b> with Figure 1 · <b>${s.hard}</b> prospective/OOD/closed-loop</p>
       <p class="muted">${s.topChem ? `Most papers: ${esc(s.topChem[0])} (${s.topChem[1]}).` : ''} ${s.topRep ? `Dominant representation: ${esc(s.topRep[0])}.` : ''}</p>
-      <p class="prompt">Tap a node. Use Board in the library for the chemistry × representation gaps.</p></div>` : '';
+      <p class="prompt">Tap a node to see Figure 1. Tap the figure to enlarge it for the train or plane.</p></div>` : '';
     if (!papers.length) box.hidden = true;
     return;
   }
   box.hidden = false;
+  $('side')?.classList.toggle('has-fig-sel', n.type === 'paper' && !!n.figure);
+  box.classList.toggle('has-fig', n.type === 'paper' && !!n.figure);
   if (n.type !== 'paper') {
+    document.querySelector('.atlas-shell')?.classList.remove('has-paper-fig');
     box.innerHTML = `<div class="sel-card"><p class="eyebrow">${esc(n.type)}</p><h2>${esc(n.label)}</h2><p class="muted">Tap the same node again to clear focus.</p></div>`;
     return;
   }
   const near = similarPapers(n.id);
-  box.innerHTML = `<div class="sel-card"><p class="eyebrow">${esc(n.year || '')} · ${esc(n.journal || '')}</p><h2>${esc(n.full_title || n.label)}</h2>
+  document.querySelector('.atlas-shell')?.classList.toggle('has-paper-fig', n.type === 'paper' && !!n.figure);
+  box.innerHTML = `<div class="sel-card"><p class="eyebrow">${esc(n.year || '')} · ${esc(n.journal || '')}</p>
+    <h2>${esc(n.label)}</h2>
+    ${figureButton(n, true)}
+    ${n.full_title && n.full_title !== n.label ? `<p class="sel-full muted">${esc(n.full_title)}</p>` : ''}
     <p class="summary">${esc(n.summary || n.why || '')}</p>
     <p class="prompt">${esc(n.ask_next || '')}</p>
     <p class="muted">${esc(n.use_for || '')}</p>
@@ -467,6 +495,7 @@ function bindGraph() {
 function bind() {
   ['q','view','year','density','chemistry','representation','hideReviews','hideIsolates'].forEach(id =>
     $(id).addEventListener(id === 'q' ? 'input' : 'change', () => { clearSelection(); buildData(); }));
+  $('showFigs')?.addEventListener('change', () => { renderPapers(); persist(); });
   $('layout').addEventListener('change', () => { persist(); applyLayout($('layout').value); });
   $('colorby').addEventListener('change', () => { paintGraph(); persist(); });
   $('labels').addEventListener('change', persist);
@@ -476,11 +505,16 @@ function bind() {
     $('q').value = ''; $('view').value = 'papers'; $('layout').value = 'free'; $('colorby').value = 'paradigm';
     $('year').value = 'all'; $('chemistry').value = 'all'; $('representation').value = 'all'; $('density').value = 'normal';
     $('labels').value = 'papers'; $('focus').value = '1'; $('hideReviews').checked = false; $('hideIsolates').checked = false;
+    if ($('showFigs')) $('showFigs').checked = true;
     activeStory = null; document.querySelectorAll('[data-story]').forEach(x => x.classList.remove('active'));
     clearSelection(); buildData();
   });
+  $('close-fig')?.addEventListener('click', () => $('figbox')?.close());
+  $('figbox')?.addEventListener('click', e => { if (e.target.id === 'figbox') $('figbox').close(); });
   document.addEventListener('click', e => {
     if (e.target.id === 'clear-focus') { clearSelection(); return; }
+    const fig = e.target.closest('[data-fig]');
+    if (fig) { e.preventDefault(); e.stopPropagation(); openFigure(fig.dataset.fig); return; }
     const row = e.target.closest('[data-node]'); if (row) selectNode(row.dataset.node);
   });
 }
@@ -511,6 +545,7 @@ async function init() {
         have.add(d);
       }
     } catch {}
+    ALL.filter(n => n.figure?.src).forEach(n => { const img = new Image(); img.src = n.figure.src; });
     fillFilters(ALL.filter(n => n.type === 'paper'));
     restore();
     if ($('labels').value === 'selected') $('labels').value = 'papers';

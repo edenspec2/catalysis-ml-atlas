@@ -67,6 +67,7 @@
     </label>
     <button type="button" id="center">Fit</button>
     <button type="button" id="reset">Reset</button>
+    <label class="check"><input type="checkbox" id="showFigs" checked> Figure 1</label>
   </div>
   <details class="atlas-more">
     <summary>More graph options</summary>
@@ -105,7 +106,7 @@
       <div class="hudbox" id="status">Loading atlas…</div>
       <div class="hudbox" id="legend"></div>
     </div>
-    <p class="atlas-hint">Drag to rotate · scroll or pinch to zoom · tap a node, tap again to clear. Auto-rotate stays off.</p>
+    <p class="atlas-hint">Drag to rotate · pinch to zoom · tap a paper for Figure 1. Auto-rotate stays off.</p>
   </div>
   <aside id="side">
     <div id="selection" hidden></div>
@@ -116,6 +117,14 @@
     <div id="papers" tabindex="-1"></div>
   </aside>
 </div>
-<script src="atlas.js?v=11"></script>
+<dialog id="figbox">
+  <div class="dialog-top"><span class="eyebrow">FIGURE</span><button type="button" id="close-fig" aria-label="Close figure">Close ✕</button></div>
+  <img id="figbox-img" alt="">
+  <p id="figbox-cap" class="muted"></p>
+</dialog>
+<script src="atlas.js?v=13"></script>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
 </body>
 </html>

@@ -287,9 +287,9 @@ export function buildInsights(papers){
   };
 }
 
-export function enrichGraph(graph, {metadata={}, authors={}} = {}){
+export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v10',features_version:10,updated:'2026-09-06',enrichment:'DescriPyTor neighborhood, summaries, chemistry/representation analysis'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v11',features_version:11,updated:'2026-09-06',enrichment:'Figure 1 thumbnails, DescriPyTor neighborhood, summaries'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -332,6 +332,8 @@ export function enrichGraph(graph, {metadata={}, authors={}} = {}){
     p.brief=paperBrief(p);
     p.ask_next=askNext(p);
     p.use_for=useFor(p);
+    const fig=figures.records?.[p.id];
+    if(fig?.src)p.figure={src:fig.src,caption:fig.caption||'Figure 1',kind:fig.kind||'figure1',source:fig.source||''};
   }
 
   g.stories={

@@ -6,7 +6,9 @@ await cp('src','dist',{recursive:true});await cp('public','dist',{recursive:true
 const source=JSON.parse(await readFile('original/graph_catalysis_v7.json','utf8'));
 const metadata=JSON.parse(await readFile('public/metadata.json','utf8'));
 const authors=JSON.parse(await readFile('public/authors.json','utf8'));
-const graph=enrichGraph(source,{metadata,authors});
+let figures={records:{}};
+try{figures=JSON.parse(await readFile('public/figures.json','utf8'))}catch{}
+const graph=enrichGraph(source,{metadata,authors,figures});
 await writeFile('dist/graph.json',JSON.stringify(graph));
 for(const [src,dst] of [['three/build/three.min.js','three.min.js'],['3d-force-graph/dist/3d-force-graph.min.js','3d-force-graph.min.js'],['three-spritetext/dist/three-spritetext.min.js','three-spritetext.min.js']])await copyFile('node_modules/'+src,'dist/vendor/'+dst);
 const cols=['id','year','published_date','label','full_title','doi','url','paradigm','secondary_paradigms','representation_class','chemistry_class','chemistry','data_size_bin','data_regime','validation_type','validation'];

@@ -38,7 +38,10 @@ body.atlas-page .brand span:last-child{margin-left:10px}
 #paper-count{color:var(--muted);font-size:13px}
 #papers{overflow:auto;padding:8px}
 .rowitem{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:transparent;border-color:transparent;border-radius:10px;padding:10px 12px;min-height:52px}
-.rowitem span:first-child{font-weight:650;font-size:14px;line-height:1.35}
+.row-text{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.rowitem span:first-child,.row-text>span:first-child{font-weight:650;font-size:14px;line-height:1.35}
+.fig-card{display:block;width:100%;padding:0;min-height:0;margin:10px 0 8px;border:1px solid var(--line);border-radius:10px;background:#070b10;overflow:hidden}
+.fig-card img{display:block;width:100%;max-height:200px;object-fit:contain;background:#070b10}
 .row-brief{color:var(--muted);font-size:12px;font-weight:400;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .sel-card .summary{margin:8px 0;color:#d5e1ed}
 .sel-card .prompt{margin:10px 0}
@@ -52,13 +55,26 @@ body.atlas-page .brand span:last-child{margin-left:10px}
 #selection{padding:12px 12px 0;max-height:46%;overflow:auto}
 .sel-card{padding:14px;border:1px solid var(--line);border-radius:12px;background:#111923}
 .sel-card h2{font-size:18px;letter-spacing:-.3px;margin:4px 0 8px}
+.sel-full{margin:0 0 10px;font-size:13px}
 .sel-card .tags{margin:10px 0}
+.fig-list .rowitem.has-fig{display:grid;grid-template-columns:88px minmax(0,1fr);gap:10px;align-items:center}
+.fig-sm{width:88px;height:72px;object-fit:contain;background:#0b1118;border-radius:8px;border:1px solid var(--line)}
+.fig-lg{display:block;width:100%;padding:0;min-height:0;border:1px solid var(--line);border-radius:10px;background:#070b10;overflow:hidden}
+.fig-lg img{display:block;width:100%;max-height:min(42dvh,360px);object-fit:contain;background:#070b10}
+.fig-cap{margin:6px 0 10px;font-size:12px;color:var(--muted)}
+.fig-missing{margin:8px 0;font-size:13px}
+#figbox{width:min(960px,calc(100% - 16px));max-height:96dvh;padding:16px;background:#070b10}
+#figbox .dialog-top{top:-16px;background:#070b10}
+#figbox img{display:block;width:100%;max-height:78dvh;object-fit:contain;background:#000;border-radius:8px}
+#side.has-fig-sel{grid-template-rows:minmax(0,1.15fr) auto minmax(0,.85fr)}
+#selection.has-fig{max-height:none}
 .glabel{background:#0b1320;color:#fff;border:1px solid #33425a;border-radius:8px;padding:7px 9px;font-size:13px}
 @media(max-width:900px){
 body.atlas-page{height:100dvh;overflow:hidden;grid-template-rows:auto auto minmax(0,1fr)}
 body.atlas-page header{position:static}
 .atlas-controls{position:static}
-.atlas-shell{grid-template-columns:1fr;grid-template-rows:minmax(42dvh,1fr) minmax(180px,36%)}
+.atlas-shell{grid-template-columns:1fr;grid-template-rows:minmax(34dvh,1fr) minmax(220px,48%)}
+.atlas-shell.has-paper-fig{grid-template-rows:minmax(22dvh,28%) minmax(0,1fr)}
 .atlas-stage{height:auto;min-height:0}
 .atlas-top{flex-wrap:wrap}
 .atlas-search{max-width:none;flex-basis:100%}
@@ -67,4 +83,12 @@ body.atlas-page header{position:static}
 .atlas-hint{display:none}
 #legend{display:none}
 #side{border-left:0;border-top:1px solid var(--line);min-height:0}
+#selection{max-height:none}
+#side.has-fig-sel{overflow:auto}
+.fig-lg img{max-height:38dvh}
+.fig-list .rowitem.has-fig{grid-template-columns:76px minmax(0,1fr)}
+.fig-sm{width:76px;height:64px}
+.fig-card img{max-height:180px}
+#figbox{width:calc(100% - 8px);max-height:100dvh;padding:12px;border-radius:12px}
+#figbox img{max-height:82dvh}
 }

@@ -1,0 +1,422 @@
+{
+  "checked_at": "2026-09-06T10:18:43.286Z",
+  "records": {
+    "paper_target_data_2025": {
+      "src": "figures/paper_target_data_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11887056",
+      "bytes": 105286,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0a4f/11887056/5f48815561b1/ja4c15902_0001.jpg"
+    },
+    "paper_minerva_2025": {
+      "src": "figures/paper_minerva_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12255721",
+      "bytes": 188478,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/91a7/12255721/3eeca0ae0c52/41467_2025_61803_Fig1_HTML.jpg"
+    },
+    "paper_meta_selectivity_2025": {
+      "src": "figures/paper_meta_selectivity_2025.jpg",
+      "caption": "Fig. 1 Asymmetric hydrogenation of olefins.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12000603",
+      "bytes": 38805,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5e81/12000603/74aabffa2f49/41467_2025_58854_Fig1_HTML.jpg"
+    },
+    "paper_bisphos_2025": {
+      "src": "figures/paper_bisphos_2025.jpg",
+      "caption": "Fig. 1 Introduction.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12498247",
+      "bytes": 164882,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9345/12588150/a1ee4f1d5957/d5sc04691b-f1.jpg"
+    },
+    "paper_hcat_2025": {
+      "src": "figures/paper_hcat_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11889620",
+      "bytes": 273477,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c1b4/11889620/4038701ef33b/fx1.jpg"
+    },
+    "paper_transfer_nature_2026": {
+      "src": "figures/paper_transfer_nature_2026.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12999503",
+      "bytes": 185890,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ea2a/12999503/852f059662d7/41586_2026_10239_Fig1_HTML.jpg"
+    },
+    "paper_cernak_2026": {
+      "src": "figures/paper_cernak_2026.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC13339639",
+      "bytes": 55233,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/55bb/13339639/9470006b46c8/ja6c05959_0009.jpg"
+    },
+    "paper_denmark_2025": {
+      "src": "figures/paper_denmark_2025.jpg",
+      "caption": "1",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12464766",
+      "bytes": 134750,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/24b3/12464766/3661b47fec22/oc5c00900_0002.jpg"
+    },
+    "paper_lowdata_workflows_2025": {
+      "src": "figures/paper_lowdata_workflows_2025.jpg",
+      "caption": "Fig. 1 Traditional conceptions of linear and non-linear regression models for low-data regimes.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC11997861",
+      "bytes": 139852,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/943c/12077359/f28a1e8a278f/d5sc00996k-f1.jpg"
+    },
+    "paper_pdni_transfer_2025": {
+      "src": "figures/paper_pdni_transfer_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12063614",
+      "bytes": 110175,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/83dc/12063614/4a93ff815ea7/ja5c00838_0009.jpg"
+    },
+    "paper_corminboeuf_flp_2026": {
+      "src": "figures/paper_corminboeuf_flp_2026.jpg",
+      "caption": "Fig. 1 (a) Simplified description of the IFLP-catalyzed direct hydrogenation of CO",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12903909",
+      "bytes": 140412,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/32d8/13085741/a3636f846f45/d5sc09530a-f1.jpg"
+    },
+    "paper_moleclip_2025": {
+      "src": "figures/paper_moleclip_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC12100517",
+      "bytes": 142196,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a27c/12175575/214758e11819/d5sc00907c-f1.jpg"
+    },
+    "paper_bismuth_2025": {
+      "src": "figures/paper_bismuth_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12636031",
+      "bytes": 65865,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0375/12636031/23d3ce466d64/ja5c11854_0012.jpg"
+    },
+    "paper_ch_oxidation_2025": {
+      "src": "figures/paper_ch_oxidation_2025.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11812016",
+      "bytes": 82430,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/828b/11812016/8004124cc247/cs4c05659_0010.jpg"
+    },
+    "paper_noxyl_2025": {
+      "src": "figures/paper_noxyl_2025.jpg",
+      "caption": "Figure 1",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12022910",
+      "bytes": 161017,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/fc99/12022910/9e0be8816470/oc4c01919_0001.jpg"
+    },
+    "paper_ai_homocat_review_2025": {
+      "src": "figures/paper_ai_homocat_review_2025.jpg",
+      "caption": "1",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12150272",
+      "bytes": 122696,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/aba8/12150272/33b1bb9d09a0/cs5c01202_0001.jpg"
+    },
+    "paper_flexcat_2026": {
+      "src": "figures/paper_flexcat_2026.jpg",
+      "caption": "Fig. 1 Flex-Cat’s experimental platform.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC13439374",
+      "bytes": 252568,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ea7e/13439374/c2b5d9016285/41467_2026_74425_Fig1_HTML.jpg"
+    },
+    "paper_bestpractices_2026": {
+      "src": "figures/paper_bestpractices_2026.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC12772449",
+      "bytes": 74962,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e03/12772449/701b6cc33d4b/cs5c06439_0008.jpg"
+    },
+    "paper_mlips_dft_2026": {
+      "src": "figures/paper_mlips_dft_2026.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC13331578",
+      "bytes": 24638,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3bd3/13331578/3e6b6c2df0b6/CHEM-32-e71022-g007.jpg"
+    },
+    "paper_compcat_ai_2026": {
+      "src": "figures/paper_compcat_ai_2026.jpg",
+      "caption": "1",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC13081113",
+      "bytes": 87898,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/dda1/13081113/0aeba27e42c3/ja5c17786_0001.jpg"
+    },
+    "paper_corminboeuf_bidentate_2024": {
+      "src": "figures/paper_corminboeuf_bidentate_2024.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11197013",
+      "bytes": 62700,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/690a/11197013/68c35e128f0c/cs4c02452_0007.jpg"
+    },
+    "paper_pidko_rh_hte_2024": {
+      "src": "figures/paper_pidko_rh_hte_2024.jpg",
+      "caption": "Figure 1",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC11352728",
+      "bytes": 68418,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6d7d/11352728/5b653cd8cd6e/d4sc03647f-f1.jpg"
+    },
+    "paper_hyster_sigman_2023": {
+      "src": "figures/paper_hyster_sigman_2023.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC10602048",
+      "bytes": 126113,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/be9c/10602048/468c68446fc2/nihms-1937464-f0001.jpg"
+    },
+    "paper_sobo_2023": {
+      "src": "figures/paper_sobo_2023.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11723321",
+      "bytes": 200427,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/acab/11723321/f39a418aea78/nihms-2043142-f0001.jpg"
+    },
+    "paper_bisphosphine_multiobjective_2023": {
+      "src": "figures/paper_bisphosphine_multiobjective_2023.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC10194998",
+      "bytes": 117277,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/675f/10194998/ba8e1afd27a0/nihms-1894427-f0001.jpg"
+    },
+    "paper_organocat_review_2024": {
+      "src": "figures/paper_organocat_review_2024.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC11406055",
+      "bytes": 50593,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f595/11406055/d10836154228/Beilstein_J_Org_Chem-20-2280-g002.jpg"
+    },
+    "paper_latent_transfer_2024": {
+      "src": "figures/paper_latent_transfer_2024.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC10807004",
+      "bytes": 77204,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/acc7/10807004/8cf0e92344e1/au3c00419_0007.jpg"
+    },
+    "paper_milo_science_2015": {
+      "src": "figures/paper_milo_science_2015.jpg",
+      "caption": "Figure",
+      "kind": "figure",
+      "source": "pmc",
+      "pmcid": "PMC4465137",
+      "bytes": 91468,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2a6c/4465137/44ce33db5bd7/nihms665729f1.jpg"
+    },
+    "paper_santiago_mlr_2018": {
+      "src": "figures/paper_santiago_mlr_2018.jpg",
+      "caption": "Fig. 1 (A) Taft, (B) Charton, and (C) Sterimol steric parameters.",
+      "kind": "figure1",
+      "source": "pmc",
+      "pmcid": "PMC5903422",
+      "bytes": 66792,
+      "origin": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1864/5903422/a02858e2e18f/c7sc04679k-f1.jpg"
+    }
+  },
+  "failures": [
+    {
+      "id": "paper_kraken_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_duarte_almeta_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_flower_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_bunny_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_hda_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_reid_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_qmworkflow_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_hartwig_ru_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_reid_local_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_hartwig_libra_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_cats_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_sunoj_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_shearilicine_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_rmlp_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_rajaraman_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_milo_hie_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_sigman_gold_2026",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_pd_fluorination_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_fastcat_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_ni_edbo_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_denmark_catalyst_selection_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_delta_phosphine_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_cbs_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_palladaelectro_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kulik_space_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_kulik_manybody_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_resource_hydroformylation_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_milo_vibrations_2014",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_harper_sterimol_2012",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_paton_sterimol_2019",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_santiago_milo_2016",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_autoqchem_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_aqme_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_lustosa_milo_2022",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_robert_2024",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_milo_smalldata_2023",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_smartpy_2025",
+      "reason": "not openly available"
+    },
+    {
+      "id": "paper_chemrefine_2026",
+      "reason": "not openly available"
+    }
+  ],
+  "found": 29,
+  "tried": 67
+}
