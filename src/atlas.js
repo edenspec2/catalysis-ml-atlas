@@ -189,10 +189,11 @@ function project(n, w, h) {
   const x1 = n.x * cy - n.z * sy;
   const z1 = n.x * sy + n.z * cy;
   const y2 = n.y * cp - z1 * sp;
-  const z2 = n.y * sp + z1 * cp;
-  const depth = 420 / (420 + z2);
+  const z2 = Math.max(-520, n.y * sp + z1 * cp);
+  const depth = 900 / (900 + z2);
   const s = depth * cam.zoom;
-  return { x: w / 2 + x1 * s, y: h / 2 + y2 * s, r: (n.type === 'paper' ? 11 : 7) * s * (n._selected ? 1.45 : 1), z: z2, depth };
+  const r = (n.type === 'paper' ? 9 : 6) * Math.min(1.35, depth) * (n._selected ? 1.4 : 1);
+  return { x: w / 2 + x1 * s, y: h / 2 + y2 * s, r, z: z2, depth };
 }
 function sizeCanvas() {
   const el = $('graph');
