@@ -33,7 +33,7 @@ export function uniqueWorks(works){
  });
 }
 export function paperText(p){
- return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.why,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+ return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.why,p.summary,p.brief,p.ask_next,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 }
 export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},chemistry='',representation=''}={}){
  return papers.filter(p=>{

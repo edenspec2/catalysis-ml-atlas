@@ -33,7 +33,7 @@ const cam = { yaw: 0.55, pitch: 0.32, zoom: 1, autoRotate };
 const pointer = { down:false, x:0, y:0, moved:false, id:null };
 
 const primaryGroup = n => n.type === 'paper' ? (n.groups?.[0] || 'Other') : 'Other';
-const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.why, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
+const paperText = p => [p.label, p.full_title, p.chemistry, p.chemistry_class, p.paradigm, p.representation_class, p.why, p.summary, p.brief, p.ask_next, p.journal, (p.derived_authors||[]).join(' '), (p.groups||[]).join(' '), (p.derived_methods||[]).join(' '), (p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 
 function colorMap() {
   const mode = $('colorby').value;
@@ -308,21 +308,60 @@ function renderPapers() {
   const papers = currentData.nodes.filter(n => n.type === 'paper').sort((a,b) => (b.year||0) - (a.year||0) || a.label.localeCompare(b.label));
   $('paper-count').textContent = papers.length;
   $('papers').innerHTML = papers.length
-    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}" data-node="${esc(p.id)}"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.groups?.[0] || p.paradigm || '')}</span></button>`).join('')
+    ? papers.map(p => `<button type="button" class="rowitem${p._selected ? ' active' : ''}" data-node="${esc(p.id)}"><span>${esc(p.label)}</span><span class="muted">${esc(p.year || '')} · ${esc(p.groups?.[0] || p.paradigm || '')}</span><span class="row-brief">${esc(p.brief || p.summary || p.why || '')}</span></button>`).join('')
     : '<p class="muted">No papers match these filters.</p>';
+}
+function similarPapers(id) {
+  return PAPER_LINKS.filter(l => l.source === id || l.target === id)
+    .sort((a,b) => (b.score || 0) - (a.score || 0))
+    .slice(0, 4)
+    .map(l => {
+      const oid = l.source === id ? l.target : l.source;
+      const n = ALL.find(x => x.id === oid);
+      return n ? { id: n.id, label: n.label, reason: l.reason } : null;
+    }).filter(Boolean);
+}
+function viewStats(papers) {
+  const hard = papers.filter(p => ['prospective experimental','autonomous closed-loop','scaffold / OOD'].includes(p.validation_type)).length;
+  const small = papers.filter(p => p.data_size_bin === 'n < 50').length;
+  const reps = {};
+  papers.forEach(p => { const k = p.representation_class || 'unspecified'; reps[k] = (reps[k] || 0) + 1; });
+  const topRep = Object.entries(reps).sort((a,b) => b[1] - a[1])[0];
+  const chem = {};
+  papers.forEach(p => { const k = p.chemistry_class || 'unspecified'; chem[k] = (chem[k] || 0) + 1; });
+  const topChem = Object.entries(chem).sort((a,b) => b[1] - a[1])[0];
+  return { hard, small, topRep, topChem, n: papers.length };
 }
 function renderSelection() {
   const box = $('selection');
   const n = currentData.nodes.find(x => x.id === currentSelection);
-  if (!n) { box.hidden = true; box.innerHTML = ''; return; }
+  if (!n) {
+    const papers = currentData.nodes.filter(x => x.type === 'paper');
+    const s = viewStats(papers);
+    box.hidden = false;
+    box.innerHTML = papers.length ? `<div class="sel-card"><p class="eyebrow">This view</p>
+      <p class="view-stats"><b>${s.n}</b> papers · <b>${s.hard}</b> prospective/OOD/closed-loop · <b>${s.small}</b> with n&lt;50</p>
+      <p class="muted">${s.topChem ? `Most papers: ${esc(s.topChem[0])} (${s.topChem[1]}).` : ''} ${s.topRep ? `Dominant representation: ${esc(s.topRep[0])}.` : ''}</p>
+      <p class="prompt">Tap a node. Use Board in the library for the chemistry × representation gaps.</p></div>` : '';
+    if (!papers.length) box.hidden = true;
+    return;
+  }
   box.hidden = false;
   if (n.type !== 'paper') {
     box.innerHTML = `<div class="sel-card"><p class="eyebrow">${esc(n.type)}</p><h2>${esc(n.label)}</h2><p class="muted">Tap the same node again to clear focus.</p></div>`;
     return;
   }
+  const near = similarPapers(n.id);
   box.innerHTML = `<div class="sel-card"><p class="eyebrow">${esc(n.year || '')} · ${esc(n.journal || '')}</p><h2>${esc(n.full_title || n.label)}</h2>
-    <p>${esc(n.why || '')}</p>
+    <p class="summary">${esc(n.summary || n.why || '')}</p>
+    <p class="prompt">${esc(n.ask_next || '')}</p>
+    <p class="muted">${esc(n.use_for || '')}</p>
+    <dl class="mini">
+      ${n.data_regime ? `<dt>Data</dt><dd>${esc(n.data_size_bin ? n.data_size_bin + ' · ' : '')}${esc(n.data_regime)}</dd>` : ''}
+      ${n.validation ? `<dt>Checked</dt><dd>${esc(n.validation_type ? n.validation_type + ' · ' : '')}${esc(n.validation)}</dd>` : ''}
+    </dl>
     <div class="tags">${[n.chemistry_class, n.representation_class, n.paradigm, ...(n.groups||[]).filter(g => g !== 'Other')].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    ${near.length ? `<p class="eyebrow">Nearby papers</p><div class="near">${near.map(p => `<button type="button" class="rowitem" data-node="${esc(p.id)}"><span>${esc(p.label)}</span><span class="muted">${esc(p.reason || '')}</span></button>`).join('')}</div>` : ''}
     <div class="actions"><a class="primary" href="${esc(url(n.url))}" target="_blank" rel="noopener">Read paper ↗</a><button type="button" id="clear-focus">Clear focus</button></div></div>`;
 }
 function paintGraph() { updateHud(); }

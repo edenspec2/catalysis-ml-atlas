@@ -171,9 +171,105 @@ function authorNode(name){
   return {id:authorId(name),label:name,type:'author',paper_type:'',relevance:'',journal:'',year:'',url:'',doi:'',chemistry:'',data_regime:'',validation:'',why:'',focus:'',summary:'',steps:[],group:'author'};
 }
 
+function clip(s, n){
+  s = String(s || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= n) return s;
+  return s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…';
+}
+
+export function paperSummary(p){
+  if (p.summary && String(p.summary).trim().length > 40) return clip(p.summary, 360);
+  const chem = (p.chemistry || p.chemistry_class || '').split(';')[0].trim();
+  const methods = (p.derived_methods || []).slice(0, 2).join(', ');
+  const rep = p.representation_class && p.representation_class !== 'Overview / mixed' ? p.representation_class.toLowerCase() : '';
+  const head = [chem, rep ? `using ${rep}` : '', methods ? `(${methods})` : ''].filter(Boolean).join(' ');
+  const data = p.data_regime ? `Data: ${p.data_regime}.` : '';
+  const val = p.validation ? `Checked by ${p.validation.replace(/^./, c => c.toLowerCase())}.` : '';
+  const why = p.why || '';
+  return clip([head ? head + '.' : '', data, val, why].filter(Boolean).join(' '), 360);
+}
+
+function paperBrief(p){
+  return clip(p.why || (p.chemistry || '').split(';')[0] || p.representation_class || p.paradigm || '', 110);
+}
+
+function askNext(p){
+  const v = p.validation_type, d = p.data_size_bin, rep = p.representation_class;
+  const overview = /review|perspective|viewpoint/i.test(p.paper_type || '') || v === 'n/a overview';
+  if (overview) return 'Which reaction in your lab is the first place this overview would actually change an experiment?';
+  if (v === 'random split') return 'Would this ranking survive a held-out ligand scaffold, metal, or elementary step?';
+  if (v === 'retrospective') return 'What prospective experiment would you run before trusting this ranking at the bench?';
+  if (d === 'n < 50' || /few-shot|sparse|low-data|limited experimental/i.test(String(p.data_regime || ''))) return 'What is the cheapest next labeled example that would falsify the current model?';
+  if (v === 'prospective experimental' || v === 'autonomous closed-loop') return 'Can the same loop move to a new reaction class without rebuilding the representation?';
+  if (rep === 'Learned 3D / TS GNN' || rep === 'MLIP / physics acceleration') return 'Where would this 3D or physics model fail for ligands you actually use?';
+  if (rep === 'Reusable ligand library') return 'What chemistry is missing from this library that you would add first?';
+  if (v === 'scaffold / OOD') return 'How far does the OOD claim go — new metal, new denticity, or a new elementary step?';
+  if (v === 'cross-substrate') return 'Would the same representation still hold if the catalytic intermediate changed?';
+  return 'With ten more experiments, would you grow the dataset, change the representation, or open a new substrate class?';
+}
+
+function useFor(p){
+  const rep = p.representation_class;
+  if (rep === 'Reusable ligand library') return 'When you need a shared ligand space instead of a one-off descriptor set.';
+  if (rep === 'Physical / chemist descriptors') return 'When you want an interpretable steric/electronic model you can argue with.';
+  if (rep === 'Conformer / ensemble descriptors') return 'When a single conformer is probably lying about the ligand.';
+  if (rep === 'Catalyst-state / mechanistic') return 'When free-ligand descriptors are not the species that makes the selectivity.';
+  if (rep === 'Learned 3D / TS GNN') return 'When geometry of the enantiodetermining state is the thing you want the model to see.';
+  if (rep === 'Pretrained learned representation') return 'When you are testing whether a learned embedding transfers into catalysis.';
+  if (rep === 'MLIP / physics acceleration') return 'When the bottleneck is exploring mechanisms or TS space, not fitting a yield model.';
+  if (rep === 'Dataset / experimental loop') return 'When the paper is really about how the data were chosen, not only the final fit.';
+  return 'Use as orientation, then jump to a primary study in the same chemistry.';
+}
+
+function tally(items, key){
+  const m = new Map();
+  for (const it of items) {
+    const raw = typeof key === 'function' ? key(it) : it[key];
+    for (const v of (Array.isArray(raw) ? raw : [raw])) {
+      const name = v && v !== 'Other' ? v : 'unspecified';
+      m.set(name, (m.get(name) || 0) + 1);
+    }
+  }
+  return [...m.entries()].sort((a, b) => b[1] - a[1]).map(([name, n]) => ({name, n}));
+}
+
+export function buildInsights(papers){
+  const reps = REPRESENTATIONS.filter(r => r !== 'Overview / mixed');
+  const heatmap = [];
+  const chemCount = Object.fromEntries(tally(papers, 'chemistry_class').map(x => [x.name, x.n]));
+  const repCount = Object.fromEntries(tally(papers, 'representation_class').map(x => [x.name, x.n]));
+  for (const chemistry of CHEMISTRY_CLASSES) {
+    for (const representation of reps) {
+      const n = papers.filter(p => p.chemistry_class === chemistry && p.representation_class === representation).length;
+      heatmap.push({chemistry, representation, n});
+    }
+  }
+  const gaps = heatmap.filter(c => c.n === 0 && (chemCount[c.chemistry] || 0) >= 2 && (repCount[c.representation] || 0) >= 2);
+  const hard = papers.filter(p => ['prospective experimental', 'autonomous closed-loop', 'scaffold / OOD'].includes(p.validation_type));
+  const small = papers.filter(p => p.data_size_bin === 'n < 50');
+  const reviews = papers.filter(p => /review|perspective|viewpoint/i.test(p.paper_type || '') || p.data_size_bin === 'n/a overview');
+  return {
+    years: tally(papers, p => String(p.year || 'unknown')),
+    representations: tally(papers, 'representation_class'),
+    chemistry: tally(papers, 'chemistry_class'),
+    data_size: tally(papers, 'data_size_bin'),
+    validation: tally(papers, 'validation_type'),
+    groups: tally(papers, p => (p.groups || []).filter(g => g !== 'Other')[0] || 'Other / mixed'),
+    heatmap,
+    gaps,
+    stats: {
+      papers: papers.length,
+      prospective: hard.length,
+      small: small.length,
+      reviews: reviews.length,
+      unspecified_data: papers.filter(p => p.data_size_bin === 'unspecified').length
+    }
+  };
+}
+
 export function enrichGraph(graph, {metadata={}, authors={}} = {}){
   const g=structuredClone(graph);
-  g.meta={...g.meta,title:'Catalysis ML Atlas v8',features_version:8,updated:'2026-09-06',enrichment:'chemistry_class, secondary_paradigms, representation_class, Crossref years/authors'};
+  g.meta={...g.meta,title:'Catalysis ML Atlas v9',features_version:9,updated:'2026-09-06',enrichment:'summaries, ask_next prompts, chemistry/representation analysis'};
   const byId=new Map(g.nodes.map(n=>[n.id,n]));
   const labelAuthors=new Map(g.nodes.filter(n=>n.type==='author').map(n=>[n.label.toLowerCase(),n]));
   const edgeKey=e=>e.relation+'|'+e.source+'|'+e.target;
@@ -212,6 +308,10 @@ export function enrichGraph(graph, {metadata={}, authors={}} = {}){
     p.secondary_paradigms=secondaryParadigms(p);
     p.data_size_bin=dataSizeBin(p);
     p.validation_type=validationType(p);
+    p.summary=paperSummary(p);
+    p.brief=paperBrief(p);
+    p.ask_next=askNext(p);
+    p.use_for=useFor(p);
   }
 
   g.stories={
@@ -229,7 +329,9 @@ export function enrichGraph(graph, {metadata={}, authors={}} = {}){
       ]
     }
   };
-  g.meta.paper_count=g.nodes.filter(n=>n.type==='paper').length;
+  const papers=g.nodes.filter(n=>n.type==='paper');
+  g.insights=buildInsights(papers);
+  g.meta.paper_count=papers.length;
   g.meta.node_count=g.nodes.length;
   g.meta.metadata_edge_count=g.edges.length;
   return g;
