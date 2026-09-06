@@ -3,7 +3,7 @@
 Interactive phone reading library and 3D knowledge graph for machine learning in homogeneous catalysis.
 
 ## Use it
-Open the GitHub Pages URL, then Add to Home Screen.
+Open https://edenspec2.github.io/catalysis-ml-atlas/ on your phone, then Add to Home Screen.
 
 - Search and filter papers by chemistry, representation, year, and Milo neighborhood
 - Compare catalyst representations
