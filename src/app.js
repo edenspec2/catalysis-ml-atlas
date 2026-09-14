@@ -1,11 +1,11 @@
 
-import {discover,filterPapers,doiKey,searchWorks,sortByFocus} from './literature.js';
+import {discover,filterPapers,doiKey,searchWorks,sortByFocus,toBibTeX,proposeIssueURL,exportShelf,mergeShelf} from './literature.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url=s=>{try{const u=new URL(s);return /^https?:$/.test(u.protocol)?u.href:'#'}catch{return '#'}};
 function load(k,f){try{return JSON.parse(localStorage.getItem('cml:'+k))??f}catch{return f}}
 function persist(k,v){try{localStorage.setItem('cml:'+k,JSON.stringify(v))}catch{toast('Storage unavailable. Changes last only for this session.')}}
 let timer;function toast(s){$('#toast').textContent=s;clearTimeout(timer);timer=setTimeout(()=>$('#toast').textContent='',4000)}
-const state={view:'library',papers:[],feed:null,saved:load('saved',{}),added:load('added',{}),read:load('read',{}),compare:[],active:null,loading:false,known:{},inspectSort:{key:'layer',dir:'asc'}};
+const state={view:'library',papers:[],feed:null,saved:load('saved',{}),added:load('added',{}),read:load('read',{}),notes:load('notes',{}),compare:[],active:null,loading:false,known:{},inspectSort:{key:'layer',dir:'asc'}};
 const find=id=>state.papers.find(p=>p.id===id)||state.added[id]||state.feed?.papers.find(p=>p.id===id)||state.saved[id]||state.known[id];
 const curated=()=>state.papers.filter(p=>!p.added);
 const inCorpus=p=>curated().some(c=>c.doi&&p.doi&&doiKey(c.doi)===doiKey(p.doi));
@@ -23,6 +23,12 @@ const CHEMS=['Asymmetric hydrogenation / reduction','C–H functionalization','C
 const STACKS=['Ground-state conformers','TS search','TS ensembles','Thermochemistry','Descriptors','Supervised model','Experiment selection','MLIP / mechanism','Overview'];
 const SIZE_ORD={'n < 50':0,'50–200':1,'200–1000':2,'>1000':3,'virtual / computational':4,'n/a overview':5,'unspecified':6};
 const VS_ROLE={ancestor:'Ancestor','same-lab':'Same lab','contrast-pool':'Contrast · pool','contrast-library':'Contrast · library','contrast-cavity':'Contrast · cavity',complement:'Complement'};
+const PAGE_VIEWS=['library','inspect','board','representations','latest','saved','compare'];
+function setView(view){
+ if(!PAGE_VIEWS.includes(view))view='library';
+ state.view=view;
+ try{history.replaceState(null,'',view==='library'?(location.pathname+location.search||'./'):'#'+view)}catch{}
+}
 const vsFocus=()=>$('#focus')?.value==='descriptytor';
 function fillSelects(){
  const chem=$('#chemistry'),rep=$('#representation'),year=$('#year'),stack=$('#stack');
@@ -63,13 +69,51 @@ function card(p){
  const vs=vsFocus()&&p.descriptytor_vs?'<p class="prompt">'+esc(p.descriptytor_vs)+'</p>':'';
  return '<article class="paper"><div class="paper-top"><span>'+esc(date(p))+'<br>'+esc(p.journal)+'</span><span class="badge">'+badge+'</span></div>'+fig+'<h3>'+button('data-detail',p.id,esc(p.full_title||p.label))+'</h3>'+(p.added||p.candidate?'':facts(p))+vs+'<p class="summary">'+esc(summary)+'</p><div class="tags">'+chips.map(t=>'<span class="tag">'+esc(t)+'</span>').join('')+'</div><div class="actions">'+button('data-detail',p.id,'Details')+'<a href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Paper ↗</a>'+add+button('data-save',p.id,state.saved[p.id]?'Saved ✓':'Save',!!state.saved[p.id])+button('data-compare',p.id,state.compare.includes(p.id)?'Comparing ✓':'Compare',state.compare.includes(p.id))+'</div>'+(state.read[p.id]?'<p class="read-status">Marked as read ✓</p>':'')+'</article>';
 }
+function visiblePapers(){
+ if(state.view==='compare')return state.compare.map(find).filter(Boolean);
+ if(state.view==='representations')return libraryPapers();
+ const source=state.view==='latest'?(state.feed?.papers||[]):state.view==='saved'?Object.values(state.saved):libraryPapers();
+ return sortByFocus(filterPapers(source,filters()),filters().focus);
+}
+function downloadFile(name,text,type){
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob([text],{type:type||'text/plain'}));
+ a.download=name;
+ a.rel='noopener';
+ document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function exportBib(){
+ const ps=visiblePapers();
+ if(!ps.length){toast('No papers in this view to export.');return}
+ downloadFile('catalysis-ml-atlas.bib',toBibTeX(ps),'application/x-bibtex');
+ toast('BibTeX for '+ps.length+' paper'+(ps.length===1?'':'s')+' in this view.');
+}
+function exportMyShelf(){
+ downloadFile('catalysis-ml-atlas-shelf.json',JSON.stringify(exportShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes}),null,2),'application/json');
+ toast('Saved, read, added, and notes exported. Import this file on another browser.');
+}
+async function importMyShelf(file){
+ try{
+  const incoming=JSON.parse(await file.text());
+  const next=mergeShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes},incoming);
+  state.saved=next.saved;state.read=next.read;state.added=next.added;state.notes=next.notes;
+  persist('saved',state.saved);persist('read',state.read);persist('added',state.added);persist('notes',state.notes);
+  render();
+  toast('Shelf imported. Saved '+Object.keys(state.saved).length+' · added '+Object.keys(state.added).length+'.');
+ }catch(err){toast(err.message||'Could not import that file.')}
+}
 function filters(){
  if(state.view==='latest')return {q:'',focus:'',year:'',unread:false,read:{},chemistry:'',representation:'',stack:''};
  return{q:$('#search').value.trim(),focus:$('#focus').value,year:$('#year').value,unread:$('#unread').checked,read:state.read,chemistry:$('#chemistry')?.value||'',representation:$('#representation')?.value||'',stack:$('#stack')?.value||''}
 }
 function render(){
  $('#saved-count').textContent=Object.keys(state.saved).length;$('#compare-count').textContent=state.compare.length;
- document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===state.view);b.setAttribute('aria-current',b.dataset.view===state.view?'page':'false')});
+ document.querySelectorAll('[data-view]').forEach(b=>{
+  const on=b.dataset.view===state.view;
+  b.classList.toggle('active',on);
+  if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
+ });
  $('#reading').hidden=state.view==='compare'||state.view==='representations';$('#comparison').hidden=state.view!=='compare'&&state.view!=='representations';$('#discovery').hidden=state.view!=='latest';
  if(state.view==='compare'){compare();return}
  if(state.view==='representations'){representations();return}
@@ -79,7 +123,7 @@ function render(){
  if(state.view==='inspect'){inspect(ps);return}
  const extra=Object.keys(state.added).length;
  $('#list-title').textContent={library:'Your research library',latest:'Find and add papers',saved:'Your saved reading'}[state.view];$('#result-count').textContent=ps.length+' papers';
- $('#source-note').textContent=state.view==='library'?(vsFocus()?'Ranked against the DescriPyTor idea: chemist-chosen axes on small catalytic n, not a fixed QM pool or a reaction-agnostic library.':curated().length+' curated papers in the shared atlas'+(extra?' · '+extra+' added on this device':'')+' · not an exhaustive literature search'):state.view==='saved'?'Saved on this device. Reading state is not synced between browsers.':'Crossref search. Title/DOI lookup can miss records; added papers stay on this device.';
+ $('#source-note').textContent=state.view==='library'?(vsFocus()?'Ranked against the DescriPyTor idea: chemist-chosen axes on small catalytic n, not a fixed QM pool or a reaction-agnostic library.':curated().length+' curated papers in the shared atlas'+(extra?' · '+extra+' added on this device':'')+' · not an exhaustive literature search'):state.view==='saved'?'Saved on this device. Export my shelf to move browsers. Reading state is not synced for the lab yet.':'Crossref search. Add keeps a paper on this device. Propose for the shared atlas opens a GitHub issue a curator can review.';
  $('#results').innerHTML=ps.length?'<div class="cards">'+ps.map(card).join('')+'</div>':'<div class="empty"><h3>'+(state.loading?'Looking for papers…':'No papers in this view')+'</h3><p>'+(state.view==='saved'?'Save papers from the Library or Discover latest.':state.view==='latest'?'Search a DOI or title, or browse recent catalysis ML papers.':'Try a broader focus, clear the search, or increase the date window.')+'</p><button id="clear-filters">Clear filters</button></div>';
  $('#clear-filters')?.addEventListener('click',()=>{$('#search').value='';$('#focus').value='';$('#year').value='';$('#chemistry').value='';$('#representation').value='';if($('#stack'))$('#stack').value='';$('#unread').checked=false;render()});
 }
@@ -158,8 +202,11 @@ function details(id){
  const p=find(id);if(!p)return;state.active=id;
  const fig=p.figure?.src?`<button type="button" class="fig fig-lg" data-fig="${esc(p.id)}"><img src="${esc(p.figure.src)}" alt="${esc(p.figure.caption||'Figure 1')}" loading="eager"></button><p class="fig-cap">${esc(p.figure.caption||'Figure 1')}</p>`:'';
  const fields=p.candidate?[['Authors',p.derived_authors.join(', ')],['Record type',p.paper_type],['Research assessment','Not yet curated. Read the original paper to assess chemistry, data, validation and limitations.']]:[['Summary',p.summary],['Why it matters',p.why],['vs DescriPyTor',p.descriptytor_vs],['DescriPyTor role',p.descriptytor_rank?(VS_ROLE[p.descriptytor_role]||p.descriptytor_role)+' · rank '+p.descriptytor_rank:''],['Use this when',p.use_for],['Ask next',p.ask_next],['Chemistry class',p.chemistry_class],['Chemistry',p.chemistry],['Stack layer',p.stack_layer],['Representation',p.representation_class],['Also in',(p.secondary_paradigms||[]).join(' · ')],['Data size',p.data_size_bin],['Data regime',p.data_regime],['Validation type',p.validation_type],['Validation',p.validation],['Methods / representation',(p.derived_methods||[]).join(' · ')],['Authors',(p.derived_authors||[]).join(', ')],['Research workflow',(p.derived_workflows||[]).join(' → ')],['Topics',(p.derived_topics||[]).join(' · ')]];
- $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p>'+fig+'<div class="actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Read original paper ↗</a>'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library'))+button('data-save',id,state.saved[id]?'Saved ✓':'Save paper')+button('data-read',id,state.read[id]?'Mark unread':'Mark as read')+button('data-compare',id,state.compare.includes(id)?'Remove comparison':'Add to compare')+'</div><dl>'+fields.filter(([,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join('')+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified in the original corpus')+'</dd><dt>Provenance</dt><dd>'+(p.added||p.candidate?'Crossref publisher metadata. Candidate relevance uses the search you ran; no scientific assessment has been added unless this DOI is already in the curated atlas.':'Research interpretation comes from the v7 handoff, with Crossref years/authors overlaid. Summaries are composed from those notes, not new abstracts. '+(p.metadata_source?'Title and publication date resolved through Crossref.':'Exact title and publication date have not been resolved.'))+'</dd></dl>'+(p.metadata_source?'<a href="'+esc(url(p.metadata_source))+'" target="_blank" rel="noopener">Metadata source ↗</a>':'');
+ $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p>'+fig+'<div class="actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Read original paper ↗</a>'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library'))+(p.doi&&!inCorpus(p)?'<a href="'+esc(proposeIssueURL(p))+'" target="_blank" rel="noopener">Propose for the shared atlas ↗</a>':'')+button('data-save',id,state.saved[id]?'Saved ✓':'Save paper')+button('data-read',id,state.read[id]?'Mark unread':'Mark as read')+button('data-compare',id,state.compare.includes(id)?'Remove comparison':'Add to compare')+'</div><label class="note-box"><span>My note · this device only</span><textarea id="paper-note" rows="3" placeholder="What I took from this…">'+esc(state.notes[id]||'')+'</textarea></label><dl>'+fields.filter(([,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join('')+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified in the original corpus')+'</dd><dt>Provenance</dt><dd>'+(p.added||p.candidate?'Crossref publisher metadata. Candidate relevance uses the search you ran; no scientific assessment has been added unless this DOI is already in the curated atlas.':'Research interpretation comes from the v7 handoff, with Crossref years/authors overlaid. Summaries are composed from those notes, not new abstracts. '+(p.metadata_source?'Title and publication date resolved through Crossref.':'Exact title and publication date have not been resolved.'))+'</dd></dl>'+(p.metadata_source?'<a href="'+esc(url(p.metadata_source))+'" target="_blank" rel="noopener">Metadata source ↗</a>':'');
  if(!$('#detail').open)$('#detail').showModal();$('#detail').scrollTop=0;
+ $('#paper-note')?.addEventListener('input',e=>{
+  const v=e.target.value;if(v)state.notes[id]=v;else delete state.notes[id];persist('notes',state.notes);
+ });
 }
 function compare(){
  const ps=state.compare.map(find).filter(Boolean);
@@ -215,9 +262,9 @@ document.addEventListener('click',e=>{
  if(b.dataset.read){state.read[b.dataset.read]=!state.read[b.dataset.read];persist('read',state.read);render();details(b.dataset.read);return}
  if(b.dataset.compare){const id=b.dataset.compare;if(state.compare.includes(id))state.compare=state.compare.filter(x=>x!==id);else if(state.compare.length<4)state.compare.push(id);else toast('Compare up to four papers. Remove one first.');render();if($('#detail').open)details(state.active);return}
  if(b.classList.contains('gap')){
-  $('#chemistry').value=b.dataset.chem;$('#representation').value='';state.view='library';render();toast('Library filtered to '+b.dataset.chem+'. The empty cell is '+b.dataset.rep+'.');return
+  $('#chemistry').value=b.dataset.chem;$('#representation').value='';setView('library');render();toast('Library filtered to '+b.dataset.chem+'. The empty cell is '+b.dataset.rep+'.');return
  }
- if(b.dataset.view){state.view=b.dataset.view;render();if(state.view==='latest'&&!state.feed)refresh()}
+ if(b.dataset.view){setView(b.dataset.view);render();if(state.view==='latest'&&!state.feed)refresh()}
 });
 for(const id of ['search','focus','year','unread','chemistry','representation','stack'])$('#'+id).addEventListener(id==='search'?'input':'change',()=>{
  if(id==='focus'){
@@ -228,6 +275,9 @@ for(const id of ['search','focus','year','unread','chemistry','representation','
 });
 $('#refresh').onclick=refresh;$('#scope').onchange=refresh;$('#window').onchange=refresh;
 $('#find-go').onclick=searchNow;$('#find').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchNow()}});
+$('#export-bib')?.addEventListener('click',exportBib);
+$('#export-shelf')?.addEventListener('click',exportMyShelf);
+$('#import-shelf')?.addEventListener('change',e=>{const f=e.target.files?.[0];if(f)importMyShelf(f);e.target.value='';});
 document.addEventListener('keydown',e=>{
  if(e.key!=='Enter')return;
  const row=e.target.closest('tr[data-detail]');
@@ -236,5 +286,5 @@ document.addEventListener('keydown',e=>{
 $('#help').onclick=()=>$('#help-dialog').showModal();$('#close-help').onclick=()=>$('#help-dialog').close();$('#close-detail').onclick=()=>$('#detail').close();
 $('#close-fig')?.addEventListener('click',()=>$('#figbox')?.close());
 $('#figbox')?.addEventListener('click',e=>{if(e.target.id==='figbox')$('#figbox').close()});
-async function init(){try{const r=await fetch('graph.json');if(!r.ok)throw Error();const graph=await r.json();state.papers=graph.nodes.filter(p=>p.type==='paper').sort((a,b)=>(b.published_date||String(b.year)).localeCompare(a.published_date||String(a.year))||a.label.localeCompare(b.label));state.papers.forEach(p=>{if(p.figure?.src){const i=new Image();i.src=p.figure.src}});fillSelects();render()}catch{$('#results').innerHTML='<div class="empty">The library could not load. <button id="retry">Try again</button></div>';$('#retry').onclick=init}}
+async function init(){try{const r=await fetch('graph.json');if(!r.ok)throw Error();const graph=await r.json();state.papers=graph.nodes.filter(p=>p.type==='paper').sort((a,b)=>(b.published_date||String(b.year)).localeCompare(a.published_date||String(a.year))||a.label.localeCompare(b.label));state.papers.forEach(p=>{if(p.figure?.src){const i=new Image();i.src=p.figure.src}});const h=decodeURIComponent(location.hash.slice(1));if(PAGE_VIEWS.includes(h))state.view=h;fillSelects();render();if(state.view==='latest'&&!state.feed)refresh()}catch{$('#results').innerHTML='<div class="empty">The library could not load. <button id="retry">Try again</button></div>';$('#retry').onclick=init}}
 init();

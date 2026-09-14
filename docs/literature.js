@@ -94,3 +94,86 @@ export async function discover({scope='catalysis',days=90,fetcher=fetch,now=new 
  const start=new Date(now);start.setUTCDate(start.getUTCDate()-Number(days));
  return {papers:uniqueWorks(works).filter(w=>w.doi&&relevant(w,scope)&&w.published_date>=start.toISOString().slice(0,10)&&w.published_date<=now.toISOString().slice(0,10)).sort((a,b)=>b.published_date.localeCompare(a.published_date)),fetched_at:now.toISOString(),failed,query_count:queries.length,scope,days:Number(days)};
 }
+
+export const ATLAS_REPO = 'edenspec2/catalysis-ml-atlas';
+export const ATLAS_SITE = 'https://edenspec2.github.io/catalysis-ml-atlas/';
+const CHEMS = ['Asymmetric hydrogenation / reduction','C–H functionalization','Cross-coupling','Hydroformylation','Asymmetric C–C / oxidation','Organocatalysis','Biocatalysis','Main-group catalysis','Electrocatalysis','CO2 / N2 small-molecule catalysis','Ligand space / homogeneous method','Reaction mechanism / methodology'];
+const REPS = ['Reusable ligand library','Physical / chemist descriptors','Conformer / ensemble descriptors','Catalyst-state / mechanistic','Learned 3D / TS GNN','Pretrained learned representation','MLIP / physics acceleration','Dataset / experimental loop','Overview / mixed'];
+const STACKS = ['Ground-state conformers','TS search','TS ensembles','Thermochemistry','Descriptors','Supervised model','Experiment selection','MLIP / mechanism','Overview'];
+const SIZES = ['n < 50','50–200','200–1000','>1000','virtual / computational','n/a overview','unspecified'];
+const VALS = ['prospective experimental','autonomous closed-loop','scaffold / OOD','cross-substrate','random split','retrospective','mixed / unspecified','n/a overview'];
+
+function bibEscape(s){
+ return String(s??'').replace(/[{}\\]/g,'\\$&').replace(/\s+/g,' ').trim();
+}
+export function bibtexKey(p){
+ const last = String((p.derived_authors||[])[0]||'atlas').split(/\s+/).pop().replace(/[^A-Za-z]/g,'') || 'atlas';
+ const year = p.year || 'nd';
+ const slug = doiKey(p.doi||p.id||'x').replace(/[^a-z0-9]+/g,'').slice(-10);
+ return `${last}${year}${slug}`;
+}
+export function toBibTeX(papers){
+ const seen = new Set();
+ return (papers||[]).map(p=>{
+  let key = bibtexKey(p);
+  while(seen.has(key)) key += 'x';
+  seen.add(key);
+  const authors = (p.derived_authors||[]).map(bibEscape).join(' and ') || 'Unknown';
+  const fields = [
+   ['author', authors],
+   ['title', bibEscape(p.full_title||p.label)],
+   p.journal ? ['journal', bibEscape(p.journal)] : null,
+   p.year ? ['year', String(p.year)] : null,
+   p.doi ? ['doi', doiKey(p.doi)] : null,
+   (p.url||p.doi) ? ['url', p.url || ('https://doi.org/'+doiKey(p.doi))] : null
+  ].filter(row => row && row[1]);
+  return `@article{${key},\n`+fields.map(([k,v])=>`  ${k} = {${v}}`).join(',\n')+'\n}';
+ }).join('\n\n');
+}
+export function proposeIssueBody(p={}){
+ const doi = p.doi ? doiKey(p.doi) : '';
+ const title = p.full_title || p.label || '';
+ return [
+  '## Propose for the curated atlas',
+  '',
+  'This is a **proposal**. It is not added to the shared atlas until a curator writes the scientific notes (summary, stack, n, validation, ask next).',
+  '',
+  `- **DOI:** ${doi || '(required)'}`,
+  `- **Title:** ${title || '(from Crossref)'}`,
+  `- **Year / journal:** ${[p.year, p.journal].filter(Boolean).join(' · ') || ''}`,
+  `- **Why it belongs (one sentence):** ${p.why || ''}`,
+  `- **Chemistry class:** ${p.chemistry_class || ''} _(pick: ${CHEMS.join('; ')})_`,
+  `- **Stack layer:** ${p.stack_layer || ''} _(pick: ${STACKS.join('; ')})_`,
+  `- **Representation:** ${p.representation_class || ''} _(pick: ${REPS.join('; ')})_`,
+  `- **Data size (n):** ${p.data_size_bin || ''} _(pick: ${SIZES.join('; ')})_`,
+  `- **Validation:** ${p.validation_type || ''} _(pick: ${VALS.join('; ')})_`,
+  `- **vs DescriPyTor (optional):** ${p.descriptytor_role || ''} _(ancestor / same-lab / contrast-pool / contrast-library / contrast-cavity / complement)_`,
+  '',
+  'Keep PDFs in the group Zotero collection. Do not attach publisher PDFs to this issue.'
+ ].join('\n');
+}
+export function proposeIssueURL(p={}){
+ const title = '[paper] ' + (p.doi ? doiKey(p.doi) : (p.label || 'new DOI'));
+ const u = new URL(`https://github.com/${ATLAS_REPO}/issues/new`);
+ u.searchParams.set('labels', 'paper-proposal');
+ u.searchParams.set('title', title);
+ u.searchParams.set('body', proposeIssueBody(p));
+ return u.href;
+}
+export function blankProposeURL(){
+ return `https://github.com/${ATLAS_REPO}/issues/new?template=propose-paper.yml&labels=paper-proposal`;
+}
+export function exportShelf({saved={},read={},added={},notes={}, now=new Date()}={}){
+ return {version:1, exported_at: now.toISOString(), saved, read, added, notes};
+}
+export function mergeShelf(current={}, incoming){
+ if(!incoming || typeof incoming!=='object') throw Error('Not a catalysis atlas shelf file.');
+ if(incoming.saved==null && incoming.read==null && incoming.added==null && incoming.notes==null) throw Error('Not a catalysis atlas shelf file.');
+ const pick = (a,b) => ({...(a&&typeof a==='object'?a:{}), ...(b&&typeof b==='object'?b:{})});
+ return {
+  saved: pick(current.saved, incoming.saved),
+  read: pick(current.read, incoming.read),
+  added: pick(current.added, incoming.added),
+  notes: pick(current.notes, incoming.notes)
+ };
+}

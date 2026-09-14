@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Open the live atlas
+    url: https://edenspec2.github.io/catalysis-ml-atlas/
+    about: Library, Inspect, and 3D graph
+  - name: Lab reading guide
+    url: https://edenspec2.github.io/catalysis-ml-atlas/lab.html
+    about: Ten-minute path and how to propose a DOI

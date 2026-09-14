@@ -1,5 +1,5 @@
 
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey,looksLikeDoi,searchCrossrefURL,searchWorks,sortByFocus} from '../src/literature.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey,looksLikeDoi,searchCrossrefURL,searchWorks,sortByFocus,toBibTeX,proposeIssueURL,exportShelf,mergeShelf} from '../src/literature.js';
 test('DOI normalization and deduplication',()=>{assert.equal(doiKey('https://doi.org/10.ABC/XYZ'),'10.abc/xyz');assert.equal(uniqueWorks([{doi:'10.ABC/x'},{doi:'10.abc/X'}]).length,1);assert.equal(uniqueWorks([{doi:'10.a/1',label:'Same Title'},{doi:'10.b/2',label:'Same Title'}]).length,1);assert.ok(titleKey('Hello, World!'))});
 test('catalysis discovery drops protein/drug ligand papers and keeps catalytic ligand work',()=>{
  const keep=normalizeWork({title:['Bayesian Optimization for Accelerated Ligand Selection in Atroposelective Negishi Coupling'],DOI:'10.keep/1'});
@@ -52,12 +52,32 @@ assert.ok(g.stories?.descriptytor);
 assert.ok(g.stories.descriptytor.ids.includes('paper_molli_2024'));
 assert.ok(g.stories?.computational_stack);
 assert.ok(g.insights.gaps.length>=3);
-assert.ok(g.insights.heatmap.length>20);assert.ok(filterPapers(ps,{focus:'milo'}).length>=8);assert.ok(filterPapers(ps,{focus:'stack'}).length>=8);assert.ok(filterPapers(ps,{representation:'Learned 3D / TS GNN'}).length>=3);const ids=new Set(g.nodes.map(n=>n.id));for(const e of g.edges){assert.ok(ids.has(e.source));assert.ok(ids.has(e.target))}const h=await readFile('dist/atlas.html','utf8');const js=await readFile('dist/atlas.js','utf8');const css=await readFile('dist/style.css','utf8');assert.ok(!h.includes('https://unpkg.com'));assert.ok(js.includes('autoRotate = false'));assert.ok(css.includes('#side{display:grid'));assert.ok(h.includes('id="chemistry"'));assert.ok(h.includes('Color: representation'));assert.ok(h.includes('id="stack"'));assert.ok(h.includes('atlas.js'));assert.ok(h.includes('id="figbox"'));assert.ok(h.includes('id="showFigs"'));assert.ok(js.includes('data-fig'));assert.ok(js.includes('figImage'));assert.ok(js.includes('packRect'));assert.ok(js.includes('s.ids'));assert.ok(!h.includes('ALL_NODES='));new vm.Script(js)});
+assert.ok(g.insights.heatmap.length>20);assert.ok(filterPapers(ps,{focus:'milo'}).length>=8);assert.ok(filterPapers(ps,{focus:'stack'}).length>=8);assert.ok(filterPapers(ps,{representation:'Learned 3D / TS GNN'}).length>=3);const ids=new Set(g.nodes.map(n=>n.id));for(const e of g.edges){assert.ok(ids.has(e.source));assert.ok(ids.has(e.target))}const h=await readFile('dist/atlas.html','utf8');const js=await readFile('dist/atlas.js','utf8');const css=await readFile('dist/style.css','utf8');const idx=await readFile('dist/index.html','utf8');const lab=await readFile('dist/lab.html','utf8');const issue=await readFile('.github/ISSUE_TEMPLATE/propose-paper.yml','utf8');assert.ok(!h.includes('https://unpkg.com'));assert.ok(js.includes('autoRotate = false'));assert.ok(css.includes('#side{display:grid'));assert.ok(h.includes('id="chemistry"'));assert.ok(h.includes('Color: representation'));assert.ok(h.includes('id="stack"'));assert.ok(h.includes('atlas.js'));assert.ok(h.includes('id="figbox"'));assert.ok(h.includes('id="showFigs"'));assert.ok(h.includes('lab.html'));assert.ok(idx.includes('id="export-bib"'));assert.ok(idx.includes('id="export-shelf"'));assert.ok(idx.includes('Propose for the shared atlas')||idx.includes('propose-paper.yml'));assert.ok(lab.includes('Ten minutes'));assert.ok(issue.includes('Stack layer'));assert.ok(js.includes('data-fig'));assert.ok(js.includes('figImage'));assert.ok(js.includes('packRect'));assert.ok(js.includes('packVolume'));assert.ok(js.includes('fibonacciSphere'));assert.ok(js.includes('s.ids'));assert.ok(js.includes('Shift-drag'));assert.ok(!h.includes('ALL_NODES='));new vm.Script(js)});
+test('BibTeX export, shelf merge, and paper-proposal URL',()=>{
+ const p={id:'paper_harper_sterimol_2012',doi:'10.1021/ja211460z',label:'Sterimol',full_title:'Multidimensional Steric Parameters',derived_authors:['K. C. Harper','M. S. Sigman'],journal:'JACS',year:2012,url:'https://doi.org/10.1021/ja211460z'};
+ const bib=toBibTeX([p]);
+ assert.ok(bib.includes('@article{'));
+ assert.ok(bib.includes('doi = {10.1021/ja211460z}'));
+ assert.ok(bib.includes('Harper'));
+ const u=proposeIssueURL(p);
+ assert.ok(u.startsWith('https://github.com/edenspec2/catalysis-ml-atlas/issues/new'));
+ assert.ok(u.includes('paper-proposal'));
+ assert.ok(decodeURIComponent(u).includes('10.1021/ja211460z'));
+ const shelf=exportShelf({saved:{[p.id]:p},read:{[p.id]:true},added:{},notes:{[p.id]:'directional steric'},now:new Date('2026-09-14T00:00:00Z')});
+ assert.equal(shelf.version,1);
+ const merged=mergeShelf({saved:{},read:{},added:{},notes:{}},shelf);
+ assert.equal(merged.notes[p.id],'directional steric');
+ assert.equal(merged.read[p.id],true);
+ assert.throws(()=>mergeShelf({}, {oops:true}),/shelf/);
+});
 test('reading UI: search, filter, details, save, read, compare and discovery failure',async()=>{
  const html=await readFile('src/index.html','utf8'),graph=JSON.parse(await readFile('dist/graph.json','utf8'));
  const dom=new JSDOM(html,{url:'https://atlas.test/',runScripts:'outside-only'}),w=dom.window;
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};
+ if(!w.URL.createObjectURL)w.URL.createObjectURL=()=>'blob:test';
+ if(!w.URL.revokeObjectURL)w.URL.revokeObjectURL=()=>{};
  w.discover=async()=>{throw Error('offline')};w.filterPapers=filterPapers;w.sortByFocus=sortByFocus;w.doiKey=doiKey;
+ w.toBibTeX=toBibTeX;w.proposeIssueURL=proposeIssueURL;w.exportShelf=exportShelf;w.mergeShelf=mergeShelf;
  w.searchWorks=async({q})=>({papers:[{id:'doi:10.1234/add.1',doi:'10.1234/add.1',label:'Machine learning for a new catalytic ligand',full_title:'Machine learning for a new catalytic ligand',candidate:true,derived_authors:['Test Author'],journal:'JACS',year:2025,published_date:'2025-06-01',url:'https://doi.org/10.1234/add.1',derived_methods:[],derived_topics:[],groups:[]}],fetched_at:'2026-09-06T00:00:00Z',query:q,doi:true});
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('graph.json')?graph:{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
  w.eval((await readFile('src/app.js','utf8')).replace(/^\s*import .*?;\s*/,''));
@@ -95,7 +115,13 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  q('[data-view="latest"]').click();await new Promise(r=>setTimeout(r,20));assert.ok(q('#feed-status').textContent.includes('snapshot'));assert.equal(q('#refresh').disabled,false);
  q('#find').value='10.1234/add.1';q('#find-go').click();await new Promise(r=>setTimeout(r,20));
  assert.ok(q('[data-add]'));q('[data-add]').click();assert.ok(w.localStorage.getItem('cml:added').includes('10.1234/add.1'));
+ q('[data-detail]').click();assert.equal(q('#detail').open,true);assert.ok(q('#detail-body a[href*="issues/new"]'));assert.ok(q('#paper-note'));
+ q('#paper-note').value='directional steric on this substrate';q('#paper-note').dispatchEvent(new w.Event('input'));
+ assert.ok(w.localStorage.getItem('cml:notes').includes('directional steric'));
+ q('#close-detail').click();
  q('#focus').value='';q('#focus').dispatchEvent(new w.Event('change'));q('[data-view="library"]').click();
+ assert.ok(q('#export-bib'));assert.ok(q('#export-shelf'));
+ q('#export-bib').click();
  assert.ok([...w.document.querySelectorAll('.paper')].some(el=>el.textContent.includes('new catalytic ligand')));
  dom.window.close();
 });

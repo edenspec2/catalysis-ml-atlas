@@ -1,7 +1,7 @@
-const CACHE = 'cml-atlas-v19';
+const CACHE = 'cml-atlas-v21';
 self.addEventListener('install', event => {
   self.skipWaiting();
-  event.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', './atlas.html', './graph.json', './figures.json', './style.css', './atlas.js'])));
+  event.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', './atlas.html', './lab.html', './graph.json', './figures.json', './style.css', './atlas.js'])));
 });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -9,7 +9,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const u = new URL(event.request.url);
   if (u.origin !== location.origin) return;
-  const cacheable = /\/(figures\/|graph\.json|figures\.json|atlas\.js|style\.css|atlas\.html|index\.html|icon\.svg|manifest\.webmanifest)/.test(u.pathname) || u.pathname.endsWith('/');
+  const cacheable = /\/(figures\/|graph\.json|figures\.json|atlas\.js|style\.css|atlas\.html|lab\.html|index\.html|icon\.svg|manifest\.webmanifest)/.test(u.pathname) || u.pathname.endsWith('/');
   if (!cacheable || event.request.method !== 'GET') return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);

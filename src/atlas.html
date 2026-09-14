@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080c12">
-<meta name="description" content="Rotate the catalysis ML knowledge graph. Filter by chemistry, representation, story, and year. Auto-rotate stays off.">
+<meta name="description" content="Rotate the catalysis ML knowledge graph in 3D. Filter by chemistry, representation, story, and year. Auto-rotate stays off.">
 <title>3D atlas · Catalysis ML</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg">
@@ -17,6 +17,7 @@
   <nav class="header-nav" aria-label="App">
     <a href="./">Library</a>
     <a href="atlas.html" aria-current="page">3D atlas</a>
+    <a href="lab.html">For the lab</a>
   </nav>
 </header>
 <div class="atlas-controls">
@@ -109,7 +110,7 @@
       <div class="hudbox" id="status">Loading atlas…</div>
       <div class="hudbox" id="legend"></div>
     </div>
-    <p class="atlas-hint">Tiles are Figure 1 or the graphical abstract when an open copy exists. Drag to rotate · Fit spreads the view.</p>
+    <p class="atlas-hint">Drag to rotate · Shift-drag to pan · Scroll to zoom · arrows or J/K scan the list. Fit keeps the 3D angle.</p>
   </div>
   <aside id="side">
     <div id="selection" hidden></div>
@@ -117,7 +118,7 @@
       <h2>Papers in view</h2>
       <span id="paper-count"></span>
     </div>
-    <div id="papers" tabindex="-1"></div>
+    <div id="papers" tabindex="0" aria-label="Papers in this view. Arrow keys or J and K move through the list."></div>
   </aside>
 </div>
 <dialog id="figbox">
@@ -125,7 +126,7 @@
   <img id="figbox-img" alt="">
   <p id="figbox-cap" class="muted"></p>
 </dialog>
-<script src="atlas.js?v=20"></script>
+<script src="atlas.js?v=21"></script>
 <script>
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>

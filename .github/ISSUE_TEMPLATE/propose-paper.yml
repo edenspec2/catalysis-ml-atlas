@@ -1,0 +1,124 @@
+name: Propose a paper
+description: Suggest a DOI for the curated homogeneous catalysis × ML atlas
+title: "[paper] "
+labels: ["paper-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a **proposal**, not an automatic add. A curator still writes the scientific notes (summary, stack, n, validation, ask next) before the paper enters the shared atlas.
+
+        Keep PDFs in the group Zotero collection. Do not attach publisher PDFs here.
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      placeholder: "10.1021/jacs.xxxx"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs (one sentence)
+      description: Not the abstract. Why this lab should curate it into the homogeneous catalysis × ML core.
+    validations:
+      required: true
+  - type: dropdown
+    id: chemistry
+    attributes:
+      label: Chemistry class
+      options:
+        - Asymmetric hydrogenation / reduction
+        - C–H functionalization
+        - Cross-coupling
+        - Hydroformylation
+        - Asymmetric C–C / oxidation
+        - Organocatalysis
+        - Biocatalysis
+        - Main-group catalysis
+        - Electrocatalysis
+        - CO2 / N2 small-molecule catalysis
+        - Ligand space / homogeneous method
+        - Reaction mechanism / methodology
+    validations:
+      required: true
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Stack layer
+      options:
+        - Ground-state conformers
+        - TS search
+        - TS ensembles
+        - Thermochemistry
+        - Descriptors
+        - Supervised model
+        - Experiment selection
+        - MLIP / mechanism
+        - Overview
+    validations:
+      required: true
+  - type: dropdown
+    id: representation
+    attributes:
+      label: Representation
+      options:
+        - Reusable ligand library
+        - Physical / chemist descriptors
+        - Conformer / ensemble descriptors
+        - Catalyst-state / mechanistic
+        - Learned 3D / TS GNN
+        - Pretrained learned representation
+        - MLIP / physics acceleration
+        - Dataset / experimental loop
+        - Overview / mixed
+    validations:
+      required: true
+  - type: dropdown
+    id: n
+    attributes:
+      label: Data size (n)
+      options:
+        - n < 50
+        - 50–200
+        - 200–1000
+        - ">1000"
+        - virtual / computational
+        - n/a overview
+        - unspecified
+    validations:
+      required: true
+  - type: dropdown
+    id: validation
+    attributes:
+      label: Validation
+      options:
+        - prospective experimental
+        - autonomous closed-loop
+        - scaffold / OOD
+        - cross-substrate
+        - random split
+        - retrospective
+        - mixed / unspecified
+        - n/a overview
+    validations:
+      required: true
+  - type: dropdown
+    id: descriptytor
+    attributes:
+      label: vs DescriPyTor (optional)
+      options:
+        - not sure / skip
+        - ancestor
+        - same-lab
+        - contrast-pool
+        - contrast-library
+        - contrast-cavity
+        - complement
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything a curator should know
+      description: Optional. One limitation, one figure, or why it is not already in the atlas.
