@@ -417,7 +417,8 @@ function importLink(){
  try{
   const incoming=JSON.parse(atob(m[1]));
   if(!confirm('Add these projects to this browser?\n\n'+Object.keys(incoming).join('\n')))return;
-  state.projects=mergeShelf({projects:state.projects},{projects:incoming}).projects;
+  // Incoming first, so a re-ranked link reorders lists already in this browser.
+  state.projects=mergeShelf({projects:incoming},{projects:state.projects}).projects;
   persist('projects',state.projects);
  }catch{toast('That project link could not be read.')}
 }

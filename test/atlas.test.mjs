@@ -83,11 +83,11 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  w.toBibTeX=toBibTeX;w.toReadingLog=toReadingLog;w.proposeIssueURL=proposeIssueURL;w.exportShelf=exportShelf;w.mergeShelf=mergeShelf;
  w.searchWorks=async({q})=>({papers:[{id:'doi:10.1234/add.1',doi:'10.1234/add.1',label:'Machine learning for a new catalytic ligand',full_title:'Machine learning for a new catalytic ligand',candidate:true,derived_authors:['Test Author'],journal:'JACS',year:2025,published_date:'2025-06-01',url:'https://doi.org/10.1234/add.1',derived_methods:[],derived_topics:[],groups:[]}],fetched_at:'2026-09-06T00:00:00Z',query:q,doi:true});
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('papers.json')?graph.nodes.filter(p=>p.type==='paper'):{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
- w.confirm=()=>true;w.location.hash='#projects='+w.btoa(JSON.stringify({Linked:['paper_aqme_2023']}));
+ w.confirm=()=>true;w.localStorage.setItem('cml:projects',JSON.stringify({Linked:['paper_kraken_2022','paper_aqme_2023']}));w.location.hash='#projects='+w.btoa(JSON.stringify({Linked:['paper_aqme_2023','paper_kraken_2022']}));
  w.eval((await readFile('src/app.js','utf8')).replace(/^\s*import .*?;\s*/,''));
  await new Promise(r=>setTimeout(r,20));
  const q=s=>w.document.querySelector(s),n=()=>w.document.querySelectorAll('.paper').length;assert.equal(n(),208);
- assert.ok(q('[data-project="Linked"]'));assert.equal(w.location.hash,'');
+ assert.ok(q('[data-project="Linked"]'));assert.deepEqual(JSON.parse(w.localStorage.getItem('cml:projects')).Linked,['paper_aqme_2023','paper_kraken_2022']);assert.equal(w.location.hash,'');
  assert.ok(w.document.querySelectorAll('.fig-card').length>=10);
  q('.fig-card').click();assert.equal(q('#figbox').open,true);q('#close-fig').click();
  // Table display, sorted, opens the same sheet.
