@@ -10846,7 +10846,7 @@
       "data_regime": "Small published enantioselectivity series",
       "validation": "Retrospective correlation with selectivity; steric terms interpreted mechanistically",
       "why": "Moved Sterimol from QSAR into homogeneous catalysis: L, B1 and B5 report where bulk sits, not only a cone angle.",
-      "summary": "Sigman lab showed that Verloop Sterimol parameters, used as a chemist-defined steric frame, can give compact multivariable models of enantioselectivity. Direct ancestor of DescriPyTor’s orientational Sterimol terms.",
+      "summary": "Sigman lab showed that Verloop Sterimol parameters can give compact multivariable models of enantioselectivity.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Sigman"
@@ -10902,7 +10902,7 @@
       "data_regime": "Small catalytic selectivity datasets",
       "validation": "Interpretable vibrational terms mapped onto the selectivity-determining interaction",
       "why": "Milo/Sigman prototype for reading an electronic descriptor from a chemically chosen site rather than a generic molecular fingerprint.",
-      "summary": "Uses IR stretching frequencies as site-anchored electronic descriptors in multivariable models of catalytic selectivity. The same premise — choose where to read the feature — is the DescriPyTor reference-frame argument.",
+      "summary": "Uses IR stretching frequencies as site-anchored electronic descriptors in multivariable models of catalytic selectivity.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Milo",
@@ -10960,7 +10960,7 @@
       "data_regime": "Designed small catalytic library, not a large HTE dump",
       "validation": "Statistical models used to distinguish competing mechanistic hypotheses",
       "why": "Canonical Milo-lab result: a small, chemically designed dataset plus interpretable descriptors can interrogate mechanism.",
-      "summary": "Parameterizes catalysts and substrates in a chiral-anion system and uses the fitted models to distinguish mechanisms. Template for DescriPyTor’s claim that small catalytic sets need chemist-guided features, not bigger descriptor pools.",
+      "summary": "Parameterizes catalysts and substrates in a chiral-anion system and uses the fitted models to distinguish mechanisms.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Milo",
@@ -11017,8 +11017,8 @@
       "chemistry": "Physical-organic catalysis; steric correction of Hammett-type models",
       "data_regime": "Classic linear free-energy series plus Sterimol terms",
       "validation": "Improved correlations when steric and electronic terms are separated geometrically",
-      "why": "Puts Sterimol on the same footing as σ constants — the electronic/steric split DescriPyTor still uses.",
-      "summary": "Shows that Sterimol steric terms can be combined with Hammett electronic parameters instead of burying steric demand in a single substituent constant. Milo is a coauthor; this is the closest published ancestor of chemist-guided steric frames.",
+      "why": "Puts Sterimol on the same footing as σ constants.",
+      "summary": "Shows that Sterimol steric terms can be combined with Hammett electronic parameters instead of burying steric demand in a single substituent constant. Milo is a coauthor.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Milo",
@@ -11075,8 +11075,8 @@
       "chemistry": "Asymmetric catalysis; MLR workflow for selectivity models",
       "data_regime": "Review of small-to-moderate catalytic modeling case studies",
       "validation": "N/A",
-      "why": "The playbook DescriPyTor still follows: exhaustively search a chemist-designed descriptor pool, then validate on Q² not R².",
-      "summary": "Sigman-group tutorial on multivariate linear regression for reaction development: how to choose physical-organic descriptors, avoid overfitting, and read mechanism from the selected terms. Direct methodological backdrop for DescriPyTor’s modeling stage.",
+      "why": "Playbook: exhaustively search a chemist-designed descriptor pool, then validate on Q² not R².",
+      "summary": "Sigman-group tutorial on multivariate linear regression for reaction development: how to choose physical-organic descriptors, avoid overfitting, and read mechanism from the selected terms.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Sigman"
@@ -11133,8 +11133,8 @@
       "chemistry": "Asymmetric catalysis; conformer-averaged Sterimol descriptors",
       "data_regime": "Catalytic case studies where a single conformer misrepresents steric demand",
       "validation": "Boltzmann-weighted Sterimol outperforms single-conformer values",
-      "why": "Shows that the geometry a steric descriptor is read from is itself a modeling variable — the same point DescriPyTor makes for metal complexes vs free ligands.",
-      "summary": "Paton lab: Sterimol values change with conformation, and Boltzmann averaging is required before the descriptor is used in a selectivity model. DescriPyTor’s case studies treat structure choice (product, free ligand, metal complex) as the analogous decision.",
+      "why": "Shows that the geometry a steric descriptor is read from is itself a modeling variable.",
+      "summary": "Paton lab: Sterimol values change with conformation, and Boltzmann averaging is required before the descriptor is used in a selectivity model.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Paton"
@@ -11193,8 +11193,8 @@
       "chemistry": "Organic molecules including catalytic ligands and substrates; automated DFT featurization",
       "data_regime": "Reusable DFT descriptor database generated from SMILES inputs",
       "validation": "Workflow benchmarks and downstream modeling use-cases",
-      "why": "The Doyle-lab pipeline DescriPyTor contrasts with: compute a large fixed descriptor pool, then model. No user-defined chemical axes.",
-      "summary": "Automates DFT jobs and stores molecular descriptors from SMILES. Important platform paper: it solves extraction, not reference-frame choice. DescriPyTor’s claim is that in small catalytic sets the missing control is where each descriptor is read.",
+      "why": "Doyle-lab pipeline: compute a large fixed descriptor pool, then model.",
+      "summary": "Automates DFT jobs and stores molecular descriptors from SMILES.",
       "paradigm": "Other / mixed",
       "groups": [
         "Doyle"
@@ -11249,8 +11249,8 @@
       "chemistry": "Homogeneous catalysis; how dataset size changes what a statistical model can claim",
       "data_regime": "Explicit comparison across small vs larger catalytic data-size regimes",
       "validation": "Shows when fitted equations support mechanistic claims versus when they only interpolate",
-      "why": "Milo-lab warning that DescriPyTor is built on: with n in the tens, an unconstrained descriptor search will overfit.",
-      "summary": "Maps what statistical models in catalysis can and cannot support as n grows. The small-n regime is exactly where DescriPyTor insists on a chemist-chosen reference frame instead of a free search over hundreds of features.",
+      "why": "Milo-lab warning: with n in the tens, an unconstrained descriptor search will overfit.",
+      "summary": "Maps what statistical models in catalysis can and cannot support as n grows.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Milo"
@@ -11310,8 +11310,8 @@
       "chemistry": "General molecular / catalysis descriptor generation from automated quantum chemistry",
       "data_regime": "Broad descriptor pools assembled per molecule from QM and steric codes",
       "validation": "Software demonstration and downstream modeling examples",
-      "why": "The Paton/Alegre-Requena platform DescriPyTor is written against: Sterimol and %Vbur from supplied geometries, not user-defined axes.",
-      "summary": "End-to-end automated QM environment that computes charges, frequencies, Sterimol and buried volume. DescriPyTor keeps this broad pool, then adds chemist-chosen axes for orientational Sterimol and projected dipoles.",
+      "why": "Paton/Alegre-Requena platform: Sterimol and %Vbur from supplied geometries.",
+      "summary": "End-to-end automated QM environment that computes charges, frequencies, Sterimol and buried volume.",
       "paradigm": "Other / mixed",
       "groups": [
         "Paton",
@@ -11369,8 +11369,8 @@
       "chemistry": "Chemical discovery including catalysis; advocacy for small, designed datasets",
       "data_regime": "n/a overview",
       "validation": "N/A",
-      "why": "Milo-lab manifesto for the DescriPyTor setting: do not wait for HTE-scale data if the representation is chemically right.",
-      "summary": "Argues that carefully designed small datasets, paired with interpretable representations, can drive discovery. Sets the lab stance that DescriPyTor operationalizes: descriptor frame first, more data second.",
+      "why": "Milo-lab manifesto: do not wait for HTE-scale data if the representation is chemically right.",
+      "summary": "Argues that carefully designed small datasets, paired with interpretable representations, can drive discovery.",
       "paradigm": "Other / mixed",
       "groups": [
         "Milo"
@@ -11427,8 +11427,8 @@
       "chemistry": "Chemistry ML including homogeneous catalysis; automated model screening from feature matrices",
       "data_regime": "Designed for the small-n chemical tables AQME and similar tools export",
       "validation": "Automated model comparison with reported diagnostics",
-      "why": "DescriPyTor exports its labeled feature matrices here. ROBERT screens models; it does not choose the chemical reference frame.",
-      "summary": "Bridges chemistry descriptor tables to automated model selection. Complementary to DescriPyTor: once the chemist has anchored Sterimol and dipole columns to atoms and axes, ROBERT can hunt the equation.",
+      "why": "ROBERT screens models from labeled feature matrices.",
+      "summary": "Bridges chemistry descriptor tables to automated model selection.",
       "paradigm": "Other / mixed",
       "groups": [
         "Alegre-Requena",
@@ -11486,8 +11486,8 @@
       "chemistry": "Homogeneous catalysis; cavity-specific steric descriptors beyond classical Sterimol",
       "data_regime": "Applied to diverse catalytic and molecular systems",
       "validation": "Case studies against established steric parameterizations",
-      "why": "Newest Sigman-lab steric software: measures bulk in a cavity, not only along a substituent axis. Natural comparison for DescriPyTor’s orientational Sterimol.",
-      "summary": "Python package for cavity-centric steric descriptors. Like morfeus and DBSTEP, it computes steric numbers from a supplied geometry; unlike DescriPyTor, the chemist does not define an orientational reference frame on the substituent axis.",
+      "why": "Newest Sigman-lab steric software: measures bulk in a cavity.",
+      "summary": "Python package for cavity-centric steric descriptors. Like morfeus and DBSTEP, it computes steric numbers from a supplied geometry.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Sigman"
@@ -11545,8 +11545,8 @@
       "chemistry": "General molecular / organometallic simulation; automated QM and ML interoperability",
       "data_regime": "Workflow platform rather than a single catalytic dataset",
       "validation": "Software interoperability demonstrations across QM and ML engines",
-      "why": "2026 platform in the same automation layer as AQME/Auto-QChem. DescriPyTor cites it as adjacent infrastructure, not a chemist-guided frame.",
-      "summary": "Open platform that chains quantum chemistry and machine-learning simulations. Relevant because DescriPyTor is a lighter, chemist-in-the-loop alternative: it does not try to own the full simulation stack, only the reference frame of each descriptor.",
+      "why": "2026 platform in the same automation layer as AQME/Auto-QChem.",
+      "summary": "Open platform that chains quantum chemistry and machine-learning simulations.",
       "paradigm": "Other / mixed",
       "groups": [
         "Other"
@@ -12133,11 +12133,11 @@
       "derived_workflows": [
         "Automated QM descriptor workflow"
       ],
-      "chemistry": "General molecular / homogeneous-ligand libraries; combinatorial feature extraction, not a catalytic reference frame",
+      "chemistry": "General molecular / homogeneous-ligand libraries; combinatorial feature extraction",
       "data_regime": "Software paper; combinatorial molecular libraries rather than a single catalytic n",
       "validation": "Software demonstration across library generation and feature-extraction workflows",
-      "why": "Denmark-lab infrastructure for making libraries and extracting features. Contrast for DescriPyTor: no chemist-chosen substituent axis.",
-      "summary": "Python toolkit for combinatorial small-molecule libraries and feature extraction. Useful when the bottleneck is enumerating molecules. DescriPyTor’s claim is different: on small catalytic n the missing control is where each descriptor is read, not another feature extractor.",
+      "why": "Denmark-lab infrastructure for making libraries and extracting features.",
+      "summary": "Python toolkit for combinatorial small-molecule libraries and feature extraction. Useful when the bottleneck is enumerating molecules.",
       "paradigm": "Ligand-space / screening",
       "groups": [
         "Denmark"
@@ -12202,8 +12202,8 @@
       "chemistry": "Homogeneous catalysis; metal-centered steric maps for NHCs, phosphines, and catalytic pockets",
       "data_regime": "Software paper with organometallic pocket examples",
       "validation": "Web-tool demonstration of topographic maps versus classical %Vbur numbers",
-      "why": "Canonical cavity/pocket steric software. The frame is a metal-centered sphere, not a chemist-oriented substituent axis.",
-      "summary": "SambVca 2 turns buried volume into topographic steric maps of the catalytic pocket. Same steric family as %Vbur and SMARTpy; opposite origin of the frame from DescriPyTor’s orientational Sterimol.",
+      "why": "Canonical cavity/pocket steric software, built on a metal-centered sphere.",
+      "summary": "SambVca 2 turns buried volume into topographic steric maps of the catalytic pocket. Same steric family as %Vbur and SMARTpy.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Cavallo"
@@ -12270,8 +12270,8 @@
       "chemistry": "Homogeneous catalysis; online design of catalytic pockets from buried-volume maps",
       "data_regime": "Computational pocket-design case studies across organometallic catalysts",
       "validation": "Case studies connecting pocket topography to known catalytic behavior",
-      "why": "The high-profile cavity paper: design the pocket, not a substituent axis. Natural contrast for DescriPyTor’s orientational Sterimol.",
-      "summary": "Shows how topographic steric maps can be used to design catalytic pockets online. Measures cavity occupancy around a metal; DescriPyTor instead lets the chemist point the steric frame along a chosen substituent.",
+      "why": "The high-profile cavity paper: design the pocket.",
+      "summary": "Shows how topographic steric maps can be used to design catalytic pockets online. Measures cavity occupancy around a metal.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Cavallo"
@@ -12331,8 +12331,8 @@
       "chemistry": "Homogeneous catalysis; %Vbur as a steric number for phosphines and NHCs",
       "data_regime": "Method paper; computational buried-volume examples on common ligands",
       "validation": "Comparisons of %Vbur with Tolman cone angle and related steric scales",
-      "why": "The single-number buried-volume ancestor. Metal-centered sphere, no user-defined substituent axis.",
-      "summary": "Defines percent buried volume as a practical steric parameter for phosphines and NHCs. AQME, SambVca and SMARTpy all sit downstream of this number. DescriPyTor’s steric terms are directional Sterimol, not a metal-centered occupancy.",
+      "why": "The single-number buried-volume ancestor, read from a metal-centered sphere.",
+      "summary": "Defines percent buried volume as a practical steric parameter for phosphines and NHCs. AQME, SambVca and SMARTpy all sit downstream of this number.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Nolan"
@@ -12388,8 +12388,8 @@
       "chemistry": "Asymmetric catalysis; the Sigman/Milo playbook for chemist-designed descriptors and MLR",
       "data_regime": "n/a overview of multivariable catalytic modeling case studies",
       "validation": "N/A",
-      "why": "The written playbook DescriPyTor still follows: chemist-designed descriptors, then MLR. Milo is a coauthor.",
-      "summary": "Accounts of how multidimensional analysis — Sterimol, IR, Hammett-type terms, MLR — became a catalytic workflow. Direct ancestor of DescriPyTor’s modeling stage; it does not yet require a user-defined orientational reference frame.",
+      "why": "The written playbook: chemist-designed descriptors, then MLR. Milo is a coauthor.",
+      "summary": "Accounts of how multidimensional analysis — Sterimol, IR, Hammett-type terms, MLR — became a catalytic workflow.",
       "paradigm": "Physical / interpretable",
       "groups": [
         "Sigman",
@@ -12451,8 +12451,8 @@
       "chemistry": "Homogeneous catalysis; reaction-agnostic DFT maps of phosphorus-donor ligand space",
       "data_regime": "Computational phosphine ligand maps rather than a single catalytic dataset",
       "validation": "PCA maps of ligand space compared with known organometallic trends",
-      "why": "The original reaction-agnostic ligand library. Kraken is the scaled descendant; DescriPyTor argues the opposite direction.",
-      "summary": "Builds a DFT descriptor knowledge base for phosphorus donor ligands and maps ligand space. This is the library alternative: precomputed, reaction-agnostic features. DescriPyTor instead reads descriptors from a chemist-chosen frame on a small catalytic n.",
+      "why": "The original reaction-agnostic ligand library. Kraken is the scaled descendant.",
+      "summary": "Builds a DFT descriptor knowledge base for phosphorus donor ligands and maps ligand space with precomputed, reaction-agnostic features.",
       "paradigm": "Ligand-space / screening",
       "groups": [
         "Fey"
@@ -12510,8 +12510,8 @@
       "chemistry": "Homogeneous catalysis; survey of computational ligand descriptors used in catalyst design",
       "data_regime": "n/a overview of computational ligand-descriptor methods",
       "validation": "N/A",
-      "why": "The map of the library/descriptor landscape DescriPyTor is written against: computational ligand space rather than chemist-chosen axes.",
-      "summary": "Reviews computational ligand descriptors for catalyst design, from knowledge bases to steric maps. Use it as the landscape paper: most of the field precomputes ligand space; DescriPyTor asks the chemist to define the frame on the reaction at hand.",
+      "why": "Map of the computational ligand descriptor landscape.",
+      "summary": "Reviews computational ligand descriptors for catalyst design, from knowledge bases to steric maps.",
       "paradigm": "Ligand-space / screening",
       "groups": [
         "Fey"
@@ -14129,7 +14129,7 @@
       "chemistry": "Phosphine ligand electronic effects; machine-learning prediction of the Tolman electronic parameter",
       "data_regime": "Computational/experimental TEP examples across phosphine ligands",
       "validation": "Held-out prediction of TEP values versus experiment/DFT",
-      "why": "A learned shortcut to a canonical ligand number. Not a replacement for a chemist frame.",
+      "why": "A learned shortcut to a canonical ligand number.",
       "summary": "Predicts Tolman electronic parameters for phosphines with a machine-learning model. Useful when you want TEP-scale electronics without a new IR experiment on every ligand.",
       "derived_authors": [
         "Harlan P. Stevens",
@@ -23241,24 +23241,6 @@
       "description": "Anat Milo and surrounding small-data, mechanistic and representation-learning literature.",
       "groups": [
         "Milo"
-      ]
-    },
-    "chemist_frames": {
-      "label": "Chemist-guided descriptors",
-      "description": "Where a descriptor is read: Sterimol, cavities, vibrations, and the AQME / Auto-QChem / ROBERT platforms DescriPyTor is written against.",
-      "keywords": [
-        "sterimol",
-        "cavity",
-        "aqme",
-        "auto-qchem",
-        "robert",
-        "smartpy",
-        "chemrefine",
-        "physical-organic",
-        "descriptor pipeline",
-        "chemist-guided",
-        "vibrations",
-        "hammett"
       ]
     }
   }

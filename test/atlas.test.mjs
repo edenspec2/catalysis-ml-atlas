@@ -1,5 +1,5 @@
 
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey,looksLikeDoi,searchCrossrefURL,searchWorks,sortByFocus,toBibTeX,proposeIssueURL,exportShelf,mergeShelf} from '../src/literature.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {JSDOM} from 'jsdom';import vm from 'node:vm';import {discover,filterPapers,doiKey,normalizeWork,relevant,uniqueWorks,crossrefURL,titleKey,looksLikeDoi,searchCrossrefURL,searchWorks,toBibTeX,proposeIssueURL,exportShelf,mergeShelf} from '../src/literature.js';
 test('DOI normalization and deduplication',()=>{assert.equal(doiKey('https://doi.org/10.ABC/XYZ'),'10.abc/xyz');assert.equal(uniqueWorks([{doi:'10.ABC/x'},{doi:'10.abc/X'}]).length,1);assert.equal(uniqueWorks([{doi:'10.a/1',label:'Same Title'},{doi:'10.b/2',label:'Same Title'}]).length,1);assert.ok(titleKey('Hello, World!'))});
 test('catalysis discovery drops protein/drug ligand papers and keeps catalytic ligand work',()=>{
  const keep=normalizeWork({title:['Bayesian Optimization for Accelerated Ligand Selection in Atroposelective Negishi Coupling'],DOI:'10.keep/1'});
@@ -43,13 +43,7 @@ assert.equal(ps.find(p=>p.id==='paper_ni_edbo_2024').stack_layer,'Experiment sel
 assert.notEqual(ps.find(p=>p.id==='paper_edbo_2021').doi,ps.find(p=>p.id==='paper_ni_edbo_2024').doi);
 assert.equal(ps.find(p=>p.id==='paper_racerts_2026').stack_layer,'TS ensembles');
 assert.equal(ps.find(p=>p.id==='paper_crest_2024').stack_layer,'Ground-state conformers');
-assert.equal(ps.find(p=>p.id==='paper_harper_sterimol_2012').descriptytor_rank,1);
-assert.equal(ps.find(p=>p.id==='paper_autoqchem_2022').descriptytor_role,'contrast-pool');
-assert.equal(filterPapers(ps,{focus:'descriptytor'}).length,21);
-assert.equal(sortByFocus(filterPapers(ps,{focus:'descriptytor'}),'descriptytor')[0].id,'paper_harper_sterimol_2012');
-assert.ok(g.stories?.chemist_frames);
-assert.ok(g.stories?.descriptytor);
-assert.ok(g.stories.descriptytor.ids.includes('paper_molli_2024'));
+assert.ok(g.stories?.descriptor_tools);
 assert.ok(g.stories?.computational_stack);
 assert.ok(g.insights.gaps.length>=3);
 assert.ok(g.insights.heatmap.length>20);assert.ok(filterPapers(ps,{focus:'milo'}).length>=8);assert.ok(filterPapers(ps,{focus:'stack'}).length>=8);assert.ok(filterPapers(ps,{representation:'Learned 3D / TS GNN'}).length>=3);const ids=new Set(g.nodes.map(n=>n.id));for(const e of g.edges){assert.ok(ids.has(e.source));assert.ok(ids.has(e.target))}const h=await readFile('dist/atlas.html','utf8');const js=await readFile('dist/atlas.js','utf8');const css=await readFile('dist/style.css','utf8');const idx=await readFile('dist/index.html','utf8');const lab=await readFile('dist/lab.html','utf8');const issue=await readFile('.github/ISSUE_TEMPLATE/propose-paper.yml','utf8');assert.ok(!h.includes('https://unpkg.com'));assert.ok(js.includes('autoRotate = false'));assert.ok(css.includes('#side{display:grid'));assert.ok(h.includes('id="chemistry"'));assert.ok(h.includes('Color: representation'));assert.ok(h.includes('id="stack"'));assert.ok(h.includes('atlas.js'));assert.ok(h.includes('id="figbox"'));assert.ok(h.includes('id="showFigs"'));assert.ok(h.includes('lab.html'));assert.ok(idx.includes('id="export-bib"'));assert.ok(idx.includes('id="export-shelf"'));assert.ok(idx.includes('Propose for the shared atlas')||idx.includes('propose-paper.yml'));assert.ok(lab.includes('Ten minutes'));assert.ok(issue.includes('Stack layer'));assert.ok(js.includes('data-fig'));assert.ok(js.includes('figImage'));assert.ok(js.includes('packRect'));assert.ok(js.includes('packVolume'));assert.ok(js.includes('fibonacciSphere'));assert.ok(js.includes('s.ids'));assert.ok(js.includes('Shift-drag'));assert.ok(!h.includes('ALL_NODES='));new vm.Script(js)});
@@ -76,7 +70,7 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.HTMLDialogElement.prototype.close=function(){this.open=false};
  if(!w.URL.createObjectURL)w.URL.createObjectURL=()=>'blob:test';
  if(!w.URL.revokeObjectURL)w.URL.revokeObjectURL=()=>{};
- w.discover=async()=>{throw Error('offline')};w.filterPapers=filterPapers;w.sortByFocus=sortByFocus;w.doiKey=doiKey;
+ w.discover=async()=>{throw Error('offline')};w.filterPapers=filterPapers;w.doiKey=doiKey;
  w.toBibTeX=toBibTeX;w.proposeIssueURL=proposeIssueURL;w.exportShelf=exportShelf;w.mergeShelf=mergeShelf;
  w.searchWorks=async({q})=>({papers:[{id:'doi:10.1234/add.1',doi:'10.1234/add.1',label:'Machine learning for a new catalytic ligand',full_title:'Machine learning for a new catalytic ligand',candidate:true,derived_authors:['Test Author'],journal:'JACS',year:2025,published_date:'2025-06-01',url:'https://doi.org/10.1234/add.1',derived_methods:[],derived_topics:[],groups:[]}],fetched_at:'2026-09-06T00:00:00Z',query:q,doi:true});
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('graph.json')?graph:{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
@@ -95,15 +89,6 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  q('#focus').value='milo';q('#focus').dispatchEvent(new w.Event('change'));assert.ok(w.document.querySelectorAll('.paper').length>=4);
  q('[data-detail]').click();assert.equal(q('#detail').open,true);assert.ok(q('#detail-body').textContent.includes('Summary'));assert.ok(q('#detail-body').textContent.includes('Ask next'));
  q('#close-detail').click();
- q('#focus').value='descriptytor';q('#focus').dispatchEvent(new w.Event('change'));
- assert.equal(w.document.querySelectorAll('.paper').length,21);
- assert.ok(q('.paper').textContent.includes('Sterimol')||q('.paper').textContent.toLowerCase().includes('sterimol'));
- assert.ok(q('.prompt')?.textContent.includes('DescriPyTor')||q('#source-note').textContent.includes('DescriPyTor'));
- q('[data-view="inspect"]').click();
- assert.equal(w.document.querySelectorAll('table.inspect tbody tr').length,21);
- assert.ok(q('table.inspect').classList.contains('descriptytor'));
- assert.ok(q('#results').textContent.includes('vs DescriPyTor'));
- assert.ok(q('table.inspect tbody tr').textContent.includes('#'));
  q('#close-detail')?.click();q('[data-view="library"]').click();
  q('#focus').value='milo';q('#focus').dispatchEvent(new w.Event('change'));
  q('[data-view="board"]').click();assert.ok(q('.heat'));assert.ok(q('#results').textContent.includes('Open cells'));assert.ok(q('#results').textContent.includes('Stack layer'));

@@ -497,7 +497,7 @@ const SPECS = {
     topics: ['Tolman electronic parameter', 'Phosphine ligands', 'Electronic descriptors'],
     methods: ['Supervised ML', 'TEP prediction'],
     workflows: ['Descriptors'],
-    why: 'A learned shortcut to a canonical ligand number. Not a replacement for a chemist frame.',
+    why: 'A learned shortcut to a canonical ligand number.',
     summary: 'Predicts Tolman electronic parameters for phosphines with a machine-learning model. Useful when you want TEP-scale electronics without a new IR experiment on every ligand.'
   },
   '10.1021/acs.jpclett.3c02828': {

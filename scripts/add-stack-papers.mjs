@@ -239,7 +239,7 @@ graph.meta = {
   updated: '2026-09-06',
   new_papers_added: (graph.meta.new_papers_added || 0) + added.length,
   paper_count: graph.nodes.filter(n => n.type === 'paper').length,
-  note: 'Includes a DescriPyTor neighborhood and a computational stack: CREST, autodE, TS-tools, racerTS, GoodVibes, thermoMLIP, EDBO, EDBO+.'
+  note: 'Includes a computational stack: CREST, autodE, TS-tools, racerTS, GoodVibes, thermoMLIP, EDBO, EDBO+.'
 };
 
 await writeFile(graphPath, JSON.stringify(graph, null, 2));
