@@ -37,6 +37,7 @@ let canvas, ctx, hoverId = null, layoutKind = 'free';
 const cam = { yaw: -0.48, pitch: 0.85, zoom: 1, tx: 0, ty: 0, tz: 0, ox: 0, oy: 0 };
 const pointer = { down:false, x:0, y:0, moved:false, id:null, pan:false };
 const figImgs = new Map(), texts = new WeakMap();
+let projectIds = null;
 let lastLayoutSize = { w: 0, h: 0 };
 let relayouting = false;
 
@@ -56,6 +57,7 @@ function baseColor(n) {
   return map[key(n)] || GRAY;
 }
 function storyMatch(p) {
+  if (projectIds) return projectIds.has(p.id);
   if (!activeStory) return true;
   const s = STORIES[activeStory]; if (!s) return true;
   if (s.filter?.years && !s.filter.years.includes(Number(p.year))) return false;
@@ -662,6 +664,7 @@ function fillFilters(papers) {
   const chem = $('chemistry');
   [...new Set(papers.map(p => p.chemistry_class).filter(Boolean))].sort().forEach(c => chem.insertAdjacentHTML('beforeend', `<option>${esc(c)}</option>`));
   const box = $('story');
+  Object.keys(shelf('projects')).forEach(name => box.insertAdjacentHTML('beforeend', `<option value="project:${esc(name)}">My project: ${esc(name)}</option>`));
   const order = ['milo','descriptor_tools','computational_stack','representation','small_data','automation','physics','frontier_2026'];
   [...new Set([...order, ...Object.keys(STORIES)])].forEach(id => {
     const s = STORIES[id]; if (s) box.insertAdjacentHTML('beforeend', `<option value="${esc(id)}">${esc(s.label)}</option>`);
@@ -736,13 +739,19 @@ function bind() {
   $('showFigs')?.addEventListener('change', () => { applyLayout($('layout').value); renderPapers(); persist(); });
   $('layout').addEventListener('change', () => { persist(); applyLayout($('layout').value); });
   $('colorby').addEventListener('change', () => { updateHud(); markSelection(); persist(); });
-  $('story').addEventListener('change', e => { activeStory = e.target.value || null; clearSelection(); buildData(); });
+  $('story').addEventListener('change', e => {
+    const v = e.target.value;
+    projectIds = v.startsWith('project:') ? new Set(shelf('projects')[v.slice(8)] || []) : null;
+    activeStory = v && !projectIds ? v : null;
+    clearSelection(); buildData();
+  });
   $('center').addEventListener('click', () => { endTween(); START.set(POS); settle(false); });
   $('reset').addEventListener('click', () => {
     $('q').value = ''; $('view').value = 'papers'; $('layout').value = 'free'; $('colorby').value = 'paradigm';
     $('year').value = 'all'; $('chemistry').value = 'all'; $('story').value = '';
     if ($('showFigs')) $('showFigs').checked = true;
     activeStory = null;
+    projectIds = null;
     defaultCamera();
     clearSelection(); buildData();
   });

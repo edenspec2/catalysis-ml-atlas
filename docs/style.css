@@ -107,6 +107,15 @@ body[data-view=board] .tools .seg{display:none}
 
 /* Paper rows */
 .cards{display:grid}
+.side-row{display:flex;align-items:center;gap:4px}
+.side-row .side-item{flex:1;min-width:0}
+.side-row .round{flex:none;width:20px;height:20px}
+.side-row .round .i{width:9px;height:9px}
+.side-input{width:100%;min-height:28px;margin-top:2px;padding:3px 10px;border:0;border-radius:var(--r-s);background:transparent;box-shadow:none;font-size:13px}
+.side-input:focus{background:var(--surface)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.chips button{min-height:28px;padding:3px 11px;border-radius:999px;font-size:12px;box-shadow:none;background:var(--fill)}
+.chips button.selected{background:var(--accent);color:#fff}
 .paper{content-visibility:auto;contain-intrinsic-size:auto 92px;position:relative;display:grid;grid-template-columns:22px minmax(0,1fr) auto auto auto;gap:0 12px;align-items:start;padding:11px 8px;margin:0 -8px;border-radius:var(--r-m);cursor:pointer;transition:background-color .14s var(--ease);content-visibility:auto;contain-intrinsic-size:auto 88px}
 .paper+.paper::before{content:"";position:absolute;top:0;left:42px;right:8px;border-top:.5px solid var(--line)}
 .paper:hover{background:var(--fill-2)}
@@ -341,6 +350,8 @@ body.atlas-page header{position:relative;padding:8px 16px}
  #sidebar::-webkit-scrollbar{display:none}
  #sidebar nav{display:flex;gap:6px;width:max-content}
  .side-label{display:none}
+ #projects{display:contents}
+ .side-input{width:120px;margin-top:0;background:var(--fill-2);border-radius:999px}
  .side-item{width:auto;min-height:32px;padding:4px 12px;border-radius:999px;background:var(--fill-2);white-space:nowrap}
  .side-item .n{display:none}
  .side-item .i{display:none}

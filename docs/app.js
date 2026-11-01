@@ -5,7 +5,7 @@ const url=s=>{try{const u=new URL(s);return /^https?:$/.test(u.protocol)?u.href:
 function load(k,f){try{return JSON.parse(localStorage.getItem('cml:'+k))??f}catch{return f}}
 function persist(k,v){try{localStorage.setItem('cml:'+k,JSON.stringify(v))}catch{toast('Storage unavailable. Changes last only for this session.')}}
 let timer;function toast(s){$('#toast').textContent=s;clearTimeout(timer);timer=setTimeout(()=>$('#toast').textContent='',4000)}
-const state={view:'library',focus:'',table:load('table',false),papers:[],feed:null,saved:load('saved',{}),added:load('added',{}),read:load('read',{}),notes:load('notes',{}),compare:[],active:null,loading:false,known:{},inspectSort:{key:'year',dir:'desc'}};
+const state={view:'library',focus:'',table:load('table',false),papers:[],feed:null,saved:load('saved',{}),added:load('added',{}),read:load('read',{}),notes:load('notes',{}),projects:load('projects',{}),project:'',compare:[],active:null,loading:false,known:{},inspectSort:{key:'year',dir:'desc'}};
 const byId=new Map(),dois=new Set();
 const find=id=>byId.get(id)||state.added[id]||state.known[id]||state.saved[id];
 const inCorpus=p=>!!p.doi&&dois.has(doiKey(p.doi));
@@ -69,6 +69,7 @@ function byMonth(ps){
  return [...groups].map(([k,v])=>'<h2 class="month">'+esc(k)+'</h2>'+rows(v)).join('');
 }
 function listSource(){
+ if(state.project&&state.view==='library')return (state.projects[state.project]||[]).map(find).filter(Boolean);
  return state.view==='latest'?(state.feed?.papers||[]):state.view==='saved'?queued():state.view==='read'?finished():libraryPapers();
 }
 function visiblePapers(){
@@ -96,15 +97,15 @@ function exportNotes(){
  toast('Reading notes for '+ps.length+' paper'+(ps.length===1?'':'s')+'.');
 }
 function exportMyShelf(){
- downloadFile('catalysis-ml-atlas-shelf.json',JSON.stringify(exportShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes}),null,2),'application/json');
+ downloadFile('catalysis-ml-atlas-shelf.json',JSON.stringify(exportShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes,projects:state.projects}),null,2),'application/json');
  toast('Backup saved. Restore it on another browser.');
 }
 async function importMyShelf(file){
  try{
   const incoming=JSON.parse(await file.text());
-  const next=mergeShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes},incoming);
-  state.saved=next.saved;state.read=next.read;state.added=next.added;state.notes=next.notes;
-  persist('saved',state.saved);persist('read',state.read);persist('added',state.added);persist('notes',state.notes);
+  const next=mergeShelf({saved:state.saved,read:state.read,added:state.added,notes:state.notes,projects:state.projects},incoming);
+  state.saved=next.saved;state.read=next.read;state.added=next.added;state.notes=next.notes;state.projects=next.projects;
+  persist('saved',state.saved);persist('read',state.read);persist('added',state.added);persist('notes',state.notes);persist('projects',state.projects);
   render();
   toast('Backup restored.');
  }catch(err){toast(err.message||'Could not read that file.')}
@@ -118,17 +119,22 @@ function clearFilters(){$('#search').value='';state.focus='';$('#year').value=''
 function counts(){
  $('#all-count').textContent=libraryPapers().length;$('#saved-count').textContent=queued().length;$('#read-count').textContent=finished().length;$('#compare-count').textContent=state.compare.length;
  $('#compare-item').hidden=!state.compare.length&&state.view!=='compare';
+ $('#projects').innerHTML=Object.keys(state.projects).map(name=>{
+  const on=state.project===name&&state.view==='library';
+  return '<div class="side-row"><button class="side-item'+(on?' active':'')+'" data-project="'+esc(name)+'"'+(on?' aria-current="page"':'')+'><span class="label">'+esc(name)+'</span><span class="n">'+state.projects[name].length+'</span></button>'+(on?'<button class="round" data-rename-project="'+esc(name)+'" aria-label="Rename project '+esc(name)+'">'+icon('edit')+'</button><button class="round" data-drop-project="'+esc(name)+'" aria-label="Delete project '+esc(name)+'">'+icon('close')+'</button>':'')+'</div>';
+ }).join('');
 }
 function emptyState(){
  if(state.loading)return '<div class="empty">'+icon('find')+'<h3>Looking for papers…</h3></div>';
  if(anyFilter())return '<div class="empty">'+icon('find')+'<h3>No papers match</h3><button id="clear-filters">Clear filters</button></div>';
+ if(state.project)return '<div class="empty">'+icon('all')+'<h3>No papers here yet</h3><p>Open a paper and tick this project.</p></div>';
  const copy={saved:['bookmark','Nothing to read yet','Tap the bookmark on a paper to keep it here.'],read:['done','No read papers yet','Tap the circle beside a paper when you finish it. It lands here by month, with your note.'],latest:['find','Search for a paper','Paste a DOI or a title above.']}[state.view]||['all','No papers','This list is empty.'];
  return '<div class="empty">'+icon(copy[0])+'<h3>'+copy[1]+'</h3><p>'+copy[2]+'</p></div>';
 }
 function render(){
  const v=state.view;document.body.dataset.view=v;counts();
  document.querySelectorAll('[data-view],[data-focus]').forEach(b=>{
-  const on=b.dataset.focus?b.dataset.focus===state.focus&&v==='library':b.dataset.view===v&&!(v==='library'&&state.focus);
+  const on=b.dataset.focus?b.dataset.focus===state.focus&&v==='library':b.dataset.view===v&&!(v==='library'&&(state.focus||state.project));
   b.classList.toggle('active',on);
   if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
  });
@@ -136,7 +142,7 @@ function render(){
  $('#reading').hidden=v==='compare';$('#comparison').hidden=v!=='compare';$('#discovery').hidden=v!=='latest';
  if(v==='compare'){compare();return}
  const ps=filterPapers(listSource(),filters());
- $('#list-title').textContent=TITLES[v]||(state.focus?$('[data-focus="'+state.focus+'"] .label').textContent:'All Papers');
+ $('#list-title').textContent=TITLES[v]||state.project||(state.focus?$('[data-focus="'+state.focus+'"] .label').textContent:'All Papers');
  $('#result-count').textContent=ps.length;
  if(v==='board'){board(ps);return}
  if(state.table&&v!=='latest'){inspect(ps);$('#clear-filters')?.addEventListener('click',clearFilters);return}
@@ -215,6 +221,16 @@ function openFigure(id){
  $('#figbox-cap').textContent=(p.full_title||p.label)+' · '+(p.figure.caption||'Figure 1');
  if(!$('#figbox').open)$('#figbox').showModal();
 }
+function projectChips(id){
+ const names=Object.keys(state.projects);
+ return names.length?'<div class="chips" role="group" aria-label="Projects">'+names.map(name=>button('data-assign',name,esc(name),state.projects[name].includes(id))).join('')+'</div>':'';
+}
+function assign(name,id){
+ const p=find(id),list=state.projects[name];if(!p||!list)return;
+ if(list.includes(id))list.splice(list.indexOf(id),1);else list.push(id);
+ if(!inCorpus(p)&&!state.added[id]){state.added[id]=stampAdded(p);persist('added',state.added)}
+ persist('projects',state.projects);render();details(id);
+}
 function details(id){
  const p=find(id);if(!p)return;state.active=id;
  const isNew=p.candidate,read=!!state.read[id],queue=!!state.saved[id]&&!read;
@@ -223,7 +239,7 @@ function details(id){
  const more=isNew?[['Record type',p.paper_type]]:[['Use this when',p.use_for],['Chemistry',p.chemistry||p.chemistry_class],['Stack layer',p.stack_layer],['Representation',p.representation_class],['Data',[p.data_size_bin,p.data_regime].filter(Boolean).join(' · ')],['Validation',[p.validation_type,p.validation].filter(Boolean).join(' · ')],['Methods',(p.derived_methods||[]).join(' · ')],['Authors',(p.derived_authors||[]).join(', ')],['Workflow',(p.derived_workflows||[]).join(' → ')],['Topics',(p.derived_topics||[]).join(' · ')]];
  const dl=rows=>rows.filter(([,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join('');
  const when=readDate(p)?'Read '+day(readDate(p)):read?'Read':'';
- $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p><div class="sheet-actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Open paper ↗</a><div class="seg" role="group" aria-label="Reading status">'+button('data-save',id,'To Read',queue)+button('data-read',id,read?'Read ✓':'Read',read)+'</div><span class="muted">'+esc(when)+'</span></div><label class="note-box"><span>My notes</span><textarea id="paper-note" rows="4" placeholder="What did you take from this paper?">'+esc(state.notes[id]||'')+'</textarea></label>'+fig+'<dl>'+dl(main)+'</dl><details class="more"><summary>More about this paper</summary><dl>'+dl(more)+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified')+'</dd></dl><div class="sheet-links">'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library',!!state.added[id]))+(p.doi&&!inCorpus(p)?'<a href="'+esc(proposeIssueURL(p))+'" target="_blank" rel="noopener">Propose for the shared atlas ↗</a>':'')+button('data-compare',id,state.compare.includes(id)?'Remove from Compare':'Add to Compare',state.compare.includes(id))+'</div></details>';
+ $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p><div class="sheet-actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Open paper ↗</a><div class="seg" role="group" aria-label="Reading status">'+button('data-save',id,'To Read',queue)+button('data-read',id,read?'Read ✓':'Read',read)+'</div><span class="muted">'+esc(when)+'</span></div><label class="note-box"><span>My notes</span><textarea id="paper-note" rows="4" placeholder="What did you take from this paper?">'+esc(state.notes[id]||'')+'</textarea></label>'+projectChips(id)+fig+'<dl>'+dl(main)+'</dl><details class="more"><summary>More about this paper</summary><dl>'+dl(more)+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified')+'</dd></dl><div class="sheet-links">'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library',!!state.added[id]))+(p.doi&&!inCorpus(p)?'<a href="'+esc(proposeIssueURL(p))+'" target="_blank" rel="noopener">Propose for the shared atlas ↗</a>':'')+button('data-compare',id,state.compare.includes(id)?'Remove from Compare':'Add to Compare',state.compare.includes(id))+'</div></details>';
  const wasOpen=$('#detail').open;
  if(!wasOpen){$('#detail').showModal();$('#detail').scrollTop=0}
  $('#paper-note')?.addEventListener('input',e=>{
@@ -296,6 +312,15 @@ document.addEventListener('click',e=>{
  if(row&&!e.target.closest('button,a')){details(row.dataset.detail||row.dataset.id);return}
  const b=e.target.closest('button');if(!b)return;
  if(b.dataset.detail){details(b.dataset.detail);return}
+ if(b.dataset.assign){assign(b.dataset.assign,state.active);return}
+ if(b.dataset.project){state.project=b.dataset.project;state.focus='';setView('library');smooth(()=>{render();window.scrollTo({top:0})});return}
+ if(b.dataset.renameProject){
+  const old=b.dataset.renameProject,name=prompt('Rename project',old)?.trim();
+  if(!name||name===old)return;
+  state.projects[name]=[...new Set([...(state.projects[name]||[]),...state.projects[old]])];delete state.projects[old];
+  state.project=name;persist('projects',state.projects);render();return
+ }
+ if(b.dataset.dropProject){if(confirm('Delete the project "'+b.dataset.dropProject+'"? Its papers stay in the library.')){delete state.projects[b.dataset.dropProject];state.project='';persist('projects',state.projects);render()}return}
  if(b.dataset.save){toggleQueued(b.dataset.save);statusChanged(b,b.dataset.save);return}
  if(b.dataset.read){toggleRead(b.dataset.read);statusChanged(b,b.dataset.read);return}
  if(b.dataset.add){const p=find(b.dataset.add);if(!p||inCorpus(p))return;if(state.added[p.id])delete state.added[p.id];else state.added[p.id]=stampAdded(p);persist('added',state.added);render();if($('#detail').open)details(state.active);return}
@@ -304,11 +329,15 @@ document.addEventListener('click',e=>{
   state.focus='';$('#chemistry').value=b.dataset.chem;setView('library');render();return
  }
  if(b.dataset.table){state.table=b.dataset.table==='1';persist('table',state.table);smooth(render);return}
- if(b.dataset.focus){state.focus=b.dataset.focus;setView('library');smooth(()=>{render();window.scrollTo({top:0})});return}
- if(b.dataset.view){state.focus='';setView(b.dataset.view);smooth(()=>{render();window.scrollTo({top:0})});if(state.view==='latest'&&!state.feed)refresh()}
+ if(b.dataset.focus){state.focus=b.dataset.focus;state.project='';setView('library');smooth(()=>{render();window.scrollTo({top:0})});return}
+ if(b.dataset.view){state.focus='';state.project='';setView(b.dataset.view);smooth(()=>{render();window.scrollTo({top:0})});if(state.view==='latest'&&!state.feed)refresh()}
 });
 for(const id of ['#year','#chemistry'])$(id).addEventListener('change',render);
 let typing;$('#search').addEventListener('input',()=>{clearTimeout(typing);typing=setTimeout(render,80)});
+$('#new-project').addEventListener('keydown',e=>{
+ const name=e.target.value.trim();if(e.key!=='Enter'||!name)return;
+ state.projects[name]||=[];persist('projects',state.projects);e.target.value='';state.project=name;state.focus='';setView('library');render();
+});
 $('#refresh').onclick=refresh;$('#scope').onchange=refresh;
 $('#find-go').onclick=searchNow;$('#find').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchNow()}});
 $('#export-bib').addEventListener('click',exportBib);

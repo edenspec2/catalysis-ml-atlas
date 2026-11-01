@@ -171,17 +171,23 @@ export function toReadingLog(papers,{read={},notes={}}={}){
  ].filter(Boolean).join('\n\n');
  return '# Reading notes\n\n'+papers.map(entry).join('\n\n')+'\n';
 }
-export function exportShelf({saved={},read={},added={},notes={}, now=new Date()}={}){
- return {version:1, exported_at: now.toISOString(), saved, read, added, notes};
+export function exportShelf({saved={},read={},added={},notes={},projects={}, now=new Date()}={}){
+ return {version:1, exported_at: now.toISOString(), saved, read, added, notes, projects};
+}
+function mergeProjects(a,b){
+ const out={};
+ for(const [name,ids] of [...Object.entries(a||{}),...Object.entries(b||{})])if(Array.isArray(ids))out[name]=[...new Set([...(out[name]||[]),...ids.map(String)])];
+ return out;
 }
 export function mergeShelf(current={}, incoming){
  if(!incoming || typeof incoming!=='object') throw Error('Not a catalysis atlas shelf file.');
- if(incoming.saved==null && incoming.read==null && incoming.added==null && incoming.notes==null) throw Error('Not a catalysis atlas shelf file.');
+ if(incoming.saved==null && incoming.read==null && incoming.added==null && incoming.notes==null && incoming.projects==null) throw Error('Not a catalysis atlas shelf file.');
  const pick = (a,b) => ({...(a&&typeof a==='object'?a:{}), ...(b&&typeof b==='object'?b:{})});
  return {
   saved: pick(current.saved, incoming.saved),
   read: pick(current.read, incoming.read),
   added: pick(current.added, incoming.added),
-  notes: pick(current.notes, incoming.notes)
+  notes: pick(current.notes, incoming.notes),
+  projects: mergeProjects(current.projects, incoming.projects)
  };
 }

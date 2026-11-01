@@ -68,6 +68,7 @@ test('BibTeX export, shelf merge, and paper-proposal URL',()=>{
  const merged=mergeShelf({saved:{},read:{},added:{},notes:{}},shelf);
  assert.equal(merged.notes[p.id],'directional steric');
  assert.equal(merged.read[p.id],true);
+ assert.deepEqual(mergeShelf({projects:{A:['1']}},{projects:{A:['1','2'],B:['3']}}).projects,{A:['1','2'],B:['3']});
  assert.throws(()=>mergeShelf({}, {oops:true}),/shelf/);
  const log=toReadingLog([p],{read:{[p.id]:'2026-11-01'},notes:{[p.id]:'directional steric'}});
  assert.ok(log.includes('## Multidimensional Steric Parameters'));assert.ok(log.includes('Read 2026-11-01'));assert.ok(log.includes('directional steric'));assert.ok(log.includes('https://doi.org/10.1021/ja211460z'));
@@ -95,6 +96,8 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  // Topics live in the sidebar and All Papers clears them.
  q('[data-focus="milo"]').click();assert.ok(n()>=4&&n()<208);assert.equal(q('#list-title').textContent,'Milo neighborhood');
  q('[data-detail]').click();assert.ok(q('#detail-body').textContent.includes('Summary'));assert.ok(q('#detail-body').textContent.includes('Ask next'));q('#close-detail').click();
+ q('#new-project').value='Thesis';q('#new-project').dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));assert.equal(q('#list-title').textContent,'Thesis');assert.equal(n(),0);
+ q('button[data-view="library"]').click();q('[data-detail]').click();q('[data-assign="Thesis"]').click();q('#close-detail').click();q('[data-project="Thesis"]').click();assert.equal(n(),1);assert.equal(JSON.parse(w.localStorage.getItem('cml:projects')).Thesis.length,1);w.prompt=()=>'Book';q('[data-rename-project]').click();assert.equal(q('#list-title').textContent,'Book');assert.equal(JSON.parse(w.localStorage.getItem('cml:projects')).Book.length,1);q('button[data-view="library"]').click();
  q('[data-view="board"]').click();assert.ok(q('.heat'));assert.ok(q('.ring'));q('.years [data-year="2025"]').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));assert.equal(q('#year').value,'2025');q('#year').value='';q('[data-view="board"]').click();assert.ok(q('#results').textContent.includes('Open cells'));assert.ok(q('#results').textContent.includes('Stack layer'));
  q('[data-view="library"]').click();assert.equal(n(),208);
  // Row controls: bookmark queues, the circle finishes and takes it off the queue.
