@@ -296,7 +296,31 @@ function statusChanged(b,id){
  counts();
  if(state.view==='saved'||state.view==='read')setTimeout(render,340);
 }
+// Hover preview: thumb shows at once as the background, the full figure loads over it.
+let peekTimer,peeked=null;
+function hidePeek(){clearTimeout(peekTimer);peeked=null;$('#peek').hidden=true}
+document.addEventListener('mouseover',e=>{
+ if(!window.matchMedia?.('(hover: hover)').matches)return;
+ const row=e.target.closest('.paper,tr[data-detail]');
+ if(row&&row===peeked)return;
+ hidePeek();
+ const p=row&&find(row.dataset.id||row.dataset.detail);
+ if(!p?.figure?.src||p.candidate)return;
+ peeked=row;
+ peekTimer=setTimeout(()=>{
+  const box=$('#peek'),img=box.firstChild,r=row.getBoundingClientRect(),W=440,H=360;
+  img.removeAttribute('src');
+  img.style.backgroundImage='url("'+thumb(p.figure.src)+'")';
+  img.src=p.figure.src;
+  box.lastChild.textContent=p.figure.kind==='toc'?'Graphical abstract':p.figure.caption||'Figure 1';
+  box.style.left=Math.max(8,Math.min(innerWidth-W-8,e.clientX+16))+'px';
+  box.style.top=(r.bottom+H+8<innerHeight?r.bottom+6:Math.max(8,r.top-H-6))+'px';
+  box.hidden=false;
+ },220);
+});
+addEventListener('scroll',hidePeek,{passive:true});
 document.addEventListener('click',e=>{
+ hidePeek();
  document.querySelectorAll('details.menu[open]').forEach(d=>{if(!d.contains(e.target)||e.target.closest('button'))d.open=false});
  const fig=e.target.closest('[data-fig]');
  if(fig){openFigure(fig.dataset.fig);return}
@@ -352,5 +376,16 @@ document.addEventListener('keydown',e=>{
 $('#help').onclick=()=>$('#help-dialog').showModal();$('#close-help').onclick=()=>$('#help-dialog').close();$('#close-detail').onclick=()=>$('#detail').close();
 $('#close-fig').addEventListener('click',()=>$('#figbox').close());
 for(const id of ['#detail','#figbox','#help-dialog'])$(id).addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();if(e.target===e.currentTarget&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))e.currentTarget.close()});
-async function init(){try{const r=await fetch('papers.json');if(!r.ok)throw Error();state.papers=(await r.json()).sort((a,b)=>(b.published_date||String(b.year)).localeCompare(a.published_date||String(a.year))||a.label.localeCompare(b.label));for(const p of state.papers){byId.set(p.id,p);if(p.doi)dois.add(doiKey(p.doi))}const h=decodeURIComponent(location.hash.slice(1));if(PAGE_VIEWS.includes(h))state.view=h;fillSelects();render();if(h&&find(h))details(h);if(state.view==='latest'&&!state.feed)refresh()}catch{$('#results').innerHTML='<div class="empty">The library could not load. <button id="retry">Try again</button></div>';$('#retry').onclick=init}}
+// Project lists arrive in the URL fragment, which browsers never send to the server.
+function importLink(){
+ const m=location.hash.match(/^#projects=(.+)/);if(!m)return;
+ history.replaceState(null,'',location.pathname+location.search);
+ try{
+  const incoming=JSON.parse(atob(m[1]));
+  if(!confirm('Add these projects to this browser?\n\n'+Object.keys(incoming).join('\n')))return;
+  state.projects=mergeShelf({projects:state.projects},{projects:incoming}).projects;
+  persist('projects',state.projects);
+ }catch{toast('That project link could not be read.')}
+}
+async function init(){try{const r=await fetch('papers.json');if(!r.ok)throw Error();state.papers=(await r.json()).sort((a,b)=>(b.published_date||String(b.year)).localeCompare(a.published_date||String(a.year))||a.label.localeCompare(b.label));for(const p of state.papers){byId.set(p.id,p);if(p.doi)dois.add(doiKey(p.doi))}importLink();const h=decodeURIComponent(location.hash.slice(1));if(PAGE_VIEWS.includes(h))state.view=h;fillSelects();render();if(h&&find(h))details(h);if(state.view==='latest'&&!state.feed)refresh()}catch{$('#results').innerHTML='<div class="empty">The library could not load. <button id="retry">Try again</button></div>';$('#retry').onclick=init}}
 init();

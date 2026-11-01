@@ -83,9 +83,11 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  w.toBibTeX=toBibTeX;w.toReadingLog=toReadingLog;w.proposeIssueURL=proposeIssueURL;w.exportShelf=exportShelf;w.mergeShelf=mergeShelf;
  w.searchWorks=async({q})=>({papers:[{id:'doi:10.1234/add.1',doi:'10.1234/add.1',label:'Machine learning for a new catalytic ligand',full_title:'Machine learning for a new catalytic ligand',candidate:true,derived_authors:['Test Author'],journal:'JACS',year:2025,published_date:'2025-06-01',url:'https://doi.org/10.1234/add.1',derived_methods:[],derived_topics:[],groups:[]}],fetched_at:'2026-09-06T00:00:00Z',query:q,doi:true});
  w.fetch=async path=>({ok:true,json:async()=>String(path).includes('papers.json')?graph.nodes.filter(p=>p.type==='paper'):{papers:[],fetched_at:'2026-09-06T00:00:00Z'}});
+ w.confirm=()=>true;w.location.hash='#projects='+w.btoa(JSON.stringify({Linked:['paper_aqme_2023']}));
  w.eval((await readFile('src/app.js','utf8')).replace(/^\s*import .*?;\s*/,''));
  await new Promise(r=>setTimeout(r,20));
  const q=s=>w.document.querySelector(s),n=()=>w.document.querySelectorAll('.paper').length;assert.equal(n(),208);
+ assert.ok(q('[data-project="Linked"]'));assert.equal(w.location.hash,'');
  assert.ok(w.document.querySelectorAll('.fig-card').length>=10);
  q('.fig-card').click();assert.equal(q('#figbox').open,true);q('#close-fig').click();
  // Table display, sorted, opens the same sheet.
@@ -100,6 +102,7 @@ test('reading UI: search, filter, details, save, read, compare and discovery fai
  q('button[data-view="library"]').click();q('[data-detail]').click();q('[data-assign="Thesis"]').click();q('#close-detail').click();q('[data-project="Thesis"]').click();assert.equal(n(),1);assert.equal(JSON.parse(w.localStorage.getItem('cml:projects')).Thesis.length,1);w.prompt=()=>'Book';q('[data-rename-project]').click();assert.equal(q('#list-title').textContent,'Book');assert.equal(JSON.parse(w.localStorage.getItem('cml:projects')).Book.length,1);q('button[data-view="library"]').click();
  q('[data-view="board"]').click();assert.ok(q('.heat'));assert.ok(q('.ring'));q('.years [data-year="2025"]').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));assert.equal(q('#year').value,'2025');q('#year').value='';q('[data-view="board"]').click();assert.ok(q('#results').textContent.includes('Open cells'));assert.ok(q('#results').textContent.includes('Stack layer'));
  q('[data-view="library"]').click();assert.equal(n(),208);
+ w.matchMedia=()=>({matches:true});const figRow=q('.fig-card').closest('.paper');figRow.dispatchEvent(new w.MouseEvent('mouseover',{bubbles:true}));await new Promise(r=>setTimeout(r,260));assert.equal(q('#peek').hidden,false);assert.ok(q('#peek img').getAttribute('src').includes('figures/'));w.dispatchEvent(new w.Event('scroll'));assert.equal(q('#peek').hidden,true);
  // Row controls: bookmark queues, the circle finishes and takes it off the queue.
  const first=q('.paper').dataset.id;
  q('.paper .flag').click();assert.equal(q('#saved-count').textContent,'1');assert.ok(w.localStorage.getItem('cml:saved').includes(first));
