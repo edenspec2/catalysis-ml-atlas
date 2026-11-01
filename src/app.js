@@ -231,6 +231,20 @@ function assign(name,id){
  if(!inCorpus(p)&&!state.added[id]){state.added[id]=stampAdded(p);persist('added',state.added)}
  persist('projects',state.projects);render();details(id);
 }
+// Authors weigh least: otherwise prolific groups fill every list.
+const TIES=[['derived_workflows',3],['derived_topics',2],['derived_methods',2],['derived_authors',.5]];
+function similar(p){
+ return state.papers.filter(q=>q.id!==p.id).map(q=>{
+  const why=[];let score=0;
+  for(const [field,weight] of TIES){const hit=(q[field]||[]).filter(x=>(p[field]||[]).includes(x));score+=weight*hit.length;why.push(...hit)}
+  for(const field of ['chemistry_class','representation_class'])if(q[field]&&q[field]===p[field]){score++;why.push(q[field])}
+  return {q,score,why};
+ }).filter(s=>s.score).sort((a,b)=>b.score-a.score||(b.q.year-a.q.year)).slice(0,5);
+}
+function relatedHTML(p){
+ const list=similar(p);
+ return list.length?'<section class="related"><h3>Papers like this</h3>'+list.map(({q,why})=>'<button type="button" data-detail="'+esc(q.id)+'"><span>'+esc(q.full_title||q.label)+'</span><small>'+esc(why.slice(0,3).join(' · '))+'</small></button>').join('')+'</section>':'';
+}
 function details(id){
  const p=find(id);if(!p)return;state.active=id;
  const isNew=p.candidate,read=!!state.read[id],queue=!!state.saved[id]&&!read;
@@ -239,7 +253,7 @@ function details(id){
  const more=isNew?[['Record type',p.paper_type]]:[['Use this when',p.use_for],['Chemistry',p.chemistry||p.chemistry_class],['Stack layer',p.stack_layer],['Representation',p.representation_class],['Data',[p.data_size_bin,p.data_regime].filter(Boolean).join(' · ')],['Validation',[p.validation_type,p.validation].filter(Boolean).join(' · ')],['Methods',(p.derived_methods||[]).join(' · ')],['Authors',(p.derived_authors||[]).join(', ')],['Workflow',(p.derived_workflows||[]).join(' → ')],['Topics',(p.derived_topics||[]).join(' · ')]];
  const dl=rows=>rows.filter(([,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join('');
  const when=readDate(p)?'Read '+day(readDate(p)):read?'Read':'';
- $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p><div class="sheet-actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Open paper ↗</a><div class="seg" role="group" aria-label="Reading status">'+button('data-save',id,'To Read',queue)+button('data-read',id,read?'Read ✓':'Read',read)+'</div><span class="muted">'+esc(when)+'</span></div><label class="note-box"><span>My notes</span><textarea id="paper-note" rows="4" placeholder="What did you take from this paper?">'+esc(state.notes[id]||'')+'</textarea></label>'+projectChips(id)+fig+'<dl>'+dl(main)+'</dl><details class="more"><summary>More about this paper</summary><dl>'+dl(more)+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified')+'</dd></dl><div class="sheet-links">'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library',!!state.added[id]))+(p.doi&&!inCorpus(p)?'<a href="'+esc(proposeIssueURL(p))+'" target="_blank" rel="noopener">Propose for the shared atlas ↗</a>':'')+button('data-compare',id,state.compare.includes(id)?'Remove from Compare':'Add to Compare',state.compare.includes(id))+'</div></details>';
+ $('#detail-body').innerHTML='<h2>'+esc(p.full_title||p.label)+'</h2><p class="muted">'+esc(date(p))+' · '+esc(p.journal)+'</p><div class="sheet-actions"><a class="primary" href="'+esc(url(p.url))+'" target="_blank" rel="noopener">Open paper ↗</a><div class="seg" role="group" aria-label="Reading status">'+button('data-save',id,'To Read',queue)+button('data-read',id,read?'Read ✓':'Read',read)+'</div><span class="muted">'+esc(when)+'</span></div><label class="note-box"><span>My notes</span><textarea id="paper-note" rows="4" placeholder="What did you take from this paper?">'+esc(state.notes[id]||'')+'</textarea></label>'+projectChips(id)+fig+'<dl>'+dl(main)+'</dl>'+relatedHTML(p)+'<details class="more"><summary>More about this paper</summary><dl>'+dl(more)+'<dt>DOI</dt><dd>'+esc(p.doi||'Not verified')+'</dd></dl><div class="sheet-links">'+(inCorpus(p)?'':button('data-add',id,state.added[id]?'Remove from my library':'Add to my library',!!state.added[id]))+(p.doi&&!inCorpus(p)?'<a href="'+esc(proposeIssueURL(p))+'" target="_blank" rel="noopener">Propose for the shared atlas ↗</a>':'')+button('data-compare',id,state.compare.includes(id)?'Remove from Compare':'Add to Compare',state.compare.includes(id))+'</div></details>';
  const wasOpen=$('#detail').open;
  if(!wasOpen){$('#detail').showModal();$('#detail').scrollTop=0}
  $('#paper-note')?.addEventListener('input',e=>{
@@ -298,6 +312,20 @@ function statusChanged(b,id){
 }
 // Hover preview: thumb shows at once as the background, the full figure loads over it.
 let peekTimer,peeked=null;
+// Abstracts are fetched live from OpenAlex and never stored in the repo.
+const abstracts=new Map();
+function abstractOf(doi){
+ if(!abstracts.has(doi))abstracts.set(doi,fetch('https://api.openalex.org/works/doi:'+encodeURIComponent(doi)+'?select=abstract_inverted_index').then(r=>r.ok?r.json():null).then(w=>{
+  const words=[];for(const [word,at] of Object.entries(w?.abstract_inverted_index||{}))for(const i of at)words[i]=word;
+  return words.join(' ').replace(/^High Resolution Image Download MS PowerPoint Slide\s*/,'');
+ }).catch(()=>''));
+ return abstracts.get(doi);
+}
+function placePeek(row,x){
+ const box=$('#peek'),r=row.getBoundingClientRect(),H=box.offsetHeight;
+ box.style.left=Math.max(8,Math.min(innerWidth-448,x+16))+'px';
+ box.style.top=(r.bottom+H+8<innerHeight?r.bottom+6:Math.max(8,r.top-H-6))+'px';
+}
 function hidePeek(){clearTimeout(peekTimer);peeked=null;$('#peek').hidden=true}
 document.addEventListener('mouseover',e=>{
  if(!window.matchMedia?.('(hover: hover)').matches)return;
@@ -305,17 +333,23 @@ document.addEventListener('mouseover',e=>{
  if(row&&row===peeked)return;
  hidePeek();
  const p=row&&find(row.dataset.id||row.dataset.detail);
- if(!p?.figure?.src||p.candidate)return;
+ const hasFig=p?.figure?.src&&!p.candidate;
+ if(!hasFig&&!p?.summary&&!p?.doi)return;
  peeked=row;
  peekTimer=setTimeout(()=>{
-  const box=$('#peek'),img=box.firstChild,r=row.getBoundingClientRect(),W=440,H=360;
+  const box=$('#peek'),img=box.firstChild,text=box.lastChild;
   img.removeAttribute('src');
-  img.style.backgroundImage='url("'+thumb(p.figure.src)+'")';
-  img.src=p.figure.src;
-  box.lastChild.textContent=p.figure.kind==='toc'?'Graphical abstract':p.figure.caption||'Figure 1';
-  box.style.left=Math.max(8,Math.min(innerWidth-W-8,e.clientX+16))+'px';
-  box.style.top=(r.bottom+H+8<innerHeight?r.bottom+6:Math.max(8,r.top-H-6))+'px';
+  box.classList.toggle('text',!hasFig);
+  if(hasFig){
+   img.style.backgroundImage='url("'+thumb(p.figure.src)+'")';
+   img.src=p.figure.src;
+   text.textContent=p.figure.kind==='toc'?'Graphical abstract':p.figure.caption||'Figure 1';
+  }else{
+   text.textContent=p.summary||'';
+   if(p.doi)abstractOf(p.doi).then(a=>{if(a&&peeked===row){text.textContent=a;placePeek(row,e.clientX)}});
+  }
   box.hidden=false;
+  placePeek(row,e.clientX);
  },220);
 });
 addEventListener('scroll',hidePeek,{passive:true});
@@ -335,7 +369,7 @@ document.addEventListener('click',e=>{
  const row=e.target.closest('tr[data-detail],.paper');
  if(row&&!e.target.closest('button,a')){details(row.dataset.detail||row.dataset.id);return}
  const b=e.target.closest('button');if(!b)return;
- if(b.dataset.detail){details(b.dataset.detail);return}
+ if(b.dataset.detail){details(b.dataset.detail);$('#detail').scrollTop=0;return}
  if(b.dataset.assign){assign(b.dataset.assign,state.active);return}
  if(b.dataset.project){state.project=b.dataset.project;state.focus='';setView('library');smooth(()=>{render();window.scrollTo({top:0})});return}
  if(b.dataset.renameProject){
