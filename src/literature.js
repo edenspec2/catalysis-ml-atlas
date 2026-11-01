@@ -32,22 +32,27 @@ export function uniqueWorks(works){
   return true;
  });
 }
+const texts=new WeakMap();
 export function paperText(p){
+ if(!texts.has(p))texts.set(p,joinedText(p));
+ return texts.get(p);
+}
+function joinedText(p){
  return [p.label,p.full_title,p.chemistry,p.chemistry_class,p.paradigm,p.representation_class,p.stack_layer,p.data_size_bin,p.validation_type,p.why,p.summary,p.brief,p.ask_next,p.journal,(p.derived_authors||[]).join(' '),(p.groups||[]).join(' '),(p.derived_methods||[]).join(' '),(p.derived_topics||[]).join(' '),(p.secondary_paradigms||[]).join(' ')].join(' ').toLowerCase();
 }
 function focusMatch(p,focus,text){
  if(!focus)return true;
+ if(focus==='mlip_transfer')return p.research_set==='mlip_transfer';
  if(focus==='milo')return (p.groups||[]).includes('Milo')||(p.derived_authors||[]).some(a=>/anat milo/i.test(a));
  if(focus==='stack')return ['Ground-state conformers','TS search','TS ensembles','Thermochemistry'].includes(p.stack_layer)||/crest|autode|ts-tools|racerts|goodvibes|thermomlip|\bedbo\b/.test(text);
  const re={small:/small.data|sparse|few.shot|low.data|transfer/,representation:/descriptor|representation|conformer|3d|ligand.space|ligand library/,autonomous:/autonom|bayesian|active.learning|self.driving|hte/,mechanism:/mechanis|mlip|interatomic|transition.state/}[focus];
  return !re||re.test(text);
 }
-export function filterPapers(papers,{q='',focus='',year='',unread=false,read={},chemistry='',representation='',stack=''}={}){
+export function filterPapers(papers,{q='',focus='',year='',chemistry='',representation='',stack=''}={}){
  return papers.filter(p=>{
   const text=paperText(p);
   return(!q||text.includes(q.toLowerCase()))
    &&(!year||String(p.year)===String(year))
-   &&(!unread||!read[p.id])
    &&(!chemistry||p.chemistry_class===chemistry)
    &&(!representation||p.representation_class===representation)
    &&(!stack||p.stack_layer===stack)
@@ -156,6 +161,15 @@ export function proposeIssueURL(p={}){
 }
 export function blankProposeURL(){
  return `https://github.com/${ATLAS_REPO}/issues/new?template=propose-paper.yml&labels=paper-proposal`;
+}
+export function toReadingLog(papers,{read={},notes={}}={}){
+ const entry=p=>[
+  '## '+(p.full_title||p.label),
+  [(p.derived_authors||[])[0]&&(p.derived_authors[0]+((p.derived_authors.length>1)?' et al.':'')),p.journal,p.year].filter(Boolean).join(', ')+(p.doi?' · https://doi.org/'+p.doi:''),
+  typeof read[p.id]==='string'?'Read '+read[p.id]:read[p.id]?'Read':'',
+  notes[p.id]||''
+ ].filter(Boolean).join('\n\n');
+ return '# Reading notes\n\n'+papers.map(entry).join('\n\n')+'\n';
 }
 export function exportShelf({saved={},read={},added={},notes={}, now=new Date()}={}){
  return {version:1, exported_at: now.toISOString(), saved, read, added, notes};

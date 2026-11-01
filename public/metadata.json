@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T13:20:53.241Z",
+  "checked_at": "2026-11-01T09:47:37.647Z",
   "records": {
     "paper_kraken_2022": {
       "title": "A Comprehensive Discovery Platform for Organophosphorus Ligands for Catalysis",
@@ -894,6 +894,282 @@
       "published_date": "2026-07-07",
       "doi": "10.1021/acs.orglett.6c02314",
       "source": "https://api.crossref.org/works/10.1021%2Facs.orglett.6c02314"
+    },
+    "paper_bortoli_schlenk_2026": {
+      "title": "The influence of the organic residue and the solvent in the Schlenk equilibrium for Grignard reagents in THF. A molecular dynamics study with machine learning potentials",
+      "published_date": "2026-02",
+      "doi": "10.1016/j.jcat.2025.116619",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.jcat.2025.116619"
+    },
+    "paper_cascella_grignard_2025": {
+      "title": "The fellowship of the Grignard: 21st century computational tools for hundred-year-old chemistry",
+      "published_date": "2025",
+      "doi": "10.1039/d5sc01078k",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5sc01078k"
+    },
+    "paper_degiovanetti_lix_2024": {
+      "title": "Morphology of lithium halides in tetrahydrofuran from molecular dynamics with machine learning potentials",
+      "published_date": "2024",
+      "doi": "10.1039/d4sc04957h",
+      "source": "https://api.crossref.org/works/10.1039%2Fd4sc04957h"
+    },
+    "paper_celerse_dichotomic_2024": {
+      "title": "Capturing Dichotomic Solvent Behavior in Solute–Solvent Reactions with Neural Network Potentials",
+      "published_date": "2024-11-21",
+      "doi": "10.1021/acs.jctc.4c01201",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.4c01201"
+    },
+    "paper_zhang_explicit_solvent_2024": {
+      "title": "Modelling chemical processes in explicit solvents with machine learning potentials",
+      "published_date": "2024-07-20",
+      "doi": "10.1038/s41467-024-50418-6",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41467-024-50418-6"
+    },
+    "paper_holownia_finetuning_2026": {
+      "title": "Data-efficient fine-tuning for reaction modelling in explicit solvent",
+      "published_date": "2026-08-10",
+      "doi": "10.26434/chemrxiv.15007217/v1",
+      "source": "https://api.crossref.org/works/10.26434%2Fchemrxiv.15007217%2Fv1"
+    },
+    "paper_kim_reewc_2025": {
+      "title": "An efficient forgetting-aware fine-tuning framework for pretrained universal machine-learning interatomic potentials",
+      "published_date": "2025-12-17",
+      "doi": "10.1038/s41524-025-01895-w",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41524-025-01895-w"
+    },
+    "paper_radova_frozen_2025": {
+      "title": "Fine-tuning foundation models of materials interatomic potentials with frozen transfer learning",
+      "published_date": "2025-07-18",
+      "doi": "10.1038/s41524-025-01727-x",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41524-025-01727-x"
+    },
+    "paper_ju_electrolytes_2025": {
+      "title": "Application of pretrained universal machine-learning interatomic potential for physicochemical simulation of liquid electrolytes in Li-ion batteries",
+      "published_date": "2025",
+      "doi": "10.1039/d5dd00025d",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5dd00025d"
+    },
+    "paper_cui_multifidelity_2025": {
+      "title": "Multi-fidelity transfer learning for quantum chemical data using a robust density functional tight binding baseline",
+      "published_date": "2025-03-28",
+      "doi": "10.1088/2632-2153/adc222",
+      "source": "https://api.crossref.org/works/10.1088%2F2632-2153%2Fadc222"
+    },
+    "paper_gardner_multifidelity_2026": {
+      "title": "Understanding multi-fidelity training of machine-learned force-fields",
+      "published_date": "2026-08-18",
+      "doi": "10.1088/2632-2153/ae8e2e",
+      "source": "https://api.crossref.org/works/10.1088%2F2632-2153%2Fae8e2e"
+    },
+    "paper_gardner_synthetic_2024": {
+      "title": "Synthetic pre-training for neural-network interatomic potentials",
+      "published_date": "2024-01-10",
+      "doi": "10.1088/2632-2153/ad1626",
+      "source": "https://api.crossref.org/works/10.1088%2F2632-2153%2Fad1626"
+    },
+    "paper_zaverkin_transfer_2023": {
+      "title": "Transfer learning for chemically accurate interatomic neural network potentials",
+      "published_date": "2023",
+      "doi": "10.1039/d2cp05793j",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2cp05793j"
+    },
+    "paper_rocken_elements_2025": {
+      "title": "Enhancing Machine Learning Potentials through Transfer Learning across Chemical Elements",
+      "published_date": "2025-07-07",
+      "doi": "10.1021/acs.jcim.5c00293",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jcim.5c00293"
+    },
+    "paper_huang_crossfunctional_2025": {
+      "title": "Cross-functional transferability in foundation machine learning interatomic potentials",
+      "published_date": "2025-10-21",
+      "doi": "10.1038/s41524-025-01796-y",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41524-025-01796-y"
+    },
+    "paper_hanseroth_finetuning_2026": {
+      "title": "Fine-Tuning Unifies Foundational Machine-Learned Interatomic Potential Architectures at ab initio Accuracy",
+      "published_date": "2026-03-04",
+      "doi": "10.1021/acs.jpclett.5c03801",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jpclett.5c03801"
+    },
+    "paper_ren_finetuning_2026": {
+      "title": "Data-Efficient Machine Learning Potentials for Organic Reactions through Active-Learning-Guided Fine-Tuning",
+      "published_date": "2026-09-23",
+      "doi": "10.26434/chemrxiv.15009333/v1",
+      "source": "https://api.crossref.org/works/10.26434%2Fchemrxiv.15009333%2Fv1"
+    },
+    "paper_deng_softening_2025": {
+      "title": "Systematic softening in universal machine learning interatomic potentials",
+      "published_date": "2025-01-10",
+      "doi": "10.1038/s41524-024-01500-6",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41524-024-01500-6"
+    },
+    "paper_anstine_aimnet2rxn_2026": {
+      "title": "AIMNet2-rxn: A machine-learned potential for generalized reaction modeling on a millions-of-pathways scale",
+      "published_date": "2026-10-09",
+      "doi": "10.1126/sciadv.aea1557",
+      "source": "https://api.crossref.org/works/10.1126%2Fsciadv.aea1557"
+    },
+    "paper_kalikadien_uma_2026": {
+      "title": "Performance of Meta’s Universal Model for Atoms across the Conformational and Configurational Space of Diverse Transition-Metal Catalysts",
+      "published_date": "2026-02-18",
+      "doi": "10.1021/acs.jpca.5c07061",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jpca.5c07061"
+    },
+    "paper_nayal_ncis_2026": {
+      "title": "Benchmarking Universal Machine-learned Interatomic Potentials for Intermolecular and Noncovalent Interactions",
+      "published_date": "2026-02-18",
+      "doi": "10.26434/chemrxiv.15000203/v1",
+      "source": "https://api.crossref.org/works/10.26434%2Fchemrxiv.15000203%2Fv1"
+    },
+    "paper_schwalbekoda_information_2025": {
+      "title": "Model-free estimation of completeness, uncertainties, and outliers in atomistic machine learning using information theory",
+      "published_date": "2025-04-29",
+      "doi": "10.1038/s41467-025-59232-0",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41467-025-59232-0"
+    },
+    "paper_chorna_latent_2026": {
+      "title": "Comparing the Latent Features of Universal Machine‐Learning Interatomic Potentials",
+      "published_date": "2026-03-22",
+      "doi": "10.1002/aisy.202501497",
+      "source": "https://api.crossref.org/works/10.1002%2Faisy.202501497"
+    },
+    "paper_kreiman_shifts_2026": {
+      "title": "Understanding and mitigating distribution shifts for universal machine learning interatomic potentials",
+      "published_date": "2026",
+      "doi": "10.1039/d5dd00260e",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5dd00260e"
+    },
+    "paper_harabuchi_networks_2026": {
+      "title": "Predicting Enantioselectivity via Kinetic Simulations on Gigantic Reaction Path Networks",
+      "published_date": "2026-03-30",
+      "doi": "10.1021/acscentsci.6c00079",
+      "source": "https://api.crossref.org/works/10.1021%2Facscentsci.6c00079"
+    },
+    "paper_staub_passerini_2025": {
+      "title": "An Accurate and Efficient Reaction Path Search with Iteratively Trained Neural Network Potential: Answering the Passerini Mechanism Controversy",
+      "published_date": "2025-12-26",
+      "doi": "10.1021/acs.jctc.5c01293",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.5c01293"
+    },
+    "paper_das_uma_2026": {
+      "title": "Universal Model for Atoms (UMA) in Computational Asymmetric Catalysis: Comparing Enantioselectivity Predictions",
+      "published_date": "2026-09-24",
+      "doi": "10.26434/chemrxiv.15009465/v1",
+      "source": "https://api.crossref.org/works/10.26434%2Fchemrxiv.15009465%2Fv1"
+    },
+    "paper_manoj_select50_2026": {
+      "title": "Accelerating Mechanistic Understanding and Prediction of Chemical Selectivity with Foundation Machine-Learned Interatomic Potentials",
+      "published_date": "2026-10-22",
+      "doi": "10.26434/chemrxiv.15010828/v1",
+      "source": "https://api.crossref.org/works/10.26434%2Fchemrxiv.15010828%2Fv1"
+    },
+    "paper_wang_diels_alderase_2026": {
+      "title": "Multiscale machine learning molecular mechanics for mechanism and stereoselectivity of Diels-Alderase catalysis",
+      "published_date": "2026-05-13",
+      "doi": "10.1038/s41467-026-72904-9",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41467-026-72904-9"
+    },
+    "paper_casetti_cyclization_2025": {
+      "title": "Anticipating the Selectivity of Intramolecular Cyclization Reaction Pathways with Neural Network Potentials",
+      "published_date": "2025-10-09",
+      "doi": "10.1021/acs.jctc.5c01161",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.5c01161"
+    },
+    "paper_laplaza_marc_2024": {
+      "title": "Overcoming the Pitfalls of Computing Reaction Selectivity from Ensembles of Transition States",
+      "published_date": "2024-07-11",
+      "doi": "10.1021/acs.jpclett.4c01657",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jpclett.4c01657"
+    },
+    "paper_harden_induced_fit_2022": {
+      "title": "An induced-fit model for asymmetric organocatalytic reactions: a case study of the activation of olefins via chiral Brønsted acid catalysts",
+      "published_date": "2022",
+      "doi": "10.1039/d2sc02274e",
+      "source": "https://api.crossref.org/works/10.1039%2Fd2sc02274e"
+    },
+    "paper_umemiya_cpa_screening_2026": {
+      "title": "DFT Calculation-Assisted Virtual Screening to Refine Chiral Phosphoric Acid-Catalyzed Allylboration Enabling Organocatalytic Synthesis of Tetrafibricin C21–C40 Fragment",
+      "published_date": "2026-04-21",
+      "doi": "10.1021/jacsau.6c00180",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacsau.6c00180"
+    },
+    "paper_ren_deepestos_2026": {
+      "title": "Reactive machine learning potential for accelerating transition state search in organic synthesis",
+      "published_date": "2026-05-08",
+      "doi": "10.1038/s41467-026-72945-0",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41467-026-72945-0"
+    },
+    "paper_darouich_generative_ts_2026": {
+      "title": "Robust generative transition-state models for unseen chemistry",
+      "published_date": "2026-08-12",
+      "doi": "10.1038/s43588-026-01034-5",
+      "source": "https://api.crossref.org/works/10.1038%2Fs43588-026-01034-5"
+    },
+    "paper_galustian_goflow_2025": {
+      "title": "GoFlow: efficient transition state geometry prediction with flow matching and E(3)-equivariant neural networks",
+      "published_date": "2025",
+      "doi": "10.1039/d5dd00283d",
+      "source": "https://api.crossref.org/works/10.1039%2Fd5dd00283d"
+    },
+    "paper_desouza_goat_2025": {
+      "title": "GOAT: A Global Optimization Algorithm for Molecules and Atomic Clusters",
+      "published_date": "2025-03-17",
+      "doi": "10.1002/anie.202500393",
+      "source": "https://api.crossref.org/works/10.1002%2Fanie.202500393"
+    },
+    "paper_spicher_sph_2021": {
+      "title": "Single-Point Hessian Calculations for Improved Vibrational Frequencies and Rigid-Rotor-Harmonic-Oscillator Thermodynamics",
+      "published_date": "2021-02-08",
+      "doi": "10.1021/acs.jctc.0c01306",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jctc.0c01306"
+    },
+    "paper_wang_azetidines_2015": {
+      "title": "Catalytic Enantioselective Intermolecular Desymmetrization of Azetidines",
+      "published_date": "2015-05-04",
+      "doi": "10.1021/jacs.5b03083",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.5b03083"
+    },
+    "paper_champagne_azetidine_2021": {
+      "title": "Identifying the true origins of selectivity in chiral phosphoric acid catalyzed N -acyl-azetidine desymmetrizations",
+      "published_date": "2021",
+      "doi": "10.1039/d1sc04969k",
+      "source": "https://api.crossref.org/works/10.1039%2Fd1sc04969k"
+    },
+    "paper_reid_steric_model_2017": {
+      "title": "Selecting Chiral BINOL‐Derived Phosphoric Acid Catalysts: General Model To Identify Steric Features Essential for Enantioselectivity",
+      "published_date": "2017-09-14",
+      "doi": "10.1002/chem.201702019",
+      "source": "https://api.crossref.org/works/10.1002%2Fchem.201702019"
+    },
+    "paper_reid_holistic_2019": {
+      "title": "Holistic prediction of enantioselectivity in asymmetric catalysis",
+      "published_date": "2019-07-17",
+      "doi": "10.1038/s41586-019-1384-z",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41586-019-1384-z"
+    },
+    "paper_zahrt_higher_selectivity_2019": {
+      "title": "Prediction of higher-selectivity catalysts by computer-driven workflow and machine learning",
+      "published_date": "2019-01-18",
+      "doi": "10.1126/science.aau5631",
+      "source": "https://api.crossref.org/works/10.1126%2Fscience.aau5631"
+    },
+    "paper_liles_cpa_design_2023": {
+      "title": "Data science enables the development of a new class of chiral phosphoric acid catalysts",
+      "published_date": "2023-06",
+      "doi": "10.1016/j.chempr.2023.02.020",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.chempr.2023.02.020"
+    },
+    "paper_smith_buried_volume_2026": {
+      "title": "Stereoselective Generalizations over Diverse Sets of Chiral Acids Enabled by Buried Volume",
+      "published_date": "2026-01-06",
+      "doi": "10.1021/jacs.5c20342",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.5c20342"
+    },
+    "paper_smith_complementarity_2026": {
+      "title": "Abstracting Complementarity for the Design of Stereoselective Acid Catalysts",
+      "published_date": "2026-09-09",
+      "doi": "10.1021/jacs.6c13855",
+      "source": "https://api.crossref.org/works/10.1021%2Fjacs.6c13855"
     }
   },
   "failures": []

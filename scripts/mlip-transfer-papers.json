@@ -1,0 +1,2445 @@
+[
+ {
+  "id": "paper_bortoli_schlenk_2026",
+  "label": "Schlenk equilibrium of Grignard reagents in THF",
+  "full_title": "The influence of the organic residue and the solvent in the Schlenk equilibrium for Grignard reagents in THF. A molecular dynamics study with machine learning potentials",
+  "year": 2026,
+  "published_date": "2026-02",
+  "journal": "J Catal",
+  "doi": "10.1016/j.jcat.2025.116619",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Marco Bortoli",
+   "Sigbjørn Løland Bore",
+   "Odile Eisenstein",
+   "Michele Cascella"
+  ],
+  "derived_topics": [
+   "Grignard reagents",
+   "Schlenk equilibrium",
+   "explicit solvation"
+  ],
+  "derived_methods": [
+   "DeePMD",
+   "enhanced sampling",
+   "PBE-D3 reference data"
+  ],
+  "derived_workflows": [
+   "ab initio data to machine learning potential to Helmholtz energy maps"
+  ],
+  "chemistry": "Alkyl Grignard reagents (R = Me, Et, i-Pr, t-Bu) with fully solvated dinuclear species in THF.",
+  "data_regime": "DeePMD potential trained on PBE-D3 energies and forces, with active learning used to grow the training set.",
+  "validation": "The rise in ligand exchange barrier with R size agrees with experimental data. Equilibrium results are set against the limited experimental data available.",
+  "why": "The study shows how the alkyl group and magnesium solvation together shape the Schlenk exchange. It treats R groups of different size with explicit THF in one protocol.",
+  "summary": "Enhanced sampling on a trained potential gives Helmholtz energy maps for the Schlenk exchange of four alkyl Grignard reagents in THF. Bulky R groups disfavour higher Mg solvation and raise the exchange barrier. The main Cl/R exchange routes run through monochloro-bridged species.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Cascella"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_cascella_grignard_2025",
+  "label": "Computational tools for Grignard chemistry",
+  "full_title": "The fellowship of the Grignard: 21st century computational tools for hundred-year-old chemistry",
+  "year": 2025,
+  "published_date": "2025-04-11",
+  "journal": "Chem Sci",
+  "doi": "10.1039/d5sc01078k",
+  "paper_type": "review",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Michele Cascella",
+   "Sigbjørn Løland Bore",
+   "Odile Eisenstein"
+  ],
+  "derived_topics": [
+   "Grignard reaction",
+   "solvent effects",
+   "ab initio molecular dynamics"
+  ],
+  "derived_methods": [
+   "ab initio molecular dynamics",
+   "machine learning potentials"
+  ],
+  "derived_workflows": [
+   "literature perspective on solute and solvent treated together"
+  ],
+  "chemistry": "The Grignard reaction and other solvent-sensitive Group I and II species.",
+  "data_regime": "Perspective on published work.",
+  "validation": "Not stated in the abstract",
+  "why": "This perspective traces the history of the Grignard reaction and argues for treating solute and solvent together. It names the cost of ab initio molecular dynamics as a limit and points to data-driven methods as a way forward.",
+  "summary": "A perspective that runs from the discovery of the Grignard reaction to current computational work. It says that solvent-sensitive species need a joint treatment of solute and solvent. Machine learning potentials are presented as a route past the cost limits of ab initio dynamics.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Cascella",
+   "Eisenstein"
+  ],
+  "stack_layer": "Overview"
+ },
+ {
+  "id": "paper_degiovanetti_lix_2024",
+  "label": "Lithium halide morphology in THF",
+  "full_title": "Morphology of lithium halides in tetrahydrofuran from molecular dynamics with machine learning potentials",
+  "year": 2024,
+  "published_date": "2024-11-12",
+  "journal": "Chem Sci",
+  "doi": "10.1039/d4sc04957h",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Marinella de Giovanetti",
+   "Sondre Hilmar Hopen Eliasson",
+   "Sigbjørn Løland Bore",
+   "Odile Eisenstein",
+   "Michele Cascella"
+  ],
+  "derived_topics": [
+   "lithium halides",
+   "solution speciation",
+   "turbo Grignard context"
+  ],
+  "derived_methods": [
+   "machine learning potential",
+   "molecular dynamics",
+   "free energy sampling"
+  ],
+  "derived_workflows": [
+   "ab initio data to machine learning potential to free energy surfaces"
+  ],
+  "chemistry": "LiCl, LiBr and LiI aggregates in tetrahydrofuran, with four LiX units and larger LiCl aggregates.",
+  "data_regime": "Machine learning potential trained on ab initio molecular dynamics data for LiX in THF.",
+  "validation": "For LiCl the potential follows the AIMD free energy profile over 25 ps. Deviations in the checked profiles mostly stay within AIMD uncertainty, and LiCl results are reported to agree with available experimental structures.",
+  "why": "The study describes LiX in THF as a diverse ensemble rather than one structure. It addresses solution structures that the authors note are hard to observe experimentally.",
+  "summary": "A machine learning potential explores the conformational landscape of lithium halides in THF. Many scaffolds lie at thermally accessible free energies for all three halides. LiCl prefers compact pseudo-cubane forms, LiBr favours less compact and more solvated aggregates, and LiI gives highly solvated small or linear species.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Cascella"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_celerse_dichotomic_2024",
+  "label": "Solvent dichotomy with neural network potentials",
+  "full_title": "Capturing Dichotomic Solvent Behavior in Solute–Solvent Reactions with Neural Network Potentials",
+  "year": 2024,
+  "published_date": "2024-11-21",
+  "journal": "JCTC",
+  "doi": "10.1021/acs.jctc.4c01201",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Frédéric Célerse",
+   "Veronika Juraskova",
+   "Shubhajit Das",
+   "Matthew D. Wodrich",
+   "Clemence Corminboeuf"
+  ],
+  "derived_topics": [
+   "reactions in explicit solvent",
+   "transfer learning across functionals",
+   "transition state ensembles"
+  ],
+  "derived_methods": [
+   "DeepPot-SE",
+   "active learning",
+   "transfer learning",
+   "well-tempered metadynamics"
+  ],
+  "derived_workflows": [
+   "PBE-D3(BJ) potentials transferred to PBE0-D3(BJ) for free energy surfaces"
+  ],
+  "chemistry": "Ring opening of N-enoxyphthalimide, observed in methanol but not in 2,2,2-trifluoroethanol.",
+  "data_regime": "PBE-D3(BJ) databases of 6,483 structures (methanol, 931 atoms each) and 19,744 structures (TFE, 814 atoms each), then transfer to hybrid DFT labels.",
+  "validation": "Free energy barriers agree with the experimental reactivity in the two solvents. Transfer-learned and reference models were compared on a test set of 200 diverse structures along the path.",
+  "why": "The study reaches hybrid DFT barriers in solution through active and transfer learning. It attributes the solvent difference to nucleophilicity and to conformational entropy in methanol, not to a change in the hydrogen bonding network.",
+  "summary": "A workflow trains neural network potentials at hybrid DFT level by transfer from GGA data and samples the transition state region with metadynamics. Barriers come from an ensemble of transition states with up to five solvent molecules. Hydrogen bonding patterns differ little between methanol and TFE.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Corminboeuf"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_zhang_explicit_solvent_2024",
+  "label": "Chemical processes in explicit solvent with MLPs",
+  "full_title": "Modelling chemical processes in explicit solvents with machine learning potentials",
+  "year": 2024,
+  "published_date": "2024-07-20",
+  "journal": "Nat Commun",
+  "doi": "10.1038/s41467-024-50418-6",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Hanwen Zhang",
+   "Veronika Juraskova",
+   "Fernanda Duarte"
+  ],
+  "derived_topics": [
+   "reactions in explicit solvent",
+   "active learning",
+   "data-efficient training sets"
+  ],
+  "derived_methods": [
+   "Atomic Cluster Expansion",
+   "active learning",
+   "SOAP-based selectors"
+  ],
+  "derived_workflows": [
+   "automated active learning to reactive potentials to free energy surfaces"
+  ],
+  "chemistry": "Diels-Alder reaction of cyclopentadiene and methyl vinyl ketone in water and methanol.",
+  "data_regime": "Active learning data sets built with descriptor-based selectors. Selectors were first evaluated on bulk water.",
+  "validation": "Computed reaction rates agree with experimental data, per the authors.",
+  "why": "The paper gives a general route to reactive potentials for reactions in solution. It reports that descriptor-based selectors use fewer configurations than an energy selector for comparable accuracy.",
+  "summary": "A general strategy builds reactive machine learning potentials for solution chemistry using active learning with descriptor-based selectors. It is applied to a Diels-Alder reaction in water and methanol. The potentials give rates that match experiment and show how each solvent influences the mechanism.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Duarte"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_holownia_finetuning_2026",
+  "label": "Fine-tuning for reactions in explicit solvent",
+  "full_title": "Data-efficient fine-tuning for reaction modelling in explicit solvent",
+  "year": 2026,
+  "published_date": "2026-08-10",
+  "journal": "ChemRxiv",
+  "doi": "10.26434/chemrxiv.15007217/v1",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Josef Holownia",
+   "Veronika Juraskova",
+   "Volker L. Deringer",
+   "Fernanda Duarte"
+  ],
+  "derived_topics": [
+   "fine-tuning",
+   "reactions in explicit solvent",
+   "pre-training bias"
+  ],
+  "derived_methods": [
+   "MACE",
+   "naive fine-tuning",
+   "umbrella sampling"
+  ],
+  "derived_workflows": [
+   "fine-tune a pre-trained potential on vacuum and solvated clusters near the TS"
+  ],
+  "chemistry": "Three Diels-Alder reactions of increasing complexity in explicit solvent.",
+  "data_regime": "Fine-tuning sets of 50 or fewer vacuum and solvated cluster samples, starting from GO-MACE-23, MACE-OFF-23, MACE-MP0 and MACE-OMOL.",
+  "validation": "Fine-tuned models are assessed on barrier heights, TS geometries and dynamics in solvent.",
+  "why": "The preprint gives a systematic analysis of how fine-tuning data affect reaction modelling in solution. It identifies level of theory differences and limited non-equilibrium coverage in pre-training data as factors in performance.",
+  "summary": "Pre-trained MACE models from different domains are fine-tuned on small sets of vacuum and solvated clusters for three Diels-Alder reactions. Fifty or fewer samples are reported to be enough for barriers, geometries and dynamics. MACE-OMOL gains less from fine-tuning, and its size limits long dynamics.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Duarte",
+   "Deringer"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_tompa_finetuning_2026",
+  "label": "Fine-tuning strategies for MLIP foundation models",
+  "full_title": "Fine-tuning MLIP foundation models: strategies for accuracy and transferability",
+  "year": 2026,
+  "published_date": "2026-06-10",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2606.12704",
+  "paper_type": "benchmark",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Tamás Lajos Tompa",
+   "Eszter Varga-Umbrich",
+   "Ilyes Batatia",
+   "Alin M. Elena",
+   "Noam Bernstein",
+   "Gábor Csányi"
+  ],
+  "derived_topics": [
+   "fine-tuning strategies",
+   "out-of-distribution robustness",
+   "atomic reference energies"
+  ],
+  "derived_methods": [
+   "MACE",
+   "LoRA",
+   "multihead replay",
+   "pseudolabelled replay"
+  ],
+  "derived_workflows": [
+   "compare fine-tuning strategies across benchmarks and foundation models"
+  ],
+  "chemistry": "Aqueous NaCl, ice polymorphs, SN2 reactions, SPICE biomolecules and lithium electrolytes.",
+  "data_regime": "Seven strategies, three generations of foundation models, and training sets across five orders of magnitude.",
+  "validation": "Strategies are compared on target accuracy, forgetting of pretraining domains and molecular dynamics behaviour. Results are set against models trained from scratch.",
+  "why": "The paper offers practical guidance on when and how to fine-tune. It reports that foundation quality, E0 setup and hyperparameters often outweigh the choice of strategy.",
+  "summary": "Seven fine-tuning strategies are compared across five chemically diverse benchmarks in the MACE code. Once the prerequisites are met, most strategies beat training from scratch on the target. Naive fine-tuning suits single systems, and multihead replay was the only tested route that kept out-of-distribution robustness.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Csányi"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_kim_reewc_2025",
+  "label": "reEWC: forgetting-aware fine-tuning",
+  "full_title": "An efficient forgetting-aware fine-tuning framework for pretrained universal machine-learning interatomic potentials",
+  "year": 2025,
+  "published_date": "2025-12-17",
+  "journal": "npj Comput Mater",
+  "doi": "10.1038/s41524-025-01895-w",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Jisu Kim",
+   "Jiho Lee",
+   "Sangmin Oh",
+   "Yutack Park",
+   "Seungwoo Hwang",
+   "Seungwu Han",
+   "Sungwoo Kang",
+   "Youngho Kang"
+  ],
+  "derived_topics": [
+   "fine-tuning",
+   "catastrophic forgetting",
+   "solid-state electrolytes"
+  ],
+  "derived_methods": [
+   "SevenNet-0",
+   "Experience Replay",
+   "Elastic Weight Consolidation"
+  ],
+  "derived_workflows": [
+   "fine-tune on one target while retaining pretrained generality"
+  ],
+  "chemistry": "Li6PS5Cl as the fine-tuning target, with tests on other sulfide, oxide, nitride and halide electrolytes.",
+  "data_regime": "Fine-tuning set for one target material, plus a replay set sampled as 10% of the MPtrj data.",
+  "validation": "Energy and force errors and dynamics are compared for vanilla, Replay, EWC and reEWC methods, including molecular dynamics of Li solid electrolytes.",
+  "why": "The paper proposes a method that combines replay and weight regularisation to limit forgetting during fine-tuning. It reports benefits over either component alone.",
+  "summary": "reEWC combines Experience Replay and Elastic Weight Consolidation for fine-tuning a pretrained universal potential. Tuned on Li6PS5Cl, it addresses potential energy surface softening and overestimated Li diffusivity. Generality is retained, with transfer to chemically distinct electrolytes.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Kang"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_radova_frozen_2025",
+  "label": "Frozen transfer learning for foundation models",
+  "full_title": "Fine-tuning foundation models of materials interatomic potentials with frozen transfer learning",
+  "year": 2025,
+  "published_date": "2025-07-18",
+  "journal": "npj Comput Mater",
+  "doi": "10.1038/s41524-025-01727-x",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Mariia Radova",
+   "Wojciech G. Stark",
+   "Connor S. Allen",
+   "Reinhard J. Maurer",
+   "Albert P. Bartók"
+  ],
+  "derived_topics": [
+   "transfer learning",
+   "frozen layers",
+   "surrogate models"
+  ],
+  "derived_methods": [
+   "MACE-MP",
+   "frozen transfer learning",
+   "surrogate model training"
+  ],
+  "derived_workflows": [
+   "fine-tune with frozen layers, then train a faster surrogate on the result"
+  ],
+  "chemistry": "Reactive hydrogen chemistry on copper surfaces, and stability and elastic properties of Ti-Al-V alloys.",
+  "data_regime": "Hundreds of datapoints, or 10-20% of the data, against thousands for models trained from scratch.",
+  "validation": "Accuracy is compared with from-scratch models on energies, forces and virial stress, plus elastic and vibrational properties, with DFT as reference.",
+  "why": "The paper shows that partial freezing can bring foundation models to chemical accuracy with little data. It adds a surrogate step for computational efficiency.",
+  "summary": "Foundation potentials are fine-tuned by transfer learning with some layers frozen. With 10-20% of the data, the models match the accuracy of from-scratch training on two data sets. An equally accurate and faster surrogate is then trained using the transfer-learned potential as ground truth.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Bartók"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_ju_electrolytes_2025",
+  "label": "SevenNet-0 for liquid electrolytes",
+  "full_title": "Application of pretrained universal machine-learning interatomic potential for physicochemical simulation of liquid electrolytes in Li-ion batteries",
+  "year": 2025,
+  "published_date": "2025",
+  "journal": "Digital Discovery",
+  "doi": "10.1039/d5dd00025d",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Suyeon Ju",
+   "Jinmu You",
+   "Gijin Kim",
+   "Yutack Park",
+   "Hyungmin An",
+   "Seungwu Han"
+  ],
+  "derived_topics": [
+   "liquid electrolytes",
+   "out-of-distribution transfer",
+   "fine-tuning"
+  ],
+  "derived_methods": [
+   "SevenNet-0",
+   "fine-tuning",
+   "latent space analysis"
+  ],
+  "derived_workflows": [
+   "apply a pretrained universal potential, then fine-tune on one solvent"
+  ],
+  "chemistry": "Liquid electrolytes for Li-ion batteries, with 20 solvents.",
+  "data_regime": "Model pretrained on inorganic data. The fine-tuning set has 150 structures of DMC solvent.",
+  "validation": "Solvation structures, diffusivities and density are assessed. Fine-tuning on DMC is reported to improve density and stress predictions.",
+  "why": "The study tests a potential trained on inorganic compounds on an out-of-distribution liquid system. Latent space analysis suggests the model draws on related chemical motifs.",
+  "summary": "SevenNet-0, trained mostly on inorganic compounds, is applied to liquid electrolytes. The authors report sound predictions of solvation structures and diffusivities, with limits on liquid density. Fine-tuning on DMC improves density and stress at small computational cost.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Han"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_cui_multifidelity_2025",
+  "label": "Multi-fidelity transfer with a DFTB baseline",
+  "full_title": "Multi-fidelity transfer learning for quantum chemical data using a robust density functional tight binding baseline",
+  "year": 2025,
+  "published_date": "2025-03-28",
+  "journal": "MLST",
+  "doi": "10.1088/2632-2153/adc222",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Mengnan Cui",
+   "Karsten Reuter",
+   "Johannes T Margraf"
+  ],
+  "derived_topics": [
+   "multi-fidelity learning",
+   "negative transfer",
+   "chemical space overlap"
+  ],
+  "derived_methods": [
+   "transfer learning",
+   "density functional tight binding baseline"
+  ],
+  "derived_workflows": [
+   "pre-train on low-fidelity labels and fine-tune on high-fidelity labels"
+  ],
+  "chemistry": "Molecules and materials.",
+  "data_regime": "Not stated in the abstract",
+  "validation": "Not stated in the abstract",
+  "why": "The study separates the effects of label fidelity from those of configuration and chemical space in pre-training and fine-tuning. It reports negative transfer caused by low-fidelity noise.",
+  "summary": "Transfer learning across multiple fidelities is studied for molecules and materials. Noise from low-fidelity methods can cause negative transfer in fine-tuned models. The multi-fidelity route still outperforms single-fidelity learning, and in some cases foundation model transfer, when chemical spaces overlap well.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Margraf"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_gardner_multifidelity_2026",
+  "label": "Mechanisms of multi-fidelity MLFF training",
+  "full_title": "Understanding multi-fidelity training of machine-learned force-fields",
+  "year": 2026,
+  "published_date": "2026-08-18",
+  "journal": "MLST",
+  "doi": "10.1088/2632-2153/ae8e2e",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "John L A Gardner",
+   "Hannes Schulz",
+   "Jean Hélie",
+   "Lixin Sun",
+   "Gregor N C Simm"
+  ],
+  "derived_topics": [
+   "multi-fidelity training",
+   "pre-training and fine-tuning",
+   "multi-headed models"
+  ],
+  "derived_methods": [
+   "pre-training and fine-tuning",
+   "multi-headed training",
+   "MACE"
+  ],
+  "derived_workflows": [
+   "ablation study of low- to high-fidelity transfer"
+  ],
+  "chemistry": "Small to medium organic molecules from the ANI-1ccx data set.",
+  "data_regime": "ANI-1ccx, about 500k conformations with coupled cluster and DFT labels, plus xTB labels. Up to 100k coupled cluster labels.",
+  "validation": "DFT pre-training cut coupled cluster error by 85% at 1k labels and 50% at 100k labels.",
+  "why": "The paper finds a log-log linear relation between pre-trained and fine-tuned accuracy. It explains the mechanism in terms of method-specific and method-independent representations.",
+  "summary": "Two multi-fidelity strategies for machine-learned force fields are compared. Pre-trained and fine-tuned accuracy follow a log-log linear relation, and the outcome depends on the data and on force labels. Multi-headed models give slightly lower accuracy but scale more easily to several labelling methods.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Simm"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_gardner_synthetic_2024",
+  "label": "Synthetic pre-training for neural potentials",
+  "full_title": "Synthetic pre-training for neural-network interatomic potentials",
+  "year": 2024,
+  "published_date": "2024-01-10",
+  "journal": "MLST",
+  "doi": "10.1088/2632-2153/ad1626",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "John L A Gardner",
+   "Kathryn T Baker",
+   "Volker L Deringer"
+  ],
+  "derived_topics": [
+   "synthetic data",
+   "pre-training",
+   "data efficiency"
+  ],
+  "derived_methods": [
+   "NequIP",
+   "synthetic pre-training",
+   "fine-tuning"
+  ],
+  "derived_workflows": [
+   "pre-train on labels from an existing potential, then fine-tune on DFT"
+  ],
+  "chemistry": "Carbon, with a proof of concept for silicon by alchemical pre-training.",
+  "data_regime": "Large synthetic data set from an existing ML potential, then a smaller DFT set from C-GAP-17.",
+  "validation": "A pre-trained model needs no more than 25 structures to match a model trained directly on 800.",
+  "why": "The paper introduces synthetic atomistic data as a pre-training task for neural potentials. It tests limits of the idea, including the quality of the synthetic source.",
+  "summary": "Neural-network potentials are pre-trained on large synthetic data sets made with an existing ML potential, then fine-tuned on a small quantum-mechanical set. This improves numerical accuracy and stability for carbon. More accurate pre-training labels give larger gains.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Deringer"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_zaverkin_transfer_2023",
+  "label": "Transfer learning for chemically accurate potentials",
+  "full_title": "Transfer learning for chemically accurate interatomic neural network potentials",
+  "year": 2023,
+  "published_date": "2023-02-15",
+  "journal": "PCCP",
+  "doi": "10.1039/d2cp05793j",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Viktor Zaverkin",
+   "David Holzmüller",
+   "Luca Bonfirraro",
+   "Johannes Kästner"
+  ],
+  "derived_topics": [
+   "transfer learning",
+   "coupled cluster labels",
+   "organic molecules"
+  ],
+  "derived_methods": [
+   "GM-NN",
+   "discriminative fine-tuning"
+  ],
+  "derived_workflows": [
+   "pre-train on DFT labels and fine-tune on coupled cluster labels"
+  ],
+  "chemistry": "Organic molecules from the MD17 and ANI data sets.",
+  "data_regime": "ANI-1ccx with 489,571 molecules, and MD17 molecules with coupled cluster labels.",
+  "validation": "For aspirin, 128 fine-tuning structures reach a force error of 1.06 kcal/mol/Å, against 950 structures for 1.01 from scratch.",
+  "why": "The study shows that DFT pre-training raises sample efficiency for higher-level labels. It also examines limits related to the size and design of the pre-training and fine-tuning sets.",
+  "summary": "Discriminative fine-tuning is tested on organic molecules from MD17 and ANI. Pre-training on DFT data improves sample efficiency on more accurate labels. Energy labels alone can give accurate forces with a well-designed fine-tuning set, and pre-trained GM-NN potentials are provided.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Kästner"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_rocken_elements_2025",
+  "label": "Transfer learning across chemical elements",
+  "full_title": "Enhancing Machine Learning Potentials through Transfer Learning across Chemical Elements",
+  "year": 2025,
+  "published_date": "2025-07-07",
+  "journal": "JCIM",
+  "doi": "10.1021/acs.jcim.5c00293",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Sebastien Röcken",
+   "Julija Zavadlav"
+  ],
+  "derived_topics": [
+   "transfer learning",
+   "chemically similar elements",
+   "data-scarce training"
+  ],
+  "derived_methods": [
+   "machine learning potentials",
+   "transfer learning"
+  ],
+  "derived_workflows": [
+   "initialise a germanium potential from a trained silicon potential"
+  ],
+  "chemistry": "Bulk silicon and germanium.",
+  "data_regime": "Stillinger-Weber classical data and a public DFT data set, with germanium training sizes from 1 to 195 samples in the DFT tests.",
+  "validation": "Forces, energies, stability and other properties are compared with training from scratch. Positive and negative transfer outcomes are both reported for other properties.",
+  "why": "The paper introduces transfer of potential energy surfaces between chemically similar elements. It reports advantages that grow as the training set shrinks.",
+  "summary": "A trained silicon potential is used to start the training of a germanium potential. Transfer learning beats training from scratch on forces and gives more stable simulations with better temperature transferability. The gains are larger when less data is available.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Zavadlav"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_huang_crossfunctional_2025",
+  "label": "Cross-functional transfer in foundation potentials",
+  "full_title": "Cross-functional transferability in foundation machine learning interatomic potentials",
+  "year": 2025,
+  "published_date": "2025-10-21",
+  "journal": "npj Comput Mater",
+  "doi": "10.1038/s41524-025-01796-y",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Xu Huang",
+   "Bowen Deng",
+   "Peichen Zhong",
+   "Aaron D. Kaplan",
+   "Kristin A. Persson",
+   "Gerbrand Ceder"
+  ],
+  "derived_topics": [
+   "cross-functional transfer",
+   "elemental energy referencing",
+   "multi-fidelity learning"
+  ],
+  "derived_methods": [
+   "CHGNet",
+   "transfer learning",
+   "r2SCAN labels"
+  ],
+  "derived_workflows": [
+   "pre-train at GGA level and transfer to r2SCAN"
+  ],
+  "chemistry": "Inorganic materials from the MP-r2SCAN data set.",
+  "data_regime": "MP-r2SCAN data set of 0.24 million structures, with pre-training on GGA-level data.",
+  "validation": "Transfer approaches are benchmarked on MP-r2SCAN. The variant with r2SCAN-specific atomic references gave the lowest energy error in the tests.",
+  "why": "The paper analyses why transfer from GGA to r2SCAN is hard within CHGNet. It points to energy scale shifts and weak correlation, and to elemental energy referencing as a remedy.",
+  "summary": "Transfer learning from GGA to r2SCAN labels is analysed within the CHGNet framework. Energy scale shifts and poor correlation between functionals hinder transfer. Elemental energy referencing matters, and transfer still improves data efficiency with sub-million target sets.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Ceder"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_allen_metalearning_2023",
+  "label": "Meta-learning for foundational MLIPs",
+  "full_title": "Learning Together: Towards foundational models for machine learning interatomic potentials with meta-learning",
+  "year": 2023,
+  "published_date": "2023-07-08",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2307.04012",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Alice E. A. Allen",
+   "Nicholas Lubbers",
+   "Sakib Matin",
+   "Justin Smith",
+   "Richard Messerly",
+   "Sergei Tretiak",
+   "Kipton Barros"
+  ],
+  "derived_topics": [
+   "meta-learning",
+   "multiple levels of theory",
+   "pre-training"
+  ],
+  "derived_methods": [
+   "Reptile",
+   "ANI potential"
+  ],
+  "derived_workflows": [
+   "meta-learn across data sets, then refit to a new task"
+  ],
+  "chemistry": "Organic molecule data sets and a small drug-like molecule.",
+  "data_regime": "Multiple data sets at different QM levels, including QM9 with 10,000 structures per level of theory.",
+  "validation": "Refitting to a small drug-like molecule gave lower error and a smoother potential energy surface after meta-learned pre-training.",
+  "why": "The paper shows that meta-learning can fit data at inconsistent levels of theory in one training process. It frames this as a route to pre-trained foundational models.",
+  "summary": "Meta-learning is used to train an interatomic potential on several quantum mechanical levels in one process. The resulting representation retrains easily on new tasks with small data. In a proof of concept, refitting to a drug-like molecule gives reduced error and a smoother surface.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Barros"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_hanseroth_finetuning_2026",
+  "label": "Fine-tuning across MLIP architectures",
+  "full_title": "Fine-Tuning Unifies Foundational Machine-Learned Interatomic Potential Architectures at ab initio Accuracy",
+  "year": 2026,
+  "published_date": "2026-03-04",
+  "journal": "JPCL",
+  "doi": "10.1021/acs.jpclett.5c03801",
+  "paper_type": "benchmark",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Jonas Hänseroth",
+   "Aaron Flötotto",
+   "Muhammad Nawaz Qaisrani",
+   "Christian Dreßler"
+  ],
+  "derived_topics": [
+   "fine-tuning",
+   "architecture comparison",
+   "AIMD-derived data"
+  ],
+  "derived_methods": [
+   "MACE",
+   "GRACE",
+   "SevenNet",
+   "MatterSim"
+  ],
+  "derived_workflows": [
+   "fine-tune foundation models on AIMD frames with one toolkit"
+  ],
+  "chemistry": "Seven chemically diverse systems, including phenol in water and 1H-MoS2.",
+  "data_regime": "2000 equidistantly sampled frames from short ab initio molecular dynamics trajectories.",
+  "validation": "Force errors fall by factors of 5-15 to 0.02-0.07 eV/Å, and energy accuracy improves by 2-4 orders of magnitude.",
+  "why": "The paper benchmarks five frameworks, including ORB, and reports that fine-tuning removes architecture-dependent deviations. It also introduces the aMACEing Toolkit as a shared interface.",
+  "summary": "Five MLIP frameworks are benchmarked before and after fine-tuning on seven systems. Fine-tuning improves force and energy accuracy and makes performance similar across architectures. The aMACEing Toolkit provides a common workflow for this task.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Dreßler"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_ren_finetuning_2026",
+  "label": "Active-learning fine-tuning for organic reactions",
+  "full_title": "Data-Efficient Machine Learning Potentials for Organic Reactions through Active-Learning-Guided Fine-Tuning",
+  "year": 2026,
+  "published_date": "2026-09-23",
+  "journal": "ChemRxiv",
+  "doi": "10.26434/chemrxiv.15009333/v1",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Kaipai Ren",
+   "Yujing Zhao",
+   "Kun Tang",
+   "Juntao Wang",
+   "Guangran Zhang",
+   "Qilei Liu"
+  ],
+  "derived_topics": [
+   "active learning",
+   "fine-tuning",
+   "transition state optimization"
+  ],
+  "derived_methods": [
+   "MACE",
+   "active learning",
+   "fine-tuning"
+  ],
+  "derived_workflows": [
+   "pretrained model plus adaptive labelling of reactive conformations"
+  ],
+  "chemistry": "Diverse organic reactions, including a Ugi reaction network.",
+  "data_regime": "QC labels for about 2% of about 19 million candidate conformations.",
+  "validation": "TS RMSD 0.080 Å and barrier MAE 0.938 kcal/mol across three in-distribution benchmarks. Barrier MAE 1.09 kcal/mol on a Ugi network with structures above 70 atoms.",
+  "why": "The preprint couples pretrained knowledge with adaptive labelling of reactive conformations. It addresses the labelling cost of chemical transferability in reactive potentials.",
+  "summary": "An active-learning-guided fine-tuning strategy gives MACEPre-DeePEST-OS for TS optimization and barrier prediction in organic reactions. Fine-tuning lowers barrier MAE by 58% relative to the pretrained model on an external OrgReact subset. Out-of-distribution tests include structures with more than 70 atoms.",
+  "paradigm": "Transfer / few-shot",
+  "groups": [
+   "Liu"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_ni_anysolv_2026",
+  "label": "AnySolv: implicit solvation for MLIPs",
+  "full_title": "Solvating machine-learning interatomic potentials for solution-phase chemistry",
+  "year": 2026,
+  "published_date": "2026-10-12",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2610.17226",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Anton Z. Ni",
+   "Joonho Lee"
+  ],
+  "derived_topics": [
+   "implicit solvation",
+   "solution-phase chemistry",
+   "transferable solvent descriptors"
+  ],
+  "derived_methods": [
+   "AnySolv",
+   "DFT-SMD labels",
+   "UMA-S-1.2"
+  ],
+  "derived_workflows": [
+   "add solvent-dependent corrections to a gas-phase potential"
+  ],
+  "chemistry": "Solution-phase chemistry, including 120 nucleophilic aromatic substitutions in six phases.",
+  "data_regime": "1.4 million solvation energies and forces from DFT and SMD in 36 solvents, with charged, open-shell and transition-state structures.",
+  "validation": "Reproduces DFT-SMD solvation energies to 2-4 meV MAE on external benchmarks and matches DFT-SMD against experimental solvation free energies.",
+  "why": "The preprint adds solvent-dependent corrections to gas-phase potentials without retraining them. Continuous solvent descriptors let it cover 179 solvents, including some absent from training.",
+  "summary": "AnySolv is a transferable implicit solvation potential that corrects energies and forces of existing gas-phase MLIPs. It is trained on DFT-SMD data in 36 solvents. It supports mechanism screening in six phases and dynamics that reproduce solvent-dependent preferences of alanine dipeptide.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Lee"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_deng_softening_2025",
+  "label": "Systematic softening in universal MLIPs",
+  "full_title": "Systematic softening in universal machine learning interatomic potentials",
+  "year": 2025,
+  "published_date": "2025-01-10",
+  "journal": "npj Comput Mater",
+  "doi": "10.1038/s41524-024-01500-6",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Bowen Deng",
+   "Yunyeong Choi",
+   "Peichen Zhong",
+   "Janosh Riebesell",
+   "Shashwat Anand",
+   "Zhuohan Li",
+   "KyuJung Jun",
+   "Kristin A. Persson",
+   "Gerbrand Ceder"
+  ],
+  "derived_topics": [
+   "potential energy surface softening",
+   "out-of-distribution errors",
+   "pre-training data bias"
+  ],
+  "derived_methods": [
+   "M3GNet",
+   "CHGNet",
+   "MACE-MP-0"
+  ],
+  "derived_workflows": [
+   "benchmark universal potentials on off-equilibrium properties"
+  ],
+  "chemistry": "Materials, including surfaces, defects, solid solutions, ion migration and phonons.",
+  "data_regime": "Atomic-modelling benchmarks on high-energy states. Sizes not stated in the abstract.",
+  "validation": "Energy and force underprediction appears across the benchmarks. No separate validation is stated in the abstract.",
+  "why": "The paper traces a shared softening effect to biased sampling of near-equilibrium structures in pre-training data. It argues that a large fraction of the errors is systematic and so can be corrected.",
+  "summary": "Three universal MLIPs show consistent softening of the potential energy surface, seen as underpredicted energies and forces. The cause is underpredicted curvature, linked to near-equilibrium bias in training data. The authors call for data sets with better sampling of the surface.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Ceder"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_wood_uma_2025",
+  "label": "UMA: Universal Models for Atoms",
+  "full_title": "UMA: A Family of Universal Models for Atoms",
+  "year": 2025,
+  "published_date": "2025-06-30",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2506.23971",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Brandon M. Wood",
+   "Misko Dzamba",
+   "Xiang Fu",
+   "Meng Gao",
+   "Muhammed Shuaibi",
+   "Luis Barroso-Luque",
+   "Kareem Abdelmaqsoud",
+   "Vahe Gharakhanyan",
+   "John R. Kitchin",
+   "Daniel S. Levine",
+   "Kyle Michel",
+   "Anuroop Sriram",
+   "Taco Cohen",
+   "Abhishek Das",
+   "Ammar Rizvi",
+   "Sushree Jagriti Sahoo",
+   "Zachary W. Ulissi",
+   "C. Lawrence Zitnick"
+  ],
+  "derived_topics": [
+   "foundation models",
+   "multi-domain training",
+   "model scaling"
+  ],
+  "derived_methods": [
+   "UMA",
+   "mixture of linear experts",
+   "OMol25 data"
+  ],
+  "derived_workflows": [
+   "train one model across molecules, materials and catalysts"
+  ],
+  "chemistry": "Molecules, materials and catalysts.",
+  "data_regime": "Half a billion unique 3D atomic structures compiled across chemical domains.",
+  "validation": "Evaluated on applications across domains, with held-out test splits including OMol25 out-of-distribution sets. A single model without fine-tuning is reported to perform similarly to or better than specialized models.",
+  "why": "The paper presents a family of foundation models with released code, weights and data. It also develops empirical scaling laws that relate model capacity to data set size.",
+  "summary": "Meta FAIR presents UMA, a family of models trained across molecules, materials and catalysts. A mixture of linear experts raises capacity without losing speed, with UMA-medium at 1.4B parameters and about 50M active per structure. Code, weights and data are released.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Zitnick"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_levine_omol25_2025",
+  "label": "OMol25 data set, evaluations and models",
+  "full_title": "The Open Molecules 2025 (OMol25) Dataset, Evaluations, and Models",
+  "year": 2025,
+  "published_date": "2025-05-13",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2505.08762",
+  "paper_type": "dataset",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Daniel S. Levine",
+   "Muhammed Shuaibi",
+   "Evan Walter Clark Spotte-Smith",
+   "Michael G. Taylor",
+   "Muhammad R. Hasyim",
+   "Kyle Michel",
+   "Ilyes Batatia",
+   "Gábor Csányi",
+   "Misko Dzamba",
+   "Peter Eastman",
+   "Nathan C. Frey",
+   "Xiang Fu",
+   "Vahe Gharakhanyan",
+   "Aditi S. Krishnapriyan",
+   "Joshua A. Rackers",
+   "Sanjeev Raja",
+   "Ammar Rizvi",
+   "Andrew S. Rosen",
+   "Zachary Ulissi",
+   "Santiago Vargas",
+   "C. Lawrence Zitnick",
+   "Samuel M. Blau",
+   "Brandon M. Wood"
+  ],
+  "derived_topics": [
+   "molecular data sets",
+   "foundation models",
+   "chemical coverage"
+  ],
+  "derived_methods": [
+   "ωB97M-V/def2-TZVPD DFT",
+   "baseline MLIP training"
+  ],
+  "derived_workflows": [
+   "public data set with evaluations and baseline models"
+  ],
+  "chemistry": "Small molecules, biomolecules, metal complexes and electrolytes across 83 elements.",
+  "data_regime": "More than 100 million DFT calculations, about 83M unique molecular systems, up to 350 atoms.",
+  "validation": "Baseline models and a set of evaluations are provided, including out-of-distribution test sets. The authors note limited coverage for lanthanide complexes, multimetallic structures and some solvated species.",
+  "why": "OMol25 addresses the lack of a large molecular data set that combines diversity with high accuracy. It includes explicit solvation, variable charge and spin, conformers and reactive structures.",
+  "summary": "Meta FAIR releases OMol25, a molecular data set of over 100 million calculations at the ωB97M-V/def2-TZVPD level. It spans elemental, chemical and structural diversity with systems of up to 350 atoms. Baseline models and evaluations come with the data.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Wood"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_batatia_macepolar_2026",
+  "label": "MACE-POLAR-1 electrostatic foundation model",
+  "full_title": "MACE-POLAR-1: A Polarisable Electrostatic Foundation Model for Molecular Chemistry",
+  "year": 2026,
+  "published_date": "2026-02-23",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2602.19411",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Ilyes Batatia",
+   "William J. Baldwin",
+   "Domantas Kuryla",
+   "Joseph Hart",
+   "Elliott Kasoar",
+   "Alin M. Elena",
+   "Harry Moore",
+   "Mikołaj J. Gawkowski",
+   "Benjamin X. Shi",
+   "Venkat Kapil",
+   "Panagiotis Kourtis",
+   "Ioan-Bogdan Magdău",
+   "Gábor Csányi"
+  ],
+  "derived_topics": [
+   "long-range electrostatics",
+   "polarisation",
+   "foundation models"
+  ],
+  "derived_methods": [
+   "MACE-POLAR-1",
+   "OMol25 data",
+   "charge equilibration"
+  ],
+  "derived_workflows": [
+   "extend a local model with polarisable long-range terms"
+  ],
+  "chemistry": "Molecular chemistry, from small molecules to protein-ligand complexes and transition metal complexes.",
+  "data_regime": "Trained on the OMol25 data set of 100 million hybrid DFT calculations.",
+  "validation": "Benchmarks cover thermochemistry, barriers and conformers. On protein-ligand interactions, MAEs of 3.35-3.68 kcal/mol are reported against 29.9 kcal/mol for MACE-OMOL.",
+  "why": "The paper adds explicit long-range interactions and induction to the MACE architecture. It reports a large gain for non-covalent and supramolecular systems over non-electrostatic models.",
+  "summary": "MACE-POLAR-1 extends MACE with learnable charge and spin densities, polarisable iterations and global charge equilibration. Trained on OMol25, it targets systems of varying charge and spin. It gives sub-kcal/mol formation energies on X23-DMC molecular crystals.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Csányi"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_anstine_aimnet2rxn_2026",
+  "label": "AIMNet2-rxn for general reaction modelling",
+  "full_title": "AIMNet2-rxn: A machine-learned potential for generalized reaction modeling on a millions-of-pathways scale",
+  "year": 2026,
+  "published_date": "2026-10-09",
+  "journal": "Sci Adv",
+  "doi": "10.1126/sciadv.aea1557",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Dylan M. Anstine",
+   "Qiyuan Zhao",
+   "Roman Zubatyuk",
+   "Shuhao Zhang",
+   "Veerupaksh Singla",
+   "Filipp Nikitin",
+   "Brett M. Savoie",
+   "Olexandr Isayev"
+  ],
+  "derived_topics": [
+   "reaction modelling",
+   "high-throughput pathway search",
+   "closed-shell organic chemistry"
+  ],
+  "derived_methods": [
+   "AIMNet2-rxn",
+   "batched nudged elastic band"
+  ],
+  "derived_workflows": [
+   "GPU-batched minimum energy pathway search"
+  ],
+  "chemistry": "Closed-shell reactions of carbon, hydrogen, nitrogen and oxygen.",
+  "data_regime": "About 4.7 million range-separated DFT calculations.",
+  "validation": "1 to 2 kcal/mol accuracy across reaction coordinates on a test suite of known mechanisms, without retraining. Test pathways were withheld from training.",
+  "why": "The paper reports a general MLIP for mechanistic modelling of organic reactions. It introduces a batched nudged elastic band method for searches at a scale of millions of reactions.",
+  "summary": "AIMNet2-rxn is a general potential for closed-shell CHNO reactions, about 10^6 times faster than the reference quantum methods. A batched nudged elastic band procedure allows pathway search on a large scale. An 11-step route to hydroxymethylfurfural from glucose pyrolysis is evaluated as a demonstration.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Isayev"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_kalikadien_uma_2026",
+  "label": "UMA on transition-metal catalyst conformers",
+  "full_title": "Performance of Meta’s Universal Model for Atoms across the Conformational and Configurational Space of Diverse Transition-Metal Catalysts",
+  "year": 2026,
+  "published_date": "2026-02-18",
+  "journal": "JPCA",
+  "doi": "10.1021/acs.jpca.5c07061",
+  "paper_type": "benchmark",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Adarsh V. Kalikadien",
+   "Evgeny A. Pidko"
+  ],
+  "derived_topics": [
+   "foundation model evaluation",
+   "conformer ranking",
+   "transition-metal catalysts"
+  ],
+  "derived_methods": [
+   "UMA",
+   "per-ligand Spearman correlation",
+   "DFT comparison"
+  ],
+  "derived_workflows": [
+   "single-point ranking of catalyst conformers against DFT"
+  ],
+  "chemistry": "Transition-metal complexes: Ni bisphosphine, Ru(II) and Mn(I).",
+  "data_regime": "Two data sets. Data set 1 has conformers of square-planar Ni complexes with 25 bisphosphine ligands.",
+  "validation": "Reliable rankings (ρ > 0.6, p < 0.05) for 84% of ligands in rigid Ni-Cl2 and 53% in flexible Ni complexes, and 61% for Ru(II) and 44% for Mn(I).",
+  "why": "The paper finds that per-ligand rank correlation shows variation that R2 and RMSE do not. Failures sit mainly where conformers differ by small energy gaps.",
+  "summary": "UMA is evaluated on two data sets of transition-metal complexes against DFT. Ranking reliability varies by ligand and falls for flexible or fluxional systems with small energy gaps. The authors advise combining ML speed with validation and domain expertise.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Pidko"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_eastman_benchmarks_2026",
+  "label": "Benchmarks of pretrained ML potentials",
+  "full_title": "Accuracy and Efficiency Benchmarks of Pretrained Machine Learning Potentials for Molecular Simulations",
+  "year": 2026,
+  "published_date": "2026-01-22",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2601.16331",
+  "paper_type": "benchmark",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Peter Eastman",
+   "Evan Pretti",
+   "Thomas E. Markland"
+  ],
+  "derived_topics": [
+   "model benchmarking",
+   "accuracy and speed",
+   "simulation stability"
+  ],
+  "derived_methods": [
+   "UMA",
+   "Orb-v3-omol",
+   "MACE-OMOL",
+   "AIMNet2"
+  ],
+  "derived_workflows": [
+   "benchmark pretrained MLIPs on a shared test set"
+  ],
+  "chemistry": "Molecules and dimers from SPICE, plus water boxes.",
+  "data_regime": "SPICE test set of 800 molecules and dimers with 10 conformations each.",
+  "validation": "15 models are compared on accuracy, speed, memory use and stability. Orb-v3-omol, UMA-m-1.1 and UMA-s-1.1 have MAE below 1 kcal/mol on every subset.",
+  "why": "The paper provides a shared basis for choosing a pretrained MLIP. It finds parameter count and training set size strongly correlated with accuracy, and no benefit from explicit Coulomb terms.",
+  "summary": "Fifteen pretrained MLIPs are benchmarked on accuracy, speed, memory use and stability. Accuracy correlates strongly with parameter count and training set size. Speed and memory depend on architecture as much as on model size.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Markland"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_nayal_ncis_2026",
+  "label": "Universal MLIPs for noncovalent interactions",
+  "full_title": "Benchmarking Universal Machine-learned Interatomic Potentials for Intermolecular and Noncovalent Interactions",
+  "year": 2026,
+  "published_date": "2026-02-18",
+  "journal": "ChemRxiv",
+  "doi": "10.26434/chemrxiv.15000203/v1",
+  "paper_type": "benchmark",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Kamal Singh Nayal",
+   "Ilkwon Cho",
+   "Olexandr Isayev"
+  ],
+  "derived_topics": [
+   "noncovalent interactions",
+   "training-benchmark overlap",
+   "reference level error floors"
+  ],
+  "derived_methods": [
+   "AIMNet2",
+   "MACE-OMol",
+   "UMA-S-OMol"
+  ],
+  "derived_workflows": [
+   "benchmark MLIPs against near-CCSD(T)/CBS references with overlap detection"
+  ],
+  "chemistry": "Hydrogen-bonded, dispersion, sigma-hole, ionic, charge transfer and repulsive interactions.",
+  "data_regime": "Twenty-one data sets with references at or near CCSD(T)/CBS accuracy.",
+  "validation": "Overlap between training and benchmark data was quantified. S12L and L7 show large errors for all models, driven by a few complexes.",
+  "why": "The preprint argues that data provenance and reference theory shape reported benchmark scores. It reports that overlap inflates apparent accuracy, most for models trained on OMol25.",
+  "summary": "Five MLIPs are benchmarked on noncovalent interactions across 21 data sets. AIMNet2(2025) improves on its predecessor. Training data overlap and the training DFT level both influence the reported scores, and sigma-hole sets have the lowest overlap.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Isayev"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_kang_orbitall_2025",
+  "label": "OrbitAll: orbital-based molecular learning",
+  "full_title": "OrbitAll: A Unified Quantum Mechanical Representation Deep Learning Framework for All Molecular Systems",
+  "year": 2025,
+  "published_date": "2025-07-05",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2507.03853",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Beom Seok Kang",
+   "Vignesh C. Bhethanabotla",
+   "Amin Tavakoli",
+   "Maurice D. Hanisch",
+   "Arimitsu Horikawa-Strakovsky",
+   "Miguel Nouman",
+   "Danish Khan",
+   "William A. Goddard",
+   "Anima Anandkumar"
+  ],
+  "derived_topics": [
+   "electronic structure features",
+   "charged and open-shell molecules",
+   "solvent effects"
+  ],
+  "derived_methods": [
+   "OrbitAll",
+   "SE(3)-equivariant graph networks",
+   "spin-polarized orbital features"
+  ],
+  "derived_workflows": [
+   "encode orbital features from a low-cost quantum method in an equivariant network"
+  ],
+  "chemistry": "Charged, open-shell and solvated molecules, including solvent-dependent reaction pathways.",
+  "data_regime": "Chemically diverse data sets, including a 400K QM9star training set and an OMol25 subset.",
+  "validation": "Reported chemical accuracy with 10 times less data than competing models, and 10^3-10^4 speedup over DFT. Comparison with UMA covers highly charged species.",
+  "why": "The paper encodes molecular systems of arbitrary charge, spin and environment through electronic structure information. It also models reactions in implicit solvent.",
+  "summary": "OrbitAll combines spin-polarized orbital features with equivariant graph networks. It is tested on charged, open-shell and solvated molecules and on molecules much larger than the training data. Once solvent effects are learned, it gives solvent-dependent reaction paths at roughly 100 times less cost than UMA simulations in explicit solvent.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Anandkumar"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_schwalbekoda_information_2025",
+  "label": "Model-free information theory for atomistic ML",
+  "full_title": "Model-free estimation of completeness, uncertainties, and outliers in atomistic machine learning using information theory",
+  "year": 2025,
+  "published_date": "2025-04-29",
+  "journal": "Nat Commun",
+  "doi": "10.1038/s41467-025-59232-0",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Daniel Schwalbe-Koda",
+   "Sebastien Hamel",
+   "Babak Sadigh",
+   "Fei Zhou",
+   "Vincenzo Lordi"
+  ],
+  "derived_topics": [
+   "information entropy",
+   "uncertainty quantification",
+   "data set overlap"
+  ],
+  "derived_methods": [
+   "atom-centered descriptors",
+   "information entropy",
+   "model-free UQ"
+  ],
+  "derived_workflows": [
+   "measure data set information and outliers without a trained model"
+  ],
+  "chemistry": "Atomistic simulations and training sets, including molecules and elemental metals.",
+  "data_regime": "Data sets include rMD17, GAP-20 and TM23.",
+  "validation": "Entropy measures are compared with MLIP force errors, and overlap between data sets is related to errors for models tested on warmer TM23 subsets.",
+  "why": "The paper introduces a model-free framework for information content in atomistic simulations. It connects information entropy to training set size, data set optimality and out-of-distribution detection.",
+  "summary": "A theoretical framework quantifies information in atomistic data from distributions of atom-centered environments. Entropy explains known heuristics in potential development. The same tool gives a model-free uncertainty method that detects out-of-distribution samples, including rare events such as nucleation.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Schwalbe-Koda",
+   "Lordi"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_chorna_latent_2026",
+  "label": "Latent features of universal MLIPs compared",
+  "full_title": "Comparing the Latent Features of Universal Machine‐Learning Interatomic Potentials",
+  "year": 2026,
+  "published_date": "2026-03-22",
+  "journal": "Adv Intell Syst",
+  "doi": "10.1002/aisy.202501497",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Sofiia Chorna",
+   "Davide Tisi",
+   "Cesare Malosso",
+   "Wei Bin How",
+   "Michele Ceriotti",
+   "Sanggyu Chong"
+  ],
+  "derived_topics": [
+   "latent features",
+   "feature reconstruction error",
+   "fine-tuning bias"
+  ],
+  "derived_methods": [
+   "MACE-MP-0b3",
+   "PET-MAD",
+   "DPA-3.1",
+   "UMA-S-1P1"
+  ],
+  "derived_workflows": [
+   "compare what universal models encode through feature reconstruction"
+  ],
+  "chemistry": "Universal potentials across materials and molecules.",
+  "data_regime": "Reconstruction errors on 1,000 atomic environments sampled from the MAD data set, with an Alexandria subset as a check.",
+  "validation": "Global and local feature reconstruction errors are computed between models, tasks and fine-tuning strategies.",
+  "why": "The paper measures how differently universal models encode chemical space. It reports substantial cross-model errors and a strong pretraining bias retained after fine-tuning.",
+  "summary": "Latent features of universal MLIPs are compared with feature reconstruction errors. Models encode chemical space in significantly distinct ways, and fine-tuning retains a strong pretraining bias. The authors also show how atom-level features can be compressed into structure-level features using cumulants.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Ceriotti",
+   "Chong"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_kreiman_shifts_2026",
+  "label": "Distribution shifts for universal MLIPs",
+  "full_title": "Understanding and mitigating distribution shifts for universal machine learning interatomic potentials",
+  "year": 2026,
+  "published_date": "2026",
+  "journal": "Digital Discovery",
+  "doi": "10.1039/d5dd00260e",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Tobias Kreiman",
+   "Aditi S. Krishnapriyan"
+  ],
+  "derived_topics": [
+   "distribution shift",
+   "out-of-distribution generalization",
+   "test-time refinement"
+  ],
+  "derived_methods": [
+   "MACE-OFF",
+   "GemNet-T",
+   "test-time training"
+  ],
+  "derived_workflows": [
+   "diagnose shift from training data, then refine at test time"
+  ],
+  "chemistry": "Molecules and materials, including a SPICE to SPICEv2 shift.",
+  "data_regime": "Foundation models tested on new SPICEv2 molecules, MD22 and other shift benchmarks.",
+  "validation": "On the SPICEv2 shift benchmark, force MAE moves from 26.75 to 26.0 meV/Å for MACE-OFF and from 22.9 to 19.9 meV/Å for GemNet-T with refinement.",
+  "why": "The paper identifies shifts in atomic features, force norms and connectivity as causes of degradation. It proposes test-time refinement to reduce them.",
+  "summary": "Common distribution shifts are identified for universal potentials. Test-time refinement strategies are developed to reduce them. The authors suggest that training strategies, along with data and architecture, will matter for generalization.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Krishnapriyan"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_harabuchi_networks_2026",
+  "label": "Kinetic simulation on gigantic reaction networks",
+  "full_title": "Predicting Enantioselectivity via Kinetic Simulations on Gigantic Reaction Path Networks",
+  "year": 2026,
+  "published_date": "2026-03-30",
+  "journal": "ACS Cent Sci",
+  "doi": "10.1021/acscentsci.6c00079",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Yu Harabuchi",
+   "Ruben Staub",
+   "Min Gao",
+   "Nobuya Tsuji",
+   "Benjamin List",
+   "Alexandre Varnek",
+   "Satoshi Maeda"
+  ],
+  "derived_topics": [
+   "asymmetric organocatalysis",
+   "reaction path networks",
+   "kinetic simulation"
+  ],
+  "derived_methods": [
+   "delta-learning NNP",
+   "AFIR",
+   "GFN2-xTB baseline"
+  ],
+  "derived_workflows": [
+   "iterative NNP training, network search, then kinetic simulation"
+  ],
+  "chemistry": "Asymmetric alkene hydroalkoxylation by an imidodiphosphorimidate catalyst, 228 atoms in total.",
+  "data_regime": "System-specific NNP trained iteratively to DFT, with a network of 20,920 equilibrium structures and 48,463 paths.",
+  "validation": "MAE of 1.2 kJ/mol against DFT on 418 EQs and 970 TSs. Computed S:R 99.95:0.05 against experimental 98.5:1.5.",
+  "why": "The study avoids assuming a selectivity-determining step or a Boltzmann distribution of TS conformers. Network analysis shows many competing paths, and low-yield intermediates can play kinetic roles.",
+  "summary": "A delta-learning neural network potential drives AFIR path search for an organocatalyst of over 200 atoms. Kinetic simulation on the network predicts mechanism and enantioselectivity. Asynchronous concerted and stepwise paths are both competitive.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Maeda",
+   "List"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_staub_passerini_2025",
+  "label": "NNP-AFIR reaction path search on Passerini",
+  "full_title": "An Accurate and Efficient Reaction Path Search with Iteratively Trained Neural Network Potential: Answering the Passerini Mechanism Controversy",
+  "year": 2025,
+  "published_date": "2025-12-26",
+  "journal": "JCTC",
+  "doi": "10.1021/acs.jctc.5c01293",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Ruben Staub",
+   "Yu Harabuchi",
+   "Carine Seraphim",
+   "Alexandre Varnek",
+   "Satoshi Maeda"
+  ],
+  "derived_topics": [
+   "automated reaction path search",
+   "iterative training",
+   "Passerini mechanism"
+  ],
+  "derived_methods": [
+   "NNP-AFIR",
+   "SpookyNet",
+   "GFN2-xTB baseline"
+  ],
+  "derived_workflows": [
+   "iterate NNP-powered search, DFT labels and retraining"
+  ],
+  "chemistry": "The Passerini reaction with and without an extra acid molecule, on experimental substrates.",
+  "data_regime": "Specialized NNP trained from less than about 0.1% of the DFT calculations otherwise needed. Networks hold 48,640 equilibrium states and 156,236 paths.",
+  "validation": "About 1.7 kJ/mol MAE relative to DFT, excluding very high energy geometries.",
+  "why": "The paper gives a general iterative training scheme for NNP models that support AFIR search. It estimates about three orders of magnitude acceleration over a full DFT exploration.",
+  "summary": "An iterative scheme trains a specialized neural network potential on the spot to drive AFIR reaction path search. It enables tens of thousands of paths for organic systems above 60 atoms. The Passerini networks are used to discuss the roles of substituents and additional acid molecules.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Maeda"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_das_uma_2026",
+  "label": "UMA for enantioselectivity prediction",
+  "full_title": "Universal Model for Atoms (UMA) in Computational Asymmetric Catalysis: Comparing Enantioselectivity Predictions",
+  "year": 2026,
+  "published_date": "2026-09-24",
+  "journal": "ChemRxiv",
+  "doi": "10.26434/chemrxiv.15009465/v1",
+  "paper_type": "benchmark",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Soumik Das",
+   "Cyndi Qixin He",
+   "Yu-hong Lam"
+  ],
+  "derived_topics": [
+   "enantioselectivity",
+   "foundation model evaluation",
+   "conformational ensembles"
+  ],
+  "derived_methods": [
+   "UMA",
+   "conformational ensemble averaging"
+  ],
+  "derived_workflows": [
+   "direct modelling of diastereomeric transition states"
+  ],
+  "chemistry": "Two organocatalytic and two metal-catalyzed transformations.",
+  "data_regime": "Not stated in the abstract",
+  "validation": "Experimental selectivity trends reproduced with accuracy within 1-2 kcal/mol.",
+  "why": "The preprint tests a foundation model for enantioselectivity by direct modelling of diastereomeric transition states. The authors also describe its current scope and limitations.",
+  "summary": "UMA is evaluated for enantioselectivity through conformational ensemble averaging of diastereomeric transition states. It reproduces experimental trends within 1-2 kcal/mol across four transformations. Structural features governing stereoinduction are identified.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Lam"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_manoj_select50_2026",
+  "label": "SELECT50 and foundation MLIPs for selectivity",
+  "full_title": "Accelerating Mechanistic Understanding and Prediction of Chemical Selectivity with Foundation Machine-Learned Interatomic Potentials",
+  "year": 2026,
+  "published_date": "2026-10-22",
+  "journal": "ChemRxiv",
+  "doi": "10.26434/chemrxiv.15010828/v1",
+  "paper_type": "benchmark",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Niket Manoj",
+   "Austin Pounder",
+   "Niko Ahmed",
+   "Abhijeet S. Bhadauria",
+   "Robert S. Paton"
+  ],
+  "derived_topics": [
+   "selectivity prediction",
+   "transition state benchmarks",
+   "DFT//MLIP workflows"
+  ],
+  "derived_methods": [
+   "UMA-M-1.1",
+   "UMA-S-1.2",
+   "ωB97M-V reference"
+  ],
+  "derived_workflows": [
+   "DFT single points on MLIP transition states"
+  ],
+  "chemistry": "Stereo-, chemo- and regioselective organic and organometallic reactions, with Ni and Pd reaction families.",
+  "data_regime": "SELECT50, a collection of paired selectivity-determining transition states. Assemblies of up to 211 atoms were also treated.",
+  "validation": "Relative TS energy MAE of 0.36 and 0.44 kcal/mol, reduced to 0.25 with DFT single points. Experimental tracking R2 0.87-0.90, ρ 0.80.",
+  "why": "The preprint introduces a data set of paired transition states and compares four MLIPs with semiempirical and low-cost quantum methods. The authors position these models for the exploration and screening stages of DFT analyses.",
+  "summary": "SELECT50 is used to assess foundation MLIPs on small energy gaps between competing transition states. The major pathway is assigned correctly in up to 98% of cases. With calibration, held-out MAEs against experiment are 0.12 and 0.63 kcal/mol.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Paton"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_wang_diels_alderase_2026",
+  "label": "Reactive ML/MM for Diels-Alderases",
+  "full_title": "Multiscale machine learning molecular mechanics for mechanism and stereoselectivity of Diels-Alderase catalysis",
+  "year": 2026,
+  "published_date": "2026-05-13",
+  "journal": "Nat Commun",
+  "doi": "10.1038/s41467-026-72904-9",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Xujian Wang",
+   "Haocheng Tang",
+   "Xiongwu Wu",
+   "Bernard R. Brooks",
+   "Junmei Wang",
+   "Wan-Lu Li"
+  ],
+  "derived_topics": [
+   "enzyme catalysis",
+   "ML/MM simulation",
+   "stereoselectivity"
+  ],
+  "derived_methods": [
+   "reactive ML/MM",
+   "metadynamics",
+   "AMBER",
+   "PLUMED"
+  ],
+  "derived_workflows": [
+   "universal reactive potential in ML/MM with enhanced sampling"
+  ],
+  "chemistry": "Diels-Alderases (MaDA family), with activity, mutational effects and endo/exo preference.",
+  "data_regime": "Universal reactive potentials that need no system-specific training, with nanosecond sampling of bond-forming reactions.",
+  "validation": "Experimental activity and endo/exo preference reproduced with sub-kcal/mol accuracy. Mean unsigned error of 0.61 kcal/mol in ΔΔG across four MaDA-3 variants.",
+  "why": "The paper introduces a reactive ML/MM framework for direct exploration of enzymatic transition states and free-energy landscapes. It describes how pathway dynamics and local electrostatics preorganize substrates.",
+  "summary": "A reactive machine learning and molecular mechanics framework is coupled with metadynamics to study Diels-Alderases. It predicts barriers, mutational effects and stereoselectivity. The authors present it as a general strategy for mechanistic enzymology and biocatalyst design.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Li"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_hadler_ruthenium_2026",
+  "label": "3D deep learning for Ru ketone hydrogenation",
+  "full_title": "Predicting Enantioselectivity of Ruthenium-Catalyzed Ketone Hydrogenation with 3D Structure-Based Deep Learning",
+  "year": 2026,
+  "published_date": "2026-07-23",
+  "journal": "JACS",
+  "doi": "10.1021/jacs.6c07313",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Nicholas Hadler",
+   "Evelyn Ramirez",
+   "Matthew Avaylon",
+   "Masha Elkin",
+   "N. Ian Rinehart",
+   "Michael W. Mahoney",
+   "Gunther H. Weber",
+   "Joscha Hoche",
+   "Jan Gerit Brandenburg",
+   "Talita Perciano",
+   "John F. Hartwig"
+  ],
+  "derived_topics": [
+   "enantioselectivity prediction",
+   "high-throughput experimentation",
+   "transition state representations"
+  ],
+  "derived_methods": [
+   "3D graph neural networks",
+   "high-throughput experimentation"
+  ],
+  "derived_workflows": [
+   "train 3D graph networks on TS-derived representations"
+  ],
+  "chemistry": "Ketone hydrogenation with Noyori-type diphosphine-diamine ruthenium catalysts.",
+  "data_regime": "Curated literature data combined with more than 1,000 examples from in-house high-throughput experiments.",
+  "validation": "Compared with models from 2D graphs, molecular fingerprints and semiempirical descriptors. Extrapolation to structures distinct from the training set is reported.",
+  "why": "The paper combines curated and new experimental data to reduce bias in published data. It trains on 3D representations of the enantiodetermining transition state.",
+  "summary": "Machine learning models predict the enantioselectivity of ketone hydrogenation with Noyori-type catalysts. Graph neural networks using 3D representations from the enantiodetermining transition state are reported to outperform 2D and descriptor models. High-throughput data supplement the literature set.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Hartwig"
+  ],
+  "stack_layer": "Supervised model"
+ },
+ {
+  "id": "paper_casetti_cyclization_2025",
+  "label": "Cyclization selectivity with neural potentials",
+  "full_title": "Anticipating the Selectivity of Intramolecular Cyclization Reaction Pathways with Neural Network Potentials",
+  "year": 2025,
+  "published_date": "2025-10-09",
+  "journal": "JCTC",
+  "doi": "10.1021/acs.jctc.5c01161",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Nicholas Casetti",
+   "Dylan Anstine",
+   "Olexandr Isayev",
+   "Connor W. Coley"
+  ],
+  "derived_topics": [
+   "reaction mechanism search",
+   "cyclizations",
+   "stereoselectivity"
+  ],
+  "derived_methods": [
+   "AIMNet2-rxn",
+   "graph-based enumeration",
+   "REVAMP"
+  ],
+  "derived_workflows": [
+   "enumerate steps, filter with ML, evaluate with an NNP"
+  ],
+  "chemistry": "Cyclizations with concerted bond changes, including intramolecular Diels-Alder reactions and natural product steps.",
+  "data_regime": "Candidate pathways from graph-based enumeration on case-study reactions.",
+  "validation": "AIMNet2-rxn barrier MAE of 2.9 kcal/mol against DFT, excluding two outliers. Stereoselectivity is checked against experiment, including a cis:trans ratio of 29:71.",
+  "why": "The paper offers a mechanism search strategy suited to cyclizations with several concerted bond changes. It is implemented in the open-source tool REVAMP.",
+  "summary": "Graph enumeration and machine learning filters are combined with the AIMNet2-rxn potential to search cyclization mechanisms. The authors test activation energy estimates and stereoselectivity. Case studies recapitulate enabling steps in natural product synthesis.",
+  "paradigm": "Mechanistic ML",
+  "groups": [
+   "Coley"
+  ],
+  "stack_layer": "MLIP / mechanism"
+ },
+ {
+  "id": "paper_laplaza_marc_2024",
+  "label": "Pitfalls of selectivity from TS ensembles",
+  "full_title": "Overcoming the Pitfalls of Computing Reaction Selectivity from Ensembles of Transition States",
+  "year": 2024,
+  "published_date": "2024-07-11",
+  "journal": "JPCL",
+  "doi": "10.1021/acs.jpclett.4c01657",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Ruben Laplaza",
+   "Matthew D. Wodrich",
+   "Clemence Corminboeuf"
+  ],
+  "derived_topics": [
+   "transition state ensembles",
+   "Curtin-Hammett analysis",
+   "conformer filtering"
+  ],
+  "derived_methods": [
+   "marc",
+   "k-means clustering",
+   "Boltzmann weighting"
+  ],
+  "derived_workflows": [
+   "cluster TS ensembles and reoptimize representatives"
+  ],
+  "chemistry": "N-methylation of a tropane as a model reaction.",
+  "data_regime": "TS ensembles of 86 and 146 structures, at ωB97XD DFT levels.",
+  "validation": "Processing the same ensembles gave different outcomes, for example 98:2 from a single conformer and 5:95 from Boltzmann weighting of the 20 lowest structures.",
+  "why": "The paper shows that any selectivity can be obtained from the same TS ensembles, depending on processing. It introduces marc for consistent and automated filtering.",
+  "summary": "Boltzmann weighting of TS ensembles can give wrong selectivity without proper filtering. For a model reaction, the same ensembles can be processed to give any possible selectivity. The marc tool automates filtering and limits the number of reoptimizations needed.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Corminboeuf"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_harden_induced_fit_2022",
+  "label": "Induced-fit model for Brønsted acid catalysis",
+  "full_title": "An induced-fit model for asymmetric organocatalytic reactions: a case study of the activation of olefins via chiral Brønsted acid catalysts",
+  "year": 2022,
+  "published_date": "2022-07-04",
+  "journal": "Chem Sci",
+  "doi": "10.1039/d2sc02274e",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Ingolf Harden",
+   "Frank Neese",
+   "Giovanni Bistoni"
+  ],
+  "derived_topics": [
+   "confined Brønsted acids",
+   "London dispersion",
+   "stereocontrol"
+  ],
+  "derived_methods": [
+   "CREST",
+   "DLPNO-CCSD(T)",
+   "local energy decomposition"
+  ],
+  "derived_workflows": [
+   "CREST sampling, DFT screening, coupled cluster energies"
+  ],
+  "chemistry": "Asymmetric intramolecular hydroalkoxylation of terminal olefins with confined IDPi Brønsted acids.",
+  "data_regime": "Transition state ensemble of 6,485 structures, reduced to 655 by DFT single points.",
+  "validation": "Computed ΔΔG‡ of about 8 kcal/mol against the experimental 2.8 kcal/mol. Extrapolation to the basis set limit lowers it by about 1 kcal/mol.",
+  "why": "The paper describes catalyst-substrate adduct formation with a dispersion-driven induced-fit model rather than key-and-lock. It frames a way to discuss stereoselectivity for confined organocatalysts.",
+  "summary": "High-level electronic structure methods are used to study stereocontrol in olefin hydroalkoxylation by bulky Brønsted acids. Conformational changes of catalyst and substrate are governed largely by London dispersion. Intermolecular dispersion stabilizes the transition state, while intramolecular dispersion dominates catalyst distortion.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Bistoni"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_umemiya_cpa_screening_2026",
+  "label": "DFT virtual screening of CPA allylboration",
+  "full_title": "DFT Calculation-Assisted Virtual Screening to Refine Chiral Phosphoric Acid-Catalyzed Allylboration Enabling Organocatalytic Synthesis of Tetrafibricin C21–C40 Fragment",
+  "year": 2026,
+  "published_date": "2026-04-21",
+  "journal": "JACS Au",
+  "doi": "10.1021/jacsau.6c00180",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Shigenobu Umemiya",
+   "Takumi Hirata",
+   "Masahiro Terada"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "virtual screening",
+   "natural product synthesis"
+  ],
+  "derived_methods": [
+   "M06-2X/6-31G(d) DFT",
+   "transition state energy differences"
+  ],
+  "derived_workflows": [
+   "compute TS gaps for candidates, then test in the lab"
+  ],
+  "chemistry": "Chiral phosphoric acid-catalyzed enantioselective allylboration of functionalized alkyl aldehydes.",
+  "data_regime": "DFT transition state energy differences for SPINOL-derived CPA candidates.",
+  "validation": "Experimental tests: candidate 11e(Me) gave 93% ee and 11e(H) gave 90% ee. The fragment route has 13 steps and 37% overall yield.",
+  "why": "The paper applies DFT-assisted virtual screening in place of trial and error for catalyst refinement. It led to 9-anthryl-substituted CPAs for this allylboration.",
+  "summary": "A DFT-assisted virtual screen identifies chiral phosphoric acid candidates for enantioselective allylboration. The screen points to 9-anthryl-substituted catalysts. These allow catalytic construction of all six stereogenic centers in the tetrafibricin C21-C40 fragment.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Terada"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_ren_deepestos_2026",
+  "label": "DeePEST-OS reactive potential",
+  "full_title": "Reactive machine learning potential for accelerating transition state search in organic synthesis",
+  "year": 2026,
+  "published_date": "2026-05-08",
+  "journal": "Nat Commun",
+  "doi": "10.1038/s41467-026-72945-0",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Kaipai Ren",
+   "Kun Tang",
+   "Yujing Zhao",
+   "Lei Zhang",
+   "Jian Du",
+   "Qingwei Meng",
+   "Qilei Liu"
+  ],
+  "derived_topics": [
+   "transition state optimization",
+   "delta-learning",
+   "organic synthesis"
+  ],
+  "derived_methods": [
+   "DeePEST-OS",
+   "MACE",
+   "delta-learning",
+   "GFN2-xTB comparison"
+  ],
+  "derived_workflows": [
+   "semi-empirical sampling, DFT labels, then TS optimization with the model"
+  ],
+  "chemistry": "Organic reactions across ten elements, including Diels-Alder reactions and steps for complex pharmaceuticals.",
+  "data_regime": "DORTS database of 74,837 reactions.",
+  "validation": "On 1,000 reactions excluded from training: mean TS RMSD 0.12 Å and barrier MAE 0.60 kcal/mol. Diels-Alder diastereoselectivity gave R2 = 0.76 with measured values.",
+  "why": "The paper presents a reactive potential that adds semi-empirical priors to equivariant message passing. It reports potential energy surface prediction nearly 10,000 times faster than quantum chemistry methods.",
+  "summary": "DeePEST-OS is a reactive machine learning potential for transition state optimization and barrier prediction. It is trained on about 75,000 reactions from a low-cost data strategy. Applications include TS conformer screening, retrosynthesis barriers and experimentally validated diastereoselectivity.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Liu"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_marks_ts_search_2026",
+  "label": "Automated TS searches with MLIPs",
+  "full_title": "Reliable and Efficient Automated Transition-State Searches with Machine-Learned Interatomic Potentials",
+  "year": 2026,
+  "published_date": "2026-04-01",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2604.00405",
+  "paper_type": "benchmark",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Jonah Marks",
+   "Jonathon Vandezande",
+   "Joseph Gomes"
+  ],
+  "derived_topics": [
+   "transition state search",
+   "workflow benchmarking",
+   "transition-metal catalysis"
+  ],
+  "derived_methods": [
+   "MACE-OMol25",
+   "UMA",
+   "freezing-string method",
+   "climbing-image NEB"
+  ],
+  "derived_workflows": [
+   "MLIP path search, low-level refinement, then DFT optimization"
+  ],
+  "chemistry": "Small organics, polymerization chemistry and transition-metal catalysis.",
+  "data_regime": "58 reactions with 24 algorithm-potential combinations.",
+  "validation": "MACE-OMol25 reached 96.6% success on organics with an average of 3.8 DFT gradient evaluations. The freezing-string method reached 88-90% against 63-71% for the CI-NEB setup.",
+  "why": "The paper benchmarks hybrid TS search workflows with six freely available potentials. It reports about three-fold cost reduction from low-level refinement on the MLIP surface.",
+  "summary": "Hybrid transition state search workflows are benchmarked with six potentials and two path-finding algorithms. Models trained on OMol25 show higher success rates. UMA-Medium handled in-distribution metal complex reactions and an out-of-distribution Rh-catalyzed C-H activation.",
+  "paradigm": "MLIP / TS acceleration",
+  "groups": [
+   "Gomes"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_darouich_generative_ts_2026",
+  "label": "Generative TS models for unseen chemistry",
+  "full_title": "Robust generative transition-state models for unseen chemistry",
+  "year": 2026,
+  "published_date": "2026-08-12",
+  "journal": "Nat Comput Sci",
+  "doi": "10.1038/s43588-026-01034-5",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Samir Darouich",
+   "Jacob W. Toney",
+   "Weiliang Luo",
+   "Johannes Kästner",
+   "Mathias Niepert",
+   "Heather J. Kulik"
+  ],
+  "derived_topics": [
+   "generative transition state models",
+   "out-of-domain generalization",
+   "self-supervised pretraining"
+  ],
+  "derived_methods": [
+   "generative TS models",
+   "self-supervised pretraining",
+   "fine-tuning"
+  ],
+  "derived_workflows": [
+   "pretrain on equilibrium conformers, then fine-tune on reactions"
+  ],
+  "chemistry": "Reactions from Transition1x extended with elemental substitutions and transition metal complexes.",
+  "data_regime": "Extensions of Transition1x, including about 14,000 reactions in Transition1x-2p3p4p.",
+  "validation": "On Transition1x-TMC, pretraining lowers median RMSD from 0.39 to 0.19.",
+  "why": "The paper introduces benchmarks for chemical and structural novelty in generative TS prediction. They reveal limits on previously unseen elements, which pretraining on equilibrium conformers helps address.",
+  "summary": "Targeted benchmarks test how generative transition state models generalize to new elements and metal complexes. These models show limits on unseen elements. Self-supervised pretraining on equilibrium conformers improves prediction and reduces fine-tuning data requirements.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Kulik"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_galustian_goflow_2025",
+  "label": "GoFlow: flow matching for TS geometries",
+  "full_title": "GoFlow: efficient transition state geometry prediction with flow matching and E(3)-equivariant neural networks",
+  "year": 2025,
+  "published_date": "2025-10-21",
+  "journal": "Digital Discovery",
+  "doi": "10.1039/d5dd00283d",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Leonard Galustian",
+   "Konstantin Mark",
+   "Johannes Karwounopoulos",
+   "Maximilian P.-P. Kovar",
+   "Esther Heid"
+  ],
+  "derived_topics": [
+   "transition state generation",
+   "flow matching",
+   "out-of-distribution splits"
+  ],
+  "derived_methods": [
+   "GoFlow",
+   "E(3)-equivariant flow matching"
+  ],
+  "derived_workflows": [
+   "predict TS geometry from a 2D reaction graph"
+  ],
+  "chemistry": "Gas-phase reactions of H, C, N and O with up to seven heavy atoms.",
+  "data_regime": "11,926 reactions in the data set.",
+  "validation": "D-MAE of 0.107 Å at 25 ODE steps against 0.164 Å for TsDiff. Random, reaction core and barrier height splits were examined.",
+  "why": "The paper frames TS generation as an optimal transport flow problem. It reports over a hundredfold speedup in inference and better geometries than earlier diffusion approaches.",
+  "summary": "GoFlow predicts transition state geometries from 2D reaction graphs with E(3)-equivariant flow matching. Inference takes 0.01 s per reaction for one sample. The authors also show use as guess structures for quantum-mechanical TS optimization.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Heid"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_shprints_fragmentflow_2026",
+  "label": "FragmentFlow: TS generation for large molecules",
+  "full_title": "FragmentFlow: Scalable Transition State Generation for Large Molecules",
+  "year": 2026,
+  "published_date": "2026-02-02",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2602.02310",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Ron Shprints",
+   "Peter Holderrieth",
+   "Juno Nam",
+   "Rafael Gómez-Bombarelli",
+   "Tommi Jaakkola"
+  ],
+  "derived_topics": [
+   "transition state generation",
+   "fragmentation",
+   "distribution shift"
+  ],
+  "derived_methods": [
+   "FragmentFlow",
+   "ReactOT",
+   "Sella optimization"
+  ],
+  "derived_workflows": [
+   "generate the reactive core, then re-attach substituents"
+  ],
+  "chemistry": "Reactions with reactants of up to 33 heavy atoms.",
+  "data_regime": "Training on Transition1x augmented with fragmented reactive cores. Evaluation on a new curated set of mono-, di- and tri-substituted reactions.",
+  "validation": "About 90% of TSs identified within 1 kcal/mol of reference after Sella optimization, with 30% fewer steps than IDPP starts.",
+  "why": "The paper targets distribution shift from molecular size by modelling only the reactive core. Substituents are added back afterwards.",
+  "summary": "FragmentFlow trains a generative model on reactive core atoms and rebuilds the full transition state by re-attaching fragments. Core size and composition vary little across molecules, which limits distribution shift. On a new data set it recovers 90% of TSs with fewer optimization steps.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Jaakkola"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_desouza_goat_2025",
+  "label": "GOAT: global optimization for molecules",
+  "full_title": "GOAT: A Global Optimization Algorithm for Molecules and Atomic Clusters",
+  "year": 2025,
+  "published_date": "2025-03-17",
+  "journal": "Angew Chem Int Ed",
+  "doi": "10.1002/anie.202500393",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Bernardo de Souza"
+  ],
+  "derived_topics": [
+   "global optimization",
+   "conformer search",
+   "atomic clusters"
+  ],
+  "derived_methods": [
+   "GOAT",
+   "CREST comparison"
+  ],
+  "derived_workflows": [
+   "find global minima without molecular dynamics"
+  ],
+  "chemistry": "Organic molecules, water clusters, metal complexes and metal nanoparticles.",
+  "data_regime": "Not stated in the abstract",
+  "validation": "Compared with methods such as CREST across various systems.",
+  "why": "The paper proposes a global optimization algorithm that avoids molecular dynamics. It can therefore be used with regular quantum chemical methods, including hybrid DFT.",
+  "summary": "GOAT finds global energy minima for molecules and atomic clusters without running molecular dynamics. This avoids the large number of gradient calculations of a long MD run. It is reported to be, in general, more efficient and accurate than earlier algorithms.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "de Souza"
+  ],
+  "stack_layer": "Ground-state conformers"
+ },
+ {
+  "id": "paper_adams_conformer_quality_2025",
+  "label": "Conformer quality in learned representations",
+  "full_title": "The impact of conformer quality on learned representations of molecular conformer ensembles",
+  "year": 2025,
+  "published_date": "2025-02-18",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2502.13220",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Keir Adams",
+   "Connor W. Coley"
+  ],
+  "derived_topics": [
+   "conformer ensembles",
+   "surrogate models",
+   "Sterimol parameters"
+  ],
+  "derived_methods": [
+   "3D representation learning",
+   "MMFF94 and xTB conformers",
+   "DFT reference ensembles"
+  ],
+  "derived_workflows": [
+   "predict ensemble properties from lower-quality conformers"
+  ],
+  "chemistry": "Carboxylic acids, with Sterimol parameters of DFT-optimized conformer ensembles.",
+  "data_regime": "Filtered data of 5,056 acids, split 4056/500/1000 for training, validation and test.",
+  "validation": "Surrogate models are compared with computing properties directly from cheap ensembles, as a function of training set size and conformer quality.",
+  "why": "The paper asks when conformer quality matters for 3D surrogate models. For these ensemble properties, it reports that the optimization level of encoded random conformers does not matter.",
+  "summary": "Surrogate models for conformer-dependent properties are tested with inputs of varying quality. For Sterimol properties of carboxylic acids, computing values directly from cheap ensembles can be more cost-effective than training surrogates. The authors note that answers will be case-specific.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Coley"
+  ],
+  "stack_layer": "Ground-state conformers"
+ },
+ {
+  "id": "paper_zhu_marcel_2023",
+  "label": "MARCEL conformer ensemble benchmark",
+  "full_title": "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks",
+  "year": 2023,
+  "published_date": "2023-09-29",
+  "journal": "arXiv",
+  "doi": "10.48550/arXiv.2310.00115",
+  "paper_type": "benchmark",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Yanqiao Zhu",
+   "Jeehyun Hwang",
+   "Keir Adams",
+   "Zhen Liu",
+   "Bozhao Nan",
+   "Brock Stenfors",
+   "Yuanqi Du",
+   "Jatin Chauhan",
+   "Olaf Wiest",
+   "Olexandr Isayev",
+   "Connor W. Coley",
+   "Yizhou Sun",
+   "Wei Wang"
+  ],
+  "derived_topics": [
+   "conformer ensembles",
+   "molecular representation learning",
+   "benchmarks"
+  ],
+  "derived_methods": [
+   "1D, 2D and 3D representation models",
+   "conformer sampling"
+  ],
+  "derived_workflows": [
+   "benchmark learning on conformer ensembles"
+  ],
+  "chemistry": "Drug-like molecules, organocatalysts and transition-metal catalysts.",
+  "data_regime": "Four data sets with nine regression tasks, including Drugs-75K with 75,099 molecules and Kraken with 1,552.",
+  "validation": "Representative 1D, 2D and 3D models are compared, with two strategies that use conformer ensembles.",
+  "why": "The paper introduces the MARCEL benchmark for learning on conformer ensembles. It covers molecule- and reaction-level properties beyond drug-like sets.",
+  "summary": "MARCEL evaluates molecular representation learning on conformer ensembles across four data sets. Its data include organocatalysts and transition-metal catalysts. The authors find that learning directly from accessible conformers can raise performance across tasks.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Wang"
+  ],
+  "stack_layer": "Ground-state conformers"
+ },
+ {
+  "id": "paper_spicher_sph_2021",
+  "label": "Single-point Hessians for RRHO thermodynamics",
+  "full_title": "Single-Point Hessian Calculations for Improved Vibrational Frequencies and Rigid-Rotor-Harmonic-Oscillator Thermodynamics",
+  "year": 2021,
+  "published_date": "2021-02-08",
+  "journal": "JCTC",
+  "doi": "10.1021/acs.jctc.0c01306",
+  "paper_type": "research",
+  "relevance": "adjacent method",
+  "derived_authors": [
+   "Sebastian Spicher",
+   "Stefan Grimme"
+  ],
+  "derived_topics": [
+   "vibrational frequencies",
+   "free energy corrections",
+   "nonequilibrium geometries"
+  ],
+  "derived_methods": [
+   "single-point Hessian",
+   "modified RRHO",
+   "RMSD biasing potential"
+  ],
+  "derived_workflows": [
+   "compute frequencies on a fixed geometry with a biasing potential"
+  ],
+  "chemistry": "General molecular systems, including reaction paths, crambin snapshots, supramolecular association, organic dimers and transition-metal complexes.",
+  "data_regime": "Not stated in the abstract",
+  "validation": "Tested against high-level DFT values. On average, DFT reference free energies are better reproduced than by conventional calculations on freely optimized geometries or without relaxation.",
+  "why": "The paper proposes a method for harmonic frequencies and thermodynamic contributions on nonequilibrium geometries. It applies to quantum mechanical, semiempirical and force-field methods.",
+  "summary": "The single-point Hessian method computes frequencies and free energy contributions without first optimizing the structure. A Gaussian RMSD biasing potential keeps the input geometry, with a back-correction of the biased frequencies. It is also shown to improve IR spectra at low theoretical levels.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Grimme"
+  ],
+  "stack_layer": "Thermochemistry"
+ },
+ {
+  "id": "paper_wang_azetidines_2015",
+  "label": "Enantioselective desymmetrization of azetidines",
+  "full_title": "Catalytic Enantioselective Intermolecular Desymmetrization of Azetidines",
+  "year": 2015,
+  "published_date": "2015-05-04",
+  "journal": "JACS",
+  "doi": "10.1021/jacs.5b03083",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Zhaobin Wang",
+   "Fu Kit Sheong",
+   "Herman H. Y. Sung",
+   "Ian D. Williams",
+   "Zhenyang Lin",
+   "Jianwei Sun"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acid catalysis",
+   "azetidine desymmetrization",
+   "Curtin-Hammett analysis"
+  ],
+  "derived_methods": [
+   "asymmetric catalysis experiments",
+   "kinetic studies",
+   "DFT calculations"
+  ],
+  "derived_workflows": [
+   "reaction development with mechanistic study"
+  ],
+  "chemistry": "Catalytic asymmetric intermolecular desymmetrization of azetidines with thiol nucleophiles.",
+  "data_regime": "Experimental substrate scope. No modelling data set.",
+  "validation": "Kinetic studies and DFT calculations. The chosen protecting group gave 95% yield and 88% ee in optimization, and an all-carbon quaternary stereocenter formed in 97% ee.",
+  "why": "The authors describe this as the first catalytic asymmetric azetidine desymmetrization. Mechanistic studies find one catalyst molecule in the key transition state and activation through the amide nitrogen.",
+  "summary": "The first catalytic asymmetric desymmetrization of azetidines is reported, with a suitable mix of catalyst, nucleophile and protective group. Products are versatile chiral precursors. Mechanistic work shows that the Curtin-Hammett principle governs the reaction, which proceeds through amide nitrogen activation.",
+  "paradigm": "Other / mixed",
+  "groups": [
+   "Sun"
+  ],
+  "stack_layer": "TS search"
+ },
+ {
+  "id": "paper_champagne_azetidine_2021",
+  "label": "Origins of selectivity in CPA azetidine opening",
+  "full_title": "Identifying the true origins of selectivity in chiral phosphoric acid catalyzed N-acyl-azetidine desymmetrizations",
+  "year": 2021,
+  "published_date": "2021-11-23",
+  "journal": "Chem Sci",
+  "doi": "10.1039/d1sc04969k",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Pier Alexandre Champagne"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "origins of selectivity",
+   "transition state sampling"
+  ],
+  "derived_methods": [
+   "B97D3 DFT",
+   "conformational sampling",
+   "steric maps"
+  ],
+  "derived_workflows": [
+   "compare model and full catalyst TSs through steric maps"
+  ],
+  "chemistry": "BINOL-derived phosphoric acid-catalyzed desymmetrization of N-acyl azetidines with 2-mercaptobenzothiazole.",
+  "data_regime": "DFT transition states: 19 unique pro-(S) and 45 unique pro-(R) conformers.",
+  "validation": "A free energy difference of 2.0 kcal/mol reproduces the measured 88% e.e. at 80 °C.",
+  "why": "The study confirms bifunctional activation among four candidate modes. It proposes a general selectivity model based on how the nucleophile and benzoyl group occupy quadrants of the catalyst pocket.",
+  "summary": "DFT calculations uncover the mechanism and origins of enantioselectivity in a phosphoric acid-catalyzed azetidine desymmetrization. The energy gap arises from lower distortion and stronger non-covalent interactions in the pro-(S) transition state. Arrangements that fit the catalyst pocket drive the outcome.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Champagne"
+  ],
+  "stack_layer": "TS ensembles"
+ },
+ {
+  "id": "paper_reid_steric_model_2017",
+  "label": "Selecting BINOL phosphoric acid catalysts",
+  "full_title": "Selecting Chiral BINOL‐Derived Phosphoric Acid Catalysts: General Model To Identify Steric Features Essential for Enantioselectivity",
+  "year": 2017,
+  "published_date": "2017-09-14",
+  "journal": "Chem Eur J",
+  "doi": "10.1002/chem.201702019",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Jolene P. Reid",
+   "Jonathan M. Goodman"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "steric parameters",
+   "catalyst selection"
+  ],
+  "derived_methods": [
+   "ONIOM calculations",
+   "quantitative steric parameters"
+  ],
+  "derived_workflows": [
+   "steric assessment summarised as a decision tree"
+  ],
+  "chemistry": "BINOL-derived phosphoric acids in nucleophilic additions to imines.",
+  "data_regime": "Seventy-seven papers with over 1000 transformations.",
+  "validation": "The analysis was verified with ONIOM calculations, and the model is reported as consistent with all the surveyed reactions.",
+  "why": "The paper shows that in most reactions the outcome depends on both proximal and remote sterics at the 3,3' groups. It gives a simple qualitative model for catalyst choice.",
+  "summary": "A quantitative steric assessment of 3,3' substituents is applied to a wide range of imine reactions. The stereochemical outcome usually depends on proximal and remote sterics. A qualitative model and decision tree guide catalyst selection.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Goodman"
+  ],
+  "stack_layer": "Descriptors"
+ },
+ {
+  "id": "paper_reid_holistic_2019",
+  "label": "Holistic prediction of enantioselectivity",
+  "full_title": "Holistic prediction of enantioselectivity in asymmetric catalysis",
+  "year": 2019,
+  "published_date": "2019-07-17",
+  "journal": "Nature",
+  "doi": "10.1038/s41586-019-1384-z",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Jolene P. Reid",
+   "Matthew S. Sigman"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "transfer between reactions",
+   "statistical modelling"
+  ],
+  "derived_methods": [
+   "multivariate linear regression",
+   "leave-one-reaction-out analysis",
+   "parameterized descriptors"
+  ],
+  "derived_workflows": [
+   "data-mine literature, build models, predict out of sample"
+  ],
+  "chemistry": "BINOL-derived chiral phosphoric acids in nucleophilic additions to imines.",
+  "data_regime": "Published enantioselectivity data sets. The comprehensive regression model has 367 entries.",
+  "validation": "R2 of 0.88 on the training set, with leave-one-out, k-fold, 50:50 external and leave-one-reaction-out analyses. Out-of-sample tests include a Z-imine prediction with average absolute error of 0.30 kcal/mol.",
+  "why": "The paper presents a data-driven workflow for moving observations quantitatively from one reaction to another. The models expose general interactions behind asymmetric induction.",
+  "summary": "A holistic workflow derives statistical models from one set of reactions and uses them to predict out-of-sample reactions. The case study combines published phosphoric acid data on imine additions. A retrained model also predicted a highly selective catalyst outside its training set.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Sigman"
+  ],
+  "stack_layer": "Supervised model"
+ },
+ {
+  "id": "paper_zahrt_higher_selectivity_2019",
+  "label": "Predicting higher-selectivity catalysts",
+  "full_title": "Prediction of higher-selectivity catalysts by computer-driven workflow and machine learning",
+  "year": 2019,
+  "published_date": "2019-01-18",
+  "journal": "Science",
+  "doi": "10.1126/science.aau5631",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Andrew F. Zahrt",
+   "Jeremy J. Henle",
+   "Brennan T. Rose",
+   "Yang Wang",
+   "William T. Darrow",
+   "Scott E. Denmark"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "catalyst selection",
+   "chemoinformatics"
+  ],
+  "derived_methods": [
+   "support vector machines",
+   "deep feed-forward neural networks",
+   "3D steric descriptors"
+  ],
+  "derived_workflows": [
+   "select a universal training set, train, then predict an external catalyst set"
+  ],
+  "chemistry": "Chiral phosphoric acid-catalyzed thiol addition to N-acylimines.",
+  "data_regime": "1075 experimental selectivity data points.",
+  "validation": "Three external test sets gave MADs of 0.161, 0.211 and 0.236 kcal/mol. A second study trained only on reactions below 80% ee.",
+  "why": "The paper reports a computationally guided workflow for chiral catalyst selection. Descriptors are designed to be agnostic to the catalyst scaffold.",
+  "summary": "A workflow uses chemoinformatics at every stage of chiral catalyst selection. A universal training set is chosen from scaffold-agnostic steric and electronic descriptors. Support vector machines and deep neural networks then predict selectivity for catalysts outside the training data.",
+  "paradigm": "3D / deep learning",
+  "groups": [
+   "Denmark"
+  ],
+  "stack_layer": "Supervised model"
+ },
+ {
+  "id": "paper_liles_cpa_design_2023",
+  "label": "Data science for a new CPA class",
+  "full_title": "Data science enables the development of a new class of chiral phosphoric acid catalysts",
+  "year": 2023,
+  "published_date": "2023-06-08",
+  "journal": "Chem",
+  "doi": "10.1016/j.chempr.2023.02.020",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Jordan P. Liles",
+   "Caroline Rouget-Virbel",
+   "Julie L.H. Wahlman",
+   "René Rahimoff",
+   "Jennifer M. Crawford",
+   "Abby Medlin",
+   "Veronica S. O’Connor",
+   "Junqi Li",
+   "Vladislav A. Roytman",
+   "F. Dean Toste",
+   "Matthew S. Sigman"
+  ],
+  "derived_topics": [
+   "chiral phosphoric acids",
+   "catalyst design",
+   "training set selection"
+  ],
+  "derived_methods": [
+   "univariate classification",
+   "multivariate linear regression",
+   "data science catalyst selection"
+  ],
+  "derived_workflows": [
+   "select a diverse training set, model, then extrapolate"
+  ],
+  "chemistry": "Transfer hydrogenation of an 8-aminoquinoline, plus two additional transformations.",
+  "data_regime": "20 structurally diverse catalysts as the training set.",
+  "validation": "A validation set of sulfonamide catalysts was predicted. Classification by one partial charge reached 0.93 accuracy across three data sets, and the best catalyst gave up to 95:5 er.",
+  "why": "The paper discloses a minimalistic phosphoric acid backbone with a single point chiral element. Data science is used from the start of catalyst development.",
+  "summary": "A new chiral phosphoric acid backbone with one point of chirality is developed with data science tools. Classification and linear regression isolate key catalyst features. The workflow reaches a catalyst with higher selectivity than reported peptide-type and BINOL-type catalysts for this reaction.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Sigman",
+   "Toste"
+  ],
+  "stack_layer": "Supervised model"
+ },
+ {
+  "id": "paper_smith_buried_volume_2026",
+  "label": "Buried volume for Brønsted acid selectivity",
+  "full_title": "Stereoselective Generalizations over Diverse Sets of Chiral Acids Enabled by Buried Volume",
+  "year": 2026,
+  "published_date": "2026-01-06",
+  "journal": "JACS",
+  "doi": "10.1021/jacs.5c20342",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Andrew L. Smith",
+   "F. Dean Toste"
+  ],
+  "derived_topics": [
+   "Brønsted acid organocatalysis",
+   "buried volume",
+   "stereoselectivity models"
+  ],
+  "derived_methods": [
+   "active site-based buried volume",
+   "univariate regression"
+  ],
+  "derived_workflows": [
+   "statistical analysis of literature data sets with one descriptor"
+  ],
+  "chemistry": "Brønsted acid organocatalysts across 54 literature reactions.",
+  "data_regime": "50+ data sets across nearly 200 distinct catalysts.",
+  "validation": "67% of univariate models are meaningful at >95% confidence, with average R2 0.57 and MAE 0.21 kcal/mol. A mean-value predictor gives average MAE 0.37 kcal/mol.",
+  "why": "The paper reports active site-based buried volume as a concise descriptor for stereoselectivity by Brønsted acids. It says the descriptor generalizes beyond simple steric interactions.",
+  "summary": "Active site-based buried volume is studied as a representation for stereoselectivity across many Brønsted acid data sets. It accommodates structural diversity within data sets and functional diversity across them. The authors link this to a capacity to account for diverse stereoelectronic effects.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Toste"
+  ],
+  "stack_layer": "Descriptors"
+ },
+ {
+  "id": "paper_smith_complementarity_2026",
+  "label": "Complementarity for acid catalyst design",
+  "full_title": "Abstracting Complementarity for the Design of Stereoselective Acid Catalysts",
+  "year": 2026,
+  "published_date": "2026-09-09",
+  "journal": "JACS",
+  "doi": "10.1021/jacs.6c13855",
+  "paper_type": "research",
+  "relevance": "core catalysis",
+  "derived_authors": [
+   "Andrew L. Smith",
+   "Christine M. Le",
+   "Baihua Ye",
+   "Jie Zhao",
+   "F. Dean Toste"
+  ],
+  "derived_topics": [
+   "catalyst design",
+   "complementarity",
+   "Brønsted acid organocatalysis"
+  ],
+  "derived_methods": [
+   "active site-based buried volume",
+   "analytical Gaussian models"
+  ],
+  "derived_workflows": [
+   "encode complementarity, then validate new catalysts experimentally"
+  ],
+  "chemistry": "Brønsted acid organocatalysts across diverse structural motifs and functional modes.",
+  "data_regime": "Not stated in the abstract",
+  "validation": "Experimental validation of new stereoselective solutions is reported. Numbers are not stated in the abstract.",
+  "why": "The paper proposes active site-based buried volume as a quantitative representation of complementarity. It reports design guidance that does not need detailed attention to stereoinduction mechanisms.",
+  "summary": "Active site-based buried volume gives a low-dimensional, generalizable representation of catalyst-substrate complementarity. Analytical Gaussian models built on it encode this complementarity. Experimental validation gives new stereoselective solutions.",
+  "paradigm": "Physical / interpretable",
+  "groups": [
+   "Toste"
+  ],
+  "stack_layer": "Descriptors"
+ }
+]

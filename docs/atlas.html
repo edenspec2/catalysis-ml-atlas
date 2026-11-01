@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080c12">
-<meta name="description" content="Rotate the catalysis ML knowledge graph in 3D. Filter by chemistry, representation, story, and year. Auto-rotate stays off.">
-<title>3D atlas · Catalysis ML</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Rotate the catalysis ML knowledge graph in 3D. Filter by topic, chemistry and year.">
+<title>3D Map · Catalysis ML</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg">
 <link rel="stylesheet" href="style.css">
@@ -13,93 +13,58 @@
 <body class="atlas-page">
 <a class="skip" href="#papers">Skip to papers</a>
 <header>
-  <a class="brand" href="./">C<span class="brand-dot">·</span>ML <span>Catalysis atlas</span></a>
+  <a class="brand" href="./" aria-label="Catalysis ML Atlas"><img class="logo" src="icon.svg" alt="" width="24" height="24"><span>Catalysis ML Atlas</span></a>
   <nav class="header-nav" aria-label="App">
     <a href="./">Library</a>
-    <a href="atlas.html" aria-current="page">3D atlas</a>
-    <a href="lab.html">For the lab</a>
+    <a href="atlas.html" aria-current="page">3D Map</a>
+    <a href="lab.html">Lab guide</a>
   </nav>
 </header>
 <div class="atlas-controls">
-  <div class="atlas-top">
-    <label class="atlas-search"><span>Search</span><input type="search" id="q" placeholder="Milo, ligands, transfer…" autocomplete="off"></label>
-    <div class="storybar" id="storybar" role="toolbar" aria-label="Research stories"></div>
-  </div>
-  <div class="atlas-filters">
-    <label><span>View</span>
-      <select id="view">
-        <option value="papers" selected>Papers only</option>
-        <option value="papers_authors">Papers + authors</option>
-        <option value="papers_topics">Papers + topics</option>
-        <option value="papers_methods">Papers + methods</option>
-        <option value="papers_workflows">Papers + workflows</option>
-        <option value="full">Full metadata graph</option>
-      </select>
-    </label>
-    <label><span>Layout</span>
-      <select id="layout">
-        <option value="free" selected>Layout: network</option>
-        <option value="year">Layout: timeline</option>
-        <option value="paradigm">Layout: paradigms</option>
-        <option value="representation">Layout: representation</option>
-        <option value="stack">Layout: stack layer</option>
-        <option value="group">Layout: PI / group</option>
-      </select>
-    </label>
-    <label><span>Color</span>
-      <select id="colorby">
-        <option value="paradigm" selected>Color: paradigm</option>
-        <option value="representation">Color: representation</option>
-        <option value="stack">Color: stack layer</option>
-        <option value="group">Color: PI / group</option>
-        <option value="year">Color: year</option>
-        <option value="type">Color: node type</option>
-      </select>
-    </label>
-    <label><span>Chemistry</span><select id="chemistry"><option value="all">All chemistry</option></select></label>
-    <label><span>Representation</span><select id="representation"><option value="all">All representations</option></select></label>
-    <label><span>Stack</span><select id="stack"><option value="all">All stack layers</option></select></label>
-    <label><span>Year</span>
-      <select id="year">
-        <option value="all">All years</option>
-        <option value="2026">2026</option>
-        <option value="2025">2025</option>
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
-        <option value="older">2022 and earlier</option>
-      </select>
-    </label>
-    <button type="button" id="center">Fit</button>
-    <button type="button" id="reset">Reset</button>
-    <label class="check"><input type="checkbox" id="showFigs" checked> Figures</label>
-  </div>
-  <details class="atlas-more">
-    <summary>More graph options</summary>
-    <div class="atlas-filters">
-      <label><span>Links</span>
-        <select id="density">
-          <option value="sparse">Sparse links</option>
-          <option value="normal" selected>Normal links</option>
-          <option value="dense">Dense links</option>
+  <label class="atlas-search"><span>Search</span><input type="search" id="q" placeholder="Search the map" autocomplete="off"></label>
+  <label><span>Topic</span><select id="story"><option value="">All topics</option></select></label>
+  <label><span>Arrange</span>
+    <select id="layout">
+      <option value="free" selected>Arrange: network</option>
+      <option value="year">Arrange: timeline</option>
+      <option value="paradigm">Arrange: paradigm</option>
+      <option value="representation">Arrange: representation</option>
+      <option value="group">Arrange: PI / group</option>
+    </select>
+  </label>
+  <label><span>Color</span>
+    <select id="colorby">
+      <option value="paradigm" selected>Color: paradigm</option>
+      <option value="representation">Color: representation</option>
+      <option value="group">Color: PI / group</option>
+      <option value="year">Color: year</option>
+    </select>
+  </label>
+  <button type="button" id="center">Fit</button>
+  <button type="button" id="reset">Reset</button>
+  <details class="menu">
+    <summary>Filters</summary>
+    <div class="menu-pop">
+      <label><span>Chemistry</span><select id="chemistry"><option value="all">All chemistry</option></select></label>
+      <label><span>Year</span>
+        <select id="year">
+          <option value="all">All years</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="older">2022 and earlier</option>
         </select>
       </label>
-      <label><span>Labels</span>
-        <select id="labels">
-          <option value="papers" selected>Paper labels</option>
-          <option value="selected">Selected label</option>
-          <option value="all">All labels</option>
-          <option value="hover">Hover only</option>
+      <label><span>Show</span>
+        <select id="view">
+          <option value="papers" selected>Papers only</option>
+          <option value="papers_authors">Papers + authors</option>
+          <option value="papers_topics">Papers + topics</option>
+          <option value="papers_methods">Papers + methods</option>
         </select>
       </label>
-      <label><span>Focus hops</span>
-        <select id="focus">
-          <option value="1" selected>1 hop</option>
-          <option value="2">2 hops</option>
-          <option value="3">3 hops</option>
-        </select>
-      </label>
-      <label class="check"><input type="checkbox" id="hideReviews"> Hide reviews</label>
-      <label class="check"><input type="checkbox" id="hideIsolates"> Hide isolates</label>
+      <label class="check"><input type="checkbox" id="showFigs" checked> Figures</label>
     </div>
   </details>
 </div>
@@ -110,7 +75,7 @@
       <div class="hudbox" id="status">Loading atlas…</div>
       <div class="hudbox" id="legend"></div>
     </div>
-    <p class="atlas-hint">Drag to rotate · Shift-drag to pan · Scroll to zoom · arrows or J/K scan the list. Fit keeps the 3D angle.</p>
+    <p class="atlas-hint">Drag to rotate · Shift-drag to pan · Scroll to zoom</p>
   </div>
   <aside id="side">
     <div id="selection" hidden></div>
@@ -122,11 +87,11 @@
   </aside>
 </div>
 <dialog id="figbox">
-  <div class="dialog-top"><span class="eyebrow">FIGURE</span><button type="button" id="close-fig" aria-label="Close figure">Close ✕</button></div>
+  <div class="dialog-top"><span class="eyebrow">FIGURE</span><button type="button" id="close-fig" class="round" aria-label="Close figure">✕</button></div>
   <img id="figbox-img" alt="">
   <p id="figbox-cap" class="muted"></p>
 </dialog>
-<script src="atlas.js?v=21"></script>
+<script src="atlas.js?v=24"></script>
 <script>
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>

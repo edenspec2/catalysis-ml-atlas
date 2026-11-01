@@ -1,31 +1,65 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080c12"><meta name="description" content="Read recent machine-learning chemistry research, compare evidence, and explore the catalysis knowledge atlas."><title>Catalysis ML Atlas</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#results">Skip to papers</a><header><a class="brand" href="./">C<span class="brand-dot">·</span>ML <span>Catalysis atlas</span></a><nav class="header-nav" aria-label="App"><a href="./" aria-current="page">Library</a><a href="atlas.html">3D atlas</a><a href="lab.html">For the lab</a></nav><button id="help">Phone setup</button></header>
-<main><section class="intro"><p class="eyebrow">MACHINE LEARNING × CHEMISTRY</p><h1>Keep up. Look deeper.</h1><p class="lead">A curated core for homogeneous catalysis × ML — not the whole field. Inspect scans n, validation, and stack layer.</p></section>
-<nav aria-label="Research views"><button data-view="library" class="active">Library</button><button data-view="inspect">Inspect</button><button data-view="board">Board</button><button data-view="representations">Representations</button><button data-view="latest">Discover latest</button><button data-view="saved">Saved <span id="saved-count">0</span></button><button data-view="compare">Compare <span id="compare-count">0</span></button><a class="nav-atlas" href="atlas.html">3D atlas</a></nav>
-<section id="reading"><div class="toolbar"><label class="search"><span>Search the papers</span><input type="search" id="search" placeholder="Ligands, Milo, transfer learning…"></label><label><span>Research focus</span><select id="focus"><option value="">All directions</option><option value="milo">Milo neighborhood</option><option value="stack">Computational stack</option><option value="small">Small-data learning</option><option value="representation">Representations</option><option value="autonomous">Autonomous / active learning</option><option value="mechanism">Mechanisms / MLIPs</option></select></label><label><span>Chemistry</span><select id="chemistry"><option value="">All chemistry</option></select></label><label><span>Representation</span><select id="representation"><option value="">All representations</option></select></label><label><span>Stack layer</span><select id="stack"><option value="">All stack layers</option></select></label><label><span>Year</span><select id="year"><option value="">All years</option></select></label></div>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><meta name="description" content="Choose what to read in machine-learning catalysis, track what you have read, and keep your notes."><title>Catalysis ML Atlas</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#results">Skip to papers</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-check" viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 16 16"><path d="M4 2.5h8v11l-4-3-4 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+<symbol id="i-all" viewBox="0 0 16 16"><path d="M3 3h3.5v10H3zM7.5 3H11v10H7.5zM12 3.5l1.5.4L13 13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+<symbol id="i-done" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.3 8.3l1.9 1.9 3.6-4.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-find" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+<symbol id="i-chart" viewBox="0 0 16 16"><path d="M3 13V8M8 13V3M13 13V6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-cube" viewBox="0 0 16 16"><path d="M8 2l5.5 3v6L8 14l-5.5-3V5zM2.5 5L8 8l5.5-3M8 8v6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+<symbol id="i-compare" viewBox="0 0 16 16"><rect x="2.5" y="3" width="4.5" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="3" width="4.5" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+<symbol id="i-list" viewBox="0 0 16 16"><path d="M3 4.5h10M3 8h10M3 11.5h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-table" viewBox="0 0 16 16"><rect x="2.5" y="3" width="11" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 6.5h11M6.5 6.5V13" stroke="currentColor" stroke-width="1.3"/></symbol>
+<symbol id="i-close" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</defs></svg>
+<header><a class="brand" href="./" aria-label="Catalysis ML Atlas"><img class="logo" src="icon.svg" alt="" width="24" height="24"><span>Catalysis ML Atlas</span></a><label class="search"><span>Search the papers</span><input type="search" id="search" placeholder="Search papers" autocomplete="off"></label></header>
+<div class="shell">
+<aside id="sidebar"><nav aria-label="Library">
+<p class="side-label">Library</p>
+<button class="side-item active" data-view="library"><svg class="i"><use href="#i-all"/></svg><span class="label">All Papers</span><span class="n" id="all-count"></span></button>
+<button class="side-item" data-view="saved"><svg class="i"><use href="#i-bookmark"/></svg><span class="label">To Read</span><span class="n" id="saved-count">0</span></button>
+<button class="side-item" data-view="read"><svg class="i"><use href="#i-done"/></svg><span class="label">Read</span><span class="n" id="read-count">0</span></button>
+<button class="side-item" data-view="compare" id="compare-item" hidden><svg class="i"><use href="#i-compare"/></svg><span class="label">Compare</span><span class="n" id="compare-count">0</span></button>
+<p class="side-label">Explore</p>
+<button class="side-item" data-view="latest"><svg class="i"><use href="#i-find"/></svg><span class="label">Find Papers</span></button>
+<button class="side-item" data-view="board"><svg class="i"><use href="#i-chart"/></svg><span class="label">Overview</span></button>
+<a class="side-item" href="atlas.html"><svg class="i"><use href="#i-cube"/></svg><span class="label">3D Map</span></a>
+<p class="side-label">Topics</p>
+<button class="side-item" data-focus="mlip_transfer"><span class="label">MLIP transfer &amp; TS ensembles</span><span class="n"></span></button>
+<button class="side-item" data-focus="milo"><span class="label">Milo neighborhood</span><span class="n"></span></button>
+<button class="side-item" data-focus="stack"><span class="label">Computational stack</span><span class="n"></span></button>
+<button class="side-item" data-focus="small"><span class="label">Small-data learning</span><span class="n"></span></button>
+<button class="side-item" data-focus="representation"><span class="label">Representations</span><span class="n"></span></button>
+<button class="side-item" data-focus="autonomous"><span class="label">Autonomous &amp; active learning</span><span class="n"></span></button>
+<button class="side-item" data-focus="mechanism"><span class="label">Mechanisms &amp; MLIPs</span><span class="n"></span></button>
+</nav></aside>
+<main>
+<section id="reading">
+<div class="title-row"><h1 id="list-title">All Papers</h1><span id="result-count" aria-live="polite"></span>
+<div class="tools"><label class="pick"><span>Chemistry</span><select id="chemistry"><option value="">All chemistry</option></select></label><label class="pick"><span>Year</span><select id="year"><option value="">All years</option></select></label>
+<div class="seg" role="group" aria-label="Display"><button type="button" data-table="0" aria-label="List"><svg class="i"><use href="#i-list"/></svg></button><button type="button" data-table="1" aria-label="Table"><svg class="i"><use href="#i-table"/></svg></button></div>
+<details class="menu"><summary>Export</summary><div class="menu-pop"><button type="button" id="export-notes">Reading notes (Markdown)</button><button type="button" id="export-bib">BibTeX for this list</button><hr><button type="button" id="export-shelf">Back up my shelf</button><label class="file-btn">Restore a backup<input type="file" id="import-shelf" accept="application/json,.json"></label></div></details>
+</div></div>
+<p id="source-note" class="muted"></p>
 <div id="discovery" hidden>
-  <div class="discovery-controls">
-    <label class="find"><span>Find a paper</span><input type="search" id="find" placeholder="DOI, title, or author" autocomplete="off"></label>
-    <button type="button" id="find-go" class="primary">Search Crossref</button>
-    <label><span>Or browse recent</span><select id="scope"><option value="catalysis">Catalysis & ligand design</option><option value="chemistry">Broader ML chemistry</option><option value="milo">Anat Milo</option></select></label>
-    <label><span>Published within</span><select id="window"><option value="30">30 days</option><option value="90" selected>90 days</option><option value="365">One year</option></select></label>
-    <button type="button" id="refresh">Browse recent</button>
-  </div>
-  <p class="muted">The shared atlas is a curated core. Search any DOI or title to add it to <b>your shelf on this device</b>, then <b>Propose for the shared atlas</b> so a curator can review it. Added Crossref records are not curated summaries and are not published until that review. <a href="https://github.com/edenspec2/catalysis-ml-atlas/issues/new?template=propose-paper.yml&amp;labels=paper-proposal" target="_blank" rel="noopener">Open a blank proposal ↗</a></p>
-  <p id="feed-status" role="status"></p>
+ <div class="discovery-controls"><label class="find"><span>Find a paper</span><input type="search" id="find" placeholder="DOI, title or author" autocomplete="off"></label><button type="button" id="find-go" class="primary">Search</button></div>
+ <div class="discovery-controls"><label class="pick"><span>Recent papers</span><select id="scope"><option value="catalysis">Recent in catalysis &amp; ligand design</option><option value="chemistry">Recent in ML chemistry</option><option value="milo">Recent from Anat Milo</option></select></label><button type="button" id="refresh">Refresh</button></div>
+ <p id="feed-status" role="status"></p>
 </div>
-<div class="results-line"><h2 id="list-title">Your research library</h2><label class="check"><input type="checkbox" id="unread"> Unread only</label><span id="result-count" aria-live="polite"></span><div class="lab-tools"><button type="button" id="export-bib">Export BibTeX</button><button type="button" id="export-shelf">Export my shelf</button><label class="file-btn">Import shelf<input type="file" id="import-shelf" accept="application/json,.json"></label></div></div><p id="source-note" class="muted">Curated papers · handoff dated 6 September 2026 · interpretation inherited from the original corpus</p><div id="results" tabindex="-1"></div></section>
-<section id="comparison" hidden></section><footer>Built around catalysis. Connected to the wider ML chemistry literature.<br>Saved papers, notes, and read status stay on this device until you export your shelf. <a href="lab.html">How the lab uses this</a> · <a href="https://www.crossref.org/documentation/retrieve-metadata/rest-api/" target="_blank" rel="noopener">About the live source ↗</a></footer></main>
-<dialog id="detail"><div class="dialog-top"><span class="eyebrow">PAPER NOTES</span><button id="close-detail" aria-label="Close paper details">Close ✕</button></div><div id="detail-body"></div></dialog><dialog id="help-dialog"><div class="dialog-top"><h2>On your phone</h2><button id="close-help">Close ✕</button></div><p>Open this site's link on your phone and add it to the home screen.</p>
-<p><b>iPhone:</b> in Safari, open Share → Add to Home Screen.</p>
-<p><b>Android:</b> in Chrome, open the menu → Add to Home screen or Install app.</p>
-<p>Search a DOI under Discover latest to add it to this device. Open Details → Propose for the shared atlas to send it to the lab queue (GitHub issue). That does not auto-curate the paper.</p>
-<p>Export my shelf, then Import shelf on another browser to move saved / read / notes. Keep PDFs in the group Zotero collection — this site does not store publisher PDFs.</p>
-<p>Open the 3D atlas once on Wi‑Fi. Figure 1 or the graphical abstract caches on this phone when an open copy exists. ACS paywalled papers often have neither.</p>
-<p><a href="lab.html">Ten-minute lab guide</a></p>
-<p class="muted">Your saved papers stay in this browser unless you export them. Publisher pages and live discovery require internet access.</p></dialog>
-<dialog id="figbox"><div class="dialog-top"><span class="eyebrow">FIGURE</span><button type="button" id="close-fig" aria-label="Close figure">Close ✕</button></div><img id="figbox-img" alt=""><p id="figbox-cap" class="muted"></p></dialog>
+<div id="results" tabindex="-1"></div>
+</section>
+<section id="comparison" hidden></section>
+<footer>A curated core, not an exhaustive search. Your reading list and notes stay on this device until you back them up.<br><a href="lab.html">Lab guide</a> · <button type="button" id="help" class="link">Use on your phone</button></footer>
+</main>
+</div>
+<dialog id="detail"><div class="dialog-top"><span class="eyebrow">PAPER</span><button id="close-detail" class="round" aria-label="Close paper"><svg class="i"><use href="#i-close"/></svg></button></div><div id="detail-body"></div></dialog>
+<dialog id="help-dialog"><div class="dialog-top"><h2>On your phone</h2><button id="close-help" class="round" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button></div>
+<p>Open this site on your phone and add it to the home screen. <b>iPhone:</b> Safari, Share, Add to Home Screen. <b>Android:</b> Chrome menu, Install app.</p>
+<p>To move your reading list and notes, use Export, Back up my shelf, then Restore a backup on the other device. Keep PDFs in the group Zotero collection: this site does not store publisher PDFs.</p>
+<p>To suggest a paper for everyone, search for it under Find Papers, open it, and choose Propose for the shared atlas.</p></dialog>
+<dialog id="figbox"><div class="dialog-top"><span class="eyebrow">FIGURE</span><button type="button" id="close-fig" class="round" aria-label="Close figure"><svg class="i"><use href="#i-close"/></svg></button></div><img id="figbox-img" alt=""><p id="figbox-cap" class="muted"></p></dialog>
 <div id="toast" role="status"></div><script type="module" src="app.js"></script>
 <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');</script>
 </body></html>

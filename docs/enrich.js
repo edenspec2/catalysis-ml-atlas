@@ -470,8 +470,8 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
     p.chemistry_class=chemistryClass(p);
     p.representation_class=REPRESENTATION[p.id]||p.representation_class||'Overview / mixed';
     p.secondary_paradigms=secondaryParadigms(p);
-    p.data_size_bin=dataSizeBin(p);
-    p.validation_type=validationType(p);
+    p.data_size_bin=p.data_size_bin||dataSizeBin(p);
+    p.validation_type=p.validation_type||validationType(p);
     p.stack_layer=stackLayer(p);
     p.summary=paperSummary(p);
     p.brief=paperBrief(p);
@@ -499,6 +499,11 @@ export function enrichGraph(graph, {metadata={}, authors={}, figures={}} = {}){
         'Learned 3D / TS GNN',
         'Pretrained learned representation'
       ]
+    },
+    mlip_transfer:{
+      label:'MLIP transfer & TS ensembles',
+      description:'Fine-tuning machine-learned potentials across chemical environments and solvents, and transition-state ensembles for selectivity, including chiral acid catalysis.',
+      ids:g.nodes.filter(n=>n.research_set==='mlip_transfer').map(n=>n.id)
     },
     computational_stack:{
       label:'Computational stack',
