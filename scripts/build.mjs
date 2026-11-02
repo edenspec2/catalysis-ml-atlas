@@ -9,6 +9,8 @@ const authors=JSON.parse(await readFile('public/authors.json','utf8'));
 let figures={records:{}};
 try{figures=JSON.parse(await readFile('public/figures.json','utf8'))}catch{}
 const graph=enrichGraph(source,{metadata,authors,figures});
+const citations=JSON.parse(await readFile('public/citations.json','utf8')).records;
+for(const p of graph.nodes)if(citations[p.id]!=null)p.citations=citations[p.id];
 await writeFile('dist/graph.json',JSON.stringify(graph));
 await writeFile('dist/papers.json',JSON.stringify(graph.nodes.filter(p=>p.type==='paper')));
 for(const [src,dst] of [['three/build/three.min.js','three.min.js'],['3d-force-graph/dist/3d-force-graph.min.js','3d-force-graph.min.js'],['three-spritetext/dist/three-spritetext.min.js','three-spritetext.min.js']])await copyFile('node_modules/'+src,'dist/vendor/'+dst);

@@ -57,7 +57,7 @@ function bars(rows,max){
 function card(p){
  const id=p.id,isNew=p.added||p.candidate,read=!!state.read[id],queue=!!state.saved[id]&&!read;
  const summary=isNew?((p.derived_authors||[]).slice(0,3).join(', ')+((p.derived_authors||[]).length>3?' et al.':'')):(p.summary||p.why||'');
- const meta=[date(p),p.journal,isNew?'':p.chemistry_class,readDate(p)?'Read '+day(readDate(p),{day:'numeric',month:'short'}):''].filter(Boolean).join(' · ');
+ const meta=[date(p),p.journal,$('#sort').value==='citations'&&p.citations!=null?p.citations+' citations':'',isNew?'':p.chemistry_class,readDate(p)?'Read '+day(readDate(p),{day:'numeric',month:'short'}):''].filter(Boolean).join(' · ');
  const add=!isNew||inCorpus(p)?'':button('data-add',id,state.added[id]?'Added ✓':'Add',!!state.added[id]);
  const fig=p.figure?.src&&!isNew?`<button type="button" class="fig fig-card" data-fig="${esc(id)}" aria-label="Open figure"><img src="${esc(thumb(p.figure.src))}" alt="" loading="lazy" decoding="async"></button>`:'';
  return '<article class="paper'+(read?' done':'')+'" data-id="'+esc(id)+'"><button class="circle'+(read?' on':'')+'" data-read="'+esc(id)+'" aria-pressed="'+read+'" aria-label="Mark as read">'+icon('check')+'</button><div class="row-main"><h3>'+button('data-detail',id,esc(p.full_title||p.label))+'</h3><p class="meta">'+esc(meta)+'</p>'+(state.notes[id]?'<p class="note-line">'+esc(state.notes[id])+'</p>':'<p class="summary">'+esc(summary)+'</p>')+'</div>'+fig+add+'<button class="flag'+(queue?' on':'')+'" data-save="'+esc(id)+'" aria-pressed="'+queue+'" aria-label="To read">'+icon('bookmark')+'</button></article>';
@@ -74,7 +74,10 @@ function listSource(){
 }
 function visiblePapers(){
  if(state.view==='compare')return state.compare.map(find).filter(Boolean);
- return filterPapers(listSource(),filters());
+ const ps=filterPapers(listSource(),filters()),by=$('#sort').value;
+ if(by==='citations')return ps.sort((a,b)=>(b.citations||0)-(a.citations||0));
+ if(by==='newest')return ps.sort((a,b)=>String(b.published_date||b.year).localeCompare(String(a.published_date||a.year)));
+ return ps;
 }
 function downloadFile(name,text,type){
  const a=document.createElement('a');
@@ -141,7 +144,7 @@ function render(){
  document.querySelectorAll('[data-table]').forEach(b=>b.classList.toggle('selected',(b.dataset.table==='1')===!!state.table));
  $('#reading').hidden=v==='compare';$('#comparison').hidden=v!=='compare';$('#discovery').hidden=v!=='latest';
  if(v==='compare'){compare();return}
- const ps=filterPapers(listSource(),filters());
+ const ps=visiblePapers();
  $('#list-title').textContent=TITLES[v]||state.project||(state.focus?$('[data-focus="'+state.focus+'"] .label').textContent:'All Papers');
  $('#result-count').textContent=ps.length;
  if(v==='board'){board(ps);return}
@@ -390,7 +393,7 @@ document.addEventListener('click',e=>{
  if(b.dataset.focus){state.focus=b.dataset.focus;state.project='';setView('library');smooth(()=>{render();window.scrollTo({top:0})});return}
  if(b.dataset.view){state.focus='';state.project='';setView(b.dataset.view);smooth(()=>{render();window.scrollTo({top:0})});if(state.view==='latest'&&!state.feed)refresh()}
 });
-for(const id of ['#year','#chemistry'])$(id).addEventListener('change',render);
+for(const id of ['#sort','#year','#chemistry'])$(id).addEventListener('change',render);
 let typing;$('#search').addEventListener('input',()=>{clearTimeout(typing);typing=setTimeout(render,80)});
 $('#new-project').addEventListener('keydown',e=>{
  const name=e.target.value.trim();if(e.key!=='Enter'||!name)return;
